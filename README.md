@@ -23,6 +23,8 @@ compare versions.
 | **v1 — pure Voronoi** | Nearest-seed partition from IGN chef-lieu points. No clipping. Regression baseline only. | grey |
 | **v2 — Voronoi + arr-clip** | Same as v1, then intersected with the IGN arrondissement polygon (Cotonou 13, Abomey-Calavi 9). Previous default. | green/orange/red by anchor count |
 | **v3 — topology-aware** | Multi-source Dijkstra on a 100 m raster grid. **Water cells (canals/lagoon) are forbidden**, **road cells are cheap (0.3 cost)**, **POIs whose name contains the quartier name act as additional seeds**. Each cell ends up owned by the quartier with lowest cost-distance. | teal |
+| **v4 — asymmetric water-barrier (experimental)** | v3 + per-quartier "home land component(s)". Stepping into a non-home connected component costs +8. Bridges (incl. Pont MLK) reconnect. POI evidence in another component extends the home set. Works where water actually disconnects (AC lake fingers); does very little inside Cotonou where bridges keep all land in one component. | purple |
+| **v5 — canal-side asymmetric barrier (experimental)** | v3 + per-quartier "home side" of each nearby canal/river/stream (>200 m). Inside the 500 m buffer of a waterway, stepping from the chef-lieu's side into the opposite side costs +25 per crossing. POI evidence on the other bank flips that waterway to "both" (no penalty). Generic — not hardcoded to any pair of quartiers. | orange |
 
 The conceptual move from v2 to v3: **stop generating polygons directly,
 generate territorial influence fields, then derive polygons from those.**
