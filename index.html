@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="utf-8">
+<title>EYA · Quartier polygon evaluation lab</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Public evaluation lab for draft quartier polygons of Cotonou + Abomey-Calavi (Bénin). v1/v2/v3 versioned + disputed strips. NOT validated — experimental.">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font:13px -apple-system,BlinkMacSystemFont,'Segoe UI',Inter,system-ui,sans-serif;color:#1a1f2e;background:#fafafa}
+  #wrap{display:flex;height:100%}
+  #side{width:340px;flex:none;overflow:auto;border-right:1px solid #e5e7eb;padding:16px;box-sizing:border-box;background:#fff}
+  #map{flex:1;background:#fdfdfd}
+  .tile-bw{filter:grayscale(100%) contrast(1.05) brightness(1.02) saturate(0)}
+  h1{font-size:16px;margin:0 0 4px;letter-spacing:-0.01em;color:#0b1f3b;font-weight:700}
+  h2{font-size:11px;margin:14px 0 6px;letter-spacing:0.06em;text-transform:uppercase;color:#475569;font-weight:600}
+  p.lede{font-size:12px;color:#475569;line-height:1.5;margin:6px 0 0}
+  .pill{display:inline-block;padding:2px 7px;border-radius:999px;font-size:10px;font-weight:600;background:#fef3c7;color:#92400e;border:1px solid #fde68a;margin-left:6px}
+  .lay{margin-top:8px;padding:8px 10px;border:1px solid #e5e7eb;border-radius:8px;background:#fff}
+  .lay-hdr{display:flex;align-items:center;gap:8px;font-size:12px;color:#0b1f3b;font-weight:600;cursor:pointer}
+  .lay-hdr input{accent-color:#0b1f3b}
+  .lay-swatch{width:14px;height:14px;border-radius:3px;flex:none}
+  .lay-meta{font-size:10.5px;color:#6b7280;margin-top:3px;line-height:1.4}
+  .slider{width:100%;margin-top:6px;accent-color:#0b1f3b}
+  .legend{font-size:11px;color:#475569;line-height:1.55;margin-top:6px}
+  .legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:middle}
+  a{color:#0b1f3b;font-weight:600}
+  .footer{font-size:10px;color:#94a3b8;margin-top:14px;line-height:1.5;border-top:1px solid #f1f5f9;padding-top:10px}
+  .leaflet-control-attribution{background:rgba(255,255,255,.9)!important;font-size:10px;border-radius:4px;padding:1px 6px}
+  .leaflet-control-zoom a,.leaflet-control-layers{border-radius:8px!important;border:1px solid #e5e7eb!important;box-shadow:0 1px 3px rgba(0,0,0,.06)!important}
+  .amen-marker{background:transparent;border:none}
+  .amen-pin{width:18px;height:18px;line-height:16px;text-align:center;
+    font:13px 'Segoe UI Emoji','Apple Color Emoji',sans-serif;
+    background:#fff;border:1.5px solid #0b1f3b;border-radius:50%;
+    box-shadow:0 1px 3px rgba(0,0,0,.18)}
+  .amen-pin.amen-place_of_worship{border-color:#7c3aed}
+  .amen-pin.amen-police,.amen-pin.amen-fire_station{border-color:#dc2626}
+  .amen-pin.amen-hospital,.amen-pin.amen-clinic,.amen-pin.amen-pharmacy{border-color:#10b981}
+  .amen-pin.amen-school,.amen-pin.amen-university,.amen-pin.amen-college{border-color:#0ea5e9}
+  .amen-pin.amen-fuel{border-color:#f59e0b}
+  .amen-pin.amen-bank,.amen-pin.amen-atm{border-color:#0d9488}
+  .amen-pin.amen-marketplace,.amen-pin.amen-supermarket,.amen-pin.amen-mall{border-color:#db2777}
+  .qlbl{background:rgba(255,255,255,.92);border:1px solid #cbd5e1;border-radius:4px;
+    padding:1px 5px;font:10px/1.3 -apple-system,system-ui;color:#0b1f3b;font-weight:500;
+    box-shadow:0 1px 2px rgba(0,0,0,.04)}.qlbl:before{display:none!important}
+  .leaflet-popup-content{font:12px -apple-system,system-ui;color:#0b1f3b;margin:10px 14px;max-width:280px}
+  .leaflet-popup-content b{color:#0b1f3b}
+</style></head><body>
+<div id="wrap"><div id="side">
+  <h1>EYA · Quartier polygon lab<span class="pill">EXPERIMENTAL</span></h1>
+  <p class="lede">Side-by-side comparison of three draft-polygon strategies for the 310 quartiers of Cotonou + Abomey-Calavi. <b>None of these are authoritative.</b> Read <a href="README.md">README.md</a> for what each version means and known limitations.</p>
+
+  <h2>Polygon versions</h2>
+
+  <div class="lay">
+    <label class="lay-hdr"><input type="checkbox" id="t-v1"><span class="lay-swatch" style="background:#94a3b8"></span>v1 — pure Voronoi (baseline)</label>
+    <div class="lay-meta">Centroid-only nearest-seed partition. Ignores all topology.</div>
+    <input type="range" min="0" max="100" value="30" id="op-v1" class="slider">
+  </div>
+
+  <div class="lay">
+    <label class="lay-hdr"><input type="checkbox" id="t-v2" checked><span class="lay-swatch" style="background:#fb923c"></span>v2 — Voronoi + arr-clipped</label>
+    <div class="lay-meta">Same as v1 but clipped to IGN arrondissement boundaries. Previous default.</div>
+    <input type="range" min="0" max="100" value="40" id="op-v2" class="slider">
+  </div>
+
+  <div class="lay">
+    <label class="lay-hdr"><input type="checkbox" id="t-v3" checked><span class="lay-swatch" style="background:#0d9488"></span>v3 — topology-aware</label>
+    <div class="lay-meta">Multi-source Dijkstra on 100 m grid. Water = forbidden · roads = cheap · POIs named after a quartier act as additional seeds.</div>
+    <input type="range" min="0" max="100" value="40" id="op-v3" class="slider">
+  </div>
+
+  <div class="lay">
+    <label class="lay-hdr"><input type="checkbox" id="t-disp" checked><span class="lay-swatch" style="background:#b91c1c"></span>v3 disputed strips</label>
+    <div class="lay-meta">Cells where 2nd-best owner's cost is close to best — fuzzy transition zones.</div>
+    <input type="range" min="0" max="100" value="45" id="op-disp" class="slider">
+  </div>
+
+  <h2>Reference layers</h2>
+  <div class="lay"><label class="lay-hdr"><input type="checkbox" id="t-arr" checked><span class="lay-swatch" style="background:#0b1f3b"></span>arrondissement polygons</label>
+    <div class="lay-meta">Cotonou 13 + Abomey-Calavi 9 (IGN-Bénin).</div></div>
+  <div class="lay"><label class="lay-hdr"><input type="checkbox" id="t-ign" checked><span class="lay-swatch" style="background:#0d9488"></span>IGN chef-lieu points + names</label>
+    <div class="lay-meta">309 quartier centroids (RGPH register).</div></div>
+  <div class="lay"><label class="lay-hdr"><input type="checkbox" id="t-amen"><span class="lay-swatch" style="background:#7c3aed"></span>OSM amenities (churches, police, fuel, …)</label>
+    <div class="lay-meta">2 662 categorised landmarks with names. Names visible at zoom ≥ 15.</div></div>
+
+  <h2>Base map</h2>
+  <div class="lay lay-meta" id="base-info">B&W (Carto Positron, grayscale-filtered). Switch in the top-right layer control.</div>
+
+  <h2>Confidence legend (v2 only)</h2>
+  <div class="legend">
+    <div><span class="sw" style="background:#22c55e"></span>osm_polygon — real OSM admin_level=8</div>
+    <div><span class="sw" style="background:#22c55e"></span>high — 2+ secondary anchors within 300 m of IGN seed</div>
+    <div><span class="sw" style="background:#fb923c"></span>medium — 1+ secondary anchor within 500 m</div>
+    <div><span class="sw" style="background:#fca5a5"></span>low — only IGN seed</div>
+  </div>
+
+  <div class="footer">
+    Data © OpenStreetMap contributors (ODbL) · IGN-Bénin · INStaD RGPH<br>
+    Tiles © OpenStreetMap · CARTO · Esri (where attributed)<br>
+    Cadastre.bj was evaluated and <b>rejected</b> as a source.<br>
+    <br>
+    <a href="README.md">README · context · limitations</a>
+  </div>
+</div>
+<div id="map"></div></div>
+
+<script>
+const map = L.map('map').setView([6.40, 2.40], 12);
+
+// Base layers — all public-tile-only.
+const baseBW = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+  {maxZoom:20, attribution:'© CARTO · © OpenStreetMap', className:'tile-bw'});
+const baseOSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  {maxZoom:19, attribution:'© OpenStreetMap'});
+const baseSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+  {maxZoom:19, attribution:'Esri'});
+baseBW.addTo(map);
+L.control.layers({'B&W (Carto)':baseBW,'OSM streets':baseOSM,'Satellite (Esri)':baseSat},{},{position:'topright'}).addTo(map);
+
+// Layer helpers — popup + style.
+function popup(p, version){
+  let h = `<b>${p.name||'(unnamed)'}</b>`;
+  if(p.quartierId) h += ` <span class="muted">${p.quartierId}</span>`;
+  h += `<br>${p.city||''} · ${p.arrondissement||''}<br>`;
+  h += `<b>version:</b> ${version} · <b>confidence:</b> ${p.confidence||'?'}<br>`;
+  if(p.cellCount!==undefined) h += `cells: ${p.cellCount} · POI seeds: ${p.poiSeedCount||0} · meanCostGap: ${p.meanCostGap||'?'}<br>`;
+  if(p.poiCount!==undefined) h += `POIs: ${p.poiCount} · anchors: ${p.anchorCount||0}<br>`;
+  if(p.disputes && p.disputes.length) h += `<span style="color:#b91c1c">⚠ ${p.disputes.join('; ')}</span>`;
+  return h;
+}
+const V1_STYLE = {color:'#64748b',weight:1.1,fillColor:'#94a3b8',fillOpacity:.05,dashArray:'2,3'};
+const V2_STYLE_BY_CONF = {
+  osm_polygon: {color:'#15803d',weight:1.8,fillColor:'#22c55e',fillOpacity:.15},
+  high:        {color:'#15803d',weight:1.6,fillColor:'#22c55e',fillOpacity:.12,dashArray:null},
+  medium:      {color:'#ea580c',weight:1.4,fillColor:'#fb923c',fillOpacity:.10,dashArray:'5,3'},
+  low:         {color:'#dc2626',weight:1.2,fillColor:'#fca5a5',fillOpacity:.08,dashArray:'2,3'},
+};
+const V3_STYLE = {color:'#0d9488',weight:1.5,fillColor:'#14b8a6',fillOpacity:.14};
+const DISP_STYLE = {color:'#b91c1c',weight:1.2,fillColor:'#fecaca',fillOpacity:.35,dashArray:'2,2'};
+
+const layers = {};
+
+async function loadGeo(url){
+  const r = await fetch(url);
+  if(!r.ok) throw new Error('fetch '+url+' → '+r.status);
+  return r.json();
+}
+
+async function init(){
+  // Polygons
+  const [v1, v2, v3, disp, ign, arr, amen, ev] = await Promise.all([
+    loadGeo('data/draft_quartier_polygons_v1.geojson'),
+    loadGeo('data/draft_quartier_polygons_v2.geojson'),
+    loadGeo('data/draft_quartier_polygons_v3.geojson'),
+    loadGeo('data/draft_quartier_disputed_v3.geojson'),
+    loadGeo('data/ign_points.geojson'),
+    loadGeo('data/arrondissement_polygons.geojson'),
+    loadGeo('data/poi_index.geojson'),
+    loadGeo('data/draft_quartier_evidence_v3.json').catch(()=>({})),
+  ]);
+
+  layers.v1 = L.geoJSON(v1, {style: V1_STYLE,
+    onEachFeature: (f,l)=>l.bindPopup(popup(f.properties,'v1'))});
+  layers.v2 = L.geoJSON(v2, {style: f => V2_STYLE_BY_CONF[f.properties.confidence] || V2_STYLE_BY_CONF.low,
+    onEachFeature: (f,l)=>l.bindPopup(popup(f.properties,'v2'))});
+  layers.v3 = L.geoJSON(v3, {style: V3_STYLE,
+    onEachFeature: (f,l)=>l.bindPopup(popup(f.properties,'v3'))});
+  layers.disp = L.geoJSON(disp, {style: DISP_STYLE,
+    onEachFeature: (f,l)=>{
+      const p = f.properties || {};
+      l.bindPopup(`<b>disputed:</b> ${(p.between||[]).join(' ↔ ')}<br>cells: ${p.cellCount||0}`);
+    }});
+
+  // Arrondissement boundary lines
+  layers.arr = L.geoJSON(arr, {style:{color:'#0b1f3b',weight:1.6,fill:false,dashArray:'5,3',opacity:.55}});
+
+  // IGN chef-lieu points with permanent name labels
+  layers.ign = L.layerGroup();
+  ign.features.forEach(f=>{
+    const p = f.properties; const [lo,la] = f.geometry.coordinates;
+    const m = L.circleMarker([la,lo],{radius:4,weight:1,color:'#0b1f3b',
+      fillColor:'#0d9488',fillOpacity:.95});
+    m.bindTooltip(p.name||'?', {permanent:true,direction:'right',offset:[6,0],className:'qlbl'});
+    m.bindPopup(`<b>${p.name||'?'}</b><br>commune: ${p.commune}<br>arrondissement: ${p.arrondissement}<br>code_geo: ${p.code_geo||'?'}<br>population: ${p.population==null?'(null)':p.population}`);
+    layers.ign.addLayer(m);
+  });
+
+  // Amenities (categorised emoji pins)
+  const AMENICON = {place_of_worship:'⛪',police:'🚓',fire_station:'🚒',hospital:'🏥',clinic:'⚕',pharmacy:'💊',
+    school:'🏫',university:'🎓',college:'🎓',bank:'🏦',atm:'🏧',fuel:'⛽',marketplace:'🛒',
+    post_office:'✉',courthouse:'⚖',townhall:'🏛',restaurant:'🍽',fast_food:'🍔',cafe:'☕',bar:'🍺',
+    hotel:'🏨',guest_house:'🛏',hostel:'🛏',supermarket:'🛒',mall:'🏬',convenience:'🏪'};
+  layers.amen = L.layerGroup();
+  amen.features.forEach(f=>{
+    const p = f.properties; const [lo,la] = f.geometry.coordinates;
+    const icon = AMENICON[p.category]||'·';
+    const html = '<div class="amen-pin amen-'+p.category+'">'+icon+'</div>';
+    const m = L.marker([la,lo],{icon: L.divIcon({html,className:'amen-marker',iconSize:[20,20],iconAnchor:[10,10]})});
+    m.bindTooltip(icon+' '+(p.name||'(sans nom)')+' — '+p.category,{sticky:true});
+    layers.amen.addLayer(m);
+  });
+
+  // Default-add the ones the checkboxes say "checked"
+  if(document.getElementById('t-v2').checked) layers.v2.addTo(map);
+  if(document.getElementById('t-v3').checked) layers.v3.addTo(map);
+  if(document.getElementById('t-disp').checked) layers.disp.addTo(map);
+  if(document.getElementById('t-arr').checked) layers.arr.addTo(map);
+  if(document.getElementById('t-ign').checked) layers.ign.addTo(map);
+
+  // Toggle wiring
+  const bind = (id, layer) => document.getElementById(id).onchange = e => {
+    if(e.target.checked) layer.addTo(map); else map.removeLayer(layer);
+  };
+  bind('t-v1', layers.v1); bind('t-v2', layers.v2); bind('t-v3', layers.v3);
+  bind('t-disp', layers.disp);
+  bind('t-arr', layers.arr); bind('t-ign', layers.ign); bind('t-amen', layers.amen);
+
+  // Opacity sliders
+  function setOpacity(layer, baseStyle, op){
+    if(!layer) return;
+    layer.eachLayer(l => {
+      const fc = l.feature ? (l.feature.properties.confidence || null) : null;
+      const base = (typeof baseStyle === 'function') ? baseStyle(l.feature) : baseStyle;
+      l.setStyle({fillOpacity: (base.fillOpacity||0.1) * op, opacity: (base.opacity||1) * Math.min(1, op*1.5)});
+    });
+  }
+  function wireOp(id, layer, base){
+    const el = document.getElementById(id);
+    el.oninput = () => setOpacity(layer, base, el.value/40);    // 40 = "neutral" preserves built-in opacity
+  }
+  wireOp('op-v1', layers.v1, V1_STYLE);
+  wireOp('op-v2', layers.v2, f => V2_STYLE_BY_CONF[f.properties.confidence] || V2_STYLE_BY_CONF.low);
+  wireOp('op-v3', layers.v3, V3_STYLE);
+  wireOp('op-disp', layers.disp, DISP_STYLE);
+
+  // Fit to v3 (the richest)
+  map.fitBounds(layers.v3.getBounds(), {padding:[20,20]});
+}
+
+init().catch(e => {
+  document.getElementById('side').innerHTML +=
+    `<div style="color:#b91c1c;margin-top:14px"><b>Error loading data.</b><br>${e.message}<br>If you opened this file directly (file:///), it must be served from an HTTP server. See README.</div>`;
+});
+</script>
+</body></html>
