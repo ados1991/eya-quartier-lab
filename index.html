@@ -72,6 +72,12 @@
   </div>
 
   <div class="lay">
+    <label class="lay-hdr"><input type="checkbox" id="t-v4"><span class="lay-swatch" style="background:#7c3aed"></span>v4 — asymmetric water-barrier (experimental)</label>
+    <div class="lay-meta">v3 + per-quartier "home land component(s)". Stepping into a component NOT in the quartier's home set costs +8. Bridges (incl. Pont MLK) reconnect land masses. POI evidence in another component adds it to the home set.</div>
+    <input type="range" min="0" max="100" value="50" id="op-v4" class="slider">
+  </div>
+
+  <div class="lay">
     <label class="lay-hdr"><input type="checkbox" id="t-disp" checked><span class="lay-swatch" style="background:#b91c1c"></span>v3 disputed strips</label>
     <div class="lay-meta">Cells where 2nd-best owner's cost is close to best — fuzzy transition zones.</div>
     <input type="range" min="0" max="100" value="45" id="op-disp" class="slider">
@@ -138,6 +144,7 @@ const V2_STYLE_BY_CONF = {
   low:         {color:'#dc2626',weight:1.2,fillColor:'#fca5a5',fillOpacity:.08,dashArray:'2,3'},
 };
 const V3_STYLE = {color:'#0d9488',weight:1.5,fillColor:'#14b8a6',fillOpacity:.14};
+const V4_STYLE = {color:'#7c3aed',weight:1.5,fillColor:'#a78bfa',fillOpacity:.18};
 const DISP_STYLE = {color:'#b91c1c',weight:1.2,fillColor:'#fecaca',fillOpacity:.35,dashArray:'2,2'};
 
 const layers = {};
@@ -150,10 +157,11 @@ async function loadGeo(url){
 
 async function init(){
   // Polygons
-  const [v1, v2, v3, disp, ign, arr, amen, ev] = await Promise.all([
+  const [v1, v2, v3, v4, disp, ign, arr, amen, ev] = await Promise.all([
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
     loadGeo('data/draft_quartier_polygons_v3.geojson'),
+    loadGeo('data/draft_quartier_polygons_v4.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_disputed_v3.geojson'),
     loadGeo('data/ign_points.geojson'),
     loadGeo('data/arrondissement_polygons.geojson'),
@@ -167,6 +175,8 @@ async function init(){
     onEachFeature: (f,l)=>l.bindPopup(popup(f.properties,'v2'))});
   layers.v3 = L.geoJSON(v3, {style: V3_STYLE,
     onEachFeature: (f,l)=>l.bindPopup(popup(f.properties,'v3'))});
+  layers.v4 = L.geoJSON(v4, {style: V4_STYLE,
+    onEachFeature: (f,l)=>l.bindPopup(popup(f.properties,'v4'))});
   layers.disp = L.geoJSON(disp, {style: DISP_STYLE,
     onEachFeature: (f,l)=>{
       const p = f.properties || {};
@@ -214,6 +224,7 @@ async function init(){
     if(e.target.checked) layer.addTo(map); else map.removeLayer(layer);
   };
   bind('t-v1', layers.v1); bind('t-v2', layers.v2); bind('t-v3', layers.v3);
+  bind('t-v4', layers.v4);
   bind('t-disp', layers.disp);
   bind('t-arr', layers.arr); bind('t-ign', layers.ign); bind('t-amen', layers.amen);
 
@@ -233,6 +244,7 @@ async function init(){
   wireOp('op-v1', layers.v1, V1_STYLE);
   wireOp('op-v2', layers.v2, f => V2_STYLE_BY_CONF[f.properties.confidence] || V2_STYLE_BY_CONF.low);
   wireOp('op-v3', layers.v3, V3_STYLE);
+  wireOp('op-v4', layers.v4, V4_STYLE);
   wireOp('op-disp', layers.disp, DISP_STYLE);
 
   // Fit to v3 (the richest)
