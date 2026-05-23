@@ -1,0 +1,34 @@
+v5 — canal-side asymmetric barrier · before/after report
+================================================================
+grid: 521 x 329 @ 100 m
+matched quartiers: 277
+SIDE_BUFFER_M=500.0  CANAL_CROSS_PENALTY=25.0
+waterways (canal/river/stream > 200 m): 54  {'river': 28, 'stream': 15, 'canal': 11}
+distinct cells with at least one side label: 20204
+quartiers with any home_side: 28
+'both' overrides (POI on other side): 0
+canal-crossing penalty applications during propagation: 73
+
+cells changed (v3 → v5): 1117 / 162445 land cells (0.69 %)
+
+Top 15 (v3 → v5) ownership flips:
+  GBODJE                   → YEVIE                     718 cells
+  WAWATA                   → WAWATA-TODJA              286 cells
+  WAWATA                   → KPAVIEDJA                 36 cells
+  GBODJE                   → AVAGBE                    20 cells
+  WAWATA                   → ZINVIE-ZOUNME             20 cells
+  WAWATA                   → HOUEGOUDO                 20 cells
+  AGLA-AKPLOMEY            → AGLA-AGONGBOMEY           13 cells
+  AGLA-AKPLOMEY            → AGLA-FIGARO               2 cells
+  ADJAHA-CITE              → AIBATIN DODO              1 cells
+  VOSSA                    → FIFADJI                   1 cells
+
+Midédji / Yénawa-Fifadji corridor (bbox lat 6.376–6.395  lng 2.385–2.408):
+  land cells in bbox        : 463
+  cells changed in bbox     : 1 (0.2 %)
+
+polygon features written  : 248 → draft_quartier_polygons_v5.geojson
+disputed strips written   : 482 → draft_quartier_disputed_v5.geojson
+evidence written          : draft_quartier_evidence_v5.json
+canal-sides viz           : diag_v5_canal_sides.png
+owner-diff viz            : diag_v5_owner_diff.png
