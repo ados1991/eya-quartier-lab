@@ -1,0 +1,245 @@
+{
+  "total_chiefs": 311,
+  "bucket_counts": {
+    "GOOD": 179,
+    "PARTIAL": 96,
+    "BROKEN": 3,
+    "OSM_DATA_LIMIT": 31,
+    "OFF_ROAD": 2
+  },
+  "thresholds": {
+    "GOOD": "coverage ≥ 80 % AND missed ≤ 1",
+    "PARTIAL": "40 % ≤ coverage < 80 %",
+    "BROKEN": "coverage < 40 % with ≥4 near ways",
+    "OFF_ROAD": "snap distance > 100 m",
+    "OSM_DATA_LIMIT": "≤ 3 near ways in OSM (no way to judge)"
+  },
+  "graph_meta": {
+    "n_raw_points": 195610,
+    "n_nodes": 94213,
+    "n_roundabouts": 44,
+    "n_dual_connectors": 957,
+    "n_water_blocked_merges": 60,
+    "n_water_blocked_dual_connectors": 3,
+    "water_blocked_merge_examples": [
+      {
+        "a": [
+          6.353483,
+          2.307113
+        ],
+        "b": [
+          6.353483,
+          2.307113
+        ]
+      },
+      {
+        "a": [
+          6.358743,
+          2.360384
+        ],
+        "b": [
+          6.358866,
+          2.360368
+        ]
+      },
+      {
+        "a": [
+          6.358866,
+          2.360368
+        ],
+        "b": [
+          6.358743,
+          2.360384
+        ]
+      },
+      {
+        "a": [
+          6.358866,
+          2.360368
+        ],
+        "b": [
+          6.358743,
+          2.360384
+        ]
+      },
+      {
+        "a": [
+          6.358866,
+          2.360368
+        ],
+        "b": [
+          6.358743,
+          2.360384
+        ]
+      },
+      {
+        "a": [
+          6.390231,
+          2.355165
+        ],
+        "b": [
+          6.390287,
+          2.355091
+        ]
+      },
+      {
+        "a": [
+          6.390231,
+          2.355165
+        ],
+        "b": [
+          6.390287,
+          2.355091
+        ]
+      },
+      {
+        "a": [
+          6.390231,
+          2.355165
+        ],
+        "b": [
+          6.390287,
+          2.355091
+        ]
+      },
+      {
+        "a": [
+          6.390287,
+          2.355091
+        ],
+        "b": [
+          6.390231,
+          2.355165
+        ]
+      },
+      {
+        "a": [
+          6.382958,
+          2.359019
+        ],
+        "b": [
+          6.382948,
+          2.359152
+        ]
+      }
+    ]
+  },
+  "per_arrondissement": {
+    "COTONOU / 12ème Arrondissement": {
+      "GOOD": 12,
+      "PARTIAL": 6
+    },
+    "COTONOU / 1er Arrondissement": {
+      "PARTIAL": 7,
+      "GOOD": 6
+    },
+    "COTONOU / 2ème Arrondissement": {
+      "GOOD": 9,
+      "PARTIAL": 4
+    },
+    "ABOMEY-CALAVI / Godomey": {
+      "PARTIAL": 21,
+      "GOOD": 25,
+      "BROKEN": 1
+    },
+    "COTONOU / 7ème Arrondissement": {
+      "GOOD": 8,
+      "PARTIAL": 3
+    },
+    "COTONOU / 5ème Arrondissement": {
+      "GOOD": 11,
+      "PARTIAL": 3,
+      "OSM_DATA_LIMIT": 1
+    },
+    "COTONOU / 6ème Arrondissement": {
+      "GOOD": 11,
+      "PARTIAL": 8
+    },
+    "ABOMEY-CALAVI / Togba": {
+      "GOOD": 5,
+      "OSM_DATA_LIMIT": 2,
+      "PARTIAL": 3
+    },
+    "COTONOU / 8ème Arrondissement": {
+      "GOOD": 6,
+      "PARTIAL": 2
+    },
+    "ABOMEY-CALAVI / Hêvié": {
+      "GOOD": 6,
+      "OSM_DATA_LIMIT": 1,
+      "PARTIAL": 2
+    },
+    "ABOMEY-CALAVI / Abomey-Calavi": {
+      "BROKEN": 1,
+      "GOOD": 8,
+      "PARTIAL": 10
+    },
+    "COTONOU / 4ème Arrondissement": {
+      "PARTIAL": 3,
+      "OSM_DATA_LIMIT": 1,
+      "GOOD": 8
+    },
+    "ABOMEY-CALAVI / Golo-Djigbé": {
+      "OSM_DATA_LIMIT": 4,
+      "GOOD": 9,
+      "PARTIAL": 1
+    },
+    "COTONOU / 13ème Arrondissement": {
+      "BROKEN": 1,
+      "GOOD": 10,
+      "PARTIAL": 2,
+      "OSM_DATA_LIMIT": 1
+    },
+    "ABOMEY-CALAVI / Zinvié": {
+      "OSM_DATA_LIMIT": 4,
+      "GOOD": 7,
+      "PARTIAL": 3,
+      "OFF_ROAD": 1
+    },
+    "COTONOU / 9ème Arrondissement": {
+      "GOOD": 2,
+      "PARTIAL": 3,
+      "OSM_DATA_LIMIT": 1
+    },
+    "COTONOU / 11ème Arrondissement": {
+      "GOOD": 7,
+      "PARTIAL": 6
+    },
+    "COTONOU / 10ème Arrondissement": {
+      "PARTIAL": 3,
+      "GOOD": 6
+    },
+    "ABOMEY-CALAVI / Kpanroun": {
+      "OFF_ROAD": 1,
+      "OSM_DATA_LIMIT": 7,
+      "GOOD": 1
+    },
+    "ABOMEY-CALAVI / Akassato": {
+      "OSM_DATA_LIMIT": 6,
+      "GOOD": 7,
+      "PARTIAL": 1
+    },
+    "COTONOU / 3ème Arrondissement": {
+      "PARTIAL": 4,
+      "GOOD": 8,
+      "OSM_DATA_LIMIT": 1
+    },
+    "ABOMEY-CALAVI / Ouèdo": {
+      "GOOD": 6,
+      "OSM_DATA_LIMIT": 1,
+      "PARTIAL": 1
+    },
+    "Abomey-Calavi / Togba": {
+      "OSM_DATA_LIMIT": 1
+    },
+    "Abomey-Calavi / Godomey": {
+      "GOOD": 1
+    }
+  },
+  "global_aggregates": {
+    "total_near_ways": 2361,
+    "total_visited_ways": 2329,
+    "total_missed_ways": 403,
+    "n_used_dual_connector": 31
+  }
+}
