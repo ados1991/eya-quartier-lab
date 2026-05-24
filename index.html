@@ -171,6 +171,20 @@
     </div>
     <input type="range" min="0" max="100" value="80" id="op-prop300" class="slider">
 
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-coll300"><span class="lay-swatch" style="background:linear-gradient(135deg,#000 50%,#dc2626 50%)"></span>300 m collision frontier candidates</label>
+    <div class="lay-meta">
+      665 collision nodes (every graph node any 2+ chef-lieus reach within 300 m). Classified into 5 buckets:<br>
+      <span style="display:inline-block;width:10px;height:10px;background:#fff;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle"></span> PLAUSIBLE_FRONTIER (404, 60.8 %)
+      <span style="display:inline-block;width:10px;height:10px;background:#dc2626;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle;margin-left:6px"></span> SUSPICIOUS_OVERREACH (206, 31.0 %)<br>
+      <span style="display:inline-block;width:11px;height:11px;background:#000;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle"></span> MULTI_QUARTIER (47, 7.1 %)
+      <span style="display:inline-block;width:10px;height:10px;background:#1e40af;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle;margin-left:6px"></span> WATER_CANAL_CONFLICT (0)
+      <span style="display:inline-block;width:9px;height:9px;background:#9ca3af;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle;margin-left:6px"></span> ROAD_GRAPH_ARTIFACT (8)<br>
+      <a href="data/collision_points_300m.geojson" download>geojson</a> ·
+      <a href="data/collision_report_300m.csv" download>CSV</a> ·
+      <a href="data/collision_summary_300m.json" target="_blank">summary</a>
+    </div>
+    <input type="range" min="0" max="100" value="80" id="op-coll300" class="slider">
+
     <div class="lay-meta" style="margin-top:8px">
       <span style="color:#dc2626">●</span> collision &nbsp;
       <span style="color:#0369a1">●</span> major-water stop &nbsp;
@@ -295,6 +309,21 @@ const WATERWAY_STYLE = (f) => {
 const PROP_STYLE   = (f) => ({color: f.properties.color || '#888', weight:2.5, opacity:.85});
 const PROP100_STYLE = (f) => ({color: f.properties.color || '#888', weight:1.5, opacity:.75});
 const PROP300_STYLE = (f) => ({color: f.properties.color || '#888', weight:3.5, opacity:.55});
+
+// 300m collision points — color by classification
+const COLL_CLS_STYLE = (f) => {
+  const c = f.properties.classification;
+  const n = f.properties.n_quartiers || 2;
+  // Black border for 3+ quartiers, navy otherwise
+  const stroke = (n >= 3) ? '#000' : '#0b1f3b';
+  // Fill color by bucket priority: WATER > MULTI > SUSPICIOUS > PLAUSIBLE > ARTIFACT
+  if (c === 'WATER_CANAL_CONFLICT')   return {radius:5, color:stroke, weight:2,   fillColor:'#1e40af', fillOpacity:.95};
+  if (c === 'MULTI_QUARTIER')         return {radius:5.5, color:'#000', weight:2, fillColor:'#000',    fillOpacity:.85};
+  if (c === 'SUSPICIOUS_OVERREACH')   return {radius:4.5, color:stroke, weight:1.6, fillColor:'#dc2626', fillOpacity:.85};
+  if (c === 'PLAUSIBLE_FRONTIER')     return {radius:4,   color:stroke, weight:1.2, fillColor:'#fff',    fillOpacity:.9};
+  if (c === 'ROAD_GRAPH_ARTIFACT')    return {radius:3.5, color:stroke, weight:1,   fillColor:'#9ca3af', fillOpacity:.85};
+  return {radius:3, color:stroke, weight:1, fillColor:'#9ca3af', fillOpacity:.7};
+};
 const PROP_POINT_STYLE = (f) => {
   const k = f.properties.kind;
   if (k === 'chef_lieu') {
@@ -346,9 +375,9 @@ async function loadGeo(url){
 }
 
 async function init(){
-  // Polygons + water overlays + audit + road-propagation (3 budgets)
+  // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
-         propL100, propP100, propL300, propP300] = await Promise.all([
+         propL100, propP100, propL300, propP300, coll300] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -372,6 +401,7 @@ async function init(){
     loadGeo('data/road_propagation_points_100m.geojson').catch(()=>({features:[]})),
     loadGeo('data/road_propagation_lines_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/road_propagation_points_300m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/collision_points_300m.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -414,6 +444,26 @@ async function init(){
   layers.propP300 = L.geoJSON(propP300, {
     pointToLayer:(f,latlng)=>L.circleMarker(latlng, PROP_POINT_STYLE(f))});
   layers.prop300 = L.layerGroup([layers.propL300, layers.propP300]);
+
+  // 300 m collision frontier candidates
+  layers.coll300 = L.geoJSON(coll300, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, COLL_CLS_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p = f.properties;
+      const cls = p.classification;
+      const others = p.others ? ('<br>also: ' + p.others) : '';
+      const water = (p.dist_to_water_m != null) ? `<br>nearest water: ${p.dist_to_water_m} m` : '';
+      l.bindPopup(
+        `<b>${cls}</b> · ${p.n_quartiers} quartiers<br>`+
+        `<b>${p.name_a}</b> (d=${p.dist_a_m} m) ↔ <b>${p.name_b}</b> (d=${p.dist_b_m} m)<br>`+
+        `asymmetry: ${p.asymmetry}<br>`+
+        `road: ${p.road_context} · highway: ${p.primary_highway} · ${p.n_road_edges} edges`+
+        `${p.in_roundabout?' · roundabout':''}${p.has_bridge?' · bridge':''}`+
+        `${p.has_dual_connector_edge?' · dual-conn':''}`+
+        `${water}${others}`
+      );
+    }
+  });
 
   layers.audit = L.geoJSON(audit, {
     style: AUDIT_STYLE,
@@ -540,6 +590,7 @@ async function init(){
   bind('t-prop', layers.prop);
   bind('t-prop100', layers.prop100);
   bind('t-prop300', layers.prop300);
+  bind('t-coll300', layers.coll300);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){

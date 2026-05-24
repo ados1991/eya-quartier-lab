@@ -1,0 +1,170 @@
+{
+  "total_collisions": 665,
+  "bucket_counts": {
+    "SUSPICIOUS_OVERREACH": 206,
+    "PLAUSIBLE_FRONTIER": 404,
+    "MULTI_QUARTIER": 47,
+    "ROAD_GRAPH_ARTIFACT": 8
+  },
+  "by_road_context": {
+    "intersection": 477,
+    "road_segment": 179,
+    "bridge": 6,
+    "endpoint": 3
+  },
+  "by_primary_highway": {
+    "primary": 58,
+    "tertiary": 32,
+    "residential": 479,
+    "secondary": 61,
+    "trunk": 13,
+    "service": 16,
+    "unclassified": 4,
+    "footway": 2
+  },
+  "max_n_quartiers_at_one_node": 4,
+  "n_multi_quartier_collisions": 47,
+  "n_with_bridge_edge": 6,
+  "n_with_dual_connector": 118,
+  "top_asymmetric": [
+    {
+      "lat": 6.371859,
+      "lng": 2.442545,
+      "a": "Gbénonkpô",
+      "d_a": 0.0,
+      "b": "Misséssin",
+      "d_b": 177.1,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.367081,
+      "lng": 2.429914,
+      "a": "Sèdjro-Saint-Michel",
+      "d_a": 0.0,
+      "b": "Nouveau-Pont",
+      "d_b": 258.9,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.371438,
+      "lng": 2.409925,
+      "a": "Gbégamey-Gbagoudo",
+      "d_a": 0.0,
+      "b": "Dagbédji-Sikê",
+      "d_b": 203.2,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.363323,
+      "lng": 2.446572,
+      "a": "Ohé",
+      "d_a": 0.0,
+      "b": "Akpakpa-Dodomè",
+      "d_b": 237.2,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.358908,
+      "lng": 2.439397,
+      "a": "Tokpa-Hoho",
+      "d_a": 0.0,
+      "b": "Guinkômey",
+      "d_b": 261.6,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.35645,
+      "lng": 2.436167,
+      "a": "Guinkômey",
+      "d_a": 0.0,
+      "b": "Tokpa-Hoho",
+      "d_b": 261.6,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.369265,
+      "lng": 2.418092,
+      "a": "Sèhogan-Sikê",
+      "d_a": 0.0,
+      "b": "Énagnon-Sikê",
+      "d_b": 240.4,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.367163,
+      "lng": 2.404412,
+      "a": "Cadjèhoun-Détinsa",
+      "d_a": 0.0,
+      "b": "Vodjè-Centre",
+      "d_b": 210.7,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.368633,
+      "lng": 2.403147,
+      "a": "Vodjè-Centre",
+      "d_a": 0.0,
+      "b": "Cadjèhoun-Détinsa",
+      "d_b": 210.7,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.36854,
+      "lng": 2.431803,
+      "a": "Nouveau-Pont",
+      "d_a": 0.0,
+      "b": "Sèdjro-Saint-Michel",
+      "d_b": 258.9,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.369876,
+      "lng": 2.446833,
+      "a": "Gbèdjèwin",
+      "d_a": 0.0,
+      "b": "Sodjatinmè-Ouest",
+      "d_b": 283.5,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.366299,
+      "lng": 2.446826,
+      "a": "Abokicodji-Centre",
+      "d_a": 0.0,
+      "b": "Ohé",
+      "d_b": 288.3,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.369107,
+      "lng": 2.406921,
+      "a": "Vodjè-Allobatin",
+      "d_a": 0.0,
+      "b": "Gbégamey-Gbagoudo",
+      "d_b": 291.0,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.370828,
+      "lng": 2.416671,
+      "a": "Énagnon-Sikê",
+      "d_a": 0.0,
+      "b": "Sèhogan-Sikê",
+      "d_b": 240.4,
+      "asym": 1.0
+    },
+    {
+      "lat": 6.369614,
+      "lng": 2.412251,
+      "a": "Dagbédji-Sikê",
+      "d_a": 0.0,
+      "b": "Gbégamey-Gbagoudo",
+      "d_b": 203.2,
+      "asym": 1.0
+    }
+  ],
+  "thresholds": {
+    "water_near_m": 50,
+    "asymmetry_fraction": 0.5
+  }
+}
