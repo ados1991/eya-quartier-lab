@@ -187,6 +187,16 @@
     </div>
     <input type="range" min="0" max="100" value="70" id="op-ovr-vic" class="slider">
 
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-compet"><span class="lay-swatch" style="background:#16a34a;border:1.5px solid #052e16"></span><b>Road propagation — 300 m COMPETITIVE</b> (no overlap)</label>
+    <div class="lay-meta">
+      Same 300 m budget, same graph, but the propagation is <b>truly competitive</b>: each chef-lieu only draws an edge if it actually <b>claims</b> the destination node. When two chef-lieus meet, both stop at the contact point — no line crosses another's territory.<br>
+      <b>30 837 → 19 617 segments rendered</b> (63.6 % of the independent layer; 11 220 phantom "pushed but never owned" segments removed). Toggle this ON and the independent 300 m layer OFF to verify Vodjè-Centre no longer passes through Cadjèhoun-Détinsa's line.<br>
+      <b>403 frontier points</b> (vs 433 independent collisions; small diff because competitive only counts FIRST contacts, not multi-quartier overlaps).<br>
+      <a href="data/competitive_road_propagation_300m.geojson" download>lines</a> ·
+      <a href="data/competitive_frontier_points_300m.geojson" download>frontier points</a>
+    </div>
+    <input type="range" min="0" max="100" value="85" id="op-compet" class="slider">
+
     <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-front" checked><span class="lay-swatch" style="background:linear-gradient(90deg,#9333ea,#ec4899,#f59e0b,#10b981)"></span><b>300 m frontier structures</b> (clustered)</label>
     <div class="lay-meta">
       665 raw collision nodes clustered into <b>376 frontier structures</b> (1.8× compression). Each pair's points within 60 m are merged. Shape classifier (PCA) splits clusters into:<br>
@@ -440,7 +450,7 @@ async function loadGeo(url){
 async function init(){
   // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach + frontiers
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
-         propL100, propP100, propL300, propP300, coll300, ovr300, front300] = await Promise.all([
+         propL100, propP100, propL300, propP300, coll300, ovr300, front300, competL, competP] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -467,6 +477,8 @@ async function init(){
     loadGeo('data/collision_points_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/suspicious_overreach_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/frontier_clusters_300m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_road_propagation_300m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_frontier_points_300m.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -509,6 +521,33 @@ async function init(){
   layers.propP300 = L.geoJSON(propP300, {
     pointToLayer:(f,latlng)=>L.circleMarker(latlng, PROP_POINT_STYLE(f))});
   layers.prop300 = L.layerGroup([layers.propL300, layers.propP300]);
+
+  // 300 m COMPETITIVE propagation — no edges crossing other quartiers' territory
+  const COMPET_STYLE = (f) => ({color: f.properties.color || '#888', weight:3.2, opacity:.92});
+  const COMPET_PT_STYLE = (f) => {
+    const k = f.properties.kind;
+    if (k === 'chef_lieu')    return {radius:5, color:'#0b1f3b', weight:1.2, fillColor: f.properties.color, fillOpacity:.95};
+    if (k === 'frontier')     return {radius:5, color:'#000',    weight:2,   fillColor:'#fde047', fillOpacity:.95};
+    if (k === 'water_stop')   return {radius:4, color:'#0369a1', weight:1.5, fillColor:'#7dd3fc', fillOpacity:.85};
+    if (k === 'end_stop')     return {radius:2.5, color:'#94a3b8',weight:0.8, fillColor:'#cbd5e1', fillOpacity:.6};
+    return {radius:3, color:'#666', weight:1, fillColor:'#aaa', fillOpacity:.6};
+  };
+  layers.competL = L.geoJSON(competL, {style: COMPET_STYLE,
+    onEachFeature:(f,l)=>{
+      const p=f.properties;
+      l.bindPopup(`<b>${p.name}</b> · 300m COMPETITIVE<br>${p.seg_count} claimed segments`);
+    }});
+  layers.competP = L.geoJSON(competP, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p=f.properties; const k=p.kind;
+      if (k === 'frontier')
+        l.bindPopup(`<b>FRONTIER</b><br><b>${p.blocker}</b> (claimed at ${p.blocker_dist_m} m) blocked <b>${p.blocked}</b> (would-be at ${p.blocked_dist_m} m)`);
+      else if (k === 'chef_lieu')
+        l.bindPopup(`<b>${p.name}</b><br>${p.arrondissement||''}`);
+      else l.bindPopup(`${k}: ${p.stopped||''}`);
+    }});
+  layers.compet = L.layerGroup([layers.competL, layers.competP]);
 
   // 300 m frontier structures (clustered)
   layers.front = L.geoJSON(front300, {
@@ -692,6 +731,7 @@ async function init(){
   bind('t-ovr-off', layers.ovrOff);
   bind('t-ovr-vic', layers.ovrVic);
   bind('t-front', layers.front);
+  bind('t-compet', layers.compet);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
