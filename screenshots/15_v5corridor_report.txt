@@ -1,0 +1,56 @@
+v5 CORRIDOR TEST — local P4-hybrid prototype
+============================================================
+bbox: lat 6.37-6.4, lng 2.38-2.415
+corridor cells: 1360
+freed cells (drain∩road inside bbox): 33
+baseline water cells (metro): 8964
+corridor-test water cells (metro): 8931
+
+cells changed metro-wide:    100
+  newly owned:               32
+  now unowned:               0
+  flipped owner→owner:       68
+cells changed in corridor:   96
+  newly owned in corridor:   32
+
+per-cell classification inside corridor bbox:
+  road                           825
+  fabric                         286
+  forbidden_other_water          161
+  traversable_drain               33
+  frontier_canal                  27
+  forbidden_water_polygon         23
+  frontier_drain                   5
+
+TARGET QUARTIERS (cell counts):
+  name                   v5 metro CT metro v5 corr CT corr Δ corr
+  GBENONKPO                    13       13       0       0     +0
+  GBEDJROMEDE                  76       76       7       7     +0
+  VOSSA                        38       38      38      38     +0
+  TONATO                       36       58      36      58    +22
+  FIFADJI                      94       94      94      94     +0
+  VOSSA-KPODJI                 19       19      19      19     +0
+  GBENONKPO                    12       12      12      12     +0
+  MIDEDJI                      18       29      18      29    +11
+  MISSOGBE                     19       19      19      19     +0
+  SETOVI                       35       37      35      37     +2
+  VEDOKO                      108      102     108     102     -6
+
+TOP 20 (v5 → corridor-test) ownership flips:
+  VEDOKO                   → TONATO                   23 cells
+  TONATO                   → VEDOKO                   10 cells
+  ENAGNON-SIKE             → MINONKPO WOLOGUEDE       9 cells
+  GBEGAMEY GBAGOUDO        → MINONKPO WOLOGUEDE       8 cells
+  (none)                   → MIDEDJI                  8 cells
+  (none)                   → TONATO                   7 cells
+  GBEDAGBA                 → MINONKPO WOLOGUEDE       7 cells
+  (none)                   → VEDOKO                   6 cells
+  (none)                   → HOUEYIHO TANOU           5 cells
+  HOUEHOUN                 → MINONKPO WOLOGUEDE       3 cells
+  AGOUNVOCODJI             → MIDEDJI                  3 cells
+  HOUEYIHO TANOU           → TONATO                   2 cells
+  (none)                   → MINONKPO WOLOGUEDE       2 cells
+  FIGNON-SIKE              → MINONKPO WOLOGUEDE       2 cells
+  (none)                   → SETOVI                   2 cells
+  (none)                   → ZOGBO                    2 cells
+  MISSEKPLE                → VEDOKO                   1 cells
