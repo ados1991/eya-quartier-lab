@@ -187,7 +187,21 @@
     </div>
     <input type="range" min="0" max="100" value="70" id="op-ovr-vic" class="slider">
 
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-coll300"><span class="lay-swatch" style="background:linear-gradient(135deg,#000 50%,#dc2626 50%)"></span>300 m collision frontier candidates</label>
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-front" checked><span class="lay-swatch" style="background:linear-gradient(90deg,#9333ea,#ec4899,#f59e0b,#10b981)"></span><b>300 m frontier structures</b> (clustered)</label>
+    <div class="lay-meta">
+      665 raw collision nodes clustered into <b>376 frontier structures</b> (1.8× compression). Each pair's points within 60 m are merged. Shape classifier (PCA) splits clusters into:<br>
+      <span style="color:#10b981">━</span> <b>linear_corridor</b> 52  (longest: Nonhouénou ↔ Hlouacomey, 363 m)<br>
+      <span style="color:#f59e0b">●</span> <b>intersection</b> 71  ·
+      <span style="color:#ec4899">●</span> <b>point</b> 249  ·
+      <span style="color:#9333ea">●</span> <b>bridge</b> 4<br>
+      Most fragmented pair: Gbégamey-Gbagoudo ↔ Dagbédji-Sikê (20 collisions → 13 disjoint clusters — they meet on many different streets).<br>
+      <a href="data/frontier_clusters_300m.geojson" download>geojson</a> ·
+      <a href="data/frontier_clusters_300m.csv" download>CSV</a> ·
+      <a href="data/frontier_clusters_summary.json" target="_blank">summary</a>
+    </div>
+    <input type="range" min="0" max="100" value="75" id="op-front" class="slider">
+
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-coll300"><span class="lay-swatch" style="background:linear-gradient(135deg,#000 50%,#dc2626 50%)"></span>300 m raw collision nodes (per-graph-node)</label>
     <div class="lay-meta">
       665 collision nodes (every graph node any 2+ chef-lieus reach within 300 m). Classified into 5 buckets:<br>
       <span style="display:inline-block;width:10px;height:10px;background:#fff;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle"></span> PLAUSIBLE_FRONTIER (404, 60.8 %)
@@ -326,6 +340,26 @@ const PROP_STYLE   = (f) => ({color: f.properties.color || '#888', weight:2.5, o
 const PROP100_STYLE = (f) => ({color: f.properties.color || '#888', weight:1.5, opacity:.75});
 const PROP300_STYLE = (f) => ({color: f.properties.color || '#888', weight:3.5, opacity:.55});
 
+// Frontier structures — style by shape + scale by collision count
+const FRONT_STYLE = (f) => {
+  const s = f.properties.shape;
+  const n = f.properties.n_collisions || 1;
+  const w = Math.min(5, 2 + Math.log(n + 1));
+  if (s === 'linear_corridor') return {color:'#10b981', weight:w, opacity:0.85};
+  if (s === 'bridge')          return {color:'#9333ea', weight:w, opacity:0.85};
+  return {};   // points use pointToLayer instead
+};
+const FRONT_POINT_STYLE = (f) => {
+  const s = f.properties.shape;
+  const n = f.properties.n_collisions || 1;
+  const r = Math.min(8, 3 + Math.sqrt(n));
+  if (s === 'roundabout')   return {radius:r, color:'#0b1f3b', weight:1.5, fillColor:'#a78bfa', fillOpacity:.85};
+  if (s === 'bridge')       return {radius:r, color:'#0b1f3b', weight:1.5, fillColor:'#9333ea', fillOpacity:.85};
+  if (s === 'intersection') return {radius:r, color:'#0b1f3b', weight:1.2, fillColor:'#f59e0b', fillOpacity:.85};
+  if (s === 'point')        return {radius:r, color:'#0b1f3b', weight:1,   fillColor:'#ec4899', fillOpacity:.85};
+  return {radius:3, color:'#666', weight:1, fillColor:'#aaa', fillOpacity:.7};
+};
+
 // Suspicious overreach styling — opacity proportional to asymmetry
 const OVR_OFF_STYLE = (f) => {
   const a = f.properties.asymmetry || 0.5;
@@ -404,9 +438,9 @@ async function loadGeo(url){
 }
 
 async function init(){
-  // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach
+  // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach + frontiers
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
-         propL100, propP100, propL300, propP300, coll300, ovr300] = await Promise.all([
+         propL100, propP100, propL300, propP300, coll300, ovr300, front300] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -432,6 +466,7 @@ async function init(){
     loadGeo('data/road_propagation_points_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/collision_points_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/suspicious_overreach_300m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/frontier_clusters_300m.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -474,6 +509,24 @@ async function init(){
   layers.propP300 = L.geoJSON(propP300, {
     pointToLayer:(f,latlng)=>L.circleMarker(latlng, PROP_POINT_STYLE(f))});
   layers.prop300 = L.layerGroup([layers.propL300, layers.propP300]);
+
+  // 300 m frontier structures (clustered)
+  layers.front = L.geoJSON(front300, {
+    style: FRONT_STYLE,
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, FRONT_POINT_STYLE(f)),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>${p.name_a}</b> ↔ <b>${p.name_b}</b><br>`+
+        `<b>${p.shape}</b> · ${p.n_collisions} collision(s)`+
+        (p.extent_m ? ` · extent ${p.extent_m} m` : '')+
+        (p.density_per_100m ? ` · density ${p.density_per_100m}/100m` : '')+
+        `<br>median d_a: ${p.median_d_a_m} m · d_b: ${p.median_d_b_m} m`+
+        ` · asymmetry: ${p.asymmetry_median}<br>`+
+        `<small>highway: ${p.highway_types || '?'}</small>`
+      );
+    }
+  });
 
   // 300 m suspicious overreach: split into offender + victim sub-layers
   const ovrOffFeats = ovr300.features.filter(f => f.properties.kind === 'offender_line');
@@ -613,6 +666,7 @@ async function init(){
   if(document.getElementById('t-prop').checked) layers.prop.addTo(map);
   if(document.getElementById('t-prop100') && document.getElementById('t-prop100').checked) layers.prop100.addTo(map);
   if(document.getElementById('t-prop300') && document.getElementById('t-prop300').checked) layers.prop300.addTo(map);
+  if(document.getElementById('t-front') && document.getElementById('t-front').checked) layers.front.addTo(map);
   if(document.getElementById('t-v2').checked) layers.v2.addTo(map);
   if(document.getElementById('t-v3').checked) layers.v3.addTo(map);
   if(document.getElementById('t-disp').checked) layers.disp.addTo(map);
@@ -637,6 +691,7 @@ async function init(){
   bind('t-coll300', layers.coll300);
   bind('t-ovr-off', layers.ovrOff);
   bind('t-ovr-vic', layers.ovrVic);
+  bind('t-front', layers.front);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){

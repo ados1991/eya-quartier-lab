@@ -1,0 +1,152 @@
+{
+  "raw_collision_nodes": 665,
+  "raw_pair_collision_records": 762,
+  "unique_touching_pairs": 135,
+  "clustered_frontier_count": 376,
+  "avg_collisions_per_frontier": 2.0,
+  "shape_counts": {
+    "intersection": 71,
+    "linear_corridor": 52,
+    "point": 249,
+    "bridge": 4
+  },
+  "longest_linear_corridors": [
+    {
+      "a": "Nonhouénou\n",
+      "b": "Hlouacomey",
+      "extent_m": 362.6,
+      "n_collisions": 26,
+      "highway": "residential|secondary|tertiary|trunk|unclassified"
+    },
+    {
+      "a": "Salamey",
+      "b": "Nonhouénou\n",
+      "extent_m": 214.2,
+      "n_collisions": 11,
+      "highway": "residential|secondary"
+    },
+    {
+      "a": "Tokpa-Hoho",
+      "b": "Guinkômey",
+      "extent_m": 206.8,
+      "n_collisions": 9,
+      "highway": "residential|secondary|trunk"
+    },
+    {
+      "a": "Akpakpa-Dodomè",
+      "b": "Ohé",
+      "extent_m": 202.6,
+      "n_collisions": 14,
+      "highway": "residential|secondary|service|tertiary|trunk|unclassified"
+    },
+    {
+      "a": "Godomey-Togoudo",
+      "b": "Sèdomey",
+      "extent_m": 198.4,
+      "n_collisions": 10,
+      "highway": "residential|tertiary|trunk"
+    },
+    {
+      "a": "Minontchou",
+      "b": "Gankpodo",
+      "extent_m": 158.9,
+      "n_collisions": 4,
+      "highway": "residential|tertiary"
+    },
+    {
+      "a": "Misséssin",
+      "b": "Gbénonkpô",
+      "extent_m": 152.0,
+      "n_collisions": 7,
+      "highway": "residential|secondary|tertiary"
+    },
+    {
+      "a": "Minontchou",
+      "b": "Agbodjèdo",
+      "extent_m": 151.9,
+      "n_collisions": 5,
+      "highway": "residential|tertiary"
+    },
+    {
+      "a": "Vodjè-Centre",
+      "b": "Cadjèhoun-Détinsa",
+      "extent_m": 149.1,
+      "n_collisions": 16,
+      "highway": "residential|secondary"
+    },
+    {
+      "a": "Djoukpa-Togoudo\n",
+      "b": "Godomey-Togoudo",
+      "extent_m": 127.0,
+      "n_collisions": 4,
+      "highway": "residential|secondary"
+    }
+  ],
+  "most_fragmented_pairs_before_clustering": [
+    {
+      "a": "Gbégamey-Gbagoudo",
+      "b": "Dagbédji-Sikê",
+      "raw_collisions": 20,
+      "clusters": 13
+    },
+    {
+      "a": "Abokicodji-Centre",
+      "b": "Ohé",
+      "raw_collisions": 16,
+      "clusters": 10
+    },
+    {
+      "a": "Misséssin",
+      "b": "Gbénonkpô",
+      "raw_collisions": 19,
+      "clusters": 9
+    },
+    {
+      "a": "Tokpa-Hoho",
+      "b": "Guinkômey",
+      "raw_collisions": 26,
+      "clusters": 8
+    },
+    {
+      "a": "Missité",
+      "b": "Avlékété-Joncquet",
+      "raw_collisions": 9,
+      "clusters": 8
+    },
+    {
+      "a": "Dota",
+      "b": "Avlékété-Joncquet",
+      "raw_collisions": 7,
+      "clusters": 7
+    },
+    {
+      "a": "Vodjè-Allobatin",
+      "b": "Gbégamey-Gbagoudo",
+      "raw_collisions": 8,
+      "clusters": 6
+    },
+    {
+      "a": "Akpakpa-Dodomè",
+      "b": "Ohé",
+      "raw_collisions": 24,
+      "clusters": 6
+    },
+    {
+      "a": "Énagnon-Sikê",
+      "b": "Sèhogan-Sikê",
+      "raw_collisions": 14,
+      "clusters": 6
+    },
+    {
+      "a": "Abokicodji-Centre",
+      "b": "Gbèdjèwin",
+      "raw_collisions": 8,
+      "clusters": 6
+    }
+  ],
+  "thresholds": {
+    "cluster_merge_m": 60,
+    "linear_ratio": 4.0,
+    "linear_min_extent_m": 50
+  }
+}
