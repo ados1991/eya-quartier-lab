@@ -171,6 +171,22 @@
     </div>
     <input type="range" min="0" max="100" value="80" id="op-prop300" class="slider">
 
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-ovr-off"><span class="lay-swatch" style="background:#dc2626"></span>Suspicious overreach — offenders</label>
+    <div class="lay-meta">
+      206 cases (asymmetry &gt; 0.5). Thick red line from the offender's chef-lieu to the collision point. Line opacity scales with asymmetry severity. Top offenders: <b>Cadjèhoun-Détinsa</b> (15×), <b>Akpakpa-Dodomè</b> (12×), <b>Misséssin / Hlouacomey</b> (10×).
+    </div>
+    <input type="range" min="0" max="100" value="70" id="op-ovr-off" class="slider">
+
+    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-ovr-vic"><span class="lay-swatch" style="background:#fb923c"></span>Suspicious overreach — victims</label>
+    <div class="lay-meta">
+      Thin orange line from the victim's chef-lieu to the collision (short — victim is close to its own territory but being intruded upon). Top victims: <b>Vodjè-Centre</b> (15×), <b>Ohé</b> (13×), <b>Missité</b> (8×).<br>
+      <i>Cause prevalence:</i> dual_carriageway_shortcut 88 (42.7 %) · graph_artifact_low_edges 24 · stronger_road_density 15 · centroid_badly_positioned 12 · <b>unattributed 109 (52.9 %)</b> → natural geometric asymmetry, not a graph bug.<br>
+      <a href="data/suspicious_overreach_summary.csv" download>CSV</a> ·
+      <a href="data/top_offender_quartiers.json" target="_blank">offenders</a> ·
+      <a href="data/top_victim_quartiers.json" target="_blank">victims</a>
+    </div>
+    <input type="range" min="0" max="100" value="70" id="op-ovr-vic" class="slider">
+
     <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-coll300"><span class="lay-swatch" style="background:linear-gradient(135deg,#000 50%,#dc2626 50%)"></span>300 m collision frontier candidates</label>
     <div class="lay-meta">
       665 collision nodes (every graph node any 2+ chef-lieus reach within 300 m). Classified into 5 buckets:<br>
@@ -310,6 +326,19 @@ const PROP_STYLE   = (f) => ({color: f.properties.color || '#888', weight:2.5, o
 const PROP100_STYLE = (f) => ({color: f.properties.color || '#888', weight:1.5, opacity:.75});
 const PROP300_STYLE = (f) => ({color: f.properties.color || '#888', weight:3.5, opacity:.55});
 
+// Suspicious overreach styling — opacity proportional to asymmetry
+const OVR_OFF_STYLE = (f) => {
+  const a = f.properties.asymmetry || 0.5;
+  // map 0.5 → 0.45 opacity, 1.0 → 1.0
+  const op = 0.45 + (a - 0.5) * 1.1;
+  return {color:'#dc2626', weight:2.8, opacity: op};
+};
+const OVR_VIC_STYLE = (f) => {
+  const a = f.properties.asymmetry || 0.5;
+  const op = 0.45 + (a - 0.5) * 1.1;
+  return {color:'#fb923c', weight:1.4, opacity: op, dashArray:'4,3'};
+};
+
 // 300m collision points — color by classification
 const COLL_CLS_STYLE = (f) => {
   const c = f.properties.classification;
@@ -375,9 +404,9 @@ async function loadGeo(url){
 }
 
 async function init(){
-  // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions
+  // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
-         propL100, propP100, propL300, propP300, coll300] = await Promise.all([
+         propL100, propP100, propL300, propP300, coll300, ovr300] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -402,6 +431,7 @@ async function init(){
     loadGeo('data/road_propagation_lines_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/road_propagation_points_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/collision_points_300m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/suspicious_overreach_300m.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -444,6 +474,20 @@ async function init(){
   layers.propP300 = L.geoJSON(propP300, {
     pointToLayer:(f,latlng)=>L.circleMarker(latlng, PROP_POINT_STYLE(f))});
   layers.prop300 = L.layerGroup([layers.propL300, layers.propP300]);
+
+  // 300 m suspicious overreach: split into offender + victim sub-layers
+  const ovrOffFeats = ovr300.features.filter(f => f.properties.kind === 'offender_line');
+  const ovrVicFeats = ovr300.features.filter(f => f.properties.kind === 'victim_line');
+  const ovrPopup = (f, role) => {
+    const p = f.properties;
+    return `<b>${role}: ${p[role]}</b> ↔ ${role==='offender'?p.victim:p.offender}<br>`+
+           `offender distance: ${p.off_d} m · victim distance: ${p.vic_d} m<br>`+
+           `asymmetry: ${p.asymmetry}<br>causes: ${p.causes.join(', ')}`;
+  };
+  layers.ovrOff = L.geoJSON({type:'FeatureCollection', features: ovrOffFeats},
+    {style: OVR_OFF_STYLE, onEachFeature:(f,l)=>l.bindPopup(ovrPopup(f,'offender'))});
+  layers.ovrVic = L.geoJSON({type:'FeatureCollection', features: ovrVicFeats},
+    {style: OVR_VIC_STYLE, onEachFeature:(f,l)=>l.bindPopup(ovrPopup(f,'victim'))});
 
   // 300 m collision frontier candidates
   layers.coll300 = L.geoJSON(coll300, {
@@ -591,6 +635,8 @@ async function init(){
   bind('t-prop100', layers.prop100);
   bind('t-prop300', layers.prop300);
   bind('t-coll300', layers.coll300);
+  bind('t-ovr-off', layers.ovrOff);
+  bind('t-ovr-vic', layers.ovrVic);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){

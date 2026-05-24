@@ -1,0 +1,229 @@
+lat,lng,offender,off_arr,off_dist_m,off_snap_m,off_snap_edges,off_comp_size,off_path_len,off_used_dual,off_used_roundabout,victim,vic_arr,vic_dist_m,vic_snap_m,vic_snap_edges,vic_comp_size,vic_near_ways,vic_dist_water_m,asymmetry,causes
+6.371859,2.442545,Misséssin,4ème Arrondissement,177.1,24.5,4,90099,3,False,False,Gbénonkpô,3ème Arrondissement,0.0,11.2,7,90099,27,570.5,1.0,unattributed
+6.371267,2.44294,Misséssin,4ème Arrondissement,120.5,24.5,4,90099,2,False,False,Gbénonkpô,3ème Arrondissement,56.6,11.2,7,90099,27,570.5,0.53,unattributed
+6.372034,2.442285,Misséssin,4ème Arrondissement,200.9,24.5,4,90099,4,False,False,Gbénonkpô,3ème Arrondissement,23.7,11.2,7,90099,27,570.5,0.882,unattributed
+6.372579,2.442412,Misséssin,4ème Arrondissement,237.3,24.5,4,90099,4,False,False,Gbénonkpô,3ème Arrondissement,60.2,11.2,7,90099,27,570.5,0.746,unattributed
+6.371268,2.442639,Misséssin,4ème Arrondissement,228.0,24.5,4,90099,4,False,False,Gbénonkpô,3ème Arrondissement,55.9,11.2,7,90099,27,570.5,0.755,unattributed
+6.367081,2.429914,Nouveau-Pont,5ème Arrondissement,258.9,8.6,4,90099,2,False,False,Sèdjro-Saint-Michel,7ème Arrondissement,0.0,2.2,4,90099,33,,1.0,unattributed
+6.366964,2.429765,Nouveau-Pont,5ème Arrondissement,274.4,8.6,4,90099,3,False,False,Sèdjro-Saint-Michel,7ème Arrondissement,15.5,2.2,4,90099,33,,0.943,unattributed
+6.367269,2.430154,Nouveau-Pont,5ème Arrondissement,230.6,8.6,4,90099,1,False,False,Sèdjro-Saint-Michel,7ème Arrondissement,28.3,2.2,4,90099,33,,0.877,unattributed
+6.367187,2.429801,Nouveau-Pont,5ème Arrondissement,275.7,8.6,4,90099,4,True,False,Sèdjro-Saint-Michel,7ème Arrondissement,16.7,2.2,4,90099,33,,0.939,dual_carriageway_shortcut
+6.371361,2.411626,Dagbédji-Sikê,7ème Arrondissement,293.0,13.1,3,90099,8,True,False,Gbégamey-Gbagoudo,11ème Arrondissement,95.6,13.6,11,90099,39,,0.674,dual_carriageway_shortcut
+6.37063,2.410711,Dagbédji-Sikê,7ème Arrondissement,174.6,13.1,3,90099,4,True,False,Gbégamey-Gbagoudo,11ème Arrondissement,28.6,13.6,11,90099,39,,0.836,dual_carriageway_shortcut
+6.371308,2.410842,Dagbédji-Sikê,7ème Arrondissement,219.5,13.1,3,90099,6,True,False,Gbégamey-Gbagoudo,11ème Arrondissement,16.3,13.6,11,90099,39,,0.926,dual_carriageway_shortcut
+6.370898,2.408928,Dagbédji-Sikê,7ème Arrondissement,220.8,13.1,3,90099,6,True,False,Gbégamey-Gbagoudo,11ème Arrondissement,17.7,13.6,11,90099,39,,0.92,dual_carriageway_shortcut
+6.372281,2.408773,Dagbédji-Sikê,7ème Arrondissement,267.4,13.1,3,90099,6,True,False,Gbégamey-Gbagoudo,11ème Arrondissement,64.2,13.6,11,90099,39,,0.76,dual_carriageway_shortcut
+6.379449,2.420663,Aïdjèdo-Ahito,6ème Arrondissement,257.9,3.5,5,90099,4,False,False,Gbèdjromèdè,6ème Arrondissement,52.0,2.4,7,90099,30,,0.798,unattributed
+6.379036,2.420381,Aïdjèdo-Ahito,6ème Arrondissement,259.7,3.5,5,90099,5,True,False,Gbèdjromèdè,6ème Arrondissement,48.1,2.4,7,90099,30,,0.815,dual_carriageway_shortcut
+6.382155,2.424365,Aïdjèdo,6ème Arrondissement,287.5,7.5,4,90099,4,False,False,Ahouansouri-Agata,6ème Arrondissement,38.0,7.0,5,90099,34,,0.868,unattributed
+6.380239,2.424761,Ahouansouri-Agata,6ème Arrondissement,254.7,7.0,5,90099,4,False,False,Aïdjèdo,6ème Arrondissement,70.7,7.5,4,90099,19,,0.722,unattributed
+6.375732,2.42607,Aïdjèdo-Vignon,6ème Arrondissement,299.0,11.5,6,90099,4,False,False,Jéricho-Nord,6ème Arrondissement,54.6,12.7,5,90099,24,,0.817,unattributed
+6.362621,2.411519,Gbégamey-Mifongou,11ème Arrondissement,288.6,3.4,3,90099,5,False,False,Gbégamey-Centre,11ème Arrondissement,77.1,9.4,4,90099,22,,0.733,unattributed
+6.36278,2.446255,Akpakpa-Dodomè,4ème Arrondissement,215.6,10.4,2,90099,3,True,False,Ohé,4ème Arrondissement,21.6,21.0,3,90099,48,639.8,0.9,dual_carriageway_shortcut
+6.36391,2.446068,Abokicodji-Centre,4ème Arrondissement,276.7,6.4,7,90099,4,False,False,Ohé,4ème Arrondissement,79.4,21.0,3,90099,48,639.8,0.713,unattributed
+6.358908,2.439397,Guinkômey,5ème Arrondissement,261.6,33.0,3,90099,9,True,False,Tokpa-Hoho,5ème Arrondissement,0.0,9.5,5,90099,45,269.4,1.0,dual_carriageway_shortcut|centroid_badly_positioned
+6.35897,2.439827,Guinkômey,5ème Arrondissement,285.7,33.0,3,90099,10,True,False,Tokpa-Hoho,5ème Arrondissement,24.2,9.5,5,90099,45,269.4,0.915,dual_carriageway_shortcut|centroid_badly_positioned
+6.358652,2.438978,Guinkômey,5ème Arrondissement,240.0,33.0,3,90099,8,True,False,Tokpa-Hoho,5ème Arrondissement,36.9,9.5,5,90099,45,269.4,0.846,dual_carriageway_shortcut|centroid_badly_positioned
+6.35844,2.43895,Guinkômey,5ème Arrondissement,216.2,33.0,3,90099,7,True,False,Tokpa-Hoho,5ème Arrondissement,45.4,9.5,5,90099,45,269.4,0.79,dual_carriageway_shortcut|centroid_badly_positioned
+6.35645,2.436167,Tokpa-Hoho,5ème Arrondissement,261.6,9.5,5,90099,10,True,False,Guinkômey,5ème Arrondissement,0.0,33.0,3,90099,76,749.7,1.0,dual_carriageway_shortcut|centroid_badly_positioned
+6.356784,2.436618,Tokpa-Hoho,5ème Arrondissement,229.6,9.5,5,90099,9,True,False,Guinkômey,5ème Arrondissement,32.0,33.0,3,90099,76,749.7,0.861,dual_carriageway_shortcut|centroid_badly_positioned
+6.361915,2.431593,Gbédokpo,5ème Arrondissement,297.6,17.2,3,90099,5,False,False,Missité,5ème Arrondissement,17.3,5.7,4,90099,26,907.5,0.942,unattributed
+6.361876,2.431806,Gbédokpo,5ème Arrondissement,299.4,17.2,3,90099,5,False,False,Missité,5ème Arrondissement,15.7,5.7,4,90099,26,907.5,0.948,unattributed
+6.361996,2.43171,Gbédokpo,5ème Arrondissement,282.4,17.2,3,90099,4,False,False,Missité,5ème Arrondissement,22.7,5.7,4,90099,26,907.5,0.92,unattributed
+6.369265,2.418092,Énagnon-Sikê,7ème Arrondissement,240.4,10.0,3,90099,6,False,False,Sèhogan-Sikê,7ème Arrondissement,0.0,7.5,4,90099,26,,1.0,unattributed
+6.36945,2.417945,Énagnon-Sikê,7ème Arrondissement,214.2,10.0,3,90099,5,False,False,Sèhogan-Sikê,7ème Arrondissement,26.2,7.5,4,90099,26,,0.878,unattributed
+6.368675,2.41856,Yévèdo,7ème Arrondissement,252.8,2.4,4,90099,3,False,False,Sèhogan-Sikê,7ème Arrondissement,83.5,7.5,4,90099,26,,0.669,unattributed
+6.36748,2.419508,Sèhogan-Sikê,7ème Arrondissement,252.7,7.5,4,90099,3,False,False,Yévèdo,7ème Arrondissement,83.6,2.4,4,90099,13,,0.669,unattributed
+6.365647,2.422356,Gbèdomidji,7ème Arrondissement,287.5,2.2,4,90099,3,False,False,Gbènan,7ème Arrondissement,122.0,5.3,4,90099,19,,0.576,unattributed
+6.365753,2.423672,Mifongou,5ème Arrondissement,298.1,14.1,5,90099,4,False,False,Gbènan,7ème Arrondissement,81.7,5.3,4,90099,19,,0.726,unattributed
+6.367163,2.404412,Vodjè-Centre,11ème Arrondissement,210.7,1.2,2,90099,7,False,False,Cadjèhoun-Détinsa,12ème Arrondissement,0.0,4.4,5,90099,31,,1.0,unattributed
+6.367305,2.404296,Vodjè-Centre,11ème Arrondissement,189.4,1.2,2,90099,6,False,False,Cadjèhoun-Détinsa,12ème Arrondissement,21.3,4.4,5,90099,31,,0.888,unattributed
+6.366628,2.404613,Vodjè-Centre,11ème Arrondissement,271.9,1.2,2,90099,8,False,False,Cadjèhoun-Détinsa,12ème Arrondissement,61.1,4.4,5,90099,31,,0.775,unattributed
+6.366797,2.404866,Vodjè-Centre,11ème Arrondissement,270.6,1.2,2,90099,8,False,False,Cadjèhoun-Détinsa,12ème Arrondissement,59.8,4.4,5,90099,31,,0.779,unattributed
+6.368633,2.403147,Cadjèhoun-Détinsa,12ème Arrondissement,210.7,4.4,5,90099,8,True,False,Vodjè-Centre,11ème Arrondissement,0.0,1.2,2,90099,28,,1.0,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.368501,2.403379,Cadjèhoun-Détinsa,12ème Arrondissement,186.5,4.4,5,90099,7,True,False,Vodjè-Centre,11ème Arrondissement,24.2,1.2,2,90099,28,,0.87,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.368732,2.402981,Cadjèhoun-Détinsa,12ème Arrondissement,232.1,4.4,5,90099,10,True,False,Vodjè-Centre,11ème Arrondissement,21.4,1.2,2,90099,28,,0.908,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.368816,2.402841,Cadjèhoun-Détinsa,12ème Arrondissement,250.2,4.4,5,90099,12,True,False,Vodjè-Centre,11ème Arrondissement,39.4,1.2,2,90099,28,,0.842,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.368505,2.40293,Cadjèhoun-Détinsa,12ème Arrondissement,221.7,4.4,5,90099,9,True,False,Vodjè-Centre,11ème Arrondissement,27.9,1.2,2,90099,28,,0.874,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.368786,2.403336,Cadjèhoun-Détinsa,12ème Arrondissement,216.7,4.4,5,90099,9,True,False,Vodjè-Centre,11ème Arrondissement,26.9,1.2,2,90099,28,,0.876,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.368895,2.403158,Cadjèhoun-Détinsa,12ème Arrondissement,237.1,4.4,5,90099,11,True,False,Vodjè-Centre,11ème Arrondissement,29.1,1.2,2,90099,28,,0.877,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.36854,2.431803,Sèdjro-Saint-Michel,7ème Arrondissement,258.9,2.2,4,90099,2,False,False,Nouveau-Pont,5ème Arrondissement,0.0,8.6,4,90099,34,651.9,1.0,unattributed
+6.36867,2.431702,Sèdjro-Saint-Michel,7ème Arrondissement,275.9,2.2,4,90099,3,False,False,Nouveau-Pont,5ème Arrondissement,18.3,8.6,4,90099,34,651.9,0.934,unattributed
+6.369876,2.446833,Sodjatinmè-Ouest,4ème Arrondissement,283.5,11.5,4,90099,5,False,False,Gbèdjèwin,4ème Arrondissement,0.0,5.2,9,90099,33,994.4,1.0,unattributed
+6.368128,2.44678,Abokicodji-Centre,4ème Arrondissement,208.1,6.4,7,90099,4,False,False,Gbèdjèwin,4ème Arrondissement,97.9,5.2,9,90099,33,994.4,0.53,unattributed
+6.370601,2.447907,Sodjatinmè-Ouest,4ème Arrondissement,289.2,11.5,4,90099,5,False,False,Gbèdjèwin,4ème Arrondissement,68.9,5.2,9,90099,33,994.4,0.762,unattributed
+6.370174,2.445376,Misséssin,4ème Arrondissement,276.1,24.5,4,90099,3,False,False,Gbèdjèwin,4ème Arrondissement,90.6,5.2,9,90099,33,994.4,0.672,unattributed
+6.368223,2.446878,Abokicodji-Centre,4ème Arrondissement,209.5,6.4,7,90099,5,True,False,Gbèdjèwin,4ème Arrondissement,96.6,5.2,9,90099,33,994.4,0.539,dual_carriageway_shortcut
+6.366299,2.446826,Ohé,4ème Arrondissement,288.3,21.0,3,90099,5,False,False,Abokicodji-Centre,4ème Arrondissement,0.0,6.4,7,90099,27,834.9,1.0,unattributed
+6.366441,2.446769,Gbèdjèwin,4ème Arrondissement,285.4,5.2,9,90099,4,True,False,Abokicodji-Centre,4ème Arrondissement,20.6,6.4,7,90099,27,834.9,0.928,dual_carriageway_shortcut
+6.365439,2.446768,Ohé,4ème Arrondissement,197.5,21.0,3,90099,4,False,False,Abokicodji-Centre,4ème Arrondissement,90.8,6.4,7,90099,27,834.9,0.54,unattributed
+6.366523,2.446878,Gbèdjèwin,4ème Arrondissement,285.5,5.2,9,90099,4,True,False,Abokicodji-Centre,4ème Arrondissement,21.9,6.4,7,90099,27,834.9,0.923,dual_carriageway_shortcut
+6.367034,2.447717,Sodjatinmè-Ouest,4ème Arrondissement,265.2,11.5,4,90099,1,False,False,Abokicodji-Centre,4ème Arrondissement,123.0,6.4,7,90099,27,834.9,0.536,unattributed
+6.393027,2.447688,Minontchou,2ème Arrondissement,238.4,6.1,3,90099,6,False,False,Agbodjèdo,3ème Arrondissement,69.5,6.6,4,90099,41,1232.2,0.708,unattributed
+6.369107,2.406921,Gbégamey-Gbagoudo,11ème Arrondissement,291.0,13.6,11,90099,3,False,False,Vodjè-Allobatin,11ème Arrondissement,0.0,9.8,4,90099,13,,1.0,unattributed
+6.373635,2.402743,Vodjè-Finagnon,11ème Arrondissement,299.1,10.9,3,90099,3,True,False,Vodjè-Ayidoté,11ème Arrondissement,65.2,7.0,4,90099,32,,0.782,dual_carriageway_shortcut
+6.370828,2.416671,Sèhogan-Sikê,7ème Arrondissement,240.4,7.5,4,90099,6,False,False,Énagnon-Sikê,7ème Arrondissement,0.0,10.0,3,90099,27,,1.0,unattributed
+6.370886,2.416817,Sèhogan-Sikê,7ème Arrondissement,218.7,7.5,4,90099,5,False,False,Énagnon-Sikê,7ème Arrondissement,21.8,10.0,3,90099,27,,0.9,unattributed
+6.369614,2.412251,Gbégamey-Gbagoudo,11ème Arrondissement,203.2,13.6,11,90099,4,False,False,Dagbédji-Sikê,7ème Arrondissement,0.0,13.1,3,90099,32,,1.0,unattributed
+6.369094,2.412556,Gbégamey-Gbagoudo,11ème Arrondissement,268.3,13.6,11,90099,6,True,False,Dagbédji-Sikê,7ème Arrondissement,66.8,13.1,3,90099,32,,0.751,dual_carriageway_shortcut
+6.369958,2.41176,Gbégamey-Gbagoudo,11ème Arrondissement,137.3,13.6,11,90099,3,False,False,Dagbédji-Sikê,7ème Arrondissement,65.9,13.1,3,90099,32,,0.52,unattributed
+6.369429,2.412003,Gbégamey-Gbagoudo,11ème Arrondissement,213.9,13.6,11,90099,5,True,False,Dagbédji-Sikê,7ème Arrondissement,34.3,13.1,3,90099,32,,0.84,dual_carriageway_shortcut
+6.391316,2.34653,Hlouacomey,Godomey,238.4,6.1,5,90099,10,True,False,Yolomahouto,Godomey,71.8,5.3,4,90099,51,,0.699,dual_carriageway_shortcut
+6.39036,2.34726,Hlouacomey,Godomey,272.4,6.1,5,90099,13,True,False,Yolomahouto,Godomey,87.1,5.3,4,90099,51,,0.68,dual_carriageway_shortcut
+6.393209,2.347894,"Nonhouénou
+",Godomey,278.4,0.6,8,90099,11,True,False,Hlouacomey,Godomey,0.0,6.1,5,90099,51,659.3,1.0,dual_carriageway_shortcut
+6.393323,2.348088,"Nonhouénou
+",Godomey,297.9,0.6,8,90099,12,True,False,Hlouacomey,Godomey,19.5,6.1,5,90099,51,659.3,0.934,dual_carriageway_shortcut
+6.393083,2.348117,"Nonhouénou
+",Godomey,298.4,0.6,8,90099,12,True,False,Hlouacomey,Godomey,20.0,6.1,5,90099,51,659.3,0.933,dual_carriageway_shortcut
+6.393052,2.347704,"Nonhouénou
+",Godomey,268.9,0.6,8,90099,10,True,False,Hlouacomey,Godomey,27.2,6.1,5,90099,51,659.3,0.899,dual_carriageway_shortcut
+6.392932,2.347954,"Nonhouénou
+",Godomey,299.6,0.6,8,90099,11,True,False,Hlouacomey,Godomey,31.4,6.1,5,90099,51,659.3,0.895,dual_carriageway_shortcut
+6.389937,2.342415,Salamey,Godomey,236.5,11.0,2,90099,5,False,False,"Aïmèvo
+",Godomey,89.9,12.5,3,90099,35,579.1,0.62,unattributed
+6.381064,2.391029,Sètôvi,10ème Arrondissement,292.3,2.2,4,90099,4,False,False,Missogbé,10ème Arrondissement,21.0,5.4,4,90099,37,328.6,0.928,unattributed
+6.37683,2.408011,Agbondjèdo,8ème Arrondissement,261.0,11.5,4,90099,4,False,False,Agontinkon,8ème Arrondissement,76.8,4.9,4,90099,14,,0.706,unattributed
+6.375437,2.409092,Agontinkon,8ème Arrondissement,272.5,4.9,4,90099,4,False,False,Agbondjèdo,8ème Arrondissement,65.3,11.5,4,90099,21,,0.76,unattributed
+6.377085,2.429185,Hindé-Nord,6ème Arrondissement,272.5,7.6,4,90099,4,False,False,Aïdjèdo-Vignon,6ème Arrondissement,98.3,11.5,6,90099,32,,0.639,unattributed
+6.375506,2.433302,Hindé-Nord,6ème Arrondissement,268.9,7.6,4,90099,4,False,False,Hindé-Sud,6ème Arrondissement,79.1,5.1,4,90099,14,339.5,0.706,unattributed
+6.366667,2.391335,Missité,13ème Arrondissement,277.7,6.4,4,90099,3,False,False,Houénoussou,13ème Arrondissement,0.0,5.3,6,90099,36,,1.0,unattributed
+6.366443,2.391243,Missité,13ème Arrondissement,297.3,6.4,4,90099,4,False,False,Houénoussou,13ème Arrondissement,19.6,5.3,6,90099,36,,0.934,unattributed
+6.366807,2.391842,Houéyihô,11ème Arrondissement,295.4,2.0,4,90099,10,True,False,Houénoussou,13ème Arrondissement,58.2,5.3,6,90099,36,,0.803,dual_carriageway_shortcut
+6.360229,2.429658,Missité,5ème Arrondissement,284.2,5.7,4,90099,5,True,False,Dota,5ème Arrondissement,81.9,6.2,5,90099,17,,0.712,dual_carriageway_shortcut
+6.382384,2.450938,Kpondéhou-Tchèmè,2ème Arrondissement,286.0,9.5,4,90099,2,False,False,Ayélawadjè-Agongbomè,3ème Arrondissement,141.0,5.1,6,90099,30,,0.507,unattributed
+6.374956,2.44457,Midombo,3ème Arrondissement,255.7,5.0,4,90099,4,False,False,Adjégounlè,3ème Arrondissement,0.0,10.7,3,90099,22,844.3,1.0,unattributed
+6.374944,2.444386,Midombo,3ème Arrondissement,276.0,5.0,4,90099,5,False,False,Adjégounlè,3ème Arrondissement,20.3,10.7,3,90099,22,844.3,0.926,unattributed
+6.365193,2.442255,Dédokpo,4ème Arrondissement,260.3,17.8,4,90099,6,False,False,Abokicodji-Lagune,4ème Arrondissement,79.0,27.9,6,90099,23,300.4,0.697,unattributed
+6.370426,2.443627,Gbénonkpô,3ème Arrondissement,177.1,11.2,7,90099,3,False,False,Misséssin,4ème Arrondissement,0.0,24.5,4,90099,32,678.9,1.0,unattributed
+6.361028,2.444783,Ohé,4ème Arrondissement,237.2,21.0,3,90099,4,True,False,Akpakpa-Dodomè,4ème Arrondissement,0.0,10.4,2,90099,37,337.1,1.0,graph_artifact_low_edges|dual_carriageway_shortcut
+6.361259,2.444765,Ohé,4ème Arrondissement,216.1,21.0,3,90099,3,False,False,Akpakpa-Dodomè,4ème Arrondissement,25.7,10.4,2,90099,37,337.1,0.881,graph_artifact_low_edges
+6.368232,2.442528,Misséssin,4ème Arrondissement,291.7,24.5,4,90099,4,False,False,Dédokpo,4ème Arrondissement,46.5,17.8,4,90099,23,435.0,0.841,unattributed
+6.367299,2.442323,Abokicodji-Lagune,4ème Arrondissement,288.6,27.9,6,90099,6,False,False,Dédokpo,4ème Arrondissement,50.7,17.8,4,90099,23,435.0,0.824,unattributed
+6.377252,2.444593,Adjégounlè,3ème Arrondissement,255.7,10.7,3,90099,4,False,False,Midombo,3ème Arrondissement,0.0,5.0,4,90099,28,877.9,1.0,unattributed
+6.377099,2.444561,Adjégounlè,3ème Arrondissement,238.3,10.7,3,90099,3,False,False,Midombo,3ème Arrondissement,17.4,5.0,4,90099,28,877.9,0.927,unattributed
+6.392926,2.45013,Agbodjèdo,3ème Arrondissement,291.1,6.6,4,90099,6,False,False,Minontchou,2ème Arrondissement,16.7,6.1,3,90099,32,1590.0,0.943,unattributed
+6.385986,2.440479,Hlacômey,3ème Arrondissement,294.9,5.2,4,90099,6,False,False,Adôgléta,3ème Arrondissement,22.8,11.0,4,90099,37,464.8,0.923,unattributed
+6.404298,2.341359,Godomey-Togoudo,Godomey,297.0,4.6,3,90099,8,True,False,Sèdomey,Godomey,34.3,9.1,4,90099,41,720.7,0.885,dual_carriageway_shortcut
+6.401837,2.341379,Sèdomey,Godomey,288.3,9.1,4,90099,8,True,False,Godomey-Togoudo,Godomey,43.0,4.6,3,90099,31,447.4,0.851,dual_carriageway_shortcut
+6.402056,2.340324,"Djoukpa-Togoudo
+",Godomey,291.3,12.9,4,90099,6,False,False,Godomey-Togoudo,Godomey,105.0,4.6,3,90099,31,447.4,0.64,unattributed
+6.366145,2.388742,Houénoussou,13ème Arrondissement,277.7,5.3,6,90099,3,False,False,Missité,13ème Arrondissement,0.0,6.4,4,90099,26,519.6,1.0,unattributed
+6.366292,2.388817,Houénoussou,13ème Arrondissement,296.0,5.3,6,90099,4,False,False,Missité,13ème Arrondissement,18.3,6.4,4,90099,26,519.6,0.938,unattributed
+6.366134,2.389448,Houénoussou,13ème Arrondissement,199.6,5.3,6,90099,2,False,False,Missité,13ème Arrondissement,78.1,6.4,4,90099,26,519.6,0.609,unattributed
+6.365884,2.386368,Missité,13ème Arrondissement,258.5,6.4,4,90099,3,False,False,Gbèdégbé,13ème Arrondissement,89.5,12.0,4,90099,34,378.4,0.654,unattributed
+6.368576,2.449549,Gbèdjèwin,4ème Arrondissement,283.5,5.2,9,90099,6,False,False,Sodjatinmè-Ouest,4ème Arrondissement,0.0,11.5,4,90099,20,,1.0,unattributed
+6.369116,2.449111,Gbèdjèwin,4ème Arrondissement,206.3,5.2,9,90099,5,False,False,Sodjatinmè-Ouest,4ème Arrondissement,77.1,11.5,4,90099,20,,0.626,unattributed
+6.394575,2.345131,Hlouacomey,Godomey,278.4,6.1,5,90099,10,True,False,"Nonhouénou
+",Godomey,0.0,0.6,8,90099,45,343.1,1.0,dual_carriageway_shortcut
+6.394383,2.345489,Hlouacomey,Godomey,233.7,6.1,5,90099,9,True,False,"Nonhouénou
+",Godomey,44.6,0.6,8,90099,45,343.1,0.809,dual_carriageway_shortcut
+6.391254,2.352404,"Finafa
+",Godomey,258.0,8.8,4,90099,4,False,False,"Sèdjannako
+",Godomey,53.9,9.7,6,90099,58,333.8,0.791,unattributed
+6.393152,2.353564,"Sèdjannako
+",Godomey,291.1,9.7,6,90099,4,False,False,"Finafa
+",Godomey,20.8,8.8,4,90099,41,238.5,0.929,unattributed
+6.363499,2.430515,Missité,5ème Arrondissement,235.7,5.7,4,90099,6,True,False,Gbédokpo,5ème Arrondissement,69.4,17.2,3,90099,26,,0.706,dual_carriageway_shortcut
+6.377687,2.421529,Gbèdjromèdè,6ème Arrondissement,244.7,2.4,7,90099,5,False,False,Aïdjèdo-Ahito,6ème Arrondissement,63.2,3.5,5,90099,29,,0.742,unattributed
+6.38868,2.443475,Hlacômey,3ème Arrondissement,289.7,5.2,4,90099,1,False,False,Sègbèya-Nord,3ème Arrondissement,137.4,6.7,4,90099,39,949.1,0.526,unattributed
+6.387875,2.440775,Adôgléta,3ème Arrondissement,227.2,11.0,4,90099,5,False,False,Hlacômey,3ème Arrondissement,90.5,5.2,4,90099,36,520.8,0.602,unattributed
+6.371257,2.411479,Dagbédji-Sikê,7ème Arrondissement,273.1,13.1,3,90099,7,True,False,Gbégamey-Gbagoudo,11ème Arrondissement,87.0,13.6,11,90099,39,,0.681,dual_carriageway_shortcut
+6.393092,2.449688,Agbodjèdo,3ème Arrondissement,265.5,6.6,4,90099,5,False,False,Minontchou,2ème Arrondissement,42.4,6.1,3,90099,32,1590.0,0.84,unattributed
+6.362401,2.431202,Gbédokpo,5ème Arrondissement,228.4,17.2,3,90099,4,True,False,Missité,5ème Arrondissement,86.6,5.7,4,90099,26,907.5,0.621,dual_carriageway_shortcut
+6.3767,2.432361,Hindé-Sud,6ème Arrondissement,247.7,5.1,4,90099,3,False,False,Hindé-Nord,6ème Arrondissement,100.3,7.6,4,90099,27,524.5,0.595,unattributed
+6.366945,2.446437,Gbèdjèwin,4ème Arrondissement,243.1,5.2,9,90099,4,True,False,Abokicodji-Centre,4ème Arrondissement,87.6,6.4,7,90099,27,834.9,0.64,dual_carriageway_shortcut
+6.392723,2.353294,"Sèdjannako
+",Godomey,238.7,9.7,6,90099,3,False,False,"Finafa
+",Godomey,73.1,8.8,4,90099,41,238.5,0.694,unattributed
+6.381079,2.390747,Sètôvi,10ème Arrondissement,261.1,2.2,4,90099,3,False,False,Missogbé,10ème Arrondissement,52.2,5.4,4,90099,37,328.6,0.8,unattributed
+6.391655,2.342445,"Aïmèvo
+",Godomey,281.0,12.5,3,90099,4,False,False,Salamey,Godomey,45.4,11.0,2,90099,45,498.4,0.839,graph_artifact_low_edges
+6.367599,2.404236,Vodjè-Centre,11ème Arrondissement,162.6,1.2,2,90099,5,False,False,Cadjèhoun-Détinsa,12ème Arrondissement,51.0,4.4,5,90099,31,,0.686,unattributed
+6.368614,2.402779,Cadjèhoun-Détinsa,12ème Arrondissement,242.4,4.4,5,90099,11,True,False,Vodjè-Centre,11ème Arrondissement,47.2,1.2,2,90099,28,,0.805,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.376906,2.427371,Jéricho-Nord,6ème Arrondissement,248.4,12.7,5,90099,4,False,False,Aïdjèdo-Vignon,6ème Arrondissement,105.2,11.5,6,90099,32,,0.577,unattributed
+6.362689,2.446639,Akpakpa-Dodomè,4ème Arrondissement,230.7,10.4,2,90099,4,True,False,Ohé,4ème Arrondissement,36.7,21.0,3,90099,48,639.8,0.841,dual_carriageway_shortcut
+6.362242,2.445887,Akpakpa-Dodomè,4ème Arrondissement,190.9,10.4,2,90099,2,True,False,Ohé,4ème Arrondissement,50.8,21.0,3,90099,48,639.8,0.734,dual_carriageway_shortcut
+6.370852,2.417656,Sèhogan-Sikê,7ème Arrondissement,237.9,7.5,4,90099,7,True,False,Énagnon-Sikê,7ème Arrondissement,114.1,10.0,3,90099,27,,0.52,dual_carriageway_shortcut
+6.37044,2.41716,Sèhogan-Sikê,7ème Arrondissement,166.4,7.5,4,90099,4,False,False,Énagnon-Sikê,7ème Arrondissement,74.1,10.0,3,90099,27,,0.555,unattributed
+6.37141,2.416396,Sèhogan-Sikê,7ème Arrondissement,285.5,7.5,4,90099,6,False,False,Énagnon-Sikê,7ème Arrondissement,88.6,10.0,3,90099,27,,0.69,unattributed
+6.370747,2.417549,Sèhogan-Sikê,7ème Arrondissement,221.2,7.5,4,90099,6,False,False,Énagnon-Sikê,7ème Arrondissement,97.4,10.0,3,90099,27,,0.56,unattributed
+6.362489,2.431316,Gbédokpo,5ème Arrondissement,212.4,17.2,3,90099,3,False,False,Missité,5ème Arrondissement,92.6,5.7,4,90099,26,907.5,0.564,unattributed
+6.386129,2.440519,Hlacômey,3ème Arrondissement,278.4,5.2,4,90099,5,False,False,Adôgléta,3ème Arrondissement,39.3,11.0,4,90099,37,464.8,0.859,unattributed
+6.372035,2.44153,Misséssin,4ème Arrondissement,284.3,24.5,4,90099,5,False,False,Gbénonkpô,3ème Arrondissement,107.2,11.2,7,90099,27,570.5,0.623,unattributed
+6.368434,2.403535,Cadjèhoun-Détinsa,12ème Arrondissement,172.4,4.4,5,90099,6,True,False,Vodjè-Centre,11ème Arrondissement,41.2,1.2,2,90099,28,,0.761,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.361448,2.444606,Ohé,4ème Arrondissement,243.5,21.0,3,90099,4,False,False,Akpakpa-Dodomè,4ème Arrondissement,53.1,10.4,2,90099,37,337.1,0.782,graph_artifact_low_edges
+6.369689,2.417755,Énagnon-Sikê,7ème Arrondissement,180.4,10.0,3,90099,4,False,False,Sèhogan-Sikê,7ème Arrondissement,60.0,7.5,4,90099,26,,0.667,unattributed
+6.36833,2.403699,Cadjèhoun-Détinsa,12ème Arrondissement,151.8,4.4,5,90099,4,False,False,Vodjè-Centre,11ème Arrondissement,61.8,1.2,2,90099,28,,0.592,stronger_road_density|graph_artifact_low_edges
+6.369235,2.40298,Cadjèhoun-Détinsa,12ème Arrondissement,280.2,4.4,5,90099,12,True,False,Vodjè-Centre,11ème Arrondissement,72.1,1.2,2,90099,28,,0.743,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.392636,2.451187,Gankpodo,2ème Arrondissement,276.5,16.7,4,90099,5,False,False,Minontchou,2ème Arrondissement,100.2,6.1,3,90099,32,1590.0,0.638,unattributed
+6.392711,2.348321,Yolomahouto,Godomey,295.3,5.3,4,90099,10,False,False,Hlouacomey,Godomey,73.7,6.1,5,90099,51,659.3,0.751,unattributed
+6.357245,2.43626,Tokpa-Hoho,5ème Arrondissement,276.4,9.5,5,90099,10,True,False,Guinkômey,5ème Arrondissement,78.8,33.0,3,90099,76,749.7,0.715,dual_carriageway_shortcut|centroid_badly_positioned
+6.356586,2.436777,Tokpa-Hoho,5ème Arrondissement,247.1,9.5,5,90099,10,True,False,Guinkômey,5ème Arrondissement,49.5,33.0,3,90099,76,749.7,0.8,dual_carriageway_shortcut|centroid_badly_positioned
+6.403936,2.341326,Godomey-Togoudo,Godomey,261.0,4.6,3,90099,7,True,False,Sèdomey,Godomey,70.3,9.1,4,90099,41,720.7,0.73,dual_carriageway_shortcut
+6.367145,2.391666,Houéyihô,11ème Arrondissement,297.2,2.0,4,90099,12,True,False,Houénoussou,13ème Arrondissement,56.2,5.3,6,90099,36,,0.811,dual_carriageway_shortcut
+6.362766,2.446959,Akpakpa-Dodomè,4ème Arrondissement,251.5,10.4,2,90099,6,True,False,Ohé,4ème Arrondissement,57.5,21.0,3,90099,48,639.8,0.771,dual_carriageway_shortcut
+6.362614,2.446851,Akpakpa-Dodomè,4ème Arrondissement,249.6,10.4,2,90099,5,True,False,Ohé,4ème Arrondissement,55.7,21.0,3,90099,48,639.8,0.777,dual_carriageway_shortcut
+6.362311,2.44677,Akpakpa-Dodomè,4ème Arrondissement,250.4,10.4,2,90099,5,True,False,Ohé,4ème Arrondissement,56.4,21.0,3,90099,48,639.8,0.775,dual_carriageway_shortcut
+6.358339,2.438597,Guinkômey,5ème Arrondissement,189.7,33.0,3,90099,7,True,False,Tokpa-Hoho,5ème Arrondissement,91.5,9.5,5,90099,45,269.4,0.518,dual_carriageway_shortcut|centroid_badly_positioned
+6.381581,2.424519,Aïdjèdo,6ème Arrondissement,222.3,7.5,4,90099,3,False,False,Ahouansouri-Agata,6ème Arrondissement,103.2,7.0,5,90099,34,,0.536,unattributed
+6.384934,2.453551,Kpondéhou-Tchèmè,2ème Arrondissement,279.4,9.5,4,90099,4,False,False,Kpondéhou,2ème Arrondissement,102.6,8.7,4,90099,20,1980.4,0.633,unattributed
+6.367913,2.393593,Houénoussou,13ème Arrondissement,288.0,5.3,6,90099,9,True,False,Houéyihô,11ème Arrondissement,65.5,2.0,4,90099,40,,0.772,dual_carriageway_shortcut
+6.386592,2.440635,Hlacômey,3ème Arrondissement,229.5,5.2,4,90099,4,False,False,Adôgléta,3ème Arrondissement,88.2,11.0,4,90099,37,464.8,0.616,unattributed
+6.368906,2.402659,Cadjèhoun-Détinsa,12ème Arrondissement,272.6,4.4,5,90099,14,True,False,Vodjè-Centre,11ème Arrondissement,61.9,1.2,2,90099,28,,0.773,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.368969,2.402521,Cadjèhoun-Détinsa,12ème Arrondissement,289.4,4.4,5,90099,15,True,False,Vodjè-Centre,11ème Arrondissement,78.6,1.2,2,90099,28,,0.728,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.368734,2.402589,Cadjèhoun-Détinsa,12ème Arrondissement,267.3,4.4,5,90099,13,True,False,Vodjè-Centre,11ème Arrondissement,68.8,1.2,2,90099,28,,0.743,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.357152,2.4361,Tokpa-Hoho,5ème Arrondissement,296.8,9.5,5,90099,11,True,False,Guinkômey,5ème Arrondissement,85.2,33.0,3,90099,76,749.7,0.713,dual_carriageway_shortcut|centroid_badly_positioned
+6.39313,2.449039,Agbodjèdo,3ème Arrondissement,209.5,6.6,4,90099,4,False,False,Minontchou,2ème Arrondissement,98.4,6.1,3,90099,32,1590.0,0.53,unattributed
+6.391202,2.342422,"Aïmèvo
+",Godomey,230.5,12.5,3,90099,3,False,False,Salamey,Godomey,95.9,11.0,2,90099,45,498.4,0.584,graph_artifact_low_edges
+6.391699,2.342664,"Aïmèvo
+",Godomey,299.9,12.5,3,90099,5,False,False,Salamey,Godomey,64.3,11.0,2,90099,45,498.4,0.786,graph_artifact_low_edges
+6.358206,2.438748,Guinkômey,5ème Arrondissement,184.6,33.0,3,90099,6,True,False,Tokpa-Hoho,5ème Arrondissement,77.0,9.5,5,90099,45,269.4,0.583,dual_carriageway_shortcut|centroid_badly_positioned
+6.368807,2.442633,Misséssin,4ème Arrondissement,226.7,24.5,4,90099,3,False,False,Dédokpo,4ème Arrondissement,111.5,17.8,4,90099,23,435.0,0.508,unattributed
+6.394672,2.345923,Hlouacomey,Godomey,277.5,6.1,5,90099,11,True,False,"Nonhouénou
+",Godomey,108.5,0.6,8,90099,45,343.1,0.609,dual_carriageway_shortcut
+6.356377,2.436948,Tokpa-Hoho,5ème Arrondissement,277.0,9.5,5,90099,11,True,False,Guinkômey,5ème Arrondissement,79.5,33.0,3,90099,76,749.7,0.713,dual_carriageway_shortcut|centroid_badly_positioned
+6.366741,2.44221,Abokicodji-Lagune,4ème Arrondissement,231.9,27.9,6,90099,5,False,False,Dédokpo,4ème Arrondissement,107.4,17.8,4,90099,23,435.0,0.537,unattributed
+6.362519,2.445655,Akpakpa-Dodomè,4ème Arrondissement,231.0,10.4,2,90099,3,True,False,Ohé,4ème Arrondissement,90.9,21.0,3,90099,48,639.8,0.607,dual_carriageway_shortcut
+6.381112,2.390562,Sètôvi,10ème Arrondissement,240.4,2.2,4,90099,2,False,False,Missogbé,10ème Arrondissement,72.9,5.4,4,90099,37,328.6,0.697,unattributed
+6.361341,2.444379,Ohé,4ème Arrondissement,271.2,21.0,3,90099,5,False,False,Akpakpa-Dodomè,4ème Arrondissement,80.8,10.4,2,90099,37,337.1,0.702,graph_artifact_low_edges
+6.361589,2.444489,Ohé,4ème Arrondissement,256.2,21.0,3,90099,5,False,False,Akpakpa-Dodomè,4ème Arrondissement,73.4,10.4,2,90099,37,337.1,0.713,graph_artifact_low_edges
+6.358597,2.396809,Cadjèhoun-Azalokogon,12ème Arrondissement,294.6,16.0,4,90099,4,False,False,Cadjèhoun-Agonga,12ème Arrondissement,112.2,2.6,4,90099,34,,0.619,unattributed
+6.367392,2.392055,Houéyihô,11ème Arrondissement,246.2,2.0,4,90099,11,True,False,Houénoussou,13ème Arrondissement,107.2,5.3,6,90099,36,,0.565,dual_carriageway_shortcut
+6.36169,2.446707,Akpakpa-Dodomè,4ème Arrondissement,267.0,10.4,2,90099,6,True,False,Ohé,4ème Arrondissement,73.1,21.0,3,90099,48,639.8,0.726,dual_carriageway_shortcut
+6.362832,2.447199,Akpakpa-Dodomè,4ème Arrondissement,277.4,10.4,2,90099,7,True,False,Ohé,4ème Arrondissement,83.5,21.0,3,90099,48,639.8,0.699,dual_carriageway_shortcut
+6.373072,2.442342,Misséssin,4ème Arrondissement,292.6,24.5,4,90099,5,False,False,Gbénonkpô,3ème Arrondissement,115.5,11.2,7,90099,27,570.5,0.605,unattributed
+6.368818,2.402421,Cadjèhoun-Détinsa,12ème Arrondissement,288.0,4.4,5,90099,14,True,False,Vodjè-Centre,11ème Arrondissement,89.5,1.2,2,90099,28,,0.689,stronger_road_density|graph_artifact_low_edges|dual_carriageway_shortcut
+6.392258,2.452574,Minontchou,2ème Arrondissement,257.6,6.1,3,90099,5,False,False,Gankpodo,2ème Arrondissement,119.0,16.7,4,90099,30,1948.2,0.538,unattributed
+6.377859,2.421749,Gbèdjromèdè,6ème Arrondissement,268.2,2.4,7,90099,6,False,False,Aïdjèdo-Ahito,6ème Arrondissement,86.7,3.5,5,90099,29,,0.677,unattributed
+6.372674,2.408313,Agbondjèdo,8ème Arrondissement,271.4,11.5,4,90099,5,False,False,Gbégamey-Gbagoudo,11ème Arrondissement,131.7,13.6,11,90099,39,,0.515,unattributed
+6.367823,2.393383,Houénoussou,13ème Arrondissement,262.8,5.3,6,90099,8,True,False,Houéyihô,11ème Arrondissement,90.8,2.0,4,90099,40,,0.654,dual_carriageway_shortcut
+6.368798,2.413117,Saint-Jean-Gbèdiga,11ème Arrondissement,280.5,10.7,9,90099,6,True,False,Dagbédji-Sikê,7ème Arrondissement,132.1,13.1,3,90099,32,,0.529,dual_carriageway_shortcut
+6.368626,2.412903,Saint-Jean-Gbèdiga,11ème Arrondissement,279.9,10.7,9,90099,5,True,False,Dagbédji-Sikê,7ème Arrondissement,132.5,13.1,3,90099,32,,0.527,dual_carriageway_shortcut
+6.363406,2.430392,Missité,5ème Arrondissement,229.8,5.7,4,90099,5,True,False,Gbédokpo,5ème Arrondissement,86.5,17.2,3,90099,26,,0.623,dual_carriageway_shortcut
+6.37557,2.468157,Yagbé,1er Arrondissement,297.8,10.4,3,90099,6,True,False,Avotrou-Gbègo,1er Arrondissement,147.1,11.9,4,90099,32,,0.506,dual_carriageway_shortcut
+6.391682,2.346686,Hlouacomey,Godomey,210.5,6.1,5,90099,9,True,False,Yolomahouto,Godomey,99.6,5.3,4,90099,51,,0.527,dual_carriageway_shortcut
+6.39138,2.346844,Hlouacomey,Godomey,265.5,6.1,5,90099,11,True,False,Yolomahouto,Godomey,102.1,5.3,4,90099,51,,0.615,dual_carriageway_shortcut
+6.391424,2.346146,Hlouacomey,Godomey,275.1,6.1,5,90099,11,True,False,Yolomahouto,Godomey,108.5,5.3,4,90099,51,,0.606,dual_carriageway_shortcut
+6.361803,2.444313,Ohé,4ème Arrondissement,286.9,21.0,3,90099,6,False,False,Akpakpa-Dodomè,4ème Arrondissement,104.2,10.4,2,90099,37,337.1,0.637,graph_artifact_low_edges
+6.362717,2.41117,Gbégamey-Mifongou,11ème Arrondissement,293.2,3.4,3,90099,4,True,False,Gbégamey-Centre,11ème Arrondissement,111.3,9.4,4,90099,22,,0.62,dual_carriageway_shortcut
+6.392423,2.348122,Yolomahouto,Godomey,271.3,5.3,4,90099,9,False,False,Hlouacomey,Godomey,97.6,6.1,5,90099,51,659.3,0.64,unattributed
+6.403038,2.338904,Godomey-Togoudo,Godomey,296.1,4.6,3,90099,5,False,False,"Djoukpa-Togoudo
+",Godomey,100.1,12.9,4,90099,44,756.4,0.662,unattributed
+6.362515,2.411416,Gbégamey-Mifongou,11ème Arrondissement,272.3,3.4,3,90099,4,False,False,Gbégamey-Centre,11ème Arrondissement,93.5,9.4,4,90099,22,,0.657,unattributed
+6.362421,2.411312,Gbégamey-Mifongou,11ème Arrondissement,256.7,3.4,3,90099,3,False,False,Gbégamey-Centre,11ème Arrondissement,109.0,9.4,4,90099,22,,0.576,unattributed
+6.378112,2.432862,Djidjè,6ème Arrondissement,297.6,3.9,4,90099,5,False,False,Hindé-Nord,6ème Arrondissement,97.7,7.6,4,90099,27,524.5,0.672,unattributed
+6.379306,2.432565,Hindé-Nord,6ème Arrondissement,270.0,7.6,4,90099,5,False,False,Djidjè,6ème Arrondissement,125.2,3.9,4,90099,24,471.5,0.536,unattributed
+6.362927,2.44733,Akpakpa-Dodomè,4ème Arrondissement,295.4,10.4,2,90099,8,True,False,Ohé,4ème Arrondissement,101.4,21.0,3,90099,48,639.8,0.657,dual_carriageway_shortcut
+6.373714,2.408768,Gbégamey-Gbagoudo,11ème Arrondissement,272.3,13.6,11,90099,4,False,False,Agbondjèdo,8ème Arrondissement,130.8,11.5,4,90099,21,,0.52,unattributed
+6.390449,2.347467,Hlouacomey,Godomey,291.9,6.1,5,90099,14,True,False,Yolomahouto,Godomey,106.6,5.3,4,90099,51,,0.635,dual_carriageway_shortcut
+6.390578,2.347228,Hlouacomey,Godomey,247.8,6.1,5,90099,12,True,False,Yolomahouto,Godomey,111.7,5.3,4,90099,51,,0.549,dual_carriageway_shortcut
+6.389784,2.341877,Salamey,Godomey,291.8,11.0,2,90099,6,False,False,"Aïmèvo
+",Godomey,145.1,12.5,3,90099,35,579.1,0.503,unattributed
+6.356548,2.399562,Haie-Vive-Cocotiers,12ème Arrondissement,295.0,1.9,3,90099,7,True,False,Cadjèhoun-Azalokogon,12ème Arrondissement,118.2,16.0,4,90099,48,,0.599,dual_carriageway_shortcut
+6.362699,2.445881,Akpakpa-Dodomè,4ème Arrondissement,259.7,10.4,2,90099,4,True,False,Ohé,4ème Arrondissement,119.5,21.0,3,90099,48,639.8,0.54,dual_carriageway_shortcut
+6.362743,2.445472,Akpakpa-Dodomè,4ème Arrondissement,263.1,10.4,2,90099,4,True,False,Ohé,4ème Arrondissement,122.9,21.0,3,90099,48,639.8,0.533,dual_carriageway_shortcut
+6.402876,2.339137,Godomey-Togoudo,Godomey,264.7,4.6,3,90099,4,False,False,"Djoukpa-Togoudo
+",Godomey,131.5,12.9,4,90099,44,756.4,0.503,unattributed
+6.367562,2.39203,Houéyihô,11ème Arrondissement,265.4,2.0,4,90099,12,True,False,Houénoussou,13ème Arrondissement,126.3,5.3,6,90099,36,,0.524,dual_carriageway_shortcut

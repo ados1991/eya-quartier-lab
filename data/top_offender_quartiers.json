@@ -1,0 +1,378 @@
+{
+  "total_distinct": 62,
+  "ranking_by_count": [
+    {
+      "name": "Cadjèhoun-Détinsa",
+      "count": 15,
+      "total_extra_m": 2829.1,
+      "median_collision_dist_m": 219.2
+    },
+    {
+      "name": "Akpakpa-Dodomè",
+      "count": 12,
+      "total_extra_m": 2112.2,
+      "median_collision_dist_m": 230.8
+    },
+    {
+      "name": "Misséssin",
+      "count": 10,
+      "total_extra_m": 1667.5,
+      "median_collision_dist_m": 228.0
+    },
+    {
+      "name": "Hlouacomey",
+      "count": 10,
+      "total_extra_m": 1750.7,
+      "median_collision_dist_m": 233.7
+    },
+    {
+      "name": "Ohé",
+      "count": 8,
+      "total_extra_m": 1569.0,
+      "median_collision_dist_m": 101.4
+    },
+    {
+      "name": "Sèhogan-Sikê",
+      "count": 7,
+      "total_extra_m": 1143.3,
+      "median_collision_dist_m": 218.7
+    },
+    {
+      "name": "Dagbédji-Sikê",
+      "count": 6,
+      "total_extra_m": 1139.0,
+      "median_collision_dist_m": 153.6
+    },
+    {
+      "name": "Guinkômey",
+      "count": 6,
+      "total_extra_m": 1103.0,
+      "median_collision_dist_m": 134.9
+    },
+    {
+      "name": "Tokpa-Hoho",
+      "count": 6,
+      "total_extra_m": 1263.5,
+      "median_collision_dist_m": 160.5
+    },
+    {
+      "name": "Gbégamey-Gbagoudo",
+      "count": 6,
+      "total_extra_m": 1088.2,
+      "median_collision_dist_m": 131.7
+    },
+    {
+      "name": "Missité",
+      "count": 6,
+      "total_extra_m": 1236.2,
+      "median_collision_dist_m": 89.6
+    },
+    {
+      "name": "Gbédokpo",
+      "count": 5,
+      "total_extra_m": 1085.3,
+      "median_collision_dist_m": 228.4
+    },
+    {
+      "name": "Vodjè-Centre",
+      "count": 5,
+      "total_extra_m": 911.9,
+      "median_collision_dist_m": 61.9
+    },
+    {
+      "name": "Gbèdjèwin",
+      "count": 5,
+      "total_extra_m": 1096.6,
+      "median_collision_dist_m": 152.1
+    },
+    {
+      "name": "Nonhouénou\n",
+      "count": 5,
+      "total_extra_m": 1344.9,
+      "median_collision_dist_m": 273.6
+    },
+    {
+      "name": "Houénoussou",
+      "count": 5,
+      "total_extra_m": 1071.4,
+      "median_collision_dist_m": 126.3
+    },
+    {
+      "name": "Nouveau-Pont",
+      "count": 4,
+      "total_extra_m": 979.0,
+      "median_collision_dist_m": 244.8
+    },
+    {
+      "name": "Gbégamey-Mifongou",
+      "count": 4,
+      "total_extra_m": 719.8,
+      "median_collision_dist_m": 280.4
+    },
+    {
+      "name": "Houéyihô",
+      "count": 4,
+      "total_extra_m": 756.2,
+      "median_collision_dist_m": 255.8
+    },
+    {
+      "name": "Hlacômey",
+      "count": 4,
+      "total_extra_m": 804.9,
+      "median_collision_dist_m": 278.4
+    },
+    {
+      "name": "Godomey-Togoudo",
+      "count": 4,
+      "total_extra_m": 782.6,
+      "median_collision_dist_m": 262.8
+    },
+    {
+      "name": "Abokicodji-Centre",
+      "count": 3,
+      "total_extra_m": 420.4,
+      "median_collision_dist_m": 90.8
+    },
+    {
+      "name": "Énagnon-Sikê",
+      "count": 3,
+      "total_extra_m": 548.8,
+      "median_collision_dist_m": 97.4
+    },
+    {
+      "name": "Sodjatinmè-Ouest",
+      "count": 3,
+      "total_extra_m": 646.0,
+      "median_collision_dist_m": 265.2
+    },
+    {
+      "name": "Sètôvi",
+      "count": 3,
+      "total_extra_m": 647.7,
+      "median_collision_dist_m": 261.1
+    },
+    {
+      "name": "Hindé-Nord",
+      "count": 3,
+      "total_extra_m": 508.8,
+      "median_collision_dist_m": 268.9
+    },
+    {
+      "name": "Agbodjèdo",
+      "count": 3,
+      "total_extra_m": 608.7,
+      "median_collision_dist_m": 237.5
+    },
+    {
+      "name": "Aïmèvo\n",
+      "count": 3,
+      "total_extra_m": 606.0,
+      "median_collision_dist_m": 230.5
+    },
+    {
+      "name": "Aïdjèdo-Ahito",
+      "count": 2,
+      "total_extra_m": 417.4,
+      "median_collision_dist_m": 172.3
+    },
+    {
+      "name": "Aïdjèdo",
+      "count": 2,
+      "total_extra_m": 368.5,
+      "median_collision_dist_m": 222.3
+    },
+    {
+      "name": "Sèdjro-Saint-Michel",
+      "count": 2,
+      "total_extra_m": 516.5,
+      "median_collision_dist_m": 22.5
+    },
+    {
+      "name": "Minontchou",
+      "count": 2,
+      "total_extra_m": 307.4,
+      "median_collision_dist_m": 99.3
+    },
+    {
+      "name": "Salamey",
+      "count": 2,
+      "total_extra_m": 293.4,
+      "median_collision_dist_m": 95.9
+    },
+    {
+      "name": "Agbondjèdo",
+      "count": 2,
+      "total_extra_m": 324.0,
+      "median_collision_dist_m": 195.9
+    },
+    {
+      "name": "Kpondéhou-Tchèmè",
+      "count": 2,
+      "total_extra_m": 321.9,
+      "median_collision_dist_m": 282.7
+    },
+    {
+      "name": "Midombo",
+      "count": 2,
+      "total_extra_m": 511.4,
+      "median_collision_dist_m": 136.5
+    },
+    {
+      "name": "Abokicodji-Lagune",
+      "count": 2,
+      "total_extra_m": 362.4,
+      "median_collision_dist_m": 231.9
+    },
+    {
+      "name": "Adjégounlè",
+      "count": 2,
+      "total_extra_m": 476.7,
+      "median_collision_dist_m": 129.3
+    },
+    {
+      "name": "Sèdjannako\n",
+      "count": 2,
+      "total_extra_m": 435.9,
+      "median_collision_dist_m": 238.7
+    },
+    {
+      "name": "Gbèdjromèdè",
+      "count": 2,
+      "total_extra_m": 363.1,
+      "median_collision_dist_m": 148.4
+    },
+    {
+      "name": "Yolomahouto",
+      "count": 2,
+      "total_extra_m": 395.4,
+      "median_collision_dist_m": 106.6
+    },
+    {
+      "name": "Saint-Jean-Gbèdiga",
+      "count": 2,
+      "total_extra_m": 295.8,
+      "median_collision_dist_m": 280.2
+    },
+    {
+      "name": "Ahouansouri-Agata",
+      "count": 1,
+      "total_extra_m": 184.0,
+      "median_collision_dist_m": 103.2
+    },
+    {
+      "name": "Aïdjèdo-Vignon",
+      "count": 1,
+      "total_extra_m": 244.4,
+      "median_collision_dist_m": 105.2
+    },
+    {
+      "name": "Yévèdo",
+      "count": 1,
+      "total_extra_m": 169.2,
+      "median_collision_dist_m": 168.2
+    },
+    {
+      "name": "Gbèdomidji",
+      "count": 1,
+      "total_extra_m": 165.5,
+      "median_collision_dist_m": 287.5
+    },
+    {
+      "name": "Mifongou",
+      "count": 1,
+      "total_extra_m": 216.4,
+      "median_collision_dist_m": 298.1
+    },
+    {
+      "name": "Vodjè-Finagnon",
+      "count": 1,
+      "total_extra_m": 233.9,
+      "median_collision_dist_m": 299.1
+    },
+    {
+      "name": "Agontinkon",
+      "count": 1,
+      "total_extra_m": 207.2,
+      "median_collision_dist_m": 174.6
+    },
+    {
+      "name": "Dédokpo",
+      "count": 1,
+      "total_extra_m": 181.4,
+      "median_collision_dist_m": 107.4
+    },
+    {
+      "name": "Gbénonkpô",
+      "count": 1,
+      "total_extra_m": 177.1,
+      "median_collision_dist_m": 58.4
+    },
+    {
+      "name": "Sèdomey",
+      "count": 1,
+      "total_extra_m": 245.3,
+      "median_collision_dist_m": 70.3
+    },
+    {
+      "name": "Djoukpa-Togoudo\n",
+      "count": 1,
+      "total_extra_m": 186.3,
+      "median_collision_dist_m": 131.5
+    },
+    {
+      "name": "Finafa\n",
+      "count": 1,
+      "total_extra_m": 204.1,
+      "median_collision_dist_m": 73.1
+    },
+    {
+      "name": "Adôgléta",
+      "count": 1,
+      "total_extra_m": 136.8,
+      "median_collision_dist_m": 63.7
+    },
+    {
+      "name": "Hindé-Sud",
+      "count": 1,
+      "total_extra_m": 147.5,
+      "median_collision_dist_m": 163.4
+    },
+    {
+      "name": "Jéricho-Nord",
+      "count": 1,
+      "total_extra_m": 143.2,
+      "median_collision_dist_m": 151.5
+    },
+    {
+      "name": "Gankpodo",
+      "count": 1,
+      "total_extra_m": 176.3,
+      "median_collision_dist_m": 197.8
+    },
+    {
+      "name": "Cadjèhoun-Azalokogon",
+      "count": 1,
+      "total_extra_m": 182.4,
+      "median_collision_dist_m": 206.4
+    },
+    {
+      "name": "Yagbé",
+      "count": 1,
+      "total_extra_m": 150.8,
+      "median_collision_dist_m": 297.8
+    },
+    {
+      "name": "Djidjè",
+      "count": 1,
+      "total_extra_m": 199.9,
+      "median_collision_dist_m": 211.4
+    },
+    {
+      "name": "Haie-Vive-Cocotiers",
+      "count": 1,
+      "total_extra_m": 176.9,
+      "median_collision_dist_m": 295.0
+    }
+  ],
+  "note": "Offender = chef-lieu reaching collision from FURTHER away than its competitor (it has propagated aggressively into the other's natural territory)."
+}
