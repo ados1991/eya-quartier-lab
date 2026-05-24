@@ -149,6 +149,21 @@
     <input type="range" min="0" max="100" value="70" id="op-wway" class="slider">
   </div>
 
+  <h2>Diagnostics</h2>
+
+  <div class="lay" style="background:#f0fdf4;border-color:#bbf7d0">
+    <label class="lay-hdr"><input type="checkbox" id="t-prop" checked><span class="lay-swatch" style="background:linear-gradient(90deg,#f87171,#fbbf24,#34d399,#60a5fa,#c084fc)"></span>road-propagation (100 m, per chef-lieu)</label>
+    <div class="lay-meta">
+      From each chef-lieu (310 of 311 snapped), Dijkstra walks along OSM roads up to <b>100 m</b>. Stops at major water (canal · river · stream · lagoon · basin — <i>drains and ditches do not stop</i>) or when a road from another chef-lieu has already claimed the node. Each chef-lieu gets a stable hash-based colour.<br>
+      <span style="color:#1e40af">●</span> chef-lieu &nbsp;
+      <span style="color:#dc2626">●</span> collision (0 at 100 m — chef-lieus are too far apart) &nbsp;
+      <span style="color:#0369a1">●</span> water stop (1) &nbsp;
+      <span style="color:#94a3b8">●</span> end of 100 m budget (3 179)<br>
+      <a href="data/road_propagation_report.txt" target="_blank">report</a>
+    </div>
+    <input type="range" min="0" max="100" value="80" id="op-prop" class="slider">
+  </div>
+
   <h2>Audit: IGN ↔ OSM discrepancy</h2>
 
   <div class="lay" style="background:#fef2f2;border-color:#fecaca">
@@ -253,6 +268,17 @@ const WATERWAY_STYLE = (f) => {
   return m[k] || {color:'#0284c7', weight:1.0, opacity:.70};
 };
 
+// Road-propagation layer — colour per feature (each chef-lieu hash-coloured)
+const PROP_STYLE = (f) => ({color: f.properties.color || '#888', weight:2.5, opacity:.85});
+const PROP_POINT_STYLE = (f) => {
+  const k = f.properties.kind;
+  if (k === 'chef_lieu')   return {radius:5, color:'#0b1f3b', weight:1.2, fillColor: f.properties.color, fillOpacity:.95};
+  if (k === 'collision')   return {radius:5, color:'#dc2626', weight:2,   fillColor:'#fecaca', fillOpacity:.9};
+  if (k === 'water_stop')  return {radius:4, color:'#0369a1', weight:1.5, fillColor:'#7dd3fc', fillOpacity:.9};
+  if (k === 'end_stop')    return {radius:2.5, color:'#94a3b8', weight:0.8, fillColor:'#cbd5e1', fillOpacity:.7};
+  return {radius:3, color:'#666', weight:1, fillColor:'#aaa', fillOpacity:.6};
+};
+
 // Audit layer — color by severity bucket
 const SEV_COLOR = {
   severe:     '#dc2626',
@@ -288,8 +314,8 @@ async function loadGeo(url){
 }
 
 async function init(){
-  // Polygons + water overlays + audit
-  const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit] = await Promise.all([
+  // Polygons + water overlays + audit + road-propagation
+  const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -307,7 +333,34 @@ async function init(){
     loadGeo('data/water_bodies.geojson').catch(()=>({features:[]})),
     loadGeo('data/waterways.geojson').catch(()=>({features:[]})),
     loadGeo('data/audit_centroid_discrepancy.geojson').catch(()=>({features:[]})),
+    loadGeo('data/road_propagation_lines.geojson').catch(()=>({features:[]})),
+    loadGeo('data/road_propagation_points.geojson').catch(()=>({features:[]})),
   ]);
+
+  // Road-propagation lines + points (single grouped layer for the toggle)
+  layers.propL = L.geoJSON(propL, {
+    style: PROP_STYLE,
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(`<b>${p.name||'?'}</b> · ${p.arrondissement||''}<br>`+
+                  `snap to road: ${p.snap_m} m · ${p.seg_count} segments · max ${p.max_dist_m} m`);
+    }
+  });
+  layers.propP = L.geoJSON(propP, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, PROP_POINT_STYLE(f)),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      const k = p.kind;
+      let body;
+      if (k === 'chef_lieu')   body = `<b>${p.name}</b><br>${p.arrondissement||''}<br>chef-lieu · snapped: ${p.snapped} (${p.snap_m} m)`;
+      else if (k === 'collision') body = `<b>collision</b><br>${(p.between||[]).join(' ↔ ')}`;
+      else if (k === 'water_stop') body = `<b>major water stop</b><br>stopped: ${p.stopped}`;
+      else if (k === 'end_stop')   body = `<b>end of 100 m</b><br>stopped: ${p.stopped}`;
+      else body = JSON.stringify(p);
+      l.bindPopup(body);
+    }
+  });
+  layers.prop = L.layerGroup([layers.propL, layers.propP]);
 
   layers.audit = L.geoJSON(audit, {
     style: AUDIT_STYLE,
@@ -410,6 +463,7 @@ async function init(){
   if(document.getElementById('t-wbod').checked) layers.wbod.addTo(map);
   if(document.getElementById('t-wway').checked) layers.wway.addTo(map);
   if(document.getElementById('t-c50').checked) layers.c50.addTo(map);
+  if(document.getElementById('t-prop').checked) layers.prop.addTo(map);
   if(document.getElementById('t-v2').checked) layers.v2.addTo(map);
   if(document.getElementById('t-v3').checked) layers.v3.addTo(map);
   if(document.getElementById('t-disp').checked) layers.disp.addTo(map);
@@ -428,6 +482,7 @@ async function init(){
   bind('t-arr', layers.arr); bind('t-ign', layers.ign); bind('t-amen', layers.amen);
   bind('t-wbod', layers.wbod); bind('t-wway', layers.wway);
   bind('t-audit', layers.audit);
+  bind('t-prop', layers.prop);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
@@ -469,6 +524,15 @@ async function init(){
   wireWater('op-wbod', layers.wbod, WATER_BODY_STYLE);
   wireWater('op-wway', layers.wway, WATERWAY_STYLE);
   wireWater('op-audit', layers.audit, AUDIT_STYLE);
+  // Road-propagation opacity (apply to line layer only; points stay sharp)
+  const opProp = document.getElementById('op-prop');
+  opProp.oninput = () => {
+    const op = opProp.value / 80;
+    layers.propL.eachLayer(l => {
+      const base = PROP_STYLE(l.feature);
+      l.setStyle({opacity: (base.opacity||0.85) * Math.min(1, op*1.3)});
+    });
+  };
 
   // Fit to v3 (the richest)
   map.fitBounds(layers.v3.getBounds(), {padding:[20,20]});
