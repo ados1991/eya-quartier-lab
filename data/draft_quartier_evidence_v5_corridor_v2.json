@@ -1,0 +1,2304 @@
+{
+ "cotonou_avotrou_aimonlonfide": {
+  "name": "AVOTROU AIMONLONFIDE",
+  "cellCount": 81,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_avotrou_houezekome": {
+  "name": "AVOTROU HOUEZEKOME",
+  "cellCount": 73,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_dandji": {
+  "name": "DANDJI",
+  "cellCount": 79,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_dandji_hokanme": {
+  "name": "DANDJI HOKANME",
+  "cellCount": 405,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_finagnon": {
+  "name": "FINAGNON",
+  "cellCount": 77,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_tokplegbe": {
+  "name": "TOKPLEGBE",
+  "cellCount": 1003,
+  "ignSeeds": 1,
+  "poiSeeds": 6,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_suru_lere": {
+  "name": "SURU-LERE",
+  "cellCount": 187,
+  "ignSeeds": 1,
+  "poiSeeds": 5,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_tanto": {
+  "name": "TANTO",
+  "cellCount": 106,
+  "ignSeeds": 1,
+  "poiSeeds": 4,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_yagbe": {
+  "name": "YAGBE",
+  "cellCount": 62,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_irede": {
+  "name": "IREDE",
+  "cellCount": 102,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_kowegbo": {
+  "name": "KOWEGBO",
+  "cellCount": 6,
+  "ignSeeds": 0,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_gankpodo": {
+  "name": "GANKPODO",
+  "cellCount": 332,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_kpondehou": {
+  "name": "KPONDEHOU",
+  "cellCount": 64,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_minontchou": {
+  "name": "MINONTCHOU",
+  "cellCount": 225,
+  "ignSeeds": 1,
+  "poiSeeds": 5,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_yenawa": {
+  "name": "YENAWA",
+  "cellCount": 344,
+  "ignSeeds": 0,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_yenawa_daho": {
+  "name": "YENAWA DAHO",
+  "cellCount": 1194,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_adjegounle": {
+  "name": "ADJEGOUNLE",
+  "cellCount": 30,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_adogleta": {
+  "name": "ADOGLETA",
+  "cellCount": 37,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "4": "-1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_gbenonkpo_3eme_arrondissement": {
+  "name": "GBENONKPO",
+  "cellCount": 13,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_midombo": {
+  "name": "MIDOMBO",
+  "cellCount": 41,
+  "ignSeeds": 0,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_agbato": {
+  "name": "AGBATO",
+  "cellCount": 335,
+  "ignSeeds": 1,
+  "poiSeeds": 4,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_ayelawadje": {
+  "name": "AYELAWADJE",
+  "cellCount": 82,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_fifatin": {
+  "name": "FIFATIN",
+  "cellCount": 22,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_enagnon": {
+  "name": "ENAGNON",
+  "cellCount": 111,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_fifadji_houto": {
+  "name": "FIFADJI HOUTO",
+  "cellCount": 112,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_sodjatinme_centre": {
+  "name": "SODJATINME CENTRE",
+  "cellCount": 45,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_sodjatinme_ouest": {
+  "name": "SODJATINME OUEST",
+  "cellCount": 14,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_abokicodji_centre": {
+  "name": "ABOKICODJI CENTRE",
+  "cellCount": 19,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_abokicodji_lagune": {
+  "name": "ABOKICODJI LAGUNE",
+  "cellCount": 40,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {
+   "4": "-1"
+  },
+  "confidence": "medium"
+ },
+ "cotonou_dedokpo": {
+  "name": "DEDOKPO",
+  "cellCount": 17,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {
+   "4": "-1"
+  },
+  "confidence": "high"
+ },
+ "cotonou_gbedjewin": {
+  "name": "GBEDJEWIN",
+  "cellCount": 14,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_missessin": {
+  "name": "MISSESSIN",
+  "cellCount": 12,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_ohe": {
+  "name": "OHE",
+  "cellCount": 38,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_guinkomey": {
+  "name": "GUINKOMEY",
+  "cellCount": 42,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_tokpa_hoho": {
+  "name": "TOKPA HOHO",
+  "cellCount": 36,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "4": "1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_xwlacodji_kpodji": {
+  "name": "XWLACODJI KPODJI",
+  "cellCount": 46,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_xwlacodji_plage": {
+  "name": "XWLACODJI PLAGE",
+  "cellCount": 19,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "46": "1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_dota": {
+  "name": "DOTA",
+  "cellCount": 11,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_gbeto": {
+  "name": "GBETO",
+  "cellCount": 52,
+  "ignSeeds": 1,
+  "poiSeeds": 15,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_mifongou": {
+  "name": "MIFONGOU",
+  "cellCount": 16,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_zongo_ehuzu": {
+  "name": "ZONGO EHUZU",
+  "cellCount": 140,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_zongo_nima": {
+  "name": "ZONGO NIMA",
+  "cellCount": 34,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_bocossi_tokpa": {
+  "name": "BOCOSSI TOKPA",
+  "cellCount": 20,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "4": "1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_gbedokpo": {
+  "name": "GBEDOKPO",
+  "cellCount": 14,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_missebo": {
+  "name": "MISSEBO",
+  "cellCount": 38,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {
+   "4": "1"
+  },
+  "confidence": "high"
+ },
+ "cotonou_missite_5eme_arrondissement": {
+  "name": "MISSITE",
+  "cellCount": 14,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_nouveau_pont": {
+  "name": "NOUVEAU PONT",
+  "cellCount": 21,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_aidjedo": {
+  "name": "AIDJEDO",
+  "cellCount": 162,
+  "ignSeeds": 1,
+  "poiSeeds": 6,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_aidjedo_gbego": {
+  "name": "AIDJEDO GBEGO",
+  "cellCount": 25,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_aidjedo_vignon": {
+  "name": "AIDJEDO VIGNON",
+  "cellCount": 8,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_gbedjromede": {
+  "name": "GBEDJROMEDE",
+  "cellCount": 76,
+  "ignSeeds": 0,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_dantokpa": {
+  "name": "DANTOKPA",
+  "cellCount": 46,
+  "ignSeeds": 1,
+  "poiSeeds": 6,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_jericho_sud": {
+  "name": "JERICHO SUD",
+  "cellCount": 26,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_vossa": {
+  "name": "VOSSA",
+  "cellCount": 38,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {
+   "47": "-1"
+  },
+  "confidence": "medium"
+ },
+ "cotonou_djidje": {
+  "name": "DJIDJE",
+  "cellCount": 25,
+  "ignSeeds": 0,
+  "poiSeeds": 4,
+  "seedNudged": false,
+  "homeSide": {
+   "4": "1"
+  },
+  "confidence": "high"
+ },
+ "cotonou_djidje_aichedji": {
+  "name": "DJIDJE AICHEDJI",
+  "cellCount": 21,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "4": "1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_gbedomidji": {
+  "name": "GBEDOMIDJI",
+  "cellCount": 14,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_sedami": {
+  "name": "SEDAMI",
+  "cellCount": 37,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_sedjro_saint_michel": {
+  "name": "SEDJRO SAINT MICHEL",
+  "cellCount": 19,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_todote": {
+  "name": "TODOTE",
+  "cellCount": 37,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_yevedo": {
+  "name": "YEVEDO",
+  "cellCount": 34,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_dagbedji_sike": {
+  "name": "DAGBEDJI-SIKE",
+  "cellCount": 23,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_enagnon_sike": {
+  "name": "ENAGNON-SIKE",
+  "cellCount": 20,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_fignon_sike": {
+  "name": "FIGNON-SIKE",
+  "cellCount": 34,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_agontinkon": {
+  "name": "AGONTINKON",
+  "cellCount": 43,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_gbedagba": {
+  "name": "GBEDAGBA",
+  "cellCount": 57,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_houehoun": {
+  "name": "HOUEHOUN",
+  "cellCount": 24,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_houenoussou_ste_rita": {
+  "name": "HOUENOUSSOU Ste RITA",
+  "cellCount": 19,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_mededjro": {
+  "name": "MEDEDJRO",
+  "cellCount": 30,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {
+   "3": "1",
+   "47": "1"
+  },
+  "confidence": "medium"
+ },
+ "cotonou_tonato": {
+  "name": "TONATO",
+  "cellCount": 58,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_minonkpo_wologuede": {
+  "name": "MINONKPO WOLOGUEDE",
+  "cellCount": 31,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_fifadji": {
+  "name": "FIFADJI",
+  "cellCount": 85,
+  "ignSeeds": 1,
+  "poiSeeds": 5,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_kindonou": {
+  "name": "KINDONOU",
+  "cellCount": 202,
+  "ignSeeds": 1,
+  "poiSeeds": 6,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_menontin": {
+  "name": "MENONTIN",
+  "cellCount": 304,
+  "ignSeeds": 1,
+  "poiSeeds": 17,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_vossa_kpodji": {
+  "name": "VOSSA-KPODJI",
+  "cellCount": 19,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_zogbo": {
+  "name": "ZOGBO",
+  "cellCount": 1200,
+  "ignSeeds": 1,
+  "poiSeeds": 17,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_zogbohoue": {
+  "name": "ZOGBOHOUE",
+  "cellCount": 73,
+  "ignSeeds": 1,
+  "poiSeeds": 8,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_agounvocodji": {
+  "name": "AGOUNVOCODJI",
+  "cellCount": 35,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_gbenonkpo_10eme_arrondissement": {
+  "name": "GBENONKPO",
+  "cellCount": 12,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "40": "-1",
+   "41": "1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_kouhounou": {
+  "name": "KOUHOUNOU",
+  "cellCount": 77,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_midedji": {
+  "name": "MIDEDJI",
+  "cellCount": 29,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "41": "1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_missekple": {
+  "name": "MISSEKPLE",
+  "cellCount": 47,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "47": "1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_missogbe": {
+  "name": "MISSOGBE",
+  "cellCount": 19,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_setovi": {
+  "name": "SETOVI",
+  "cellCount": 37,
+  "ignSeeds": 1,
+  "poiSeeds": 4,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_vedoko": {
+  "name": "VEDOKO",
+  "cellCount": 102,
+  "ignSeeds": 1,
+  "poiSeeds": 17,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_yenawa_fifadji": {
+  "name": "YENAWA-FIFADJI",
+  "cellCount": 16,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": true,
+  "homeSide": {
+   "40": "-1",
+   "41": "-1",
+   "47": "-1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_gbediga_guedehoungue": {
+  "name": "GBEDIGA GUEDEHOUNGUE",
+  "cellCount": 59,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_gbegamey_ahito": {
+  "name": "GBEGAMEY AHITO",
+  "cellCount": 46,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_gbegamey_dodo_ayidje": {
+  "name": "GBEGAMEY DODO AYIDJE",
+  "cellCount": 20,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_gbegamey_gbagoudo": {
+  "name": "GBEGAMEY GBAGOUDO",
+  "cellCount": 26,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_vodje_allobatin": {
+  "name": "VODJE ALLOBATIN",
+  "cellCount": 18,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_vodje_ayidote": {
+  "name": "VODJE AYIDOTE",
+  "cellCount": 18,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_vodje_finagnon": {
+  "name": "VODJE FINAGNON",
+  "cellCount": 9,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_houeyiho_tanou": {
+  "name": "HOUEYIHO TANOU",
+  "cellCount": 44,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_vodje_centre": {
+  "name": "VODJE CENTRE",
+  "cellCount": 23,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_aibatin_dodo": {
+  "name": "AIBATIN DODO",
+  "cellCount": 35,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_cadjehoun_agonga": {
+  "name": "CADJEHOUN AGONGA",
+  "cellCount": 116,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_fidjrosse_centre": {
+  "name": "FIDJROSSE CENTRE",
+  "cellCount": 95,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "28": "1"
+  },
+  "confidence": "low"
+ },
+ "cotonou_fiyegnon_houta": {
+  "name": "FIYEGNON HOUTA",
+  "cellCount": 140,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_fiyegnon_jacquot": {
+  "name": "FIYEGNON JACQUOT",
+  "cellCount": 149,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_ahouanleko": {
+  "name": "AHOUANLEKO",
+  "cellCount": 2913,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_cadjehoun_aupiais": {
+  "name": "CADJEHOUN AUPIAIS",
+  "cellCount": 36,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_cadjehoun_azalokogon": {
+  "name": "CADJEHOUN AZALOKOGON",
+  "cellCount": 25,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_cadjehoun_detinsa": {
+  "name": "CADJEHOUN DETINSA",
+  "cellCount": 9,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_cadjehoun_gare": {
+  "name": "CADJEHOUN GARE",
+  "cellCount": 30,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_cadjehoun_kpota": {
+  "name": "CADJEHOUN KPOTA",
+  "cellCount": 23,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_gbodjetin": {
+  "name": "GBODJETIN",
+  "cellCount": 150,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_haie_vive": {
+  "name": "HAIE VIVE",
+  "cellCount": 291,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_hlazounto": {
+  "name": "HLAZOUNTO",
+  "cellCount": 198,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_vodje_kpota": {
+  "name": "VODJE KPOTA",
+  "cellCount": 18,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_yemicodji": {
+  "name": "YEMICODJI",
+  "cellCount": 259,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_adjaha_cite": {
+  "name": "ADJAHA-CITE",
+  "cellCount": 109,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {
+   "28": "-1"
+  },
+  "confidence": "medium"
+ },
+ "cotonou_agla_agongbomey": {
+  "name": "AGLA-AGONGBOMEY",
+  "cellCount": 73,
+  "ignSeeds": 0,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_agla_akplomey": {
+  "name": "AGLA-AKPLOMEY",
+  "cellCount": 42,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {
+   "49": "-1"
+  },
+  "confidence": "medium"
+ },
+ "cotonou_agla_figaro": {
+  "name": "AGLA-FIGARO",
+  "cellCount": 70,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_agla_finafa": {
+  "name": "AGLA-FINAFA",
+  "cellCount": 65,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_agla_les_pylones": {
+  "name": "AGLA-LES PYLONES",
+  "cellCount": 55,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_agla_petit_chateau": {
+  "name": "AGLA-PETIT CHÂTEAU",
+  "cellCount": 31,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_aibatin_kpota": {
+  "name": "AIBATIN KPOTA",
+  "cellCount": 26,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "cotonou_gbedegbe": {
+  "name": "GBEDEGBE",
+  "cellCount": 64,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_houenoussou": {
+  "name": "HOUENOUSSOU",
+  "cellCount": 78,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "cotonou_missite_13eme_arrondissement": {
+  "name": "MISSITE",
+  "cellCount": 31,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_agamandin": {
+  "name": "AGAMANDIN",
+  "cellCount": 2348,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_agori": {
+  "name": "AGORI",
+  "cellCount": 163,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_aifa": {
+  "name": "AÎFA",
+  "cellCount": 335,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_aitchedji": {
+  "name": "AÎTCHEDJI",
+  "cellCount": 270,
+  "ignSeeds": 1,
+  "poiSeeds": 7,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_aledjo": {
+  "name": "ALEDJO",
+  "cellCount": 125,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_cite_la_victoire": {
+  "name": "CITE LA VICTOIRE",
+  "cellCount": 100,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_cite_les_palmiers": {
+  "name": "CITE LES PALMIERS",
+  "cellCount": 205,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_fandji_abomey_calavi": {
+  "name": "FANDJI",
+  "cellCount": 229,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_finafa_abomey_calavi": {
+  "name": "FINAFA",
+  "cellCount": 102,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_gbodjo": {
+  "name": "GBODJO",
+  "cellCount": 592,
+  "ignSeeds": 1,
+  "poiSeeds": 5,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_seme": {
+  "name": "SEME",
+  "cellCount": 185,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_tankpe_abomey_calavi": {
+  "name": "TANKPE",
+  "cellCount": 199,
+  "ignSeeds": 1,
+  "poiSeeds": 10,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_tchinangbegbo": {
+  "name": "TCHINANGBEGBO",
+  "cellCount": 97,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_tokpa_zoungo": {
+  "name": "TOKPA ZOUNGO",
+  "cellCount": 138,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_tokpa_zoungo_nord": {
+  "name": "TOKPA-ZOUNGO NORD",
+  "cellCount": 60,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_zogbadje": {
+  "name": "ZOGBADJE",
+  "cellCount": 308,
+  "ignSeeds": 1,
+  "poiSeeds": 26,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_zopah": {
+  "name": "ZOPAH",
+  "cellCount": 506,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_zoundja": {
+  "name": "ZOUNDJA",
+  "cellCount": 972,
+  "ignSeeds": 1,
+  "poiSeeds": 4,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_agassa_godomey": {
+  "name": "AGASSA GODOMEY",
+  "cellCount": 715,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_agonme": {
+  "name": "AGONME",
+  "cellCount": 259,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_agonsoudja": {
+  "name": "AGONSOUDJA",
+  "cellCount": 222,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_akassato_centre": {
+  "name": "AKASSATO CENTRE",
+  "cellCount": 1474,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_gbetagbo": {
+  "name": "GBETAGBO",
+  "cellCount": 409,
+  "ignSeeds": 1,
+  "poiSeeds": 5,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_glo_tokpa": {
+  "name": "GLO-TOKPA",
+  "cellCount": 832,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_houeke_gbo": {
+  "name": "HOUEKE-GBO",
+  "cellCount": 274,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_houeke_honou": {
+  "name": "HOUEKE-HONOU",
+  "cellCount": 283,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_koletin": {
+  "name": "KOLETIN",
+  "cellCount": 374,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_kpodji_les_monts": {
+  "name": "KPODJI-LES-MONTS",
+  "cellCount": 1236,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_missessinto": {
+  "name": "MISSESSINTO",
+  "cellCount": 417,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_zekanmey_dome": {
+  "name": "ZEKANMEY-DOME",
+  "cellCount": 489,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_abikouholi": {
+  "name": "ABIKOUHOLI",
+  "cellCount": 87,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_agbo_codji_sedegbe": {
+  "name": "AGBO-CODJI-SEDEGBE",
+  "cellCount": 98,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_aimevo": {
+  "name": "AÏMEVO",
+  "cellCount": 45,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_alegleta": {
+  "name": "ALEGLETA",
+  "cellCount": 83,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_assrossa": {
+  "name": "ASSROSSA",
+  "cellCount": 107,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_atrokpo_codji": {
+  "name": "ATROKPO-CODJI",
+  "cellCount": 141,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_cococodji": {
+  "name": "COCOCODJI",
+  "cellCount": 2609,
+  "ignSeeds": 1,
+  "poiSeeds": 12,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_cocotomey": {
+  "name": "COCOTOMEY",
+  "cellCount": 253,
+  "ignSeeds": 1,
+  "poiSeeds": 13,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_dekoungbe_eglise": {
+  "name": "DEKOUNGBE-EGLISE",
+  "cellCount": 72,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_dekoungbe_usine": {
+  "name": "DEKOUNGBE-USINE",
+  "cellCount": 84,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_denou": {
+  "name": "DENOU",
+  "cellCount": 95,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_djekpota": {
+  "name": "DJEKPOTA",
+  "cellCount": 3892,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_djoukpa_togoudo": {
+  "name": "DJOUKPA TOGOUDO",
+  "cellCount": 85,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_fandji_godomey": {
+  "name": "FANDJI",
+  "cellCount": 28,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_fignonhou": {
+  "name": "FIGNONHOU",
+  "cellCount": 116,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_finafa_godomey": {
+  "name": "FINAFA",
+  "cellCount": 57,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {
+   "48": "-1"
+  },
+  "confidence": "medium"
+ },
+ "abomey_calavi_ganganzounme": {
+  "name": "GANGANZOUNME",
+  "cellCount": 174,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_gbegnigan_midokpo": {
+  "name": "GBEGNIGAN-MIDOKPO",
+  "cellCount": 145,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_gbodje_womey": {
+  "name": "GBODJE-WOMEY",
+  "cellCount": 234,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_gninkindji": {
+  "name": "GNINKINDJI",
+  "cellCount": 49,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_godomey_togoudo": {
+  "name": "GODOMEY-TOGOUDO",
+  "cellCount": 26,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "1": "-1",
+   "7": "-1"
+  },
+  "confidence": "low"
+ },
+ "abomey_calavi_hedome": {
+  "name": "HEDOME",
+  "cellCount": 113,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_hounsa_agbodokpa": {
+  "name": "HOUNSA-AGBODOKPA",
+  "cellCount": 103,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_la_paix": {
+  "name": "LA PAIX",
+  "cellCount": 121,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_maria_gleta": {
+  "name": "MARIA-GLETA",
+  "cellCount": 570,
+  "ignSeeds": 1,
+  "poiSeeds": 13,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_ningboto": {
+  "name": "NINGBOTO",
+  "cellCount": 96,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_nonhouenou": {
+  "name": "NONHOUENOU",
+  "cellCount": 52,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "1": "1",
+   "7": "1"
+  },
+  "confidence": "low"
+ },
+ "abomey_calavi_ounvenoumede": {
+  "name": "OUNVENOUMEDE",
+  "cellCount": 116,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_plateau": {
+  "name": "PLATEAU",
+  "cellCount": 59,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_salamey": {
+  "name": "SALAMEY",
+  "cellCount": 32,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_sedomey": {
+  "name": "SEDOMEY",
+  "cellCount": 63,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_tankpe_godomey": {
+  "name": "TANKPE",
+  "cellCount": 86,
+  "ignSeeds": 1,
+  "poiSeeds": 11,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_togbin_daho": {
+  "name": "TOGBIN-DAHO",
+  "cellCount": 555,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_togbin_fandji": {
+  "name": "TOGBIN-FANDJI",
+  "cellCount": 177,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_togbin_kpevi": {
+  "name": "TOGBIN-KPEVI",
+  "cellCount": 29,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_tokpa": {
+  "name": "TOKPA",
+  "cellCount": 141,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_womey_centre": {
+  "name": "WOMEY-CENTRE",
+  "cellCount": 249,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_yenandjro": {
+  "name": "YENANDJRO",
+  "cellCount": 98,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_yolomahouto": {
+  "name": "YOLOMAHOUTO",
+  "cellCount": 35,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_zounga": {
+  "name": "ZOUNGA",
+  "cellCount": 122,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_adjame": {
+  "name": "ADJAME",
+  "cellCount": 1372,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_agongbe": {
+  "name": "AGONGBE",
+  "cellCount": 843,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_agonkessa": {
+  "name": "AGONKESSA",
+  "cellCount": 337,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_alladacome": {
+  "name": "ALLADACOME",
+  "cellCount": 1995,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_azonsa": {
+  "name": "AZONSA",
+  "cellCount": 176,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_djissoukpa": {
+  "name": "DJISSOUKPA",
+  "cellCount": 6357,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_domey_gbo": {
+  "name": "DOMEY-GBO",
+  "cellCount": 460,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_lohoussa": {
+  "name": "LOHOUSSA",
+  "cellCount": 260,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_yekon_do": {
+  "name": "YEKON-DO",
+  "cellCount": 326,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_yekon_aga": {
+  "name": "YEKON-AGA",
+  "cellCount": 128,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_zekanmey": {
+  "name": "ZEKANMEY",
+  "cellCount": 262,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_adovie": {
+  "name": "ADOVIE",
+  "cellCount": 524,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_sogan": {
+  "name": "SOGAN",
+  "cellCount": 371,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_akossavie": {
+  "name": "AKOSSAVIE",
+  "cellCount": 392,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_dossounou": {
+  "name": "DOSSOUNOU",
+  "cellCount": 2713,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_hevie_centre": {
+  "name": "HEVIE-CENTRE",
+  "cellCount": 720,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_houinme": {
+  "name": "HOUINME",
+  "cellCount": 1817,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_hounzevie": {
+  "name": "HOUNZEVIE",
+  "cellCount": 423,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_zoungo": {
+  "name": "ZOUNGO",
+  "cellCount": 323,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_anagbo": {
+  "name": "ANAGBO",
+  "cellCount": 22390,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_avagbe": {
+  "name": "AVAGBE",
+  "cellCount": 1710,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_bozoun": {
+  "name": "BOZOUN",
+  "cellCount": 3033,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_djigbo": {
+  "name": "DJIGBO",
+  "cellCount": 9223,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_hadjanaho": {
+  "name": "HADJANAHO",
+  "cellCount": 666,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_kpanroun": {
+  "name": "KPANROUN",
+  "cellCount": 578,
+  "ignSeeds": 1,
+  "poiSeeds": 5,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_kpaviedja": {
+  "name": "KPAVIEDJA",
+  "cellCount": 1473,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_kpe": {
+  "name": "KPE",
+  "cellCount": 698,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_adjagbo": {
+  "name": "ADJAGBO",
+  "cellCount": 1026,
+  "ignSeeds": 1,
+  "poiSeeds": 4,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_dessato": {
+  "name": "DESSATO",
+  "cellCount": 477,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_ahouato": {
+  "name": "AHOUATO",
+  "cellCount": 661,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_adjagbo_aidjedo": {
+  "name": "ADJAGBO-AÏDJEDO",
+  "cellCount": 253,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_dassekomey": {
+  "name": "DASSEKOMEY",
+  "cellCount": 4308,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_ouedo_centre": {
+  "name": "OUEDO-CENTRE",
+  "cellCount": 559,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_ahossougbeta": {
+  "name": "AHOSSOUGBETA",
+  "cellCount": 311,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_drabo": {
+  "name": "DRABO",
+  "cellCount": 1566,
+  "ignSeeds": 1,
+  "poiSeeds": 5,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_fifonsi": {
+  "name": "FIFONSI",
+  "cellCount": 203,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_houeto": {
+  "name": "HOUETO",
+  "cellCount": 363,
+  "ignSeeds": 1,
+  "poiSeeds": 19,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_ouega_ague": {
+  "name": "OUEGA-AGUE",
+  "cellCount": 471,
+  "ignSeeds": 1,
+  "poiSeeds": 3,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_ouega_tokpa": {
+  "name": "OUEGA-TOKPA",
+  "cellCount": 325,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_some": {
+  "name": "SOME",
+  "cellCount": 491,
+  "ignSeeds": 1,
+  "poiSeeds": 2,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_tankpe_togba": {
+  "name": "TANKPE",
+  "cellCount": 230,
+  "ignSeeds": 1,
+  "poiSeeds": 27,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_togba_maria_gleta": {
+  "name": "TOGBA MARIA GLETA",
+  "cellCount": 338,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_tokan": {
+  "name": "TOKAN",
+  "cellCount": 239,
+  "ignSeeds": 1,
+  "poiSeeds": 16,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_adjogansa": {
+  "name": "ADJOGANSA",
+  "cellCount": 377,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_dangbodji": {
+  "name": "DANGBODJI",
+  "cellCount": 615,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_dokomey": {
+  "name": "DOKOMEY",
+  "cellCount": 512,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_gbodje": {
+  "name": "GBODJE",
+  "cellCount": 45,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {
+   "10": "1"
+  },
+  "confidence": "medium"
+ },
+ "abomey_calavi_gbodjoko": {
+  "name": "GBODJOKO",
+  "cellCount": 250,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_houegoudo": {
+  "name": "HOUEGOUDO",
+  "cellCount": 478,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_kpotomey": {
+  "name": "KPOTOMEY",
+  "cellCount": 746,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_sokan": {
+  "name": "SOKAN",
+  "cellCount": 414,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_wawata": {
+  "name": "WAWATA",
+  "cellCount": 207,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {
+   "51": "1"
+  },
+  "confidence": "low"
+ },
+ "abomey_calavi_wawata_todja": {
+  "name": "WAWATA-TODJA",
+  "cellCount": 9544,
+  "ignSeeds": 1,
+  "poiSeeds": 0,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "low"
+ },
+ "abomey_calavi_yevie": {
+  "name": "YEVIE",
+  "cellCount": 1792,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_yevie_nougo": {
+  "name": "YEVIE-NOUGO",
+  "cellCount": 267,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_zinvie_agoledji": {
+  "name": "ZINVIE-AGOLEDJI",
+  "cellCount": 446,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_zinvie_fandji": {
+  "name": "ZINVIE-FANDJI",
+  "cellCount": 365,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ },
+ "abomey_calavi_zinvie_zounme": {
+  "name": "ZINVIE-ZOUNME",
+  "cellCount": 317,
+  "ignSeeds": 1,
+  "poiSeeds": 1,
+  "seedNudged": false,
+  "homeSide": {},
+  "confidence": "medium"
+ }
+}
