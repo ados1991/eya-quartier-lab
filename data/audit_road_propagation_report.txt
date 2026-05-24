@@ -1,0 +1,72 @@
+road-propagation validation audit
+======================================================================
+MAX_DIST_M=100, merge_radius=15.0, dual_radius=40
+chef-lieus: 311
+
+bucket distribution:
+  GOOD              179  ( 57.6 %)
+  PARTIAL            96  ( 30.9 %)
+  BROKEN              3  (  1.0 %)
+  OFF_ROAD            2  (  0.6 %)
+  OSM_DATA_LIMIT     31  ( 10.0 %)
+
+BROKEN cases (coverage < 40 % despite augmentations): 3
+  name                     arr                    snap(m) near vis miss   cov edge  comp
+  Ahogbohoué-Cité-Eucharis 13ème Arrondissement      49.5    6   2    4  33.3    1 90087
+  Djèkpota                 Godomey                   15.2    9   3    6  33.3    3 90087
+  Tankpê-Yoho              Abomey-Calavi             18.0   11   4    7  36.4    2 90087
+
+PARTIAL (worst 15):
+  Houéyihô                 11ème Arrondissement   cov= 40.0% miss=6 near=10
+  Zongo-Nima               5ème Arrondissement    cov= 46.7% miss=8 near=15
+  Ahouansori-Towéta        6ème Arrondissement    cov= 50.0% miss=2 near=4
+  Aïdégnon
+                Togba                  cov= 50.0% miss=5 near=10
+  Houénoussou-Sainte-Rita  8ème Arrondissement    cov= 54.5% miss=5 near=11
+  Gbégamey-Mifongou        11ème Arrondissement   cov= 54.5% miss=5 near=11
+  Houéyihô-Tannou          11ème Arrondissement   cov= 55.6% miss=4 near=9
+  Sèdami                   7ème Arrondissement    cov= 57.1% miss=3 near=7
+  Aïmèvo
+                  Godomey                cov= 57.1% miss=3 near=7
+  Sèmè                     Abomey-Calavi          cov= 57.1% miss=3 near=7
+  Hlazounto                12ème Arrondissement   cov= 60.0% miss=4 near=10
+  Wawata                   Zinvié                 cov= 60.0% miss=2 near=5
+  Nvènamèdé                1er Arrondissement     cov= 60.0% miss=5 near=10
+  Kouhounou                10ème Arrondissement   cov= 61.5% miss=5 near=13
+  Godomey-Togoudo          Godomey                cov= 63.6% miss=4 near=11
+
+OFF_ROAD (2 cases):
+  Ahowégodo                Kpanroun               snap=174.4 m
+  Gbodjè                   Zinvié                 snap=None m
+
+OSM_DATA_LIMIT (31 cases, top 10 by 'near_ways' ASC):
+  Espace-Saint             Golo-Djigbé            near=1 snap=10.8 m
+  Dokomè                   Zinvié                 near=1 snap=91.5 m
+  Zinvié-Agolèdji          Zinvié                 near=2 snap=4.9 m
+  Djissoukpa               Golo-Djigbé            near=2 snap=8.7 m
+  Zèkanmey-Domè            Akassato               near=2 snap=4.9 m
+  Agbatô                   3ème Arrondissement    near=2 snap=90.0 m
+  Hounzévié
+               Hêvié                  near=2 snap=10.4 m
+  Houégoudo
+               Zinvié                 near=2 snap=5.3 m
+  Djigbo                   Kpanroun               near=2 snap=11.1 m
+  Kpanroun                 Kpanroun               near=2 snap=2.5 m
+
+per-arrondissement (worst by BROKEN+PARTIAL count):
+  commune / arrondissement                         GOOD PART BROK OFF OSM
+  ABOMEY-CALAVI / Godomey                            25   21    1   0   0
+  ABOMEY-CALAVI / Abomey-Calavi                       8   10    1   0   0
+  COTONOU / 6ème Arrondissement                      11    8    0   0   0
+  COTONOU / 1er Arrondissement                        6    7    0   0   0
+  COTONOU / 12ème Arrondissement                     12    6    0   0   0
+  COTONOU / 11ème Arrondissement                      7    6    0   0   0
+  COTONOU / 2ème Arrondissement                       9    4    0   0   0
+  COTONOU / 3ème Arrondissement                       8    4    0   0   1
+  COTONOU / 7ème Arrondissement                       8    3    0   0   0
+  COTONOU / 5ème Arrondissement                      11    3    0   0   1
+  ABOMEY-CALAVI / Togba                               5    3    0   0   2
+  COTONOU / 4ème Arrondissement                       8    3    0   0   1
+  COTONOU / 13ème Arrondissement                     10    2    1   0   1
+  ABOMEY-CALAVI / Zinvié                              7    3    0   1   4
+  COTONOU / 9ème Arrondissement                       2    3    0   0   1
