@@ -69,6 +69,12 @@
 
   <h2>Polygon versions</h2>
 
+  <div class="lay" style="background:#eff6ff;border-color:#bfdbfe">
+    <label class="lay-hdr"><input type="checkbox" id="t-c50" checked><span class="lay-swatch" style="background:#2563eb"></span>circles 50 m (clean baseline)</label>
+    <div class="lay-meta">50 m radius disk around each IGN chef-lieu (311 centroids). No Dijkstra, no water mask, no POI seeding — pure geometric circles. Use this as the fresh starting point.</div>
+    <input type="range" min="0" max="100" value="55" id="op-c50" class="slider">
+  </div>
+
   <div class="lay">
     <label class="lay-hdr"><input type="checkbox" id="t-v1"><span class="lay-swatch" style="background:#94a3b8"></span>v1 — pure Voronoi (baseline)</label>
     <div class="lay-meta">Centroid-only nearest-seed partition. Ignores all topology.</div>
@@ -188,6 +194,7 @@ const V4_STYLE = {color:'#7c3aed',weight:1.5,fillColor:'#a78bfa',fillOpacity:.18
 const V5_STYLE = {color:'#c2410c',weight:1.5,fillColor:'#fb923c',fillOpacity:.20};
 const V5C_STYLE = {color:'#047857',weight:1.6,fillColor:'#10b981',fillOpacity:.22};
 const V5C2_STYLE = {color:'#854d0e',weight:1.8,fillColor:'#ca8a04',fillOpacity:.22};
+const C50_STYLE = {color:'#1d4ed8',weight:1.4,fillColor:'#3b82f6',fillOpacity:.35};
 const USER_STYLE = {color:'#0b1f3b',weight:2.5,fillColor:'#fde68a',fillOpacity:.40};
 const DISP_STYLE = {color:'#b91c1c',weight:1.2,fillColor:'#fecaca',fillOpacity:.35,dashArray:'2,2'};
 
@@ -201,7 +208,8 @@ async function loadGeo(url){
 
 async function init(){
   // Polygons
-  const [v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev] = await Promise.all([
+  const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev] = await Promise.all([
+    loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
     loadGeo('data/draft_quartier_polygons_v3.geojson'),
@@ -217,6 +225,11 @@ async function init(){
     loadGeo('data/draft_quartier_evidence_v3.json').catch(()=>({})),
   ]);
 
+  layers.c50 = L.geoJSON(c50, {style: C50_STYLE,
+    onEachFeature: (f,l) => {
+      const p = f.properties;
+      l.bindPopup(`<b>${p.name||'?'}</b><br>${p.commune} · ${p.arrondissement}<br>radius: ${p.radius_m} m<br>code_geo: ${p.code_geo||'?'}`);
+    }});
   layers.v1 = L.geoJSON(v1, {style: V1_STYLE,
     onEachFeature: (f,l)=>l.bindPopup(popup(f.properties,'v1'))});
   layers.v2 = L.geoJSON(v2, {style: f => V2_STYLE_BY_CONF[f.properties.confidence] || V2_STYLE_BY_CONF.low,
@@ -273,6 +286,7 @@ async function init(){
   });
 
   // Default-add the ones the checkboxes say "checked"
+  if(document.getElementById('t-c50').checked) layers.c50.addTo(map);
   if(document.getElementById('t-v2').checked) layers.v2.addTo(map);
   if(document.getElementById('t-v3').checked) layers.v3.addTo(map);
   if(document.getElementById('t-disp').checked) layers.disp.addTo(map);
@@ -283,6 +297,7 @@ async function init(){
   const bind = (id, layer) => document.getElementById(id).onchange = e => {
     if(e.target.checked) layer.addTo(map); else map.removeLayer(layer);
   };
+  bind('t-c50', layers.c50);
   bind('t-v1', layers.v1); bind('t-v2', layers.v2); bind('t-v3', layers.v3);
   bind('t-v4', layers.v4); bind('t-v5', layers.v5);
   bind('t-v5c', layers.v5c); bind('t-v5c2', layers.v5c2); bind('t-user', layers.user);
@@ -309,6 +324,7 @@ async function init(){
   wireOp('op-v5', layers.v5, V5_STYLE);
   wireOp('op-v5c', layers.v5c, V5C_STYLE);
   wireOp('op-v5c2', layers.v5c2, V5C2_STYLE);
+  wireOp('op-c50', layers.c50, C50_STYLE);
   wireOp('op-user', layers.user, USER_STYLE);
   wireOp('op-disp', layers.disp, DISP_STYLE);
 
