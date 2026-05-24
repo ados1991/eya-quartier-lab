@@ -1,37 +1,24 @@
-road-propagation report  · MAX_DIST_M=100  SNAP=200
-======================================================================
-chef-lieus loaded             : 311
-chef-lieus snapped to a road  : 310
-chef-lieus with no road ≤200m : 1
-total propagation polylines   : 8161
-collision points              : 0
-water-stop points             : 1
-end-of-distance stops         : 3179
+road-propagation v2 report
+============================================================
+MAX_DIST_M               : 100
+SNAP_TO_ROAD_M           : 200
+NODE_MERGE_RADIUS_M      : 15.0
+ROAD_NEARBY_THRESHOLD_M  : 100
 
-Top 20 chef-lieus by total propagated metres:
-  name                       arr                       segs   tot_m
-  Agori                      Abomey-Calavi              104    1657
-  Dénou
-                     Godomey                     79    1434
-  Tokpa
-                     Godomey                     58    1374
-  La-Paix
-                   Godomey                     32    1175
-  Irédé                      2ème Arrondissement         32    1166
-  Nonhouénou
-                Godomey                     30    1151
-  Cadjèhoun-Détinsa          12ème Arrondissement        41    1137
-  Gbégamey-Gbagoudo          11ème Arrondissement       160    1128
-  Abokicodji-Centre          4ème Arrondissement         28    1108
-  Cococodji                  Godomey                     36    1105
-  Atrokpo-Codji              Godomey                     29    1104
-  Dandji-Hokanmè             1er Arrondissement         109    1096
-  Missogbé                   10ème Arrondissement       106    1095
-  Dandji                     1er Arrondissement         158    1090
-  Ounvènoumèdé
-              Godomey                     38    1088
-  Gbèdjromèdè-Nord           6ème Arrondissement         95    1086
-  Todoté                     7ème Arrondissement         37    1071
-  Fifatin                    3ème Arrondissement        130    1061
-  Ohé                        4ème Arrondissement        107    1046
-  Adovié                     Hêvié                       51    1023
+chef-lieus loaded         : 311
+chef-lieus off_road       : 2
+propagation polylines     : 6053
+collision points          : 0
+water-stop points         : 2
+end-of-distance stops     : 3442
+
+=== before/after (round-decimals → KDTree merge) ===
+metric                                         before      after
+graph nodes                                    152603      94192
+chef-lieus no road within 200 m                     1          1
+chef-lieus with ≤2 edges from snap                 69         25
+chef-lieus missing ≥1 nearby road                 166        175
+chef-lieus missing ≥3 nearby roads                 62         61
+total nearby ways                                2361       2361
+total visited ways                               2104       2288
+total MISSED ways                                 477        438
