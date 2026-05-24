@@ -1,0 +1,134 @@
+{
+  "total_quartiers": 311,
+  "bucket_counts": {
+    "no_data": 231,
+    "suspicious": 42,
+    "minor": 10,
+    "severe": 22,
+    "normal": 4,
+    "skipped_short_name": 2
+  },
+  "per_arrondissement": {
+    "COTONOU / 12ème Arrondissement": {
+      "no_data": 16,
+      "suspicious": 1,
+      "severe": 1
+    },
+    "COTONOU / 1er Arrondissement": {
+      "no_data": 8,
+      "minor": 2,
+      "suspicious": 2,
+      "normal": 1
+    },
+    "COTONOU / 2ème Arrondissement": {
+      "suspicious": 3,
+      "no_data": 9,
+      "normal": 1
+    },
+    "ABOMEY-CALAVI / Godomey": {
+      "no_data": 37,
+      "suspicious": 5,
+      "minor": 1,
+      "severe": 4
+    },
+    "COTONOU / 7ème Arrondissement": {
+      "no_data": 11
+    },
+    "COTONOU / 5ème Arrondissement": {
+      "suspicious": 2,
+      "no_data": 11,
+      "severe": 2
+    },
+    "COTONOU / 6ème Arrondissement": {
+      "no_data": 11,
+      "suspicious": 5,
+      "minor": 2,
+      "severe": 1
+    },
+    "ABOMEY-CALAVI / Togba": {
+      "no_data": 6,
+      "suspicious": 2,
+      "severe": 1,
+      "normal": 1
+    },
+    "COTONOU / 8ème Arrondissement": {
+      "no_data": 7,
+      "suspicious": 1
+    },
+    "ABOMEY-CALAVI / Hêvié": {
+      "no_data": 9
+    },
+    "ABOMEY-CALAVI / Abomey-Calavi": {
+      "no_data": 12,
+      "suspicious": 4,
+      "severe": 3
+    },
+    "COTONOU / 4ème Arrondissement": {
+      "no_data": 8,
+      "suspicious": 3,
+      "skipped_short_name": 1
+    },
+    "ABOMEY-CALAVI / Golo-Djigbé": {
+      "no_data": 13,
+      "suspicious": 1
+    },
+    "COTONOU / 13ème Arrondissement": {
+      "no_data": 9,
+      "severe": 3,
+      "suspicious": 1,
+      "minor": 1
+    },
+    "ABOMEY-CALAVI / Zinvié": {
+      "no_data": 15
+    },
+    "COTONOU / 9ème Arrondissement": {
+      "minor": 3,
+      "severe": 2,
+      "no_data": 1
+    },
+    "COTONOU / 11ème Arrondissement": {
+      "normal": 1,
+      "suspicious": 3,
+      "no_data": 9
+    },
+    "COTONOU / 10ème Arrondissement": {
+      "suspicious": 2,
+      "no_data": 7
+    },
+    "ABOMEY-CALAVI / Kpanroun": {
+      "no_data": 7,
+      "skipped_short_name": 1,
+      "suspicious": 1
+    },
+    "ABOMEY-CALAVI / Akassato": {
+      "no_data": 9,
+      "severe": 3,
+      "suspicious": 2
+    },
+    "COTONOU / 3ème Arrondissement": {
+      "no_data": 8,
+      "suspicious": 3,
+      "minor": 1,
+      "severe": 1
+    },
+    "ABOMEY-CALAVI / Ouèdo": {
+      "no_data": 6,
+      "suspicious": 1,
+      "severe": 1
+    },
+    "Abomey-Calavi / Togba": {
+      "no_data": 1
+    },
+    "Abomey-Calavi / Godomey": {
+      "no_data": 1
+    }
+  },
+  "thresholds": {
+    "normal": "<= 100 m",
+    "minor": "100–300 m",
+    "suspicious": "300–700 m",
+    "severe": "> 700 m",
+    "no_data": "no OSM name match",
+    "skipped_short_name": "IGN name < 4 chars"
+  }
+}

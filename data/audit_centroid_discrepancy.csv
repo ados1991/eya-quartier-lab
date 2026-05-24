@@ -1,0 +1,358 @@
+name,commune,arrondissement,code_geo,ign_lat,ign_lng,name_too_short,n_matches,n_clusters,cluster_lat,cluster_lng,distance_m,dispersion_m,confidence,severity,primary_cluster_size,sample_poi_names
+Fiyégnon-Houta,COTONOU,12ème Arrondissement,X427981Y702005,6.35059,2.348834,False,0,0,,,,,none,no_data,0,
+Dandji-Hokanmè,COTONOU,1er Arrondissement,X443050Y704011,6.36889,2.485058,False,0,0,,,,,none,no_data,0,
+Kowégbo,COTONOU,2ème Arrondissement,X440925Y705487,6.382226,2.465828,False,1,1,6.382724,2.462501,372.0,0.0,low,suspicious,1,Ecole Primaire Publique kowegbo
+"Ningboto
+",ABOMEY-CALAVI,Godomey,X426212Y704420,6.372419,2.332808,False,0,0,,,,,none,no_data,0,
+Hlazounto,COTONOU,12ème Arrondissement,X429473Y704010,6.368748,2.362304,False,0,0,,,,,none,no_data,0,
+Yévèdo,COTONOU,7ème Arrondissement,X435853Y703795,6.366872,2.419987,False,0,0,,,,,none,no_data,0,
+Nouveau-Pont,COTONOU,5ème Arrondissement,X437163Y703986,6.368611,2.431832,False,1,1,6.367043,2.435998,492.0,0.0,low,suspicious,1,Ecole primaire publique nouveau pont
+Hindé-Sud,COTONOU,6ème Arrondissement,X437380Y704684,6.374926,2.433785,False,0,0,,,,,none,no_data,0,
+Ouéga-Tokpa,ABOMEY-CALAVI,Togba,X423350Y715604,6.473549,2.3068,False,0,0,,,,,none,no_data,0,
+Tankpè-Togoudo,ABOMEY-CALAVI,Godomey,X423808Y709483,6.418191,2.311011,False,0,0,,,,,none,no_data,0,
+Minonkpô-Wologuèdè,COTONOU,8ème Arrondissement,X435178Y704659,6.374683,2.413875,False,0,0,,,,,none,no_data,0,
+"Djoukpa-Togoudo
+",ABOMEY-CALAVI,Godomey,X426786Y707864,6.403575,2.337957,False,0,0,,,,,none,no_data,0,
+Cadjèhoun-Azalokogon,COTONOU,12ème Arrondissement,X433543Y702810,6.357934,2.399114,False,0,0,,,,,none,no_data,0,
+"Fifonsi
+",ABOMEY-CALAVI,Togba,X425126Y711907,6.440134,2.322904,False,0,0,,,,,none,no_data,0,
+"Ounvènoumèdé
+",ABOMEY-CALAVI,Godomey,X426313Y706070,6.387345,2.3337,False,0,0,,,,,none,no_data,0,
+Zoungo,ABOMEY-CALAVI,Hêvié,X417042Y713712,6.456355,2.249779,False,0,0,,,,,none,no_data,0,
+Tankpê-Yoho,ABOMEY-CALAVI,Abomey-Calavi,X423741Y711052,6.432376,2.310386,False,0,0,,,,,none,no_data,0,
+Akpakpa-Dodomè,COTONOU,4ème Arrondissement,X438584Y703147,6.361032,2.444689,False,0,0,,,,,none,no_data,0,
+Akossavié,ABOMEY-CALAVI,Hêvié,X417207Y708138,6.405935,2.25134,False,0,0,,,,,none,no_data,0,
+Cadjèhoun-Kpota,COTONOU,12ème Arrondissement,X433689Y703490,6.364088,2.400424,False,0,0,,,,,none,no_data,0,
+Yagbé,COTONOU,1er Arrondissement,X441210Y704442,6.372773,2.468414,False,1,1,6.372087,2.470595,253.0,0.0,low,minor,1,CEG Yagbé
+Agonkèssa,ABOMEY-CALAVI,Golo-Djigbé,X424324Y723910,6.548696,2.315507,False,0,0,,,,,none,no_data,0,
+Missèbô,COTONOU,5ème Arrondissement,X437654Y703361,6.362961,2.436275,False,1,1,6.364815,2.433754,347.0,0.0,low,suspicious,1,Missebo
+Agbo Codji Sèdégbé,ABOMEY-CALAVI,Godomey,X424808Y705526,6.382409,2.320099,False,0,0,,,,,none,no_data,0,
+"Amahoun
+",ABOMEY-CALAVI,Godomey,X421066Y705062,6.378162,2.286275,False,0,0,,,,,none,no_data,0,
+"Ganganzounmè
+",ABOMEY-CALAVI,Godomey,X423158Y704178,6.370197,2.305203,False,0,0,,,,,none,no_data,0,
+"Gbègnigan-Midokpo
+",ABOMEY-CALAVI,Godomey,X424596Y707745,6.402474,2.31816,False,0,0,,,,,none,no_data,0,
+"Tokpa-Zoungo-Sud
+",ABOMEY-CALAVI,Abomey-Calavi,X427836Y710008,6.422988,2.34743,False,0,0,,,,,none,no_data,0,
+"Cité-la-Victoire
+",ABOMEY-CALAVI,Abomey-Calavi,X426123Y709042,6.414225,2.331952,False,0,0,,,,,none,no_data,0,
+Ahogbohoué-Cité-Eucharistie,COTONOU,13ème Arrondissement,X432013Y704589,6.374013,2.385256,False,0,0,,,,,none,no_data,0,
+Zinvié-Agolèdji,ABOMEY-CALAVI,Zinvié,X426709Y730002,6.603832,2.337,False,0,0,,,,,none,no_data,0,
+Mènontin,COTONOU,9ème Arrondissement,X430300Y706502,6.391295,2.369749,False,7,3,6.388924,2.370656,282.0,187.0,medium,minor,3,Nouvelle Pharmacie Mènontin | Centre Médico-Social Mahugnon de Menonti | Akpata Menontin
+Todoté,COTONOU,7ème Arrondissement,X435778Y703404,6.363334,2.419312,False,0,0,,,,,none,no_data,0,
+Djissoukpa,ABOMEY-CALAVI,Golo-Djigbé,X421298Y725899,6.566644,2.288105,False,0,0,,,,,none,no_data,0,
+Missité-Sikê,COTONOU,7ème Arrondissement,X435554Y704953,6.377342,2.417275,False,0,0,,,,,none,no_data,0,
+Fiyégnon-Jacquot,COTONOU,12ème Arrondissement,X430150Y702190,6.352295,2.368443,False,0,0,,,,,none,no_data,0,
+Fifadji,COTONOU,9ème Arrondissement,X433686Y706735,6.393442,2.400364,False,2,2,6.386165,2.404544,932.0,0.0,low,severe,1,Pharmacie Fifadji
+Vodjè-Finagnon,COTONOU,11ème Arrondissement,X433720Y704366,6.372012,2.400699,False,1,1,6.372023,2.400962,29.0,0.0,low,normal,1,PASE ???? VODJE FINAGNON
+Lom-Nava,COTONOU,2ème Arrondissement,X439570Y704924,6.377122,2.453587,False,0,0,,,,,none,no_data,0,
+Espace-Saint,ABOMEY-CALAVI,Golo-Djigbé,X423109Y725613,6.564085,2.304495,False,0,0,,,,,none,no_data,0,
+"Maria-Gléta
+",ABOMEY-CALAVI,Godomey,X423410Y709924,6.422174,2.30741,False,2,2,6.424156,2.304775,365.0,0.0,low,suspicious,1,École Primaire Publique de Maria-Gléta
+Védokô,COTONOU,10ème Arrondissement,X432088Y705168,6.379254,2.385935,False,6,4,6.378782,2.390647,523.0,134.0,medium,suspicious,3,Pharmacie Marché Vedoko | Église baptiste de Vêdoko | Marché Vêdoko
+Kpondéhou-Tchèmè,COTONOU,2ème Arrondissement,X439555Y705501,6.382342,2.453445,False,0,0,,,,,none,no_data,0,
+"Alédjo
+",ABOMEY-CALAVI,Abomey-Calavi,X426382Y712227,6.443044,2.334257,False,0,0,,,,,none,no_data,0,
+Ahowégodo,ABOMEY-CALAVI,Kpanroun,X428465Y740764,6.701198,2.352761,False,0,0,,,,,none,no_data,0,
+Agounvocôdji,COTONOU,10ème Arrondissement,X432049Y706124,6.387898,2.385571,False,0,0,,,,,none,no_data,0,
+Somè,ABOMEY-CALAVI,Togba,X422482Y713394,6.453545,2.298973,False,0,0,,,,,none,no_data,0,
+"Agonkanmey
+",ABOMEY-CALAVI,Godomey,X426761Y708468,6.409046,2.337729,False,0,0,,,,,none,no_data,0,
+"Dèkoungbé-Église
+",ABOMEY-CALAVI,Godomey,X424626Y704352,6.371782,2.318474,False,0,0,,,,,none,no_data,0,
+"Finafa
+",ABOMEY-CALAVI,Godomey,X428512Y706731,6.393346,2.353577,False,0,0,,,,,none,no_data,0,
+Minontchou,COTONOU,2ème Arrondissement,X439203Y706665,6.392861,2.450246,False,2,1,6.392543,2.450689,60.0,35.0,medium,normal,2,Paroisse Saint Augustin Minontchou | Paroisse Saint Augustin Minontchou
+Zèkanmey-Domè,ABOMEY-CALAVI,Akassato,X427147Y722020,6.531632,2.341055,False,0,0,,,,,none,no_data,0,
+Tokpa-Hoho,COTONOU,5ème Arrondissement,X438005Y702920,6.358974,2.439452,False,0,0,,,,,none,no_data,0,
+Sèdami,COTONOU,7ème Arrondissement,X436311Y704162,6.370194,2.424121,False,0,0,,,,,none,no_data,0,
+Gbèdjromèdè,COTONOU,6ème Arrondissement,X435859Y705197,6.379553,2.42003,False,1,1,6.383323,2.423918,600.0,0.0,low,suspicious,1,MCA GBEDJROMEDE
+Cococodji,ABOMEY-CALAVI,Godomey,X419504Y706156,6.388041,2.272137,False,4,4,6.389771,2.273194,225.0,0.0,low,minor,1,Paroisse Saint Gabriel de Cococodji
+Sodjatinmè-Ouest,COTONOU,4ème Arrondissement,X439118Y703969,6.368479,2.44951,False,0,0,,,,,none,no_data,0,
+Agla-Figaro,COTONOU,13ème Arrondissement,X428473Y705077,6.378384,2.353244,False,0,0,,,,,none,no_data,0,
+"Tokpa
+",ABOMEY-CALAVI,Godomey,X423320Y706247,6.388912,2.306642,False,1,1,6.391203,2.2944,1377.0,0.0,low,severe,1,Prix Tokpa
+Yèkon-Do,ABOMEY-CALAVI,Golo-Djigbé,X424424Y725456,6.562677,2.316385,False,0,0,,,,,none,no_data,0,
+Houèkè-Honou,ABOMEY-CALAVI,Akassato,X428665Y718492,6.499733,2.354828,False,1,1,6.497327,2.365231,1180.0,0.0,low,severe,1,EPP Houeke Honou
+Fignon-Sikê,COTONOU,7ème Arrondissement,X435833Y704596,6.374118,2.4198,False,0,0,,,,,none,no_data,0,
+Vodjè-Centre,COTONOU,11ème Arrondissement,X433991Y703993,6.368644,2.403151,False,1,1,6.372023,2.400962,447.0,0.0,low,suspicious,1,PASE ???? VODJE FINAGNON
+Xwlacôdji-Kpodji,COTONOU,5ème Arrondissement,X437801Y702320,6.353551,2.437618,False,0,0,,,,,none,no_data,0,
+Gbodjètin,COTONOU,12ème Arrondissement,X428168Y704676,6.374758,2.350493,False,0,0,,,,,none,no_data,0,
+Houénoussou-Sainte-Rita,COTONOU,8ème Arrondissement,X434047Y705136,6.378984,2.403643,False,0,0,,,,,none,no_data,0,
+Missèkplé,COTONOU,10ème Arrondissement,X434165Y705934,6.386201,2.404705,False,0,0,,,,,none,no_data,0,
+Sètôvi,COTONOU,10ème Arrondissement,X432360Y705404,6.381389,2.388391,False,2,2,6.382962,2.385469,367.0,0.0,low,suspicious,1,Ecole primaire publique de Sètovi
+Kpondéhou,COTONOU,2ème Arrondissement,X439562Y705884,6.385806,2.4535,False,1,1,6.383964,2.456728,411.0,0.0,low,suspicious,1,Lycée Technique de Kpondehoun
+Sokan,ABOMEY-CALAVI,Zinvié,X428335Y729831,6.602299,2.35171,False,0,0,,,,,none,no_data,0,
+"Aïtchédji
+",ABOMEY-CALAVI,Abomey-Calavi,X426773Y713335,6.453064,2.337776,False,3,3,6.456742,2.335789,464.0,0.0,low,suspicious,1,École primaire publique Aitchedji Makins
+Cadjèhoun-Détinsa,COTONOU,12ème Arrondissement,X434126Y703829,6.367157,2.404373,False,0,0,,,,,none,no_data,0,
+Ahouansouri-Agué,COTONOU,6ème Arrondissement,X435985Y706149,6.388161,2.421157,False,0,0,,,,,none,no_data,0,
+"Gbodjè-Womey
+",ABOMEY-CALAVI,Godomey,X420821Y706034,6.386949,2.284048,False,0,0,,,,,none,no_data,0,
+Houèto,ABOMEY-CALAVI,Togba,X423002Y711955,6.440538,2.303695,False,7,4,6.438125,2.309433,688.0,121.0,medium,suspicious,3,Pharmacie principale de Houeto | Union Renaissance d'Homme en Christde Ho | EPMB Cité de Lumière de Houêto
+"Finafa
+",ABOMEY-CALAVI,Abomey-Calavi,X427802Y712068,6.44162,2.347095,False,0,0,,,,,none,no_data,0,
+Vossa-Kpodji,COTONOU,9ème Arrondissement,X434244Y706954,6.395427,2.405403,False,0,0,,,,,none,no_data,0,
+Alègléta,ABOMEY-CALAVI,Godomey,X424765Y709425,6.417671,2.319668,False,0,0,,,,,none,no_data,0,
+Yèmicodji,COTONOU,12ème Arrondissement,X426267Y703126,6.360712,2.333323,False,0,0,,,,,none,no_data,0,
+Dangbodji,ABOMEY-CALAVI,Zinvié,X424785Y731490,6.617268,2.319582,False,0,0,,,,,none,no_data,0,
+Vodjè-Ayidoté,COTONOU,11ème Arrondissement,X433995Y704578,6.37393,2.403177,False,0,0,,,,,none,no_data,0,
+Godomey-Togoudo,ABOMEY-CALAVI,Godomey,X427158Y707626,6.401429,2.341327,False,0,0,,,,,none,no_data,0,
+Yèvié,ABOMEY-CALAVI,Zinvié,X430900Y729271,6.597264,2.374925,False,0,0,,,,,none,no_data,0,
+Wawata,ABOMEY-CALAVI,Zinvié,X425159Y732382,6.62534,2.322947,False,0,0,,,,,none,no_data,0,
+Agonmé,ABOMEY-CALAVI,Akassato,X426851Y724152,6.550911,2.338356,False,0,0,,,,,none,no_data,0,
+Kolètin,ABOMEY-CALAVI,Akassato,X428518Y726361,6.570911,2.353408,False,0,0,,,,,none,no_data,0,
+Togbin-Daho,ABOMEY-CALAVI,Godomey,X423377Y702482,6.354858,2.307201,False,0,0,,,,,none,no_data,0,
+Kpotomey,ABOMEY-CALAVI,Zinvié,X428883Y732890,6.629979,2.35663,False,0,0,,,,,none,no_data,0,
+"Tokpa-Zoungo-Nord
+",ABOMEY-CALAVI,Abomey-Calavi,X428263Y711172,6.433522,2.351276,False,0,0,,,,,none,no_data,0,
+Sodjatinmè-Centre,COTONOU,4ème Arrondissement,X439666Y703959,6.368392,2.454466,False,0,0,,,,,none,no_data,0,
+Avotrou-Gbègo,COTONOU,1er Arrondissement,X441171Y704908,6.376988,2.468062,False,0,0,,,,,none,no_data,0,
+Kpaviédja,ABOMEY-CALAVI,Kpanroun,X427046Y737451,6.671214,2.339958,False,0,0,,,,,none,no_data,0,
+Gankpodo,COTONOU,2ème Arrondissement,X439568Y706551,6.39184,2.453549,False,0,0,,,,,none,no_data,0,
+Zinvié-Fandji,ABOMEY-CALAVI,Zinvié,X428900Y731101,6.613796,2.356809,False,0,0,,,,,none,no_data,0,
+"Fignonhou
+",ABOMEY-CALAVI,Godomey,X426685Y704844,6.376257,2.337084,False,1,1,6.374173,2.340776,469.0,0.0,low,suspicious,1,Pharmacie Godomey-Fignonhou
+Gbodjè,ABOMEY-CALAVI,Zinvié,X432172Y729005,6.594872,2.386427,False,0,0,,,,,none,no_data,0,
+Adovié,ABOMEY-CALAVI,Hêvié,X418088Y710207,6.424668,2.259279,False,0,0,,,,,none,no_data,0,
+Gbènan,COTONOU,7ème Arrondissement,X436209Y703740,6.36638,2.423211,False,0,0,,,,,none,no_data,0,
+Gbèdomidji,COTONOU,7ème Arrondissement,X436121Y703454,6.363787,2.422413,False,0,0,,,,,none,no_data,0,
+Domey-Gbo,ABOMEY-CALAVI,Golo-Djigbé,X425327Y722711,6.537864,2.324585,False,0,0,,,,,none,no_data,0,
+Adjaha-Cité,COTONOU,13ème Arrondissement,X430773Y703154,6.36102,2.374064,False,0,0,,,,,none,no_data,0,
+Fidjrossè-Kpota,COTONOU,12ème Arrondissement,X429261Y702834,6.35811,2.3604,False,0,0,,,,,none,no_data,0,
+Cadjèhoun-Aupiais,COTONOU,12ème Arrondissement,X434116Y702668,6.356654,2.404294,False,0,0,,,,,none,no_data,0,
+"Aïmèvo
+",ABOMEY-CALAVI,Godomey,X427263Y706270,6.389165,2.342289,False,0,0,,,,,none,no_data,0,
+Aïdjèdo,COTONOU,6ème Arrondissement,X436393Y705196,6.379548,2.424858,False,1,1,6.38331,2.425127,419.0,0.0,low,suspicious,1,Pharmacie Aïdjèdo
+Missité,COTONOU,13ème Arrondissement,X432402Y703723,6.366179,2.388789,False,0,0,,,,,none,no_data,0,
+Avotrou-Aïmonlonfidé,COTONOU,1er Arrondissement,X441631Y705491,6.382264,2.472211,False,0,0,,,,,none,no_data,0,
+Cadjèhoun-Gare,COTONOU,12ème Arrondissement,X434101Y703242,6.361853,2.40415,False,0,0,,,,,none,no_data,0,
+Adôgléta,COTONOU,3ème Arrondissement,X438105Y705876,6.385718,2.440328,False,0,0,,,,,none,no_data,0,
+Ahouansouri-Agata,COTONOU,6ème Arrondissement,X436336Y705568,6.382916,2.424336,False,0,0,,,,,none,no_data,0,
+Kansounkpa,ABOMEY-CALAVI,Abomey-Calavi,X424269Y719313,6.507109,2.315061,False,1,1,6.4936,2.321261,1651.0,0.0,low,severe,1,Collège d’Enseignement Général Kansounkp
+Agla-Akplomey,COTONOU,13ème Arrondissement,X428828Y705728,6.384276,2.35645,False,1,1,6.376869,2.353114,902.0,0.0,low,severe,1,Eglise catholique saint Charles lwanga A
+Irédé,COTONOU,2ème Arrondissement,X439953Y704406,6.372437,2.457055,False,0,0,,,,,none,no_data,0,
+"Womey-Centre
+",ABOMEY-CALAVI,Godomey,X423196Y708119,6.405839,2.305494,False,6,5,6.403613,2.295819,1097.0,29.0,medium,severe,2,Pharmacie st Benoît de Womey | Complexe Scolaire Womey Enawa
+Dédokpo,COTONOU,4ème Arrondissement,X438322Y703883,6.367694,2.442308,False,1,1,6.371543,2.441243,444.0,0.0,low,suspicious,1,PASE DRL2 C??? DEDOKPO
+"Sodo
+",ABOMEY-CALAVI,Godomey,X422030Y707851,6.403401,2.294956,False,0,0,,,,,none,no_data,0,
+Kpankpan,COTONOU,3ème Arrondissement,X437988Y704932,6.377175,2.439282,False,0,0,,,,,none,no_data,0,
+Tanto,COTONOU,1er Arrondissement,X441606Y703887,6.367756,2.472004,False,1,1,6.369097,2.472339,154.0,0.0,low,minor,1,Ecole Primaire Public de TANTO
+Vodjè-Allobatin,COTONOU,11ème Arrondissement,X434401Y704051,6.369169,2.406858,False,0,0,,,,,none,no_data,0,
+Ahouanlèko,COTONOU,12ème Arrondissement,X434474Y702299,6.353326,2.407532,False,0,0,,,,,none,no_data,0,
+Zèkanmey,ABOMEY-CALAVI,Golo-Djigbé,X423086Y724256,6.55181,2.304305,False,0,0,,,,,none,no_data,0,
+Sènadé,COTONOU,2ème Arrondissement,X439976Y705208,6.379689,2.457251,False,3,2,6.377626,2.462127,586.0,47.0,medium,suspicious,2,Ecole Primaire Publique Sènadé | Mosqué Centrale Senadé
+Agontinkon,COTONOU,8ème Arrondissement,X434477Y704959,6.377384,2.407534,False,1,1,6.375706,2.405194,319.0,0.0,low,suspicious,1,Pharmacie Agontinkon
+Yénawa-Daho,COTONOU,2ème Arrondissement,X441624Y706169,6.388404,2.472149,False,0,0,,,,,none,no_data,0,
+Avotrou-Houézèkomè,COTONOU,1er Arrondissement,X442043Y704903,6.376949,2.475943,False,0,0,,,,,none,no_data,0,
+Ahogbohoué-Cité-De-l'Expérience,COTONOU,13ème Arrondissement,X430738Y705108,6.378693,2.373729,False,0,0,,,,,none,no_data,0,
+Atrokpo-Codji,ABOMEY-CALAVI,Godomey,X424998Y706144,6.388,2.321814,False,2,2,6.392918,2.320883,556.0,0.0,low,suspicious,1,Compexe Scolaire Le Spiritor d'Atrokpoco
+Gbodjoko,ABOMEY-CALAVI,Zinvié,X425137Y727940,6.58516,2.32281,False,0,0,,,,,none,no_data,0,
+Aïdjèdo-Ahito,COTONOU,6ème Arrondissement,X436066Y704939,6.377219,2.4219,False,0,0,,,,,none,no_data,0,
+Ahouato,ABOMEY-CALAVI,Ouèdo,X419771Y709731,6.420382,2.274508,False,0,0,,,,,none,no_data,0,
+Xwlacôdji-Plage,COTONOU,5ème Arrondissement,X438142Y702200,6.352469,2.440702,False,0,0,,,,,none,no_data,0,
+Gbégamey-Dodo-Ayidjè,COTONOU,11ème Arrondissement,X434717Y703875,6.367586,2.409717,False,0,0,,,,,none,no_data,0,
+Hlacômey,COTONOU,3ème Arrondissement,X438160Y706204,6.388684,2.440824,False,0,0,,,,,none,no_data,0,
+Anagbo,ABOMEY-CALAVI,Kpanroun,X426918Y739214,6.687158,2.338777,False,0,0,,,,,none,no_data,0,
+Zongo-Nima,COTONOU,5ème Arrondissement,X436725Y702620,6.356251,2.427883,False,0,0,,,,,none,no_data,0,
+Misséssinto,ABOMEY-CALAVI,Akassato,X429580Y720214,6.515327,2.363089,False,0,0,,,,,none,no_data,0,
+"Cité-les-Palmiers
+",ABOMEY-CALAVI,Abomey-Calavi,X426748Y716215,6.479119,2.337516,False,0,0,,,,,none,no_data,0,
+Agbatô,COTONOU,3ème Arrondissement,X438240Y706739,6.393527,2.441546,False,2,1,6.390621,2.441632,323.0,18.0,medium,suspicious,2,AGBATO CABZ | Paroisse St. Joseph d'Agbato
+Kpé,ABOMEY-CALAVI,Kpanroun,X428834Y735480,6.653408,2.356156,True,0,0,,,,,none,skipped_short_name,0,
+Zongo-Ehuzu,COTONOU,5ème Arrondissement,X436299Y702217,6.352604,2.424037,False,0,0,,,,,none,no_data,0,
+Ahouansori-Towéta,COTONOU,6ème Arrondissement,X436692Y706084,6.387585,2.427553,False,0,0,,,,,none,no_data,0,
+Agongbé,ABOMEY-CALAVI,Golo-Djigbé,X423545Y722058,6.531936,2.308476,False,0,0,,,,,none,no_data,0,
+Tokplégbé,COTONOU,1er Arrondissement,X443549Y703550,6.36473,2.489578,False,2,1,6.366871,2.485169,542.0,167.0,medium,suspicious,2,Commissariat de Tokplégbé | Marché Moderne de Tokplègbè
+"Hounzévié
+",ABOMEY-CALAVI,Hêvié,X415628Y710058,6.423287,2.237042,False,0,0,,,,,none,no_data,0,
+Fidjrossè-Centre,COTONOU,12ème Arrondissement,X430391Y702787,6.357693,2.370617,False,5,3,6.356443,2.367041,419.0,145.0,medium,suspicious,3,MCA FIDJROSSE | FIDJROSSE MCA B2 | Eglise de Jesus-Christ des Saints des De
+Sodjatinmè-Est,COTONOU,4ème Arrondissement,X440274Y704136,6.370001,2.459957,False,0,0,,,,,none,no_data,0,
+Adjagbo,ABOMEY-CALAVI,Ouèdo,X420384Y716215,6.479041,2.279968,False,1,1,6.475142,2.277744,498.0,0.0,low,suspicious,1,Complexe Scolaire de joues Adjagbo A & B
+Gbégamey-Ahito,COTONOU,11ème Arrondissement,X434542Y703578,6.364892,2.408136,False,0,0,,,,,none,no_data,0,
+Dandji,COTONOU,1er Arrondissement,X442295Y703943,6.36827,2.478233,False,0,0,,,,,none,no_data,0,
+Godomey-N'Gbèho,ABOMEY-CALAVI,Godomey,X427083Y704464,6.372827,2.340682,False,0,0,,,,,none,no_data,0,
+"Zoundja
+",ABOMEY-CALAVI,Abomey-Calavi,X426626Y718237,6.49741,2.336395,False,3,3,6.48622,2.342266,1403.0,0.0,low,severe,1,EPP Zoundja
+Abokicodji-Lagune,COTONOU,4ème Arrondissement,X438325Y703537,6.364563,2.442343,False,0,0,,,,,none,no_data,0,
+Mèdédjro,COTONOU,8ème Arrondissement,X434773Y705797,6.384965,2.410204,False,0,0,,,,,none,no_data,0,
+Zogbo,COTONOU,9ème Arrondissement,X432606Y706656,6.392713,2.390599,False,8,3,6.389545,2.381497,1066.0,170.0,high,severe,6,pharmacie Zogbohoue | PASE C??? ZOGBOHE | Eglise du Christianisme Céleste Paroisse | Mosquée centrale et école coranique raod
+Mifongou,COTONOU,5ème Arrondissement,X436448Y703436,6.363625,2.425367,False,0,0,,,,,none,no_data,0,
+Gbégamey-Gbagoudo,COTONOU,11ème Arrondissement,X434727Y704302,6.371445,2.409802,False,0,0,,,,,none,no_data,0,
+Agla-Petit-Château,COTONOU,13ème Arrondissement,X430632Y705454,6.381824,2.372759,False,0,0,,,,,none,no_data,0,
+Midédji,COTONOU,10ème Arrondissement,X432788Y705929,6.386138,2.392249,False,0,0,,,,,none,no_data,0,
+Houénoussou,COTONOU,13ème Arrondissement,X432679Y703778,6.366685,2.391291,False,1,1,6.377237,2.382849,1499.0,0.0,low,severe,1,Centre de Santé de Houenoussou
+"Aïdégnon
+",ABOMEY-CALAVI,Togba,X425499Y713070,6.450654,2.326256,False,0,0,,,,,none,no_data,0,
+"Zounga
+",ABOMEY-CALAVI,Godomey,X421757Y705359,6.380857,2.292517,False,0,0,,,,,none,no_data,0,
+"Abikouholi
+",ABOMEY-CALAVI,Godomey,X425279Y704532,6.373425,2.324371,False,0,0,,,,,none,no_data,0,
+Togbin-Fandji,ABOMEY-CALAVI,Godomey,X425933Y702465,6.354732,2.330312,False,0,0,,,,,none,no_data,0,
+Gbéto,COTONOU,5ème Arrondissement,X436444Y703050,6.360141,2.425343,False,6,4,6.366567,2.427939,770.0,2.0,medium,severe,2,Eglise Saint Michel Gbéto de Cotonou | Eglise Saint Michel Gbéto de Cotonou
+Sèdomey,ABOMEY-CALAVI,Godomey,X427178Y707988,6.404703,2.341502,False,0,0,,,,,none,no_data,0,
+Bozoun,ABOMEY-CALAVI,Kpanroun,X432878Y738864,6.684059,2.392703,False,0,0,,,,,none,no_data,0,
+Agbondjèdo,COTONOU,8ème Arrondissement,X434682Y704701,6.375052,2.409389,False,0,0,,,,,none,no_data,0,
+Fifadji-Houto (Jak),COTONOU,4ème Arrondissement,X440196Y703354,6.36292,2.459258,False,0,0,,,,,none,no_data,0,
+Missogbé,COTONOU,10ème Arrondissement,X432713Y705372,6.381107,2.391582,False,0,0,,,,,none,no_data,0,
+Agamandin,ABOMEY-CALAVI,Abomey-Calavi,X429167Y714002,6.459126,2.359418,False,1,1,6.45348,2.360717,644.0,0.0,low,suspicious,1,École Primaire Publique d' Agamandin
+Aïdjèdo-Gbègo,COTONOU,6ème Arrondissement,X436713Y705535,6.382621,2.42775,False,0,0,,,,,none,no_data,0,
+Jéricho-Nord,COTONOU,6ème Arrondissement,X436480Y704737,6.375399,2.425647,False,2,1,6.372281,2.425816,347.0,28.0,medium,suspicious,2,BIBE JERICHO | BIBE JERICHO
+Misséssin,COTONOU,4ème Arrondissement,X438471Y704209,6.370645,2.443651,False,1,1,6.370939,2.447392,415.0,0.0,low,suspicious,1,Hopital Misséssin
+Gbodjo,ABOMEY-CALAVI,Abomey-Calavi,X429235Y715041,6.468531,2.360021,False,2,1,6.471921,2.358862,398.0,126.0,medium,suspicious,2,Complexe scolaire Gbodjo | Saint Michel Archange de Gbodjo
+Kindonou,COTONOU,9ème Arrondissement,X429692Y706605,6.392222,2.364254,False,3,1,6.393258,2.36441,116.0,147.0,medium,minor,3,Pharmacie Kindonou | Eglise du Christianisme Céleste de Kindo | Marché de Kindonou
+"Yénandjro
+",ABOMEY-CALAVI,Godomey,X424082Y708600,6.410203,2.313503,False,0,0,,,,,none,no_data,0,
+"Houégoudo
+",ABOMEY-CALAVI,Zinvié,X427275Y732986,6.630823,2.34209,False,0,0,,,,,none,no_data,0,
+"Dénou
+",ABOMEY-CALAVI,Godomey,X427096Y705330,6.380664,2.340791,False,0,0,,,,,none,no_data,0,
+Djigbo,ABOMEY-CALAVI,Kpanroun,X430896Y739269,6.687702,2.374768,False,0,0,,,,,none,no_data,0,
+Djédjé-Layé,COTONOU,2ème Arrondissement,X440208Y706177,6.388456,2.459343,False,0,0,,,,,none,no_data,0,
+"Hêdomè
+",ABOMEY-CALAVI,Godomey,X423458Y704703,6.374946,2.307905,False,1,1,6.371852,2.320222,1404.0,0.0,low,severe,1,Pharmacie Hedomey
+Ahouassa,COTONOU,2ème Arrondissement,X440206Y705494,6.382286,2.45933,False,0,0,,,,,none,no_data,0,
+Zinvié-Zounmè,ABOMEY-CALAVI,Zinvié,X427920Y732052,6.622386,2.347936,False,0,0,,,,,none,no_data,0,
+Midombo,COTONOU,3ème Arrondissement,X438572Y704943,6.377283,2.44456,False,2,2,6.377412,2.441795,306.0,0.0,low,suspicious,1,Pharmacie Midombo
+"Adjamè
+",ABOMEY-CALAVI,Golo-Djigbé,X422288Y725428,6.562398,2.297066,False,0,0,,,,,none,no_data,0,
+Ladji,COTONOU,6ème Arrondissement,X436758Y706500,6.39135,2.428146,False,5,2,6.390474,2.430154,242.0,158.0,high,minor,4,Eglise Paroisse St Raphaël Ladji Centre | Église protestante de ladji | Église catholique Saint-Christophe d’Ayi | École primaire publique de Ladji
+Sènadé-Sèkon,COTONOU,2ème Arrondissement,X440230Y704765,6.375689,2.45955,False,0,0,,,,,none,no_data,0,
+Avagbé,ABOMEY-CALAVI,Kpanroun,X431004Y737112,6.668193,2.37577,False,0,0,,,,,none,no_data,0,
+"Assrossa
+",ABOMEY-CALAVI,Godomey,X425564Y708516,6.409462,2.326907,False,0,0,,,,,none,no_data,0,
+Vossa,COTONOU,6ème Arrondissement,X434702Y706658,6.392753,2.40955,False,0,0,,,,,none,no_data,0,
+Yêkon-Aga,ABOMEY-CALAVI,Golo-Djigbé,X423954Y725023,6.558756,2.312139,False,0,0,,,,,none,no_data,0,
+Agassa-Godomey,ABOMEY-CALAVI,Akassato,X429775Y723500,6.545053,2.364811,False,0,0,,,,,none,no_data,0,
+"Dessato
+",ABOMEY-CALAVI,Ouèdo,X418956Y714779,6.466031,2.26707,False,0,0,,,,,none,no_data,0,
+Gbénonkpô,COTONOU,3ème Arrondissement,X438339Y704350,6.371912,2.442459,False,0,0,,,,,none,no_data,0,
+Adjégounlè,COTONOU,3ème Arrondissement,X438568Y704676,6.374871,2.444524,False,0,0,,,,,none,no_data,0,
+Salamey,ABOMEY-CALAVI,Godomey,X427279Y706581,6.391982,2.342433,False,0,0,,,,,none,no_data,0,
+Aïdjèdo-Vignon,COTONOU,6ème Arrondissement,X436759Y704956,6.377381,2.428167,False,0,0,,,,,none,no_data,0,
+Sègbèya-Sud,COTONOU,3ème Arrondissement,X438577Y705508,6.382394,2.444604,False,4,3,6.381157,2.446842,283.0,11.0,medium,minor,2,Pharmacie Segbeya | PASE DRL2 C167 PHARMA SEGBEYA
+Dota,COTONOU,5ème Arrondissement,X436851Y703009,6.359771,2.429022,False,0,0,,,,,none,no_data,0,
+"Fandji
+",ABOMEY-CALAVI,Godomey,X422167Y706074,6.387334,2.296214,False,0,0,,,,,none,no_data,0,
+Sègbèya-Nord,COTONOU,3ème Arrondissement,X438587Y706198,6.388634,2.444684,False,4,3,6.381157,2.446842,865.0,11.0,medium,severe,2,Pharmacie Segbeya | PASE DRL2 C167 PHARMA SEGBEYA
+Tankpè-Tanmè,ABOMEY-CALAVI,Togba,X425468Y710550,6.427859,2.326013,False,0,0,,,,,none,no_data,0,
+Abokicodji-Centre,COTONOU,4ème Arrondissement,X438820Y703735,6.366356,2.446817,False,1,1,6.367091,2.443327,394.0,0.0,low,suspicious,1,PASE DRL2 C 177 ABOKICODJI
+Cadjèhoun-Agonga,COTONOU,12ème Arrondissement,X433174Y702883,6.358597,2.395776,False,0,0,,,,,none,no_data,0,
+Adjagbo,ABOMEY-CALAVI,Akassato,X428462Y721519,6.527113,2.352959,False,2,2,6.526461,2.35019,314.0,0.0,low,suspicious,1,Paroisse Sainte Thérèse de l’Enfant-Jésu
+Jéricho-Sud,COTONOU,6ème Arrondissement,X436902Y704302,6.37147,2.429472,False,2,1,6.372281,2.425816,414.0,28.0,medium,suspicious,2,BIBE JERICHO | BIBE JERICHO
+Sèdjro-Saint-Michel,COTONOU,7ème Arrondissement,X436953Y703818,6.367091,2.429931,False,0,0,,,,,none,no_data,0,
+Gbèdagba,COTONOU,8ème Arrondissement,X435129Y705485,6.382153,2.413428,False,0,0,,,,,none,no_data,0,
+Tchanhounkpamè,COTONOU,1er Arrondissement,X442544Y705190,6.379552,2.480469,False,0,0,,,,,none,no_data,0,
+Houinmè,ABOMEY-CALAVI,Hêvié,X414555Y709466,6.417919,2.227346,False,0,0,,,,,none,no_data,0,
+Aïbatin-Kpota,COTONOU,13ème Arrondissement,X431568Y703420,6.363429,2.381252,False,0,0,,,,,none,no_data,0,
+Sogan,ABOMEY-CALAVI,Hêvié,X419171Y707467,6.399896,2.269108,False,0,0,,,,,none,no_data,0,
+Gbédokpo,COTONOU,5ème Arrondissement,X436963Y703461,6.363856,2.430031,False,0,0,,,,,none,no_data,0,
+"Fandji
+",ABOMEY-CALAVI,Abomey-Calavi,X427841Y714752,6.465893,2.34742,False,0,0,,,,,none,no_data,0,
+Wawata-Todja,ABOMEY-CALAVI,Zinvié,X423901Y733028,6.631162,2.311567,False,0,0,,,,,none,no_data,0,
+Dagbédji-Sikê,COTONOU,7ème Arrondissement,X434985Y704096,6.369584,2.412136,False,0,0,,,,,none,no_data,0,
+Sèmè,ABOMEY-CALAVI,Abomey-Calavi,X427607Y713882,6.458023,2.345315,False,3,2,6.480092,2.342646,2472.0,49.0,medium,severe,2,CS Meilleure Semence | Cours Maternel la meilleure semence
+Houéhoun,COTONOU,8ème Arrondissement,X434758Y705185,6.379432,2.410071,False,0,0,,,,,none,no_data,0,
+Gbégamey-Mifongou,COTONOU,11ème Arrondissement,X434718Y703102,6.360589,2.409731,False,0,0,,,,,none,no_data,0,
+Finagnon,COTONOU,1er Arrondissement,X442168Y703534,6.36457,2.477085,False,1,1,6.365552,2.480944,440.0,0.0,low,suspicious,1,École primaire publique de Finagnon
+Nvènamèdé,COTONOU,1er Arrondissement,X440743Y704172,6.370328,2.464196,False,0,0,,,,,none,no_data,0,
+Tokan,ABOMEY-CALAVI,Togba,X423997Y713145,6.451317,2.312681,False,5,4,6.453787,2.316015,459.0,25.0,medium,suspicious,2,Paroisse Saint Pierre de Tokan | Paroisse St Pierre de Tokan
+Houéyihô-Tannou,COTONOU,11ème Arrondissement,X432739Y704529,6.373475,2.391825,False,0,0,,,,,none,no_data,0,
+Agonsoudja,ABOMEY-CALAVI,Akassato,X428029Y725813,6.565948,2.348987,False,0,0,,,,,none,no_data,0,
+Dokomè,ABOMEY-CALAVI,Zinvié,X429568Y726813,6.575012,2.362904,False,0,0,,,,,none,no_data,0,
+Dossounou,ABOMEY-CALAVI,Hêvié,X414814Y714606,6.464409,2.229614,False,0,0,,,,,none,no_data,0,
+Glo-Tokpa,ABOMEY-CALAVI,Akassato,X429627Y721442,6.526431,2.363493,False,0,0,,,,,none,no_data,0,
+Gbégamey-Centre,COTONOU,11ème Arrondissement,X434964Y703397,6.363258,2.411956,False,7,3,6.364377,2.408565,395.0,141.0,high,suspicious,4,Station Sonacop de Gbégamey | Poste de Gbégamey | Marché de gbegamey | Pharmacie de Gbegamey
+Houèkè-Gbo,ABOMEY-CALAVI,Akassato,X429776Y717662,6.492245,2.364886,False,1,1,6.48787,2.360457,690.0,0.0,low,suspicious,1,EPP Houèkègbo
+Aïbatin-Dodo,COTONOU,12ème Arrondissement,X431807Y703245,6.361853,2.383413,False,0,0,,,,,none,no_data,0,
+Logbozounkpa,ABOMEY-CALAVI,Godomey,X423866Y705526,6.382395,2.311583,False,0,0,,,,,none,no_data,0,
+Haie-Vive-Cocotiers,COTONOU,12ème Arrondissement,X433421Y702477,6.354922,2.398009,False,0,0,,,,,none,no_data,0,
+Yénawa,COTONOU,2ème Arrondissement,X440935Y706273,6.389335,2.465915,False,0,0,,,,,none,no_data,0,
+Azonsa,ABOMEY-CALAVI,Golo-Djigbé,X425934Y723669,6.546532,2.330072,False,0,0,,,,,none,no_data,0,
+Ahouansori-Towéta-Kpota,COTONOU,6ème Arrondissement,X437133Y706277,6.389331,2.431539,False,0,0,,,,,none,no_data,0,
+Houéyihô,COTONOU,11ème Arrondissement,X433008Y703958,6.368311,2.394263,False,1,1,6.36679,2.390994,399.0,0.0,low,suspicious,1,Clinique Houeyiho
+"Tchinangbégbo
+",ABOMEY-CALAVI,Abomey-Calavi,X426738Y711363,6.435228,2.337486,False,0,0,,,,,none,no_data,0,
+Adjogansa,ABOMEY-CALAVI,Zinvié,X425813Y727206,6.578527,2.328928,False,0,0,,,,,none,no_data,0,
+"Dèkoungbé
+",ABOMEY-CALAVI,Godomey,X425856Y705015,6.377795,2.32958,False,3,2,6.381563,2.332744,546.0,162.0,medium,suspicious,2,Pia Market Dèkoungbé | Pharmacie Dekoungbe
+Yénawa-Fifadji,COTONOU,10ème Arrondissement,X433238Y706188,6.38849,2.396319,False,0,0,,,,,none,no_data,0,
+Missité,COTONOU,5ème Arrondissement,X437143Y703237,6.361834,2.431661,False,0,0,,,,,none,no_data,0,
+Togbin-Kpèvi,ABOMEY-CALAVI,Godomey,X424115Y702858,6.358268,2.313871,False,0,0,,,,,none,no_data,0,
+"Plateau
+",ABOMEY-CALAVI,Godomey,X427779Y705804,6.384958,2.346964,False,0,0,,,,,none,no_data,0,
+Kpossidja,ABOMEY-CALAVI,Ouèdo,X418939Y716791,6.48423,2.266889,False,0,0,,,,,none,no_data,0,
+Avlékété-Joncquet,COTONOU,5ème Arrondissement,X437128Y702956,6.359292,2.431525,False,0,0,,,,,none,no_data,0,
+Gbèdjèwin,COTONOU,4ème Arrondissement,X438825Y704129,6.369917,2.446855,False,0,0,,,,,none,no_data,0,
+"La-Paix
+",ABOMEY-CALAVI,Godomey,X424000Y706261,6.389041,2.312788,False,0,0,,,,,none,no_data,0,
+Aïfa-Calavi,ABOMEY-CALAVI,Abomey-Calavi,X425751Y715205,6.46997,2.328511,False,0,0,,,,,none,no_data,0,
+"Nonhouénou
+",ABOMEY-CALAVI,Godomey,X427578Y706867,6.39457,2.345129,False,0,0,,,,,none,no_data,0,
+"Hounsa-Agbodokpa
+",ABOMEY-CALAVI,Godomey,X425764Y707703,6.402109,2.328718,False,0,0,,,,,none,no_data,0,
+Zogbohouè,COTONOU,9ème Arrondissement,X431568Y706430,6.390658,2.381211,False,4,1,6.389699,2.381326,107.0,206.0,high,minor,4,pharmacie Zogbohoue | Eglise du Christianisme Céleste Paroisse | Mosquée centrale et école coranique raod | École Coranique Jardin du paradis et mos
+Djidjè-Aïchédji,COTONOU,6ème Arrondissement,X437220Y705852,6.385493,2.432327,False,0,0,,,,,none,no_data,0,
+Gbénonkpô,COTONOU,10ème Arrondissement,X433398Y705564,6.382847,2.397775,False,0,0,,,,,none,no_data,0,
+Golo-Fanto,ABOMEY-CALAVI,Golo-Djigbé,X424418Y726833,6.575138,2.31632,False,0,0,,,,,none,no_data,0,
+Yolomahouto,ABOMEY-CALAVI,Godomey,X427720Y706401,6.390357,2.346424,False,0,0,,,,,none,no_data,0,
+Énagnon-Sikê,COTONOU,7ème Arrondissement,X435492Y704241,6.370903,2.416722,False,0,0,,,,,none,no_data,0,
+Agori,ABOMEY-CALAVI,Abomey-Calavi,X428583Y712538,6.445881,2.354152,False,0,0,,,,,none,no_data,0,
+Guinkômey,COTONOU,5ème Arrondissement,X437609Y702650,6.35653,2.43588,False,1,1,6.360272,2.430009,771.0,0.0,low,severe,1,Tchiep Guinkomey
+Akôgbato,COTONOU,12ème Arrondissement,X427800Y702862,6.358346,2.347183,False,1,1,6.357749,2.358385,1240.0,0.0,low,severe,1,Pharmacie Akogbato
+Ayélawadjè-Agongbomè,COTONOU,3ème Arrondissement,X439132Y705509,6.382407,2.449617,False,0,0,,,,,none,no_data,0,
+Ohé,COTONOU,4ème Arrondissement,X438772Y703403,6.363356,2.446385,True,0,0,,,,,none,skipped_short_name,0,
+Lohoussa,ABOMEY-CALAVI,Golo-Djigbé,X426148Y725934,6.567022,2.331975,False,0,0,,,,,none,no_data,0,
+Yèvié-Nougo,ABOMEY-CALAVI,Zinvié,X429784Y730534,6.608679,2.364813,False,0,0,,,,,none,no_data,0,
+Djidjè,COTONOU,6ème Arrondissement,X437171Y705273,6.380254,2.431892,False,1,1,6.386134,2.433485,677.0,0.0,low,suspicious,1,École primaire publique de Djidjè
+Kouhounou,COTONOU,10ème Arrondissement,X431282Y705642,6.383531,2.378634,False,0,0,,,,,none,no_data,0,
+Suru-Léré,COTONOU,1er Arrondissement,X440661Y705202,6.379646,2.463448,False,4,1,6.37889,2.463112,92.0,205.0,high,normal,4,CEG SURU LERE | Ecole Primaire Publique Suru Léré | Station SURU LERE | Hopital de Zone de Suru Lere
+Fifatin,COTONOU,3ème Arrondissement,X439353Y704346,6.371891,2.451625,False,0,0,,,,,none,no_data,0,
+Zopah-Kokpo,ABOMEY-CALAVI,Abomey-Calavi,X428951Y716455,6.481315,2.357438,False,0,0,,,,,none,no_data,0,
+"Gninkindji
+",ABOMEY-CALAVI,Godomey,X424201Y704780,6.375649,2.314626,False,0,0,,,,,none,no_data,0,
+Agbodjèdo,COTONOU,3ème Arrondissement,X438844Y706675,6.392953,2.447,False,0,0,,,,,none,no_data,0,
+Kpodji-Les-Monts,ABOMEY-CALAVI,Akassato,X429395Y725392,6.562164,2.361351,False,0,0,,,,,none,no_data,0,
+Agla-Les-Pylônes,COTONOU,13ème Arrondissement,X430077Y705591,6.383056,2.367741,False,0,0,,,,,none,no_data,0,
+Alladacomè,ABOMEY-CALAVI,Golo-Djigbé,X424428Y728931,6.594109,2.316385,False,0,0,,,,,none,no_data,0,
+Saint-Jean-Gbèdiga,COTONOU,11ème Arrondissement,X435306Y703807,6.36697,2.415044,False,0,0,,,,,none,no_data,0,
+Zogbadjè,ABOMEY-CALAVI,Abomey-Calavi,X426798Y710040,6.423262,2.338045,False,10,5,6.427295,2.337688,450.0,258.0,high,suspicious,6,École Primaire Publique Sedonou Zogbadje | Église Saint Paul de Zogbadje | EPP/Sèdonou de Zogbadjè | Église de Dieu du plein évangile Zogbadj
+Tonato,COTONOU,8ème Arrondissement,X433531Y705021,6.377941,2.398977,False,0,0,,,,,none,no_data,0,
+Agla-Agongbomey,COTONOU,13ème Arrondissement,X429599Y704588,6.373974,2.363429,False,1,1,6.377219,2.36158,415.0,0.0,low,suspicious,1,PASE C 527 EPP AGLA AGONGBOMEY
+Agla-Finafa,COTONOU,13ème Arrondissement,X430136Y704296,6.371344,2.368289,False,0,0,,,,,none,no_data,0,
+Hindé-Nord,COTONOU,6ème Arrondissement,X437168Y704955,6.37738,2.431863,False,0,0,,,,,none,no_data,0,
+Cocotomey,ABOMEY-CALAVI,Godomey,X422628Y705908,6.385835,2.300386,False,7,5,6.393494,2.300223,852.0,123.0,medium,severe,3,AVE MARIA DE COCOTOMEY | Brigarde Territoriale de Cocotomey | EPP St Francois d'Assise de Cocotomey
+"Sèdjannako
+",ABOMEY-CALAVI,Godomey,X428350Y706436,6.390683,2.352119,False,0,0,,,,,none,no_data,0,
+Gbèdiga-Guêdêhounguè,COTONOU,11ème Arrondissement,X435688Y702843,6.358261,2.418503,False,0,0,,,,,none,no_data,0,
+Dassèkomey,ABOMEY-CALAVI,Ouèdo,X417077Y717135,6.487314,2.250046,False,0,0,,,,,none,no_data,0,
+Sèhogan-Sikê,COTONOU,7ème Arrondissement,X435637Y704064,6.369302,2.418035,False,0,0,,,,,none,no_data,0,
+Hadjanaho,ABOMEY-CALAVI,Kpanroun,X431667Y737715,6.673653,2.381767,False,0,0,,,,,none,no_data,0,
+Énagnon,COTONOU,4ème Arrondissement,X439576Y703099,6.360612,2.453661,False,0,0,,,,,none,no_data,0,
+Drabo,ABOMEY-CALAVI,Togba,X422586Y717985,6.495077,2.299853,False,1,1,6.505,2.307341,1379.0,0.0,low,severe,1,ECOLE PRIMAIRE PUBLIQUE DE DRABO
+Dantôkpa,COTONOU,6ème Arrondissement,X437245Y704252,6.371018,2.432568,False,2,1,6.372205,2.433565,172.0,66.0,medium,minor,2,Nouvelle pharmacie Dantokpa | Marché Dantokpa
+Agla-Centre,COTONOU,13ème Arrondissement,X430004Y704961,6.377357,2.367093,False,9,7,6.3706,2.365806,765.0,135.0,medium,severe,2,PASE C 525 AGLA RUE 13 448 | École primaire privée Unité d'Agla
+Donaten,COTONOU,1er Arrondissement,X440813Y703409,6.363426,2.464842,False,0,0,,,,,none,no_data,0,
+Adjagbo-Aïdjèdo,ABOMEY-CALAVI,Ouèdo,X420920Y715699,6.474376,2.28482,False,0,0,,,,,none,no_data,0,
+Vodjè-Kpota,COTONOU,12ème Arrondissement,X433484Y704046,6.369119,2.398568,False,0,0,,,,,none,no_data,0,
+Gbèdégbé,COTONOU,13ème Arrondissement,X432042Y703677,6.365766,2.385529,False,1,1,6.365524,2.386624,124.0,0.0,low,minor,1,Paroisse Saint-Louis de Gbédégbé
+Gbétagbo,ABOMEY-CALAVI,Akassato,X427725Y722618,6.537045,2.34628,False,3,2,6.545184,2.357088,1498.0,66.0,medium,severe,2,TELLA GBETAGBO | ABERME GBETAGBO
+Djèkpota,ABOMEY-CALAVI,Godomey,X420757Y704134,6.369766,2.283492,False,1,1,6.373179,2.283427,380.0,0.0,low,suspicious,1,ABERME GBODJE DJEKPOTA
+Houinmè-Daho,ABOMEY-CALAVI,Hêvié,X415379Y708412,6.408391,2.23481,False,0,0,,,,,none,no_data,0,
+Bocossi-Tokpa,COTONOU,5ème Arrondissement,X437525Y703903,6.367863,2.435105,False,0,0,,,,,none,no_data,0,
+Zopah-Akassato,ABOMEY-CALAVI,Akassato,X427701Y717573,6.491413,2.346124,False,0,0,,,,,none,no_data,0,
+Ahossougbéta,ABOMEY-CALAVI,Togba,X424635Y714017,6.459212,2.318435,False,0,0,,,,,none,no_data,0,
+Alansankomè,ABOMEY-CALAVI,Ouèdo,X419071Y711036,6.43218,2.268156,False,0,0,,,,,none,no_data,0,
+Ayélawadjè,COTONOU,3ème Arrondissement,X439119Y704697,6.375064,2.449509,False,1,1,6.378154,2.449939,347.0,0.0,low,suspicious,1,Hopital de Zone Ayélawadjè
+Gbèdjromèdè-Nord,COTONOU,6ème Arrondissement,X435445Y705731,6.38438,2.416276,False,1,1,6.383323,2.423918,853.0,0.0,low,severe,1,MCA GBEDJROMEDE
+Hlouacomey,ABOMEY-CALAVI,Godomey,X427889Y706716,6.39321,2.347949,False,0,0,,,,,none,no_data,0,
+Ouéga-Agué,ABOMEY-CALAVI,Togba,X423541Y716817,6.484521,2.308512,False,1,1,6.484886,2.308498,41.0,0.0,low,normal,1,COMPLEXE SCOLAIRE OUEGA-AGUE
+Kpanroun,ABOMEY-CALAVI,Kpanroun,X429809Y737931,6.675582,2.364949,False,2,2,6.671378,2.362127,562.0,0.0,low,suspicious,1,CEG Kpanroun
+Hêvié,ABOMEY-CALAVI,Hêvié,X416379Y712689,6.44709,2.243794,False,0,0,,,,,none,no_data,0,
+Akassato,ABOMEY-CALAVI,Akassato,X429739Y719199,6.506143,2.364538,False,7,4,6.499756,2.362447,747.0,160.0,medium,severe,3,Immaculé Conception d'Akassato | Commissariat Akassato | ABERME AKASSATO
+Ouèdo,ABOMEY-CALAVI,Ouèdo,X418166Y713688,6.456154,2.25994,False,2,2,6.455982,2.276379,1816.0,0.0,low,severe,1,Pharmacie Les Graces Divines de Ouedo
+Golo-Djigbé,ABOMEY-CALAVI,Golo-Djigbé,X422592Y725120,6.559616,2.299821,False,2,1,6.558151,2.302152,305.0,125.0,medium,suspicious,2,Centre de santé de Golo-Djigbé | Marché de Golo-Djigbé
+Togba_Maria-Gléta,Abomey-Calavi,Togba,X422054Y712357,6.44416,2.295115,False,0,0,,,,,none,no_data,0,
+Womey-Yénawa,Abomey-Calavi,Godomey,X421100Y707947,6.404264,2.286547,False,0,0,,,,,none,no_data,0,

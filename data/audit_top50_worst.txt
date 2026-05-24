@@ -1,0 +1,85 @@
+Top 50 worst IGN-vs-OSM discrepancies (by distance, DESC)
+==============================================================================
+name                         arr                      dist(m) n_poi conf   sev        
+Sèmè                         Abomey-Calavi               2472     3 medium severe     
+Ouèdo                        Ouèdo                       1816     2 low    severe     
+Kansounkpa                   Abomey-Calavi               1651     1 low    severe     
+Houénoussou                  13ème Arrondissement        1499     1 low    severe     
+Gbétagbo                     Akassato                    1498     3 medium severe     
+Hêdomè
+                      Godomey                     1404     1 low    severe     
+Zoundja
+                     Abomey-Calavi               1403     3 low    severe     
+Drabo                        Togba                       1379     1 low    severe     
+Tokpa
+                       Godomey                     1377     1 low    severe     
+Akôgbato                     12ème Arrondissement        1240     1 low    severe     
+Houèkè-Honou                 Akassato                    1180     1 low    severe     
+Womey-Centre
+                Godomey                     1097     6 medium severe     
+Zogbo                        9ème Arrondissement         1066     8 high   severe     
+Fifadji                      9ème Arrondissement          932     2 low    severe     
+Agla-Akplomey                13ème Arrondissement         902     1 low    severe     
+Sègbèya-Nord                 3ème Arrondissement          865     4 medium severe     
+Gbèdjromèdè-Nord             6ème Arrondissement          853     1 low    severe     
+Cocotomey                    Godomey                      852     7 medium severe     
+Guinkômey                    5ème Arrondissement          771     1 low    severe     
+Gbéto                        5ème Arrondissement          770     6 medium severe     
+Agla-Centre                  13ème Arrondissement         765     9 medium severe     
+Akassato                     Akassato                     747     7 medium severe     
+Houèkè-Gbo                   Akassato                     690     1 low    suspicious 
+Houèto                       Togba                        688     7 medium suspicious 
+Djidjè                       6ème Arrondissement          677     1 low    suspicious 
+Agamandin                    Abomey-Calavi                644     1 low    suspicious 
+Gbèdjromèdè                  6ème Arrondissement          600     1 low    suspicious 
+Sènadé                       2ème Arrondissement          586     3 medium suspicious 
+Kpanroun                     Kpanroun                     562     2 low    suspicious 
+Atrokpo-Codji                Godomey                      556     2 low    suspicious 
+Dèkoungbé
+                   Godomey                      546     3 medium suspicious 
+Tokplégbé                    1er Arrondissement           542     2 medium suspicious 
+Védokô                       10ème Arrondissement         523     6 medium suspicious 
+Adjagbo                      Ouèdo                        498     1 low    suspicious 
+Nouveau-Pont                 5ème Arrondissement          492     1 low    suspicious 
+Fignonhou
+                   Godomey                      469     1 low    suspicious 
+Aïtchédji
+                   Abomey-Calavi                464     3 low    suspicious 
+Tokan                        Togba                        459     5 medium suspicious 
+Zogbadjè                     Abomey-Calavi                450    10 high   suspicious 
+Vodjè-Centre                 11ème Arrondissement         447     1 low    suspicious 
+Dédokpo                      4ème Arrondissement          444     1 low    suspicious 
+Finagnon                     1er Arrondissement           440     1 low    suspicious 
+Aïdjèdo                      6ème Arrondissement          419     1 low    suspicious 
+Fidjrossè-Centre             12ème Arrondissement         419     5 medium suspicious 
+Misséssin                    4ème Arrondissement          415     1 low    suspicious 
+Agla-Agongbomey              13ème Arrondissement         415     1 low    suspicious 
+Jéricho-Sud                  6ème Arrondissement          414     2 medium suspicious 
+Kpondéhou                    2ème Arrondissement          411     1 low    suspicious 
+Houéyihô                     11ème Arrondissement         399     1 low    suspicious 
+Gbodjo                       Abomey-Calavi                398     2 medium suspicious 
+
+Bucket distribution:
+  normal                 4
+  minor                  10
+  suspicious             42
+  severe                 22
+  no_data                231
+  skipped_short_name     2
+
+Per arrondissement (suspicious + severe count):
+  ABOMEY-CALAVI / Godomey                                 9 bad / 47 total
+  ABOMEY-CALAVI / Abomey-Calavi                           7 bad / 19 total
+  COTONOU / 6ème Arrondissement                           6 bad / 19 total
+  ABOMEY-CALAVI / Akassato                                5 bad / 14 total
+  COTONOU / 5ème Arrondissement                           4 bad / 15 total
+  COTONOU / 13ème Arrondissement                          4 bad / 14 total
+  COTONOU / 3ème Arrondissement                           4 bad / 13 total
+  COTONOU / 2ème Arrondissement                           3 bad / 13 total
+  ABOMEY-CALAVI / Togba                                   3 bad / 10 total
+  COTONOU / 4ème Arrondissement                           3 bad / 12 total
+  COTONOU / 11ème Arrondissement                          3 bad / 13 total
+  COTONOU / 12ème Arrondissement                          2 bad / 18 total
+  COTONOU / 1er Arrondissement                            2 bad / 13 total
+  COTONOU / 9ème Arrondissement                           2 bad / 6 total
+  COTONOU / 10ème Arrondissement                          2 bad / 9 total

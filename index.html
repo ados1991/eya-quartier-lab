@@ -149,6 +149,24 @@
     <input type="range" min="0" max="100" value="70" id="op-wway" class="slider">
   </div>
 
+  <h2>Audit: IGN ↔ OSM discrepancy</h2>
+
+  <div class="lay" style="background:#fef2f2;border-color:#fecaca">
+    <label class="lay-hdr"><input type="checkbox" id="t-audit"><span class="lay-swatch" style="background:linear-gradient(90deg,#dc2626,#f59e0b,#eab308,#16a34a)"></span>discrepancy lines (IGN → OSM cluster)</label>
+    <div class="lay-meta">
+      311 quartiers audited. For each, the nearest same-name OSM POI cluster centroid was computed; a line connects the IGN chef-lieu to that cluster. Color = severity bucket:<br>
+      <span style="color:#dc2626;font-weight:700">■ severe (&gt;700 m, 22)</span>
+      &nbsp;<span style="color:#f59e0b;font-weight:700">■ suspicious (300–700 m, 42)</span><br>
+      <span style="color:#eab308;font-weight:700">■ minor (100–300 m, 10)</span>
+      &nbsp;<span style="color:#16a34a;font-weight:700">■ normal (≤100 m, 4)</span>
+      &nbsp;<span style="color:#94a3b8;font-weight:700">○ no OSM POI match (231)</span><br>
+      <a href="data/audit_centroid_discrepancy.csv" download>CSV report</a> ·
+      <a href="data/audit_top50_worst.txt" target="_blank">top-50 worst</a> ·
+      <a href="data/audit_centroid_discrepancy_summary.json" target="_blank">per-arr summary</a>
+    </div>
+    <input type="range" min="0" max="100" value="55" id="op-audit" class="slider">
+  </div>
+
   <h2>Base map</h2>
   <div class="lay lay-meta" id="base-info">B&W (Carto Positron, grayscale-filtered). Switch in the top-right layer control.</div>
 
@@ -234,6 +252,31 @@ const WATERWAY_STYLE = (f) => {
   };
   return m[k] || {color:'#0284c7', weight:1.0, opacity:.70};
 };
+
+// Audit layer — color by severity bucket
+const SEV_COLOR = {
+  severe:     '#dc2626',
+  suspicious: '#f59e0b',
+  minor:      '#eab308',
+  normal:     '#16a34a',
+  no_data:    '#94a3b8',
+};
+const AUDIT_STYLE = (f) => {
+  const sev = (f.properties.severity || 'no_data').toLowerCase();
+  const c = SEV_COLOR[sev] || '#94a3b8';
+  const kind = f.properties.kind;
+  if (kind === 'discrepancy_line') {
+    return {color:c, weight: sev==='severe' ? 3 : sev==='suspicious' ? 2.2 : 1.6,
+            opacity:.85, dashArray: sev==='normal'?'1,3':null};
+  }
+  if (kind === 'osm_cluster') {
+    return {color:c, weight:1.5, fillColor:c, fillOpacity:.9, radius:5};
+  }
+  if (kind === 'ign_point' || kind === 'ign_no_match') {
+    return {color:'#0b1f3b', weight:1.2, fillColor:c, fillOpacity:.85, radius:4};
+  }
+  return {color:c, weight:1.5, fillColor:c, fillOpacity:.7};
+};
 const DISP_STYLE = {color:'#b91c1c',weight:1.2,fillColor:'#fecaca',fillOpacity:.35,dashArray:'2,2'};
 
 const layers = {};
@@ -245,8 +288,8 @@ async function loadGeo(url){
 }
 
 async function init(){
-  // Polygons + water overlays
-  const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway] = await Promise.all([
+  // Polygons + water overlays + audit
+  const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -263,8 +306,35 @@ async function init(){
     loadGeo('data/draft_quartier_evidence_v3.json').catch(()=>({})),
     loadGeo('data/water_bodies.geojson').catch(()=>({features:[]})),
     loadGeo('data/waterways.geojson').catch(()=>({features:[]})),
+    loadGeo('data/audit_centroid_discrepancy.geojson').catch(()=>({features:[]})),
   ]);
 
+  layers.audit = L.geoJSON(audit, {
+    style: AUDIT_STYLE,
+    pointToLayer: (f, latlng) => {
+      const sev = (f.properties.severity || 'no_data').toLowerCase();
+      const kind = f.properties.kind;
+      const c = SEV_COLOR[sev] || '#94a3b8';
+      const r = kind === 'osm_cluster' ? 5 : 4;
+      return L.circleMarker(latlng, {color:'#0b1f3b', weight:1, fillColor:c,
+                                       fillOpacity:.9, radius:r});
+    },
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      const kind = p.kind === 'osm_cluster' ? 'OSM cluster centroid'
+                 : p.kind === 'ign_point'   ? 'IGN chef-lieu'
+                 : p.kind === 'ign_no_match'? 'IGN chef-lieu (no OSM match)'
+                 : 'IGN → cluster line';
+      l.bindPopup(
+        `<b>${p.name||'(unnamed)'}</b><br>${p.commune||''} · ${p.arrondissement||''}<br>`+
+        `${kind}<br>`+
+        (p.distance_m!=null ? `<b>distance:</b> ${p.distance_m} m (${p.severity})<br>` : `<i>no OSM POI matches</i><br>`)+
+        `OSM POI matches: ${p.n_matches||0}, clusters: ${p.n_clusters||0}, primary cluster size: ${p.primary_cluster_size||0}<br>`+
+        `confidence: ${p.confidence||'?'} · dispersion: ${p.dispersion_m!=null?p.dispersion_m+' m':'-'}<br>`+
+        (p.sample_poi_names ? `<small>POIs: ${p.sample_poi_names}</small>` : '')
+      );
+    }
+  });
   layers.wbod = L.geoJSON(wbod, {style: WATER_BODY_STYLE,
     onEachFeature: (f,l) => {
       const p = f.properties;
@@ -357,6 +427,7 @@ async function init(){
   bind('t-disp', layers.disp);
   bind('t-arr', layers.arr); bind('t-ign', layers.ign); bind('t-amen', layers.amen);
   bind('t-wbod', layers.wbod); bind('t-wway', layers.wway);
+  bind('t-audit', layers.audit);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
@@ -397,6 +468,7 @@ async function init(){
   };
   wireWater('op-wbod', layers.wbod, WATER_BODY_STYLE);
   wireWater('op-wway', layers.wway, WATERWAY_STYLE);
+  wireWater('op-audit', layers.audit, AUDIT_STYLE);
 
   // Fit to v3 (the richest)
   map.fitBounds(layers.v3.getBounds(), {padding:[20,20]});
