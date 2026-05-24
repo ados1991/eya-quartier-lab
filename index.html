@@ -137,6 +137,18 @@
   <div class="lay"><label class="lay-hdr"><input type="checkbox" id="t-amen"><span class="lay-swatch" style="background:#7c3aed"></span>OSM amenities (churches, police, fuel, …)</label>
     <div class="lay-meta">2 662 categorised landmarks with names. Names visible at zoom ≥ 15.</div></div>
 
+  <div class="lay" style="background:#eff6ff;border-color:#bfdbfe">
+    <label class="lay-hdr"><input type="checkbox" id="t-wbod" checked><span class="lay-swatch" style="background:#1e3a8a"></span>water bodies (lagoon, ponds, basins)</label>
+    <div class="lay-meta">405 OSM polygons styled by kind: <span style="color:#1e3a8a">lake/lagoon</span>, <span style="color:#0e7490">reservoir</span>, <span style="color:#0369a1">basin</span>, <span style="color:#0284c7">pond</span>.</div>
+    <input type="range" min="0" max="100" value="55" id="op-wbod" class="slider">
+  </div>
+
+  <div class="lay" style="background:#eff6ff;border-color:#bfdbfe">
+    <label class="lay-hdr"><input type="checkbox" id="t-wway" checked><span class="lay-swatch" style="background:#0369a1"></span>waterways (canals, rivers, drains)</label>
+    <div class="lay-meta">436 OSM lines styled by kind &amp; width: <span style="color:#1e3a8a">canal</span> (thick), <span style="color:#0369a1">river</span> (thick), <span style="color:#0284c7">stream</span> (medium), <span style="color:#38bdf8">drain</span> (thin), <span style="color:#7dd3fc">ditch</span> (dotted).</div>
+    <input type="range" min="0" max="100" value="70" id="op-wway" class="slider">
+  </div>
+
   <h2>Base map</h2>
   <div class="lay lay-meta" id="base-info">B&W (Carto Positron, grayscale-filtered). Switch in the top-right layer control.</div>
 
@@ -196,6 +208,32 @@ const V5C_STYLE = {color:'#047857',weight:1.6,fillColor:'#10b981',fillOpacity:.2
 const V5C2_STYLE = {color:'#854d0e',weight:1.8,fillColor:'#ca8a04',fillOpacity:.22};
 const C50_STYLE = {color:'#1d4ed8',weight:1.4,fillColor:'#3b82f6',fillOpacity:.35};
 const USER_STYLE = {color:'#0b1f3b',weight:2.5,fillColor:'#fde68a',fillOpacity:.40};
+// Water styling by OSM kind
+const WATER_BODY_STYLE = (f) => {
+  const k = (f.properties.kind||'').toLowerCase();
+  const m = {
+    water:      {color:'#1e3a8a', weight:0.6, fillColor:'#3b82f6', fillOpacity:.55},
+    lake:       {color:'#1e3a8a', weight:0.8, fillColor:'#3b82f6', fillOpacity:.60},
+    lagoon:     {color:'#1e40af', weight:0.8, fillColor:'#60a5fa', fillOpacity:.55},
+    reservoir:  {color:'#0e7490', weight:0.6, fillColor:'#22d3ee', fillOpacity:.45},
+    basin:      {color:'#0369a1', weight:0.8, fillColor:'#7dd3fc', fillOpacity:.55},
+    pond:       {color:'#0284c7', weight:0.8, fillColor:'#7dd3fc', fillOpacity:.55},
+    river:      {color:'#1e3a8a', weight:0.8, fillColor:'#3b82f6', fillOpacity:.55},
+    canal:      {color:'#1e40af', weight:0.8, fillColor:'#60a5fa', fillOpacity:.55},
+  };
+  return m[k] || {color:'#1e3a8a', weight:0.5, fillColor:'#60a5fa', fillOpacity:.40};
+};
+const WATERWAY_STYLE = (f) => {
+  const k = (f.properties.kind||'').toLowerCase();
+  const m = {
+    canal:  {color:'#1e3a8a', weight:3.2, opacity:.90},
+    river:  {color:'#0369a1', weight:3.0, opacity:.90},
+    stream: {color:'#0284c7', weight:2.0, opacity:.85},
+    drain:  {color:'#38bdf8', weight:1.2, opacity:.75},
+    ditch:  {color:'#7dd3fc', weight:1.0, opacity:.70, dashArray:'3,3'},
+  };
+  return m[k] || {color:'#0284c7', weight:1.0, opacity:.70};
+};
 const DISP_STYLE = {color:'#b91c1c',weight:1.2,fillColor:'#fecaca',fillOpacity:.35,dashArray:'2,2'};
 
 const layers = {};
@@ -207,8 +245,8 @@ async function loadGeo(url){
 }
 
 async function init(){
-  // Polygons
-  const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev] = await Promise.all([
+  // Polygons + water overlays
+  const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -223,8 +261,20 @@ async function init(){
     loadGeo('data/arrondissement_polygons.geojson'),
     loadGeo('data/poi_index.geojson'),
     loadGeo('data/draft_quartier_evidence_v3.json').catch(()=>({})),
+    loadGeo('data/water_bodies.geojson').catch(()=>({features:[]})),
+    loadGeo('data/waterways.geojson').catch(()=>({features:[]})),
   ]);
 
+  layers.wbod = L.geoJSON(wbod, {style: WATER_BODY_STYLE,
+    onEachFeature: (f,l) => {
+      const p = f.properties;
+      l.bindTooltip(`${p.kind}${p.name?': '+p.name:''}`, {sticky:true});
+    }});
+  layers.wway = L.geoJSON(wway, {style: WATERWAY_STYLE,
+    onEachFeature: (f,l) => {
+      const p = f.properties;
+      l.bindTooltip(`${p.kind}${p.name?': '+p.name:''}`, {sticky:true});
+    }});
   layers.c50 = L.geoJSON(c50, {style: C50_STYLE,
     onEachFeature: (f,l) => {
       const p = f.properties;
@@ -286,6 +336,9 @@ async function init(){
   });
 
   // Default-add the ones the checkboxes say "checked"
+  // Water layers added FIRST so they sit visually under the polygon layers.
+  if(document.getElementById('t-wbod').checked) layers.wbod.addTo(map);
+  if(document.getElementById('t-wway').checked) layers.wway.addTo(map);
   if(document.getElementById('t-c50').checked) layers.c50.addTo(map);
   if(document.getElementById('t-v2').checked) layers.v2.addTo(map);
   if(document.getElementById('t-v3').checked) layers.v3.addTo(map);
@@ -303,6 +356,7 @@ async function init(){
   bind('t-v5c', layers.v5c); bind('t-v5c2', layers.v5c2); bind('t-user', layers.user);
   bind('t-disp', layers.disp);
   bind('t-arr', layers.arr); bind('t-ign', layers.ign); bind('t-amen', layers.amen);
+  bind('t-wbod', layers.wbod); bind('t-wway', layers.wway);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
@@ -327,6 +381,22 @@ async function init(){
   wireOp('op-c50', layers.c50, C50_STYLE);
   wireOp('op-user', layers.user, USER_STYLE);
   wireOp('op-disp', layers.disp, DISP_STYLE);
+  // Water-overlay opacity (apply uniformly to all features)
+  const wireWater = (id, layer, baseFn) => {
+    const el = document.getElementById(id);
+    el.oninput = () => {
+      const op = el.value / 70;
+      layer.eachLayer(l => {
+        const base = baseFn(l.feature);
+        l.setStyle({
+          fillOpacity: (base.fillOpacity || 0) * op,
+          opacity: (base.opacity || 0.85) * Math.min(1, op*1.3),
+        });
+      });
+    };
+  };
+  wireWater('op-wbod', layers.wbod, WATER_BODY_STYLE);
+  wireWater('op-wway', layers.wway, WATERWAY_STYLE);
 
   // Fit to v3 (the richest)
   map.fitBounds(layers.v3.getBounds(), {padding:[20,20]});
