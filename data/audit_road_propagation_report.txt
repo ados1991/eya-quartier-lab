@@ -1,72 +1,76 @@
 road-propagation validation audit
 ======================================================================
-MAX_DIST_M=100, merge_radius=15.0, dual_radius=40
+MAX_DIST_M=200, merge_radius=15.0, dual_radius=40
 chef-lieus: 311
 
 bucket distribution:
-  GOOD              179  ( 57.6 %)
-  PARTIAL            96  ( 30.9 %)
-  BROKEN              3  (  1.0 %)
+  GOOD               93  ( 29.9 %)
+  PARTIAL           200  ( 64.3 %)
+  BROKEN              6  (  1.9 %)
   OFF_ROAD            2  (  0.6 %)
-  OSM_DATA_LIMIT     31  ( 10.0 %)
+  OSM_DATA_LIMIT     10  (  3.2 %)
 
-BROKEN cases (coverage < 40 % despite augmentations): 3
+BROKEN cases (coverage < 40 % despite augmentations): 6
   name                     arr                    snap(m) near vis miss   cov edge  comp
-  Ahogbohoué-Cité-Eucharis 13ème Arrondissement      49.5    6   2    4  33.3    1 90099
-  Djèkpota                 Godomey                   15.2    9   3    6  33.3    3 90099
-  Tankpê-Yoho              Abomey-Calavi             18.0   11   4    7  36.4    2 90099
+  Ahogbohoué-Cité-Eucharis 13ème Arrondissement      49.5   11   2    9  18.2    1 90099
+  Ahouansori-Towéta        6ème Arrondissement       83.1   15   3   12  20.0    2 90099
+  Agbatô                   3ème Arrondissement       90.0    9   2    7  22.2    3 90099
+  Ahogbohoué-Cité-De-l'Exp 13ème Arrondissement      25.5   11   4    7  36.4    2 90099
+  Tankpê-Yoho              Abomey-Calavi             18.0   27  10   17  37.0    2 90099
+  Houéyihô                 11ème Arrondissement       2.0   28  11   18  39.3    4 90099
 
 PARTIAL (worst 15):
-  Houéyihô                 11ème Arrondissement   cov= 40.0% miss=6 near=10
-  Zongo-Nima               5ème Arrondissement    cov= 46.7% miss=8 near=15
-  Ahouansori-Towéta        6ème Arrondissement    cov= 50.0% miss=2 near=4
-  Aïdégnon
-                Togba                  cov= 50.0% miss=5 near=10
-  Houénoussou-Sainte-Rita  8ème Arrondissement    cov= 54.5% miss=5 near=11
-  Gbégamey-Mifongou        11ème Arrondissement   cov= 54.5% miss=5 near=11
-  Houéyihô-Tannou          11ème Arrondissement   cov= 55.6% miss=4 near=9
-  Sèdami                   7ème Arrondissement    cov= 57.1% miss=3 near=7
-  Aïmèvo
-                  Godomey                cov= 57.1% miss=3 near=7
-  Sèmè                     Abomey-Calavi          cov= 57.1% miss=3 near=7
-  Hlazounto                12ème Arrondissement   cov= 60.0% miss=4 near=10
-  Wawata                   Zinvié                 cov= 60.0% miss=2 near=5
-  Nvènamèdé                1er Arrondissement     cov= 60.0% miss=5 near=10
-  Kouhounou                10ème Arrondissement   cov= 61.5% miss=5 near=13
-  Godomey-Togoudo          Godomey                cov= 63.6% miss=4 near=11
+  Ladji                    6ème Arrondissement    cov= 40.0% miss=6 near=10
+  Agongbé                  Golo-Djigbé            cov= 41.7% miss=7 near=12
+  Tanto                    1er Arrondissement     cov= 47.6% miss=11 near=21
+  Gbodjè-Womey
+            Godomey                cov= 50.0% miss=14 near=28
+  Xwlacôdji-Plage          5ème Arrondissement    cov= 50.0% miss=5 near=10
+  Donaten                  1er Arrondissement     cov= 50.0% miss=9 near=18
+  Houéyihô-Tannou          11ème Arrondissement   cov= 51.9% miss=14 near=27
+  Djèkpota                 Godomey                cov= 52.2% miss=11 near=23
+  Ahouanlèko               12ème Arrondissement   cov= 54.2% miss=11 near=24
+  Védokô                   10ème Arrondissement   cov= 56.5% miss=11 near=23
+  Houèkè-Honou             Akassato               cov= 57.1% miss=6 near=14
+  Yèvié                    Zinvié                 cov= 57.1% miss=3 near=7
+  Gninkindji
+              Godomey                cov= 57.7% miss=11 near=26
+  Hounzévié
+               Hêvié                  cov= 60.0% miss=5 near=10
+  Zoundja
+                 Abomey-Calavi          cov= 60.0% miss=7 near=15
 
 OFF_ROAD (2 cases):
   Ahowégodo                Kpanroun               snap=174.4 m
   Gbodjè                   Zinvié                 snap=None m
 
-OSM_DATA_LIMIT (31 cases, top 10 by 'near_ways' ASC):
-  Espace-Saint             Golo-Djigbé            near=1 snap=10.8 m
-  Dokomè                   Zinvié                 near=1 snap=91.5 m
+OSM_DATA_LIMIT (10 cases, top 10 by 'near_ways' ASC):
   Zinvié-Agolèdji          Zinvié                 near=2 snap=4.9 m
-  Djissoukpa               Golo-Djigbé            near=2 snap=8.7 m
-  Zèkanmey-Domè            Akassato               near=2 snap=4.9 m
-  Agbatô                   3ème Arrondissement    near=2 snap=90.0 m
-  Hounzévié
-               Hêvié                  near=2 snap=10.4 m
+  Espace-Saint             Golo-Djigbé            near=2 snap=10.8 m
   Houégoudo
                Zinvié                 near=2 snap=5.3 m
   Djigbo                   Kpanroun               near=2 snap=11.1 m
+  Dokomè                   Zinvié                 near=2 snap=91.5 m
   Kpanroun                 Kpanroun               near=2 snap=2.5 m
+  Dangbodji                Zinvié                 near=3 snap=2.0 m
+  Kpaviédja                Kpanroun               near=3 snap=5.3 m
+  Kpé                      Kpanroun               near=3 snap=3.7 m
+  Hadjanaho                Kpanroun               near=3 snap=10.1 m
 
 per-arrondissement (worst by BROKEN+PARTIAL count):
   commune / arrondissement                         GOOD PART BROK OFF OSM
-  ABOMEY-CALAVI / Godomey                            25   21    1   0   0
-  ABOMEY-CALAVI / Abomey-Calavi                       8   10    1   0   0
-  COTONOU / 6ème Arrondissement                      11    8    0   0   0
-  COTONOU / 1er Arrondissement                        6    7    0   0   0
-  COTONOU / 12ème Arrondissement                     12    6    0   0   0
-  COTONOU / 11ème Arrondissement                      7    6    0   0   0
-  COTONOU / 2ème Arrondissement                       9    4    0   0   0
-  COTONOU / 3ème Arrondissement                       8    4    0   0   1
-  COTONOU / 7ème Arrondissement                       8    3    0   0   0
-  COTONOU / 5ème Arrondissement                      11    3    0   0   1
-  ABOMEY-CALAVI / Togba                               5    3    0   0   2
-  COTONOU / 4ème Arrondissement                       8    3    0   0   1
-  COTONOU / 13ème Arrondissement                     10    2    1   0   1
-  ABOMEY-CALAVI / Zinvié                              7    3    0   1   4
-  COTONOU / 9ème Arrondissement                       2    3    0   0   1
+  ABOMEY-CALAVI / Godomey                             5   42    0   0   0
+  ABOMEY-CALAVI / Abomey-Calavi                       3   15    1   0   0
+  COTONOU / 13ème Arrondissement                      1   11    2   0   0
+  COTONOU / 12ème Arrondissement                      6   12    0   0   0
+  COTONOU / 1er Arrondissement                        2   11    0   0   0
+  COTONOU / 5ème Arrondissement                       4   11    0   0   0
+  COTONOU / 2ème Arrondissement                       3   10    0   0   0
+  COTONOU / 6ème Arrondissement                       9    9    1   0   0
+  COTONOU / 3ème Arrondissement                       4    8    1   0   0
+  COTONOU / 11ème Arrondissement                      5    7    1   0   0
+  COTONOU / 10ème Arrondissement                      1    8    0   0   0
+  ABOMEY-CALAVI / Akassato                            6    8    0   0   0
+  COTONOU / 7ème Arrondissement                       4    7    0   0   0
+  ABOMEY-CALAVI / Hêvié                               2    7    0   0   0
+  COTONOU / 4ème Arrondissement                       6    6    0   0   0

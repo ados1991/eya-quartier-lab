@@ -1,10 +1,10 @@
 {
   "total_chiefs": 311,
   "bucket_counts": {
-    "GOOD": 179,
-    "PARTIAL": 96,
-    "BROKEN": 3,
-    "OSM_DATA_LIMIT": 31,
+    "GOOD": 93,
+    "PARTIAL": 200,
+    "BROKEN": 6,
+    "OSM_DATA_LIMIT": 10,
     "OFF_ROAD": 2
   },
   "thresholds": {
@@ -126,120 +126,114 @@
   },
   "per_arrondissement": {
     "COTONOU / 12ème Arrondissement": {
-      "GOOD": 12,
-      "PARTIAL": 6
+      "GOOD": 6,
+      "PARTIAL": 12
     },
     "COTONOU / 1er Arrondissement": {
-      "PARTIAL": 7,
-      "GOOD": 6
+      "PARTIAL": 11,
+      "GOOD": 2
     },
     "COTONOU / 2ème Arrondissement": {
-      "GOOD": 9,
-      "PARTIAL": 4
+      "PARTIAL": 10,
+      "GOOD": 3
     },
     "ABOMEY-CALAVI / Godomey": {
-      "PARTIAL": 21,
-      "GOOD": 25,
-      "BROKEN": 1
+      "PARTIAL": 42,
+      "GOOD": 5
     },
     "COTONOU / 7ème Arrondissement": {
-      "GOOD": 8,
-      "PARTIAL": 3
+      "GOOD": 4,
+      "PARTIAL": 7
     },
     "COTONOU / 5ème Arrondissement": {
-      "GOOD": 11,
-      "PARTIAL": 3,
-      "OSM_DATA_LIMIT": 1
+      "PARTIAL": 11,
+      "GOOD": 4
     },
     "COTONOU / 6ème Arrondissement": {
-      "GOOD": 11,
-      "PARTIAL": 8
+      "PARTIAL": 9,
+      "GOOD": 9,
+      "BROKEN": 1
     },
     "ABOMEY-CALAVI / Togba": {
       "GOOD": 5,
-      "OSM_DATA_LIMIT": 2,
-      "PARTIAL": 3
+      "PARTIAL": 5
     },
     "COTONOU / 8ème Arrondissement": {
-      "GOOD": 6,
-      "PARTIAL": 2
+      "PARTIAL": 4,
+      "GOOD": 4
     },
     "ABOMEY-CALAVI / Hêvié": {
-      "GOOD": 6,
-      "OSM_DATA_LIMIT": 1,
-      "PARTIAL": 2
+      "PARTIAL": 7,
+      "GOOD": 2
     },
     "ABOMEY-CALAVI / Abomey-Calavi": {
       "BROKEN": 1,
-      "GOOD": 8,
-      "PARTIAL": 10
+      "GOOD": 3,
+      "PARTIAL": 15
     },
     "COTONOU / 4ème Arrondissement": {
-      "PARTIAL": 3,
-      "OSM_DATA_LIMIT": 1,
-      "GOOD": 8
+      "PARTIAL": 6,
+      "GOOD": 6
     },
     "ABOMEY-CALAVI / Golo-Djigbé": {
-      "OSM_DATA_LIMIT": 4,
-      "GOOD": 9,
-      "PARTIAL": 1
+      "PARTIAL": 3,
+      "OSM_DATA_LIMIT": 1,
+      "GOOD": 10
     },
     "COTONOU / 13ème Arrondissement": {
-      "BROKEN": 1,
-      "GOOD": 10,
-      "PARTIAL": 2,
-      "OSM_DATA_LIMIT": 1
+      "BROKEN": 2,
+      "PARTIAL": 11,
+      "GOOD": 1
     },
     "ABOMEY-CALAVI / Zinvié": {
       "OSM_DATA_LIMIT": 4,
-      "GOOD": 7,
-      "PARTIAL": 3,
+      "PARTIAL": 5,
+      "GOOD": 5,
       "OFF_ROAD": 1
     },
     "COTONOU / 9ème Arrondissement": {
-      "GOOD": 2,
-      "PARTIAL": 3,
-      "OSM_DATA_LIMIT": 1
+      "PARTIAL": 5,
+      "GOOD": 1
     },
     "COTONOU / 11ème Arrondissement": {
-      "GOOD": 7,
-      "PARTIAL": 6
+      "PARTIAL": 7,
+      "GOOD": 5,
+      "BROKEN": 1
     },
     "COTONOU / 10ème Arrondissement": {
-      "PARTIAL": 3,
-      "GOOD": 6
+      "PARTIAL": 8,
+      "GOOD": 1
     },
     "ABOMEY-CALAVI / Kpanroun": {
       "OFF_ROAD": 1,
-      "OSM_DATA_LIMIT": 7,
-      "GOOD": 1
+      "OSM_DATA_LIMIT": 5,
+      "GOOD": 2,
+      "PARTIAL": 1
     },
     "ABOMEY-CALAVI / Akassato": {
-      "OSM_DATA_LIMIT": 6,
-      "GOOD": 7,
-      "PARTIAL": 1
+      "GOOD": 6,
+      "PARTIAL": 8
     },
     "COTONOU / 3ème Arrondissement": {
-      "PARTIAL": 4,
-      "GOOD": 8,
-      "OSM_DATA_LIMIT": 1
+      "PARTIAL": 8,
+      "BROKEN": 1,
+      "GOOD": 4
     },
     "ABOMEY-CALAVI / Ouèdo": {
-      "GOOD": 6,
-      "OSM_DATA_LIMIT": 1,
-      "PARTIAL": 1
+      "PARTIAL": 3,
+      "GOOD": 5
     },
     "Abomey-Calavi / Togba": {
-      "OSM_DATA_LIMIT": 1
+      "PARTIAL": 1
     },
     "Abomey-Calavi / Godomey": {
-      "GOOD": 1
+      "PARTIAL": 1
     }
   },
   "global_aggregates": {
-    "total_near_ways": 2361,
-    "total_visited_ways": 2329,
-    "total_missed_ways": 403,
-    "n_used_dual_connector": 31
+    "total_near_ways": 5076,
+    "total_visited_ways": 4591,
+    "total_missed_ways": 1079,
+    "n_used_dual_connector": 50
   }
 }

@@ -152,9 +152,9 @@
   <h2>Diagnostics</h2>
 
   <div class="lay" style="background:#f0fdf4;border-color:#bbf7d0">
-    <label class="lay-hdr"><input type="checkbox" id="t-prop" checked><span class="lay-swatch" style="background:linear-gradient(90deg,#f87171,#fbbf24,#34d399,#60a5fa,#c084fc)"></span>road-propagation (100 m, per chef-lieu)</label>
+    <label class="lay-hdr"><input type="checkbox" id="t-prop" checked><span class="lay-swatch" style="background:linear-gradient(90deg,#f87171,#fbbf24,#34d399,#60a5fa,#c084fc)"></span><b>Road propagation — 200 m</b> (per chef-lieu)</label>
     <div class="lay-meta">
-      Road graph built with <b>KDTree 15 m node-merge</b> (fixes phantom intersections where OSM way endpoints differ by 10–20 m at the same crossing). From each chef-lieu, Dijkstra walks along OSM roads up to <b>100 m</b>. Stops at major water (canal · river · stream · lagoon · basin — <i>drains and ditches do not stop</i>) or when a road from another chef-lieu has already claimed the node. Each chef-lieu gets a stable hash-based colour (blue hues excluded).<br>
+      Road graph: <b>KDTree 15 m node-merge</b> (water-aware — refuses to merge across canals/rivers/lagoons) + <b>roundabout super-nodes</b> + <b>dual-carriageway virtual connectors</b> (40 m, water-aware). From each chef-lieu, Dijkstra walks along OSM roads up to <b>200 m</b>. Stops at major water (canal · river · stream · lagoon · basin — <i>drains and ditches do not stop</i>) or when a road from another chef-lieu has claimed the node (collision). Each chef-lieu gets a stable hash-based colour (blue hues excluded).<br>
       <span style="color:#1e40af">●</span> chef-lieu &nbsp;
       <span style="color:#6b7280;border:2px dashed #6b7280;padding:0 3px;background:#f1f5f9">○</span> off-road chef-lieu (>100 m from any road) &nbsp;
       <span style="color:#dc2626">●</span> collision &nbsp;
@@ -164,7 +164,7 @@
       <a href="data/audit_road_propagation.csv" download>validation CSV (311 rows)</a> ·
       <a href="data/audit_road_propagation_report.txt" target="_blank">validation report</a> ·
       <a href="data/audit_road_propagation_summary.json" target="_blank">summary</a><br>
-      <b>Validation buckets:</b> GOOD 179 (57.6 %) · PARTIAL 96 (30.9 %) · BROKEN <b>3 (1.0 %)</b> · OFF_ROAD 2 · OSM_DATA_LIMIT 31
+      <b>Validation @ 200 m:</b> GOOD 93 (29.9 %) · PARTIAL 200 (64.3 %) · BROKEN <b>6 (1.9 %)</b> · OFF_ROAD 2 · OSM_DATA_LIMIT 10 · <b>94 collisions</b> · 13 water stops
     </div>
     <input type="range" min="0" max="100" value="80" id="op-prop" class="slider">
   </div>
