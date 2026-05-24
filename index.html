@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Public evaluation lab for draft quartier polygons of Cotonou + Abomey-Calavi (Bénin). v1/v2/v3 versioned + disputed strips. NOT validated — experimental.">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.15.0/dist/leaflet-geoman.css">
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@2.15.0/dist/leaflet-geoman.min.js"></script>
 <style>
   *{box-sizing:border-box}
   html,body{height:100%;margin:0;font:13px -apple-system,BlinkMacSystemFont,'Segoe UI',Inter,system-ui,sans-serif;color:#1a1f2e;background:#fafafa}
@@ -50,6 +52,20 @@
 <div id="wrap"><div id="side">
   <h1>EYA · Quartier polygon lab<span class="pill">EXPERIMENTAL</span></h1>
   <p class="lede">Side-by-side comparison of three draft-polygon strategies for the 310 quartiers of Cotonou + Abomey-Calavi. <b>None of these are authoritative.</b> Read <a href="README.md">README.md</a> for what each version means and known limitations.</p>
+
+  <div class="lay" style="background:#fef3c7;border-color:#fcd34d;margin-top:10px">
+    <label class="lay-hdr" style="cursor:default">
+      <span style="font-weight:700;color:#92400e">✏ Draw mode (ground-truth input)</span>
+    </label>
+    <div class="lay-meta">Use the drawing controls at the <b>top-left of the map</b> to trace what a quartier <i>should</i> look like.<br>① Type the quartier name BELOW first, ② click the polygon tool, ③ trace, ④ double-click to finish.<br>Repeat for each quartier. Use <b>Download</b> to export all drawn polygons as one GeoJSON file.</div>
+    <input id="draw-name" type="text" placeholder="quartier name (e.g. MIDEDJI)"
+      style="width:100%;margin-top:8px;padding:6px 8px;border:1px solid #fcd34d;border-radius:4px;font:12px -apple-system,system-ui">
+    <ul id="drawn-list" style="margin:8px 0 0;padding-left:18px;font-size:11px;color:#92400e;max-height:140px;overflow:auto;list-style:disc"></ul>
+    <button id="draw-download"
+      style="margin-top:8px;width:100%;padding:7px;border:0;background:#0b1f3b;color:#fff;border-radius:6px;font-weight:600;cursor:pointer;font:600 12px -apple-system,system-ui">⬇ Download GeoJSON</button>
+    <button id="draw-clear"
+      style="margin-top:4px;width:100%;padding:6px;border:1px solid #e5e7eb;background:#fff;color:#0b1f3b;border-radius:6px;cursor:pointer;font:500 11px -apple-system,system-ui">Clear all drawn</button>
+  </div>
 
   <h2>Polygon versions</h2>
 
@@ -271,6 +287,76 @@ async function init(){
 
   // Fit to v3 (the richest)
   map.fitBounds(layers.v3.getBounds(), {padding:[20,20]});
+
+  // ─── Draw mode (Leaflet-Geoman) — user-traced ground truth ────────
+  map.pm.setLang('fr');
+  map.pm.addControls({
+    position:'topleft',
+    drawMarker:false, drawCircle:false, drawCircleMarker:false,
+    drawRectangle:false, drawPolyline:false, drawText:false,
+    drawPolygon:true, editMode:true, dragMode:false,
+    removalMode:true, cutPolygon:false, rotateMode:false,
+  });
+  // Style the drawn polygons distinctively (deep navy outline, light yellow fill)
+  map.pm.setPathOptions({color:'#0b1f3b', weight:2.5, fillColor:'#fde68a', fillOpacity:.45});
+
+  const drawn = [];
+  const refreshList = () => {
+    const ul = document.getElementById('drawn-list');
+    ul.innerHTML = '';
+    drawn.forEach((d, i) => {
+      const li = document.createElement('li');
+      li.style.cssText = 'margin:3px 0;display:flex;align-items:center;justify-content:space-between';
+      const span = document.createElement('span');
+      span.textContent = d.name;
+      li.appendChild(span);
+      const btn = document.createElement('button');
+      btn.textContent = '×';
+      btn.title = 'remove';
+      btn.style.cssText = 'border:0;background:none;color:#dc2626;cursor:pointer;font-size:16px;padding:0 6px;line-height:1';
+      btn.onclick = () => { map.removeLayer(d.layer); drawn.splice(i, 1); refreshList(); };
+      li.appendChild(btn);
+      ul.appendChild(li);
+    });
+  };
+
+  map.on('pm:create', e => {
+    const layer = e.layer;
+    const name = (document.getElementById('draw-name').value || `polygon-${drawn.length+1}`).trim().toUpperCase();
+    layer.bindTooltip(name, {permanent:true, direction:'center', className:'qlbl'});
+    layer.bindPopup(`<b>${name}</b> (user-drawn)`);
+    drawn.push({name, layer});
+    document.getElementById('draw-name').value = '';
+    refreshList();
+  });
+
+  document.getElementById('draw-download').onclick = () => {
+    if (!drawn.length) { alert('No polygons drawn yet. Use the polygon tool at the top-left of the map.'); return; }
+    const fc = {
+      type:'FeatureCollection',
+      generator:'EYA quartier lab — user-drawn ground truth',
+      timestamp:new Date().toISOString(),
+      features: drawn.map(d => ({
+        type:'Feature',
+        geometry: d.layer.toGeoJSON().geometry,
+        properties: {name: d.name},
+      })),
+    };
+    const blob = new Blob([JSON.stringify(fc, null, 2)], {type:'application/geo+json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'eya_user_drawn_quartiers.geojson';
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+
+  document.getElementById('draw-clear').onclick = () => {
+    if (!drawn.length) return;
+    if (!confirm('Clear ALL drawn polygons?')) return;
+    drawn.forEach(d => map.removeLayer(d.layer));
+    drawn.length = 0;
+    refreshList();
+  };
 }
 
 init().catch(e => {
