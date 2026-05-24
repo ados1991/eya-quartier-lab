@@ -7,18 +7,18 @@ ROAD_NEARBY_THRESHOLD_M  : 100
 
 chef-lieus loaded         : 311
 chef-lieus off_road       : 2
-propagation polylines     : 6053
+propagation polylines     : 6263
 collision points          : 0
 water-stop points         : 2
-end-of-distance stops     : 3442
+end-of-distance stops     : 3612
 
 === before/after (round-decimals → KDTree merge) ===
 metric                                         before      after
-graph nodes                                    152603      94192
+graph nodes                                    152603      94190
 chef-lieus no road within 200 m                     1          1
-chef-lieus with ≤2 edges from snap                 69         25
-chef-lieus missing ≥1 nearby road                 166        175
-chef-lieus missing ≥3 nearby roads                 62         61
+chef-lieus with ≤2 edges from snap                 69         22
+chef-lieus missing ≥1 nearby road                 166        170
+chef-lieus missing ≥3 nearby roads                 62         56
 total nearby ways                                2361       2361
-total visited ways                               2104       2288
-total MISSED ways                                 477        438
+total visited ways                               2104       2329
+total MISSED ways                                 477        404
