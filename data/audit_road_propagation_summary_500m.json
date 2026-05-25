@@ -1,0 +1,219 @@
+{
+  "total_chiefs": 311,
+  "bucket_counts": {
+    "PARTIAL": 289,
+    "BROKEN": 6,
+    "GOOD": 12,
+    "OFF_ROAD": 2,
+    "OSM_DATA_LIMIT": 2
+  },
+  "thresholds": {
+    "GOOD": "coverage ≥ 80 % AND missed ≤ 1",
+    "PARTIAL": "40 % ≤ coverage < 80 %",
+    "BROKEN": "coverage < 40 % with ≥4 near ways",
+    "OFF_ROAD": "snap distance > 100 m",
+    "OSM_DATA_LIMIT": "≤ 3 near ways in OSM (no way to judge)"
+  },
+  "graph_meta": {
+    "n_raw_points": 195610,
+    "n_nodes": 94213,
+    "n_roundabouts": 44,
+    "n_dual_connectors": 957,
+    "n_water_blocked_merges": 60,
+    "n_water_blocked_dual_connectors": 3,
+    "water_blocked_merge_examples": [
+      {
+        "a": [
+          6.353483,
+          2.307113
+        ],
+        "b": [
+          6.353483,
+          2.307113
+        ]
+      },
+      {
+        "a": [
+          6.358743,
+          2.360384
+        ],
+        "b": [
+          6.358866,
+          2.360368
+        ]
+      },
+      {
+        "a": [
+          6.358866,
+          2.360368
+        ],
+        "b": [
+          6.358743,
+          2.360384
+        ]
+      },
+      {
+        "a": [
+          6.358866,
+          2.360368
+        ],
+        "b": [
+          6.358743,
+          2.360384
+        ]
+      },
+      {
+        "a": [
+          6.358866,
+          2.360368
+        ],
+        "b": [
+          6.358743,
+          2.360384
+        ]
+      },
+      {
+        "a": [
+          6.390231,
+          2.355165
+        ],
+        "b": [
+          6.390287,
+          2.355091
+        ]
+      },
+      {
+        "a": [
+          6.390231,
+          2.355165
+        ],
+        "b": [
+          6.390287,
+          2.355091
+        ]
+      },
+      {
+        "a": [
+          6.390231,
+          2.355165
+        ],
+        "b": [
+          6.390287,
+          2.355091
+        ]
+      },
+      {
+        "a": [
+          6.390287,
+          2.355091
+        ],
+        "b": [
+          6.390231,
+          2.355165
+        ]
+      },
+      {
+        "a": [
+          6.382958,
+          2.359019
+        ],
+        "b": [
+          6.382948,
+          2.359152
+        ]
+      }
+    ]
+  },
+  "per_arrondissement": {
+    "COTONOU / 12ème Arrondissement": {
+      "PARTIAL": 17,
+      "GOOD": 1
+    },
+    "COTONOU / 1er Arrondissement": {
+      "PARTIAL": 13
+    },
+    "COTONOU / 2ème Arrondissement": {
+      "PARTIAL": 13
+    },
+    "ABOMEY-CALAVI / Godomey": {
+      "PARTIAL": 47
+    },
+    "COTONOU / 7ème Arrondissement": {
+      "PARTIAL": 11
+    },
+    "COTONOU / 5ème Arrondissement": {
+      "PARTIAL": 15
+    },
+    "COTONOU / 6ème Arrondissement": {
+      "PARTIAL": 19
+    },
+    "ABOMEY-CALAVI / Togba": {
+      "PARTIAL": 10
+    },
+    "COTONOU / 8ème Arrondissement": {
+      "PARTIAL": 8
+    },
+    "ABOMEY-CALAVI / Hêvié": {
+      "PARTIAL": 9
+    },
+    "ABOMEY-CALAVI / Abomey-Calavi": {
+      "BROKEN": 1,
+      "PARTIAL": 18
+    },
+    "COTONOU / 4ème Arrondissement": {
+      "PARTIAL": 12
+    },
+    "ABOMEY-CALAVI / Golo-Djigbé": {
+      "PARTIAL": 13,
+      "GOOD": 1
+    },
+    "COTONOU / 13ème Arrondissement": {
+      "BROKEN": 1,
+      "PARTIAL": 13
+    },
+    "ABOMEY-CALAVI / Zinvié": {
+      "GOOD": 4,
+      "PARTIAL": 9,
+      "OFF_ROAD": 1,
+      "BROKEN": 1
+    },
+    "COTONOU / 9ème Arrondissement": {
+      "PARTIAL": 5,
+      "BROKEN": 1
+    },
+    "COTONOU / 11ème Arrondissement": {
+      "PARTIAL": 13
+    },
+    "COTONOU / 10ème Arrondissement": {
+      "PARTIAL": 8,
+      "BROKEN": 1
+    },
+    "ABOMEY-CALAVI / Kpanroun": {
+      "OFF_ROAD": 1,
+      "GOOD": 6,
+      "OSM_DATA_LIMIT": 2
+    },
+    "ABOMEY-CALAVI / Akassato": {
+      "PARTIAL": 14
+    },
+    "COTONOU / 3ème Arrondissement": {
+      "PARTIAL": 12,
+      "BROKEN": 1
+    },
+    "ABOMEY-CALAVI / Ouèdo": {
+      "PARTIAL": 8
+    },
+    "Abomey-Calavi / Togba": {
+      "PARTIAL": 1
+    },
+    "Abomey-Calavi / Godomey": {
+      "PARTIAL": 1
+    }
+  },
+  "global_aggregates": {
+    "total_near_ways": 20942,
+    "total_visited_ways": 16295,
+    "total_missed_ways": 5441,
+    "n_used_dual_connector": 115
+  }
+}

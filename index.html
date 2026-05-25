@@ -166,10 +166,12 @@
     <input type="range" min="0" max="100" value="80" id="op-prop" class="slider">
 
     <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-prop300"><span class="lay-swatch" style="background:#10b981"></span>Road propagation — 300 m</label>
-    <div class="lay-meta">GOOD 36 · PART 263 · BROK 6 · <b>433 collisions</b> · 19 water stops · coverage 83.1 %<br>
-      <i>Decoupled audit:</i> 300 m prop scored at <b>100 m radius → 232 GOOD / 0 BROKEN</b>, at <b>200 m radius → 200 GOOD / 2 BROKEN</b>. 300 m propagation actually <b>improves</b> coverage when the audit radius stays fixed.
-    </div>
+    <div class="lay-meta">GOOD 36 · PART 263 · BROK 6 · <b>433 collisions</b> · 19 water stops · coverage 83.1 %</div>
     <input type="range" min="0" max="100" value="80" id="op-prop300" class="slider">
+
+    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-prop500"><span class="lay-swatch" style="background:#065f46"></span>Road propagation — 500 m</label>
+    <div class="lay-meta">GOOD 12 · PART 289 · BROK 6 · OFFR 2 · OSM 2 · coverage 77.8 % · 20 942 near ways</div>
+    <input type="range" min="0" max="100" value="80" id="op-prop500" class="slider">
 
     <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-ovr-off"><span class="lay-swatch" style="background:#dc2626"></span>Suspicious overreach — offenders</label>
     <div class="lay-meta">
@@ -187,15 +189,26 @@
     </div>
     <input type="range" min="0" max="100" value="70" id="op-ovr-vic" class="slider">
 
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-compet"><span class="lay-swatch" style="background:#16a34a;border:1.5px solid #052e16"></span><b>Road propagation — 300 m COMPETITIVE</b> (no overlap)</label>
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-compet"><span class="lay-swatch" style="background:#16a34a;border:1.5px solid #052e16"></span><b>Road propagation — 300 m COMPETITIVE</b> (dept-bounded)</label>
     <div class="lay-meta">
-      Same 300 m budget, same graph, but the propagation is <b>truly competitive</b>: each chef-lieu only draws an edge if it actually <b>claims</b> the destination node. When two chef-lieus meet, both stop at the contact point — no line crosses another's territory.<br>
-      <b>30 837 → 19 617 segments rendered</b> (63.6 % of the independent layer; 11 220 phantom "pushed but never owned" segments removed). Toggle this ON and the independent 300 m layer OFF to verify Vodjè-Centre no longer passes through Cadjèhoun-Détinsa's line.<br>
-      <b>403 frontier points</b> (vs 433 independent collisions; small diff because competitive only counts FIRST contacts, not multi-quartier overlaps).<br>
+      Same 300 m budget, true competitive (claim-time rendering) + <b>department-boundary hard stop</b> (Cotonou→Littoral, Abomey-Calavi→Atlantique). 301 polylines, 18 860 segments, 403 frontier points, 69 dept-boundary stops affecting 13 chiefs.<br>
       <a href="data/competitive_road_propagation_300m.geojson" download>lines</a> ·
       <a href="data/competitive_frontier_points_300m.geojson" download>frontier points</a>
     </div>
     <input type="range" min="0" max="100" value="85" id="op-compet" class="slider">
+
+    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-compet500"><span class="lay-swatch" style="background:#14532d;border:1.5px solid #052e16"></span><b>Road propagation — 500 m COMPETITIVE</b> (dept-bounded)</label>
+    <div class="lay-meta">
+      500 m competitive + dept boundary. 301 polylines, 31 474 segments, <b>1 980 frontier points</b> (5× more than 300 m — most pairs now meet), 85 dept-boundary stops (14 chiefs). 2 water crossings (same as 300 m — boundary holds).<br>
+      Stop-reason markers: <span style="display:inline-block;width:9px;height:9px;background:#fde047;border:1px solid #000;border-radius:50%;vertical-align:middle"></span> contact frontier ·
+      <span style="display:inline-block;width:8px;height:8px;background:#7dd3fc;border:1px solid #0369a1;border-radius:50%;vertical-align:middle"></span> major water ·
+      <span style="display:inline-block;width:8px;height:8px;background:#ef4444;border:1.5px solid #7f1d1d;border-radius:50%;vertical-align:middle"></span> dept boundary ·
+      <span style="display:inline-block;width:7px;height:7px;background:#cbd5e1;border:1px solid #94a3b8;border-radius:50%;vertical-align:middle"></span> 500 m budget end<br>
+      <a href="data/competitive_road_propagation_500m.geojson" download>lines</a> ·
+      <a href="data/competitive_frontier_points_500m.geojson" download>frontier points</a> ·
+      <a href="data/audit_road_propagation_summary_500m.json" target="_blank">audit summary</a>
+    </div>
+    <input type="range" min="0" max="100" value="85" id="op-compet500" class="slider">
 
     <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-front" checked><span class="lay-swatch" style="background:linear-gradient(90deg,#9333ea,#ec4899,#f59e0b,#10b981)"></span><b>300 m frontier structures</b> (clustered)</label>
     <div class="lay-meta">
@@ -349,6 +362,7 @@ const WATERWAY_STYLE = (f) => {
 const PROP_STYLE   = (f) => ({color: f.properties.color || '#888', weight:2.5, opacity:.85});
 const PROP100_STYLE = (f) => ({color: f.properties.color || '#888', weight:1.5, opacity:.75});
 const PROP300_STYLE = (f) => ({color: f.properties.color || '#888', weight:3.5, opacity:.55});
+const PROP500_STYLE = (f) => ({color: f.properties.color || '#888', weight:4.5, opacity:.40});
 
 // Frontier structures — style by shape + scale by collision count
 const FRONT_STYLE = (f) => {
@@ -450,7 +464,8 @@ async function loadGeo(url){
 async function init(){
   // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach + frontiers
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
-         propL100, propP100, propL300, propP300, coll300, ovr300, front300, competL, competP] = await Promise.all([
+         propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
+         competL, competP, competL500, competP500] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -474,11 +489,15 @@ async function init(){
     loadGeo('data/road_propagation_points_100m.geojson').catch(()=>({features:[]})),
     loadGeo('data/road_propagation_lines_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/road_propagation_points_300m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/road_propagation_lines_500m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/road_propagation_points_500m.geojson').catch(()=>({features:[]})),
     loadGeo('data/collision_points_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/suspicious_overreach_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/frontier_clusters_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_road_propagation_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_frontier_points_300m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_road_propagation_500m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_frontier_points_500m.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -522,14 +541,22 @@ async function init(){
     pointToLayer:(f,latlng)=>L.circleMarker(latlng, PROP_POINT_STYLE(f))});
   layers.prop300 = L.layerGroup([layers.propL300, layers.propP300]);
 
-  // 300 m COMPETITIVE propagation — no edges crossing other quartiers' territory
+  layers.propL500 = L.geoJSON(propL500, {style: PROP500_STYLE,
+    onEachFeature:(f,l)=>{const p=f.properties;l.bindPopup(`<b>${p.name||'?'}</b> · 500m<br>snap ${p.snap_m}m · ${p.seg_count} segs`);}});
+  layers.propP500 = L.geoJSON(propP500, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, PROP_POINT_STYLE(f))});
+  layers.prop500 = L.layerGroup([layers.propL500, layers.propP500]);
+
+  // 300/500 m COMPETITIVE propagation — claim-time rendering + dept-boundary stop
   const COMPET_STYLE = (f) => ({color: f.properties.color || '#888', weight:3.2, opacity:.92});
+  const COMPET_STYLE_500 = (f) => ({color: f.properties.color || '#888', weight:2.8, opacity:.80});
   const COMPET_PT_STYLE = (f) => {
     const k = f.properties.kind;
-    if (k === 'chef_lieu')    return {radius:5, color:'#0b1f3b', weight:1.2, fillColor: f.properties.color, fillOpacity:.95};
-    if (k === 'frontier')     return {radius:5, color:'#000',    weight:2,   fillColor:'#fde047', fillOpacity:.95};
-    if (k === 'water_stop')   return {radius:4, color:'#0369a1', weight:1.5, fillColor:'#7dd3fc', fillOpacity:.85};
-    if (k === 'end_stop')     return {radius:2.5, color:'#94a3b8',weight:0.8, fillColor:'#cbd5e1', fillOpacity:.6};
+    if (k === 'chef_lieu')          return {radius:5,  color:'#0b1f3b', weight:1.2, fillColor: f.properties.color, fillOpacity:.95};
+    if (k === 'frontier')           return {radius:5,  color:'#000',    weight:2,   fillColor:'#fde047', fillOpacity:.95};
+    if (k === 'water_stop')         return {radius:4,  color:'#0369a1', weight:1.5, fillColor:'#7dd3fc', fillOpacity:.85};
+    if (k === 'dept_boundary_stop') return {radius:5,  color:'#7f1d1d', weight:1.8, fillColor:'#ef4444', fillOpacity:.92};
+    if (k === 'end_stop')           return {radius:2.5,color:'#94a3b8', weight:0.8, fillColor:'#cbd5e1', fillOpacity:.6};
     return {radius:3, color:'#666', weight:1, fillColor:'#aaa', fillOpacity:.6};
   };
   layers.competL = L.geoJSON(competL, {style: COMPET_STYLE,
@@ -548,6 +575,25 @@ async function init(){
       else l.bindPopup(`${k}: ${p.stopped||''}`);
     }});
   layers.compet = L.layerGroup([layers.competL, layers.competP]);
+
+  layers.competL500 = L.geoJSON(competL500, {style: COMPET_STYLE_500,
+    onEachFeature:(f,l)=>{
+      const p=f.properties;
+      l.bindPopup(`<b>${p.name}</b> · 500m COMPETITIVE<br>${p.seg_count} claimed segments`);
+    }});
+  layers.competP500 = L.geoJSON(competP500, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p=f.properties; const k=p.kind;
+      if (k === 'frontier')
+        l.bindPopup(`<b>FRONTIER</b><br><b>${p.blocker}</b> (${p.blocker_dist_m} m) blocked <b>${p.blocked}</b> (would-be ${p.blocked_dist_m} m)`);
+      else if (k === 'dept_boundary_stop')
+        l.bindPopup(`<b>DEPT BOUNDARY STOP</b><br>${p.stopped} stopped at edge of ${p.home_dept}`);
+      else if (k === 'chef_lieu')
+        l.bindPopup(`<b>${p.name}</b><br>${p.arrondissement||''}`);
+      else l.bindPopup(`${k}: ${p.stopped||''}`);
+    }});
+  layers.compet500 = L.layerGroup([layers.competL500, layers.competP500]);
 
   // 300 m frontier structures (clustered)
   layers.front = L.geoJSON(front300, {
@@ -727,11 +773,13 @@ async function init(){
   bind('t-prop', layers.prop);
   bind('t-prop100', layers.prop100);
   bind('t-prop300', layers.prop300);
+  bind('t-prop500', layers.prop500);
   bind('t-coll300', layers.coll300);
   bind('t-ovr-off', layers.ovrOff);
   bind('t-ovr-vic', layers.ovrVic);
   bind('t-front', layers.front);
   bind('t-compet', layers.compet);
+  bind('t-compet500', layers.compet500);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
