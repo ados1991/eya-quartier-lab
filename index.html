@@ -197,6 +197,19 @@
     </div>
     <input type="range" min="0" max="100" value="85" id="op-compet" class="slider">
 
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competF"><span class="lay-swatch" style="background:linear-gradient(135deg,#022c22 50%,#fde047 50%);border:1.5px solid #052e16"></span><b>Road propagation — FULL COVERAGE</b> (unlimited, dept-bounded)</label>
+    <div class="lay-meta">
+      Unlimited Dijkstra: each chef-lieu propagates until it hits major water, the department boundary, a road dead-end, or another chef-lieu's claimed network. <b>88 668 of 94 213 graph nodes claimed (94.1 %)</b>; 5 545 unclaimed (3 826 outside Littoral/Atlantique, 1 667 in unreached Atlantique sub-regions, 52 in unreached Littoral pockets).<br>
+      <b>7 040 frontier contact points</b> (vs 1 980 at 500 m — most pairs now fully meet).<br>
+      <b>161 dept-boundary stops</b> affecting 21 chiefs.  49 water stops.  0 end-of-budget stops (unlimited).<br>
+      <b>Largest territories</b> (Abomey-Calavi suburbs): Cococodji 5 984 nodes · Ahowégodo 4 244 · Wawata-Todja 3 342 · Djèkpota 2 322 · Anagbo 2 237.<br>
+      <b>Smallest (squeezed)</b>: 10 chef-lieus with only 1 claimed node (Cotonou 12ème/13ème central — each one surrounded by aggressive neighbours).<br>
+      <a href="data/competitive_road_propagation_full.geojson" download>lines</a> ·
+      <a href="data/competitive_frontier_points_full.geojson" download>frontier points</a> ·
+      <a href="data/competitive_diag_full.json" target="_blank">diagnostic JSON</a>
+    </div>
+    <input type="range" min="0" max="100" value="85" id="op-competF" class="slider">
+
     <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-compet500"><span class="lay-swatch" style="background:#14532d;border:1.5px solid #052e16"></span><b>Road propagation — 500 m COMPETITIVE</b> (dept-bounded)</label>
     <div class="lay-meta">
       500 m competitive + dept boundary. 301 polylines, 31 474 segments, <b>1 980 frontier points</b> (5× more than 300 m — most pairs now meet), 85 dept-boundary stops (14 chiefs). 2 water crossings (same as 300 m — boundary holds).<br>
@@ -465,7 +478,7 @@ async function init(){
   // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach + frontiers
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
-         competL, competP, competL500, competP500] = await Promise.all([
+         competL, competP, competL500, competP500, competLF, competPF] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -498,6 +511,8 @@ async function init(){
     loadGeo('data/competitive_frontier_points_300m.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_road_propagation_500m.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_frontier_points_500m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_road_propagation_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_frontier_points_full.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -594,6 +609,27 @@ async function init(){
       else l.bindPopup(`${k}: ${p.stopped||''}`);
     }});
   layers.compet500 = L.layerGroup([layers.competL500, layers.competP500]);
+
+  // FULL COVERAGE competitive — unlimited budget
+  const COMPET_STYLE_FULL = (f) => ({color: f.properties.color || '#888', weight:2.2, opacity:.75});
+  layers.competLF = L.geoJSON(competLF, {style: COMPET_STYLE_FULL,
+    onEachFeature:(f,l)=>{
+      const p=f.properties;
+      l.bindPopup(`<b>${p.name}</b> · FULL COVERAGE<br>${p.seg_count} claimed segments`);
+    }});
+  layers.competPF = L.geoJSON(competPF, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p=f.properties; const k=p.kind;
+      if (k === 'frontier')
+        l.bindPopup(`<b>FRONTIER</b><br><b>${p.blocker}</b> (${p.blocker_dist_m} m) blocked <b>${p.blocked}</b> (would-be ${p.blocked_dist_m} m)`);
+      else if (k === 'dept_boundary_stop')
+        l.bindPopup(`<b>DEPT BOUNDARY STOP</b><br>${p.stopped} stopped at edge of ${p.home_dept}`);
+      else if (k === 'chef_lieu')
+        l.bindPopup(`<b>${p.name}</b><br>${p.arrondissement||''}`);
+      else l.bindPopup(`${k}: ${p.stopped||''}`);
+    }});
+  layers.competF = L.layerGroup([layers.competLF, layers.competPF]);
 
   // 300 m frontier structures (clustered)
   layers.front = L.geoJSON(front300, {
@@ -780,6 +816,7 @@ async function init(){
   bind('t-front', layers.front);
   bind('t-compet', layers.compet);
   bind('t-compet500', layers.compet500);
+  bind('t-competF', layers.competF);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){

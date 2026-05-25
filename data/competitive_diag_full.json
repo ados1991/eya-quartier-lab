@@ -1,0 +1,3203 @@
+{
+  "max_dist_m": "unlimited",
+  "total_graph_nodes": 94213,
+  "claimed_nodes": 88668,
+  "unclaimed_nodes": 5545,
+  "unclaimed_classification": {
+    "outside_metro_depts": 3826,
+    "in_littoral_unreached": 52,
+    "in_atlantique_unreached": 1667
+  },
+  "frontier_points": 7040,
+  "water_stops": 49,
+  "dept_boundary_stops": 161,
+  "end_of_budget_stops": 0,
+  "chiefs_blocked_by_dept": [
+    "Adjaha-Cité",
+    "Agla-Agongbomey",
+    "Agla-Akplomey",
+    "Agla-Centre",
+    "Agla-Figaro",
+    "Agla-Finafa",
+    "Agla-Les-Pylônes",
+    "Ahouanlèko",
+    "Akôgbato",
+    "Dandji-Hokanmè",
+    "Fidjrossè-Centre",
+    "Fidjrossè-Kpota",
+    "Fiyégnon-Houta",
+    "Fiyégnon-Jacquot",
+    "Gbodjètin",
+    "Hlazounto",
+    "Kindonou",
+    "Tchanhounkpamè",
+    "Togbin-Fandji",
+    "Tokplégbé",
+    "Yèmicodji"
+  ],
+  "territory_sizes": [
+    {
+      "qi": 55,
+      "name": "Cococodji",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 5984,
+      "rendered_segs": 5983,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 44,
+      "name": "Ahowégodo",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 4244,
+      "rendered_segs": 4243,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 214,
+      "name": "Wawata-Todja",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 3342,
+      "rendered_segs": 3341,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 294,
+      "name": "Djèkpota",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 2322,
+      "rendered_segs": 2321,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 133,
+      "name": "Anagbo",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 2237,
+      "rendered_segs": 2236,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 33,
+      "name": "Djissoukpa",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1634,
+      "rendered_segs": 1633,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 282,
+      "name": "Dassèkomey",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1529,
+      "rendered_segs": 1528,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 96,
+      "name": "Adovié",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1327,
+      "rendered_segs": 1323,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 162,
+      "name": "Togbin-Fandji",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1296,
+      "rendered_segs": 1301,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 110,
+      "name": "Kansounkpa",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1280,
+      "rendered_segs": 1279,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 18,
+      "name": "Akossavié",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1273,
+      "rendered_segs": 1272,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 305,
+      "name": "Hêvié",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1196,
+      "rendered_segs": 1195,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 225,
+      "name": "Dossounou",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 996,
+      "rendered_segs": 995,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 51,
+      "name": "Zèkanmey-Domè",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 993,
+      "rendered_segs": 992,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 286,
+      "name": "Drabo",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 933,
+      "rendered_segs": 932,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 143,
+      "name": "Hounzévié\n",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 928,
+      "rendered_segs": 927,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 209,
+      "name": "Houinmè",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 921,
+      "rendered_segs": 920,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 243,
+      "name": "Kpossidja",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 855,
+      "rendered_segs": 854,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 307,
+      "name": "Ouèdo",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 853,
+      "rendered_segs": 852,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 192,
+      "name": "Dessato\n",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 830,
+      "rendered_segs": 826,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 295,
+      "name": "Houinmè-Daho",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 779,
+      "rendered_segs": 778,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 99,
+      "name": "Domey-Gbo",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 777,
+      "rendered_segs": 776,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 191,
+      "name": "Agassa-Godomey",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 738,
+      "rendered_segs": 737,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 136,
+      "name": "Cité-les-Palmiers\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 718,
+      "rendered_segs": 716,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 272,
+      "name": "Alladacomè",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 706,
+      "rendered_segs": 705,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 149,
+      "name": "Godomey-N'Gbèho",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 703,
+      "rendered_segs": 702,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 150,
+      "name": "Zoundja\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 700,
+      "rendered_segs": 693,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 40,
+      "name": "Maria-Gléta\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 688,
+      "rendered_segs": 687,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 84,
+      "name": "Agonmé",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 688,
+      "rendered_segs": 687,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 178,
+      "name": "Djigbo",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 652,
+      "rendered_segs": 651,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 113,
+      "name": "Womey-Centre\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 644,
+      "rendered_segs": 643,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 46,
+      "name": "Somè",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 641,
+      "rendered_segs": 640,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 146,
+      "name": "Adjagbo",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 632,
+      "rendered_segs": 631,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 247,
+      "name": "Aïfa-Calavi",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 627,
+      "rendered_segs": 626,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 8,
+      "name": "Ouéga-Tokpa",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 621,
+      "rendered_segs": 620,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 211,
+      "name": "Sogan",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 614,
+      "rendered_segs": 613,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 201,
+      "name": "Tankpè-Tanmè",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 610,
+      "rendered_segs": 609,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 141,
+      "name": "Agongbé",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 591,
+      "rendered_segs": 590,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 293,
+      "name": "Gbétagbo",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 582,
+      "rendered_segs": 581,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 299,
+      "name": "Alansankomè",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 579,
+      "rendered_segs": 578,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 15,
+      "name": "Zoungo",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 577,
+      "rendered_segs": 574,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 135,
+      "name": "Misséssinto",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 575,
+      "rendered_segs": 571,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 310,
+      "name": "Womey-Yénawa",
+      "arr": "Godomey",
+      "commune": "Abomey-Calavi",
+      "claimed_nodes": 575,
+      "rendered_segs": 574,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 74,
+      "name": "Houèto",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 538,
+      "rendered_segs": 537,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 303,
+      "name": "Ouéga-Agué",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 535,
+      "rendered_segs": 534,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 129,
+      "name": "Ahouato",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 530,
+      "rendered_segs": 529,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 187,
+      "name": "Avagbé",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 530,
+      "rendered_segs": 530,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 306,
+      "name": "Akassato",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 529,
+      "rendered_segs": 528,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 298,
+      "name": "Ahossougbéta",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 518,
+      "rendered_segs": 517,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 308,
+      "name": "Golo-Djigbé",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 512,
+      "rendered_segs": 511,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 69,
+      "name": "Sokan",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 504,
+      "rendered_segs": 503,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 270,
+      "name": "Kpodji-Les-Monts",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 504,
+      "rendered_segs": 503,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 290,
+      "name": "Adjagbo-Aïdjèdo",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 491,
+      "rendered_segs": 490,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 115,
+      "name": "Sodo\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 490,
+      "rendered_segs": 489,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 79,
+      "name": "Dangbodji",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 483,
+      "rendered_segs": 482,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 13,
+      "name": "Fifonsi\n",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 468,
+      "rendered_segs": 467,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 231,
+      "name": "Haie-Vive-Cocotiers",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 462,
+      "rendered_segs": 449,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 242,
+      "name": "Plateau\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 460,
+      "rendered_segs": 459,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 204,
+      "name": "Adjagbo",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 457,
+      "rendered_segs": 456,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 159,
+      "name": "Aïdégnon\n",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 456,
+      "rendered_segs": 455,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 16,
+      "name": "Tankpê-Yoho",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 449,
+      "rendered_segs": 448,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 221,
+      "name": "Tokan",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 448,
+      "rendered_segs": 447,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 267,
+      "name": "Zopah-Kokpo",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 434,
+      "rendered_segs": 423,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 77,
+      "name": "Alègléta",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 433,
+      "rendered_segs": 432,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 224,
+      "name": "Dokomè",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 414,
+      "rendered_segs": 413,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 70,
+      "name": "Aïtchédji\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 412,
+      "rendered_segs": 411,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 82,
+      "name": "Yèvié",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 407,
+      "rendered_segs": 408,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 226,
+      "name": "Glo-Tokpa",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 404,
+      "rendered_segs": 403,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 261,
+      "name": "Lohoussa",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 386,
+      "rendered_segs": 385,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 60,
+      "name": "Houèkè-Honou",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 380,
+      "rendered_segs": 379,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 256,
+      "name": "Agori",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 376,
+      "rendered_segs": 374,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 9,
+      "name": "Tankpè-Togoudo",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 370,
+      "rendered_segs": 368,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 126,
+      "name": "Atrokpo-Codji",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 368,
+      "rendered_segs": 365,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 213,
+      "name": "Fandji\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 367,
+      "rendered_segs": 364,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 85,
+      "name": "Kolètin",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 365,
+      "rendered_segs": 364,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 253,
+      "name": "Golo-Fanto",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 365,
+      "rendered_segs": 364,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 14,
+      "name": "Ounvènoumèdé\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 364,
+      "rendered_segs": 361,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 24,
+      "name": "Amahoun\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 351,
+      "rendered_segs": 350,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 223,
+      "name": "Agonsoudja",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 345,
+      "rendered_segs": 344,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 228,
+      "name": "Houèkè-Gbo",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 344,
+      "rendered_segs": 341,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 59,
+      "name": "Yèkon-Do",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 340,
+      "rendered_segs": 339,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 93,
+      "name": "Zinvié-Fandji",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 338,
+      "rendered_segs": 337,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 43,
+      "name": "Alédjo\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 333,
+      "rendered_segs": 332,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 176,
+      "name": "Houégoudo\n",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 332,
+      "rendered_segs": 331,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 309,
+      "name": "Togba_Maria-Gléta",
+      "arr": "Togba",
+      "commune": "Abomey-Calavi",
+      "claimed_nodes": 332,
+      "rendered_segs": 331,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 169,
+      "name": "Agamandin",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 323,
+      "rendered_segs": 321,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 182,
+      "name": "Zinvié-Zounmè",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 323,
+      "rendered_segs": 322,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 75,
+      "name": "Finafa\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 322,
+      "rendered_segs": 320,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 274,
+      "name": "Zogbadjè",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 322,
+      "rendered_segs": 321,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 73,
+      "name": "Gbodjè-Womey\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 316,
+      "rendered_segs": 313,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 236,
+      "name": "Tchinangbégbo\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 315,
+      "rendered_segs": 314,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 216,
+      "name": "Sèmè",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 305,
+      "rendered_segs": 304,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 175,
+      "name": "Yénandjro\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 303,
+      "rendered_segs": 302,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 246,
+      "name": "La-Paix\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 301,
+      "rendered_segs": 300,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 86,
+      "name": "Togbin-Daho",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 288,
+      "rendered_segs": 289,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 199,
+      "name": "Fandji\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 283,
+      "rendered_segs": 277,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 177,
+      "name": "Dénou\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 280,
+      "rendered_segs": 269,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 237,
+      "name": "Adjogansa",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 276,
+      "rendered_segs": 275,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 58,
+      "name": "Tokpa\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 275,
+      "rendered_segs": 274,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 233,
+      "name": "Azonsa",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 269,
+      "rendered_segs": 268,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 83,
+      "name": "Wawata",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 264,
+      "rendered_segs": 263,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 21,
+      "name": "Agonkèssa",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 263,
+      "rendered_segs": 262,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 184,
+      "name": "Adjamè\n",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 252,
+      "rendered_segs": 251,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 188,
+      "name": "Assrossa\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 251,
+      "rendered_segs": 250,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 297,
+      "name": "Zopah-Akassato",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 248,
+      "rendered_segs": 244,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 35,
+      "name": "Fiyégnon-Jacquot",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 241,
+      "rendered_segs": 255,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 87,
+      "name": "Kpotomey",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 238,
+      "rendered_segs": 237,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 119,
+      "name": "Ahouanlèko",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 235,
+      "rendered_segs": 231,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 100,
+      "name": "Adjaha-Cité",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 226,
+      "rendered_segs": 238,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 138,
+      "name": "Kpé",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 226,
+      "rendered_segs": 225,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 31,
+      "name": "Mènontin",
+      "arr": "9ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 219,
+      "rendered_segs": 215,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 173,
+      "name": "Gbodjo",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 219,
+      "rendered_segs": 212,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 241,
+      "name": "Togbin-Kpèvi",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 215,
+      "rendered_segs": 215,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 26,
+      "name": "Gbègnigan-Midokpo\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 213,
+      "rendered_segs": 212,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 279,
+      "name": "Cocotomey",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 207,
+      "rendered_segs": 206,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 23,
+      "name": "Agbo Codji Sèdégbé",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 205,
+      "rendered_segs": 204,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 47,
+      "name": "Agonkanmey\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 205,
+      "rendered_segs": 204,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 88,
+      "name": "Tokpa-Zoungo-Nord\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 204,
+      "rendered_segs": 203,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 91,
+      "name": "Kpaviédja",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 204,
+      "rendered_segs": 203,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 28,
+      "name": "Cité-la-Victoire\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 203,
+      "rendered_segs": 202,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 222,
+      "name": "Houéyihô-Tannou",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 193,
+      "rendered_segs": 187,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 27,
+      "name": "Tokpa-Zoungo-Sud\n",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 191,
+      "rendered_segs": 179,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 249,
+      "name": "Hounsa-Agbodokpa\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 189,
+      "rendered_segs": 188,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 250,
+      "name": "Zogbohouè",
+      "arr": "9ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 182,
+      "rendered_segs": 181,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 264,
+      "name": "Kouhounou",
+      "arr": "10ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 176,
+      "rendered_segs": 168,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 120,
+      "name": "Zèkanmey",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 175,
+      "rendered_segs": 174,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 190,
+      "name": "Yêkon-Aga",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 175,
+      "rendered_segs": 174,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 230,
+      "name": "Logbozounkpa",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 173,
+      "rendered_segs": 172,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 238,
+      "name": "Dèkoungbé\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 169,
+      "rendered_segs": 166,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 262,
+      "name": "Yèvié-Nougo",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 164,
+      "rendered_segs": 163,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 144,
+      "name": "Fidjrossè-Centre",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 154,
+      "rendered_segs": 161,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 127,
+      "name": "Gbodjoko",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 151,
+      "rendered_segs": 150,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 1,
+      "name": "Dandji-Hokanmè",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 149,
+      "rendered_segs": 178,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 271,
+      "name": "Agla-Les-Pylônes",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 149,
+      "rendered_segs": 153,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 36,
+      "name": "Fifadji",
+      "arr": "9ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 146,
+      "rendered_segs": 146,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 164,
+      "name": "Sèdomey",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 144,
+      "rendered_segs": 142,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 304,
+      "name": "Kpanroun",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 142,
+      "rendered_segs": 141,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 30,
+      "name": "Zinvié-Agolèdji",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 139,
+      "rendered_segs": 138,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 268,
+      "name": "Gninkindji\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 134,
+      "rendered_segs": 133,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 285,
+      "name": "Énagnon",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 134,
+      "rendered_segs": 133,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 11,
+      "name": "Djoukpa-Togoudo\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 127,
+      "rendered_segs": 126,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 156,
+      "name": "Agla-Petit-Château",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 126,
+      "rendered_segs": 123,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 160,
+      "name": "Zounga\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 126,
+      "rendered_segs": 125,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 288,
+      "name": "Agla-Centre",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 126,
+      "rendered_segs": 135,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 195,
+      "name": "Salamey",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 124,
+      "rendered_segs": 123,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 45,
+      "name": "Agounvocôdji",
+      "arr": "10ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 123,
+      "rendered_segs": 122,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 139,
+      "name": "Zongo-Ehuzu",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 121,
+      "rendered_segs": 120,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 248,
+      "name": "Nonhouénou\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 120,
+      "rendered_segs": 120,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 280,
+      "name": "Sèdjannako\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 119,
+      "rendered_segs": 113,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 39,
+      "name": "Espace-Saint",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 118,
+      "rendered_segs": 117,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 106,
+      "name": "Avotrou-Aïmonlonfidé",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 116,
+      "rendered_segs": 115,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 219,
+      "name": "Finagnon",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 116,
+      "rendered_segs": 115,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 281,
+      "name": "Gbèdiga-Guêdêhounguè",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 114,
+      "rendered_segs": 111,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 94,
+      "name": "Fignonhou\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 112,
+      "rendered_segs": 111,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 153,
+      "name": "Zogbo",
+      "arr": "9ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 112,
+      "rendered_segs": 111,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 3,
+      "name": "Ningboto\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 110,
+      "rendered_segs": 109,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 289,
+      "name": "Donaten",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 107,
+      "rendered_segs": 106,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 167,
+      "name": "Fifadji-Houto (Jak)",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 101,
+      "rendered_segs": 100,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 254,
+      "name": "Yolomahouto",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 100,
+      "rendered_segs": 99,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 161,
+      "name": "Abikouholi\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 99,
+      "rendered_segs": 98,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 208,
+      "name": "Tchanhounkpamè",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 98,
+      "rendered_segs": 115,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 229,
+      "name": "Aïbatin-Dodo",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 98,
+      "rendered_segs": 97,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 48,
+      "name": "Dèkoungbé-Église\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 97,
+      "rendered_segs": 96,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 41,
+      "name": "Védokô",
+      "arr": "10ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 95,
+      "rendered_segs": 92,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 180,
+      "name": "Hêdomè\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 95,
+      "rendered_segs": 94,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 158,
+      "name": "Houénoussou",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 93,
+      "rendered_segs": 92,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 203,
+      "name": "Cadjèhoun-Agonga",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 92,
+      "rendered_segs": 91,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 134,
+      "name": "Zongo-Nima",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 91,
+      "rendered_segs": 90,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 302,
+      "name": "Hlouacomey",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 90,
+      "rendered_segs": 86,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 148,
+      "name": "Dandji",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 89,
+      "rendered_segs": 88,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 19,
+      "name": "Cadjèhoun-Kpota",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 88,
+      "rendered_segs": 87,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 103,
+      "name": "Aïmèvo\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 87,
+      "rendered_segs": 86,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 284,
+      "name": "Hadjanaho",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 87,
+      "rendered_segs": 86,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 124,
+      "name": "Avotrou-Houézèkomè",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 86,
+      "rendered_segs": 85,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 168,
+      "name": "Missogbé",
+      "arr": "10ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 83,
+      "rendered_segs": 82,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 277,
+      "name": "Agla-Finafa",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 81,
+      "rendered_segs": 83,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 17,
+      "name": "Akpakpa-Dodomè",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 80,
+      "rendered_segs": 80,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 49,
+      "name": "Finafa\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 80,
+      "rendered_segs": 80,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 123,
+      "name": "Yénawa-Daho",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 78,
+      "rendered_segs": 77,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 179,
+      "name": "Djédjé-Layé",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 78,
+      "rendered_segs": 75,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 260,
+      "name": "Ohé",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 78,
+      "rendered_segs": 73,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 301,
+      "name": "Gbèdjromèdè-Nord",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 78,
+      "rendered_segs": 78,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 63,
+      "name": "Xwlacôdji-Kpodji",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 76,
+      "rendered_segs": 75,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 89,
+      "name": "Sodjatinmè-Centre",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 76,
+      "rendered_segs": 75,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 220,
+      "name": "Nvènamèdé",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 76,
+      "rendered_segs": 75,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 275,
+      "name": "Tonato",
+      "arr": "8ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 76,
+      "rendered_segs": 73,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 25,
+      "name": "Ganganzounmè\n",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 75,
+      "rendered_segs": 74,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 232,
+      "name": "Yénawa",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 72,
+      "rendered_segs": 70,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 20,
+      "name": "Yagbé",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 68,
+      "rendered_segs": 65,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 108,
+      "name": "Adôgléta",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 68,
+      "rendered_segs": 67,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 116,
+      "name": "Kpankpan",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 68,
+      "rendered_segs": 67,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 12,
+      "name": "Cadjèhoun-Azalokogon",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 67,
+      "rendered_segs": 63,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 132,
+      "name": "Hlacômey",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 67,
+      "rendered_segs": 66,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 109,
+      "name": "Ahouansouri-Agata",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 64,
+      "rendered_segs": 62,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 50,
+      "name": "Minontchou",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 61,
+      "rendered_segs": 59,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 189,
+      "name": "Vossa",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 61,
+      "rendered_segs": 62,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 200,
+      "name": "Sègbèya-Nord",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 59,
+      "rendered_segs": 58,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 92,
+      "name": "Gankpodo",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 58,
+      "rendered_segs": 57,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 186,
+      "name": "Sènadé-Sèkon",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 58,
+      "rendered_segs": 50,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 239,
+      "name": "Yénawa-Fifadji",
+      "arr": "10ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 57,
+      "rendered_segs": 58,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 2,
+      "name": "Kowégbo",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 56,
+      "rendered_segs": 55,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 66,
+      "name": "Missèkplé",
+      "arr": "10ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 56,
+      "rendered_segs": 55,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 80,
+      "name": "Vodjè-Ayidoté",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 56,
+      "rendered_segs": 55,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 234,
+      "name": "Ahouansori-Towéta-Kpota",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 55,
+      "rendered_segs": 54,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 292,
+      "name": "Gbèdégbé",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 55,
+      "rendered_segs": 54,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 165,
+      "name": "Bozoun",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 53,
+      "rendered_segs": 52,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 67,
+      "name": "Sètôvi",
+      "arr": "10ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 52,
+      "rendered_segs": 51,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 81,
+      "name": "Godomey-Togoudo",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 52,
+      "rendered_segs": 52,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 117,
+      "name": "Tanto",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 50,
+      "rendered_segs": 49,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 145,
+      "name": "Sodjatinmè-Est",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 50,
+      "rendered_segs": 48,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 174,
+      "name": "Kindonou",
+      "arr": "9ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 49,
+      "rendered_segs": 59,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 102,
+      "name": "Cadjèhoun-Aupiais",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 47,
+      "rendered_segs": 46,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 287,
+      "name": "Dantôkpa",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 47,
+      "rendered_segs": 45,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 193,
+      "name": "Gbénonkpô",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 46,
+      "rendered_segs": 46,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 197,
+      "name": "Sègbèya-Sud",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 46,
+      "rendered_segs": 45,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 257,
+      "name": "Guinkômey",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 46,
+      "rendered_segs": 44,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 269,
+      "name": "Agbodjèdo",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 46,
+      "rendered_segs": 45,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 218,
+      "name": "Gbégamey-Mifongou",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 44,
+      "rendered_segs": 43,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 181,
+      "name": "Ahouassa",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 43,
+      "rendered_segs": 41,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 259,
+      "name": "Ayélawadjè-Agongbomè",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 43,
+      "rendered_segs": 42,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 291,
+      "name": "Vodjè-Kpota",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 43,
+      "rendered_segs": 35,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 37,
+      "name": "Vodjè-Finagnon",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 42,
+      "rendered_segs": 39,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 32,
+      "name": "Todoté",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 41,
+      "rendered_segs": 38,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 90,
+      "name": "Avotrou-Gbègo",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 41,
+      "rendered_segs": 40,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 210,
+      "name": "Aïbatin-Kpota",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 41,
+      "rendered_segs": 40,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 252,
+      "name": "Gbénonkpô",
+      "arr": "10ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 41,
+      "rendered_segs": 41,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 22,
+      "name": "Missèbô",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 40,
+      "rendered_segs": 39,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 65,
+      "name": "Houénoussou-Sainte-Rita",
+      "arr": "8ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 38,
+      "rendered_segs": 37,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 54,
+      "name": "Gbèdjromèdè",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 36,
+      "rendered_segs": 35,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 152,
+      "name": "Mèdédjro",
+      "arr": "8ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 36,
+      "rendered_segs": 35,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 235,
+      "name": "Houéyihô",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 36,
+      "rendered_segs": 35,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 29,
+      "name": "Ahogbohoué-Cité-Eucharistie",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 35,
+      "rendered_segs": 34,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 157,
+      "name": "Midédji",
+      "arr": "10ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 35,
+      "rendered_segs": 36,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 251,
+      "name": "Djidjè-Aïchédji",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 35,
+      "rendered_segs": 34,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 38,
+      "name": "Lom-Nava",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 34,
+      "rendered_segs": 33,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 71,
+      "name": "Cadjèhoun-Détinsa",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 33,
+      "rendered_segs": 31,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 140,
+      "name": "Ahouansori-Towéta",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 33,
+      "rendered_segs": 32,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 62,
+      "name": "Vodjè-Centre",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 32,
+      "rendered_segs": 22,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 72,
+      "name": "Ahouansouri-Agué",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 32,
+      "rendered_segs": 31,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 125,
+      "name": "Ahogbohoué-Cité-De-l'Expérience",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 32,
+      "rendered_segs": 31,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 265,
+      "name": "Suru-Léré",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 32,
+      "rendered_segs": 31,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 52,
+      "name": "Tokpa-Hoho",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 31,
+      "rendered_segs": 31,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 53,
+      "name": "Sèdami",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 31,
+      "rendered_segs": 29,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 68,
+      "name": "Kpondéhou",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 31,
+      "rendered_segs": 30,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 107,
+      "name": "Cadjèhoun-Gare",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 31,
+      "rendered_segs": 30,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 121,
+      "name": "Sènadé",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 31,
+      "rendered_segs": 30,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 266,
+      "name": "Fifatin",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 31,
+      "rendered_segs": 29,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 217,
+      "name": "Houéhoun",
+      "arr": "8ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 30,
+      "rendered_segs": 29,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 255,
+      "name": "Énagnon-Sikê",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 29,
+      "rendered_segs": 26,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 105,
+      "name": "Missité",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 28,
+      "rendered_segs": 27,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 155,
+      "name": "Gbégamey-Gbagoudo",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 28,
+      "rendered_segs": 27,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 273,
+      "name": "Saint-Jean-Gbèdiga",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 28,
+      "rendered_segs": 27,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 114,
+      "name": "Dédokpo",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 27,
+      "rendered_segs": 26,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 163,
+      "name": "Gbéto",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 27,
+      "rendered_segs": 21,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 296,
+      "name": "Bocossi-Tokpa",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 27,
+      "rendered_segs": 26,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 10,
+      "name": "Minonkpô-Wologuèdè",
+      "arr": "8ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 26,
+      "rendered_segs": 25,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 244,
+      "name": "Avlékété-Joncquet",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 26,
+      "rendered_segs": 25,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 263,
+      "name": "Djidjè",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 26,
+      "rendered_segs": 24,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 76,
+      "name": "Vossa-Kpodji",
+      "arr": "9ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 25,
+      "rendered_segs": 24,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 97,
+      "name": "Gbènan",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 25,
+      "rendered_segs": 24,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 130,
+      "name": "Xwlacôdji-Plage",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 25,
+      "rendered_segs": 24,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 171,
+      "name": "Jéricho-Nord",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 25,
+      "rendered_segs": 24,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 185,
+      "name": "Ladji",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 25,
+      "rendered_segs": 24,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 227,
+      "name": "Gbégamey-Centre",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 25,
+      "rendered_segs": 22,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 300,
+      "name": "Ayélawadjè",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 25,
+      "rendered_segs": 24,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 147,
+      "name": "Gbégamey-Ahito",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 24,
+      "rendered_segs": 21,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 154,
+      "name": "Mifongou",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 24,
+      "rendered_segs": 23,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 183,
+      "name": "Midombo",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 24,
+      "rendered_segs": 22,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 212,
+      "name": "Gbédokpo",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 24,
+      "rendered_segs": 22,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 112,
+      "name": "Irédé",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 23,
+      "rendered_segs": 22,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 151,
+      "name": "Abokicodji-Lagune",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 22,
+      "rendered_segs": 21,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 166,
+      "name": "Agbondjèdo",
+      "arr": "8ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 22,
+      "rendered_segs": 21,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 206,
+      "name": "Sèdjro-Saint-Michel",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 22,
+      "rendered_segs": 21,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 245,
+      "name": "Gbèdjèwin",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 22,
+      "rendered_segs": 21,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 283,
+      "name": "Sèhogan-Sikê",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 22,
+      "rendered_segs": 18,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 194,
+      "name": "Adjégounlè",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 21,
+      "rendered_segs": 20,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 205,
+      "name": "Jéricho-Sud",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 21,
+      "rendered_segs": 20,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 202,
+      "name": "Abokicodji-Centre",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 20,
+      "rendered_segs": 19,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 7,
+      "name": "Hindé-Sud",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 19,
+      "rendered_segs": 18,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 240,
+      "name": "Missité",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 19,
+      "rendered_segs": 17,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 278,
+      "name": "Hindé-Nord",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 19,
+      "rendered_segs": 18,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 61,
+      "name": "Fignon-Sikê",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 18,
+      "rendered_segs": 17,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 104,
+      "name": "Aïdjèdo",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 18,
+      "rendered_segs": 17,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 196,
+      "name": "Aïdjèdo-Vignon",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 18,
+      "rendered_segs": 17,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 6,
+      "name": "Nouveau-Pont",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 17,
+      "rendered_segs": 16,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 131,
+      "name": "Gbégamey-Dodo-Ayidjè",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 16,
+      "rendered_segs": 15,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 170,
+      "name": "Aïdjèdo-Gbègo",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 16,
+      "rendered_segs": 15,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 42,
+      "name": "Kpondéhou-Tchèmè",
+      "arr": "2ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 15,
+      "rendered_segs": 14,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 122,
+      "name": "Agontinkon",
+      "arr": "8ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 15,
+      "rendered_segs": 14,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 207,
+      "name": "Gbèdagba",
+      "arr": "8ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 15,
+      "rendered_segs": 14,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 128,
+      "name": "Aïdjèdo-Ahito",
+      "arr": "6ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 14,
+      "rendered_segs": 13,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 172,
+      "name": "Misséssin",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 14,
+      "rendered_segs": 12,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 34,
+      "name": "Missité-Sikê",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 13,
+      "rendered_segs": 12,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 118,
+      "name": "Vodjè-Allobatin",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 13,
+      "rendered_segs": 11,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 198,
+      "name": "Dota",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 13,
+      "rendered_segs": 12,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 215,
+      "name": "Dagbédji-Sikê",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 13,
+      "rendered_segs": 9,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 5,
+      "name": "Yévèdo",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 9,
+      "rendered_segs": 8,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 98,
+      "name": "Gbèdomidji",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 8,
+      "rendered_segs": 7,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 56,
+      "name": "Sodjatinmè-Ouest",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 7,
+      "rendered_segs": 6,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 137,
+      "name": "Agbatô",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 5,
+      "rendered_segs": 4,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 276,
+      "name": "Agla-Agongbomey",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 3,
+      "rendered_segs": 3,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 0,
+      "name": "Fiyégnon-Houta",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 4,
+      "name": "Hlazounto",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 57,
+      "name": "Agla-Figaro",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 64,
+      "name": "Gbodjètin",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 78,
+      "name": "Yèmicodji",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 101,
+      "name": "Fidjrossè-Kpota",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 111,
+      "name": "Agla-Akplomey",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 142,
+      "name": "Tokplégbé",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 258,
+      "name": "Akôgbato",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 95,
+      "name": "Gbodjè",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 0,
+      "rendered_segs": 0,
+      "home_dept": "Atlantique"
+    }
+  ],
+  "top_largest": [
+    {
+      "qi": 55,
+      "name": "Cococodji",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 5984,
+      "rendered_segs": 5983,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 44,
+      "name": "Ahowégodo",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 4244,
+      "rendered_segs": 4243,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 214,
+      "name": "Wawata-Todja",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 3342,
+      "rendered_segs": 3341,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 294,
+      "name": "Djèkpota",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 2322,
+      "rendered_segs": 2321,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 133,
+      "name": "Anagbo",
+      "arr": "Kpanroun",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 2237,
+      "rendered_segs": 2236,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 33,
+      "name": "Djissoukpa",
+      "arr": "Golo-Djigbé",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1634,
+      "rendered_segs": 1633,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 282,
+      "name": "Dassèkomey",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1529,
+      "rendered_segs": 1528,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 96,
+      "name": "Adovié",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1327,
+      "rendered_segs": 1323,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 162,
+      "name": "Togbin-Fandji",
+      "arr": "Godomey",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1296,
+      "rendered_segs": 1301,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 110,
+      "name": "Kansounkpa",
+      "arr": "Abomey-Calavi",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1280,
+      "rendered_segs": 1279,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 18,
+      "name": "Akossavié",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1273,
+      "rendered_segs": 1272,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 305,
+      "name": "Hêvié",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 1196,
+      "rendered_segs": 1195,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 225,
+      "name": "Dossounou",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 996,
+      "rendered_segs": 995,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 51,
+      "name": "Zèkanmey-Domè",
+      "arr": "Akassato",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 993,
+      "rendered_segs": 992,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 286,
+      "name": "Drabo",
+      "arr": "Togba",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 933,
+      "rendered_segs": 932,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 143,
+      "name": "Hounzévié\n",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 928,
+      "rendered_segs": 927,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 209,
+      "name": "Houinmè",
+      "arr": "Hêvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 921,
+      "rendered_segs": 920,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 243,
+      "name": "Kpossidja",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 855,
+      "rendered_segs": 854,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 307,
+      "name": "Ouèdo",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 853,
+      "rendered_segs": 852,
+      "home_dept": "Atlantique"
+    },
+    {
+      "qi": 192,
+      "name": "Dessato\n",
+      "arr": "Ouèdo",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 830,
+      "rendered_segs": 826,
+      "home_dept": "Atlantique"
+    }
+  ],
+  "top_smallest": [
+    {
+      "qi": 172,
+      "name": "Misséssin",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 14,
+      "rendered_segs": 12,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 34,
+      "name": "Missité-Sikê",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 13,
+      "rendered_segs": 12,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 118,
+      "name": "Vodjè-Allobatin",
+      "arr": "11ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 13,
+      "rendered_segs": 11,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 198,
+      "name": "Dota",
+      "arr": "5ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 13,
+      "rendered_segs": 12,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 215,
+      "name": "Dagbédji-Sikê",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 13,
+      "rendered_segs": 9,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 5,
+      "name": "Yévèdo",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 9,
+      "rendered_segs": 8,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 98,
+      "name": "Gbèdomidji",
+      "arr": "7ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 8,
+      "rendered_segs": 7,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 56,
+      "name": "Sodjatinmè-Ouest",
+      "arr": "4ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 7,
+      "rendered_segs": 6,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 137,
+      "name": "Agbatô",
+      "arr": "3ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 5,
+      "rendered_segs": 4,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 276,
+      "name": "Agla-Agongbomey",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 3,
+      "rendered_segs": 3,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 0,
+      "name": "Fiyégnon-Houta",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 4,
+      "name": "Hlazounto",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 57,
+      "name": "Agla-Figaro",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 64,
+      "name": "Gbodjètin",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 78,
+      "name": "Yèmicodji",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 101,
+      "name": "Fidjrossè-Kpota",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 111,
+      "name": "Agla-Akplomey",
+      "arr": "13ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 142,
+      "name": "Tokplégbé",
+      "arr": "1er Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 258,
+      "name": "Akôgbato",
+      "arr": "12ème Arrondissement",
+      "commune": "COTONOU",
+      "claimed_nodes": 1,
+      "rendered_segs": 0,
+      "home_dept": "Littoral"
+    },
+    {
+      "qi": 95,
+      "name": "Gbodjè",
+      "arr": "Zinvié",
+      "commune": "ABOMEY-CALAVI",
+      "claimed_nodes": 0,
+      "rendered_segs": 0,
+      "home_dept": "Atlantique"
+    }
+  ]
+}
