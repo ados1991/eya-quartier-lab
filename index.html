@@ -197,7 +197,21 @@
     </div>
     <input type="range" min="0" max="100" value="85" id="op-compet" class="slider">
 
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competF"><span class="lay-swatch" style="background:linear-gradient(135deg,#022c22 50%,#fde047 50%);border:1.5px solid #052e16"></span><b>Road propagation — FULL COVERAGE</b> (unlimited, dept-bounded)</label>
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competP"><span class="lay-swatch" style="background:linear-gradient(135deg,#0ea5e9 50%,#a3e635 50%);border:1.5px solid #052e16"></span><b>Road propagation — FULL COVERAGE (dept-PARTITIONED)</b></label>
+    <div class="lay-meta">
+      <b>NEW RULE</b>: Littoral/Atlantique boundary is a competition partition, not a physical stop. Roads connect freely across the border. <i>Littoral chefs compete only with Littoral; Atlantique only with Atlantique. No cross-dept collisions.</i><br>
+      Total claimed (union): <b>89 965 / 94 213 (95.5 %)</b>  (+1 297 vs physical-stop variant).<br>
+      Co-claimed by both depts (near-border roads): <b>86 128</b>.<br>
+      Same-dept frontiers: <b>7 778</b> (3 511 in Littoral, 4 267 in Atlantique).<br>
+      <b>Cross-dept collisions: 0</b> (rule eliminated the artificial border walls).<br>
+      Total walked segments: 175 495 (vs 88 302 physical-stop; +99 % — both depts walk overlapping border roads).<br>
+      <a href="data/competitive_road_propagation_partitioned_full.geojson" download>lines</a> ·
+      <a href="data/competitive_frontier_points_partitioned_full.geojson" download>frontier points</a> ·
+      <a href="data/competitive_diag_partitioned_full.json" target="_blank">diagnostic</a>
+    </div>
+    <input type="range" min="0" max="100" value="80" id="op-competP" class="slider">
+
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competF"><span class="lay-swatch" style="background:linear-gradient(135deg,#022c22 50%,#fde047 50%);border:1.5px solid #052e16"></span>Road propagation — FULL COVERAGE (physical dept-stop, superseded)</label>
     <div class="lay-meta">
       Unlimited Dijkstra: each chef-lieu propagates until it hits major water, the department boundary, a road dead-end, or another chef-lieu's claimed network. <b>88 668 of 94 213 graph nodes claimed (94.1 %)</b>; 5 545 unclaimed (3 826 outside Littoral/Atlantique, 1 667 in unreached Atlantique sub-regions, 52 in unreached Littoral pockets).<br>
       <b>7 040 frontier contact points</b> (vs 1 980 at 500 m — most pairs now fully meet).<br>
@@ -478,7 +492,7 @@ async function init(){
   // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach + frontiers
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
-         competL, competP, competL500, competP500, competLF, competPF] = await Promise.all([
+         competL, competP, competL500, competP500, competLF, competPF, competLP, competPP] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -513,6 +527,8 @@ async function init(){
     loadGeo('data/competitive_frontier_points_500m.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_road_propagation_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_frontier_points_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_road_propagation_partitioned_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_frontier_points_partitioned_full.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -630,6 +646,25 @@ async function init(){
       else l.bindPopup(`${k}: ${p.stopped||''}`);
     }});
   layers.competF = L.layerGroup([layers.competLF, layers.competPF]);
+
+  // PARTITIONED full coverage — competition split by department
+  const COMPET_STYLE_PART = (f) => ({color: f.properties.color || '#888', weight:2.0, opacity:.65});
+  layers.competLP = L.geoJSON(competLP, {style: COMPET_STYLE_PART,
+    onEachFeature:(f,l)=>{
+      const p=f.properties;
+      l.bindPopup(`<b>${p.name}</b> · PARTITIONED<br>home_dept: ${p.home_dept}<br>${p.seg_count} claimed segments`);
+    }});
+  layers.competPP = L.geoJSON(competPP, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p=f.properties; const k=p.kind;
+      if (k === 'frontier')
+        l.bindPopup(`<b>FRONTIER (${p.dept})</b><br><b>${p.blocker}</b> (${p.blocker_dist_m} m) blocked <b>${p.blocked}</b> (would-be ${p.blocked_dist_m} m)`);
+      else if (k === 'chef_lieu')
+        l.bindPopup(`<b>${p.name}</b><br>${p.arrondissement||''} · home: ${p.home_dept}`);
+      else l.bindPopup(`${k}: ${p.stopped||''}`);
+    }});
+  layers.competP_full = L.layerGroup([layers.competLP, layers.competPP]);
 
   // 300 m frontier structures (clustered)
   layers.front = L.geoJSON(front300, {
@@ -817,6 +852,7 @@ async function init(){
   bind('t-compet', layers.compet);
   bind('t-compet500', layers.compet500);
   bind('t-competF', layers.competF);
+  bind('t-competP', layers.competP_full);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
