@@ -222,6 +222,21 @@
     </div>
     <input type="range" min="0" max="100" value="70" id="op-spillaudit" class="slider">
 
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-gapaudit"><span class="lay-swatch" style="background:linear-gradient(90deg,#0B1F3B 20%,#2563eb 20%,#2563eb 40%,#52525b 40%,#52525b 60%,#dc2626 60%,#dc2626 80%,#fb923c 80%);border:1.5px solid #052e16"></span><b>Remaining gap audit (post-700 m)</b></label>
+    <div class="lay-meta">
+      <b>Final diagnostic</b> — only <b>730 nodes</b> remain unclaimed inside scope (commune + 700 m). <b>46 clusters</b> of ≥ 4 nodes covering 619 nodes / 20.6 km of road.<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#0B1F3B;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>Missing chef-lieu coverage</b> 9 clusters / 154 nodes (DATA)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#2563eb;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>Water-isolated pocket</b> 20 / 287 (DATA — no bridge across)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#52525b;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>OSM graph fragmentation</b> 11 / 96 (DATA — disconnected way)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>Missing bridge crossing</b> 3 / 56 (ALGO — water-aware refused bridge)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#fb923c;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>Unknown</b> 3 / 26<br>
+      <b>Verdict</b>: 86.8 % DATA · 9.0 % ALGO. Mostly data-quality. Propagation can stop tuning.<br>
+      <a href="data/remaining_gap_clusters.geojson" download>clusters</a> ·
+      <a href="data/remaining_gap_summary.csv" download>CSV</a> ·
+      <a href="data/remaining_gap_report.md" target="_blank">report</a>
+    </div>
+    <input type="range" min="0" max="100" value="80" id="op-gapaudit" class="slider">
+
     <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-competB500"><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 33%,#fbbf24 33%,#fbbf24 66%,#f97316 66%);border:1.5px solid #052e16"></span>Road propagation — commune + 500 m spill-over (medium)</label>
     <div class="lay-meta">
       Less aggressive: 70 871 claimed (+2 063). Bbox: 210/265 (79 %).
@@ -543,7 +558,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -589,6 +604,7 @@ async function init(){
     loadGeo('data/competitive_road_propagation_commune_buf700_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_frontier_points_commune_buf700_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/spillover_700m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/remaining_gap_clusters.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -689,6 +705,21 @@ async function init(){
   // FULL COVERAGE competitive — unlimited budget
   const COMPET_STYLE_FULL = (f) => ({color: f.properties.color || '#888', weight:2.2, opacity:.75});
 
+// Remaining-gap audit styling (size scales with cluster nodes)
+const GAP_PT_STYLE = (f) => {
+  const p = f.properties;
+  const c = p.classification;
+  const r = Math.min(15, 3 + Math.sqrt(p.n_nodes||1));
+  if (c === 'Missing bridge crossing')   return {radius:r, color:'#7f1d1d', weight:1.5, fillColor:'#dc2626', fillOpacity:.85};
+  if (c === 'Water-isolated pocket')     return {radius:r, color:'#1e3a8a', weight:1.2, fillColor:'#2563eb', fillOpacity:.8};
+  if (c === 'OSM graph fragmentation')   return {radius:r, color:'#27272a', weight:1.2, fillColor:'#52525b', fillOpacity:.8};
+  if (c === 'Missing chef-lieu coverage') return {radius:r, color:'#050a14', weight:1.2, fillColor:'#0B1F3B', fillOpacity:.85};
+  if (c === 'Administrative ambiguity')  return {radius:r, color:'#854d0e', weight:1.2, fillColor:'#fbbf24', fillOpacity:.85};
+  if (c === 'Legitimate no-quartier area') return {radius:r, color:'#475569', weight:1, fillColor:'#94a3b8', fillOpacity:.7};
+  if (c === 'Unknown')                   return {radius:r, color:'#7c2d12', weight:1.2, fillColor:'#fb923c', fillOpacity:.85};
+  return {radius:r, color:'#666', weight:1, fillColor:'#aaa', fillOpacity:.6};
+};
+
 // Spill-over audit styling
 const SPILL_PT_STYLE = (f) => {
   const c = f.properties.classification;
@@ -779,6 +810,31 @@ const SPILL_PT_STYLE = (f) => {
     onEachFeature:(f,l)=>{const p=f.properties;l.bindPopup(`<b>${p.name}</b> · commune+${p.commune_tolerance_m||700}m<br>home: ${p.home_commune}<br>${p.seg_count} segs`);}});
   layers.competPB7 = L.geoJSON(competPB7, {pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE_COM(f))});
   layers.competB7 = L.layerGroup([layers.competLB7, layers.competPB7]);
+
+  // Remaining-gap audit (final diagnostic) layer
+  layers.gapAudit = L.geoJSON(gapAudit, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, GAP_PT_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p = f.properties;
+      const same = p.nearest_same_commune_chef_name
+        ? `${p.nearest_same_commune_chef_name} @ ${p.nearest_same_commune_chef_dist_m} m`
+        : '<i>none in range</i>';
+      const diff = p.nearest_diff_commune_chef_name
+        ? `${p.nearest_diff_commune_chef_name} @ ${p.nearest_diff_commune_chef_dist_m} m`
+        : '<i>none</i>';
+      l.bindPopup(
+        `<b>#${p.cluster_id} · ${p.classification}</b><br>`+
+        `${p.n_nodes} nodes · ${p.road_length_m} m road<br>`+
+        `<b>${p.arrondissement}</b><br>`+
+        `same-commune chef: ${same}<br>`+
+        `diff-commune chef: ${diff}<br>`+
+        `water sep: <b>${p.water_separation ? 'YES' : 'no'}</b> · `+
+        `bridge nearby: <b>${p.bridge_present ? 'YES' : 'no'}</b><br>`+
+        `graph component: ${p.graph_component_size} nodes · `+
+        `boundary dist: ${p.dist_to_commune_boundary_m} m`
+      );
+    }
+  });
 
   // 700 m spill-over audit layer
   layers.spillAudit = L.geoJSON(spillAudit, {
@@ -990,6 +1046,7 @@ const SPILL_PT_STYLE = (f) => {
   bind('t-competB500', layers.competB5);
   bind('t-competB700', layers.competB7);
   bind('t-spillaudit', layers.spillAudit);
+  bind('t-gapaudit', layers.gapAudit);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){

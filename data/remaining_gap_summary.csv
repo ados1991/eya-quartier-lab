@@ -1,0 +1,55 @@
+cluster_id,n_nodes,road_length_m,commune,arrondissement,centroid_lat,centroid_lng,nearest_chef_name,nearest_chef_dist_m,nearest_chef_commune,nearest_same_commune_chef_name,nearest_same_commune_chef_dist_m,nearest_diff_commune_chef_name,nearest_diff_commune_chef_dist_m,water_separation,bridge_present,graph_component_size,dist_to_commune_boundary_m,classification
+0,75,2063.5,Abomey-Calavi,Abomey-Calavi / Akassato,6.538928,2.401616,Agassa-Godomey,4123.4,Abomey-Calavi,Agassa-Godomey,4123.4,,,False,False,90099,700.1,Missing chef-lieu coverage
+1,50,2046.6,Abomey-Calavi,Abomey-Calavi / Zinvié,6.617048,2.408749,Gbodjè,3484.7,Abomey-Calavi,Gbodjè,3484.7,,,True,False,90,600.9,Water-isolated pocket
+2,39,1647.4,Abomey-Calavi (buffer),So-Ava / Ganvié II,6.474541,2.392152,Houèkè-Gbo,3597.1,Abomey-Calavi,Houèkè-Gbo,3597.1,Vossa-Kpodji,8902.9,True,False,62,85.4,Water-isolated pocket
+3,35,904.8,Abomey-Calavi (buffer),So-Ava / Ahomè-Lokpo,6.56292,2.402966,Gbodjè,3989.9,Abomey-Calavi,Gbodjè,3989.9,,,True,False,36,89.4,Water-isolated pocket
+4,33,1507.8,Abomey-Calavi,Abomey-Calavi / Godomey,6.389233,2.356015,"Sèdjannako
+",459.7,Abomey-Calavi,"Sèdjannako
+",459.7,Agla-Akplomey,552.3,True,True,90099,1116.6,Missing bridge crossing
+5,25,1097.0,Abomey-Calavi,Abomey-Calavi / Akassato,6.502242,2.399531,Akassato,3890.9,Abomey-Calavi,Akassato,3890.9,,,True,False,43,555.7,Water-isolated pocket
+6,23,558.5,Abomey-Calavi (buffer),Adjohoun / Togbota,6.685446,2.429939,Bozoun,4117.4,Abomey-Calavi,Bozoun,4117.4,,,True,False,123,557.4,Water-isolated pocket
+7,22,482.4,Abomey-Calavi,Abomey-Calavi / Zinvié,6.603959,2.406312,Gbodjè,2417.7,Abomey-Calavi,Gbodjè,2417.7,,,True,False,90,181.0,Water-isolated pocket
+8,19,625.9,Abomey-Calavi (buffer),Ouidah / Pahou,6.36231,2.242771,Cococodji,4322.9,Abomey-Calavi,Cococodji,4322.9,Yèmicodji,10007.6,True,False,20,27.9,OSM graph fragmentation
+9,16,596.3,Abomey-Calavi,Abomey-Calavi / Kpanroun,6.666437,2.400027,Bozoun,2116.8,Abomey-Calavi,Bozoun,2116.8,,,False,False,34,1966.0,Missing chef-lieu coverage
+10,13,605.7,Abomey-Calavi,Abomey-Calavi / Kpanroun,6.66997,2.399979,Bozoun,1758.3,Abomey-Calavi,Bozoun,1758.3,,,False,False,34,1577.5,Missing chef-lieu coverage
+11,13,496.3,Abomey-Calavi (buffer),Tori-Bossito / Avamè,6.510124,2.239607,Dassèkomey,2782.4,Abomey-Calavi,Dassèkomey,2782.4,,,False,False,37,513.1,Missing chef-lieu coverage
+12,12,405.9,Abomey-Calavi,Abomey-Calavi / Akassato,6.531313,2.402783,Glo-Tokpa,4375.2,Abomey-Calavi,Glo-Tokpa,4375.2,,,False,True,90099,590.6,Missing chef-lieu coverage
+13,12,337.3,Abomey-Calavi,Abomey-Calavi / Godomey,6.369402,2.300493,"Ganganzounmè
+",527.9,Abomey-Calavi,"Ganganzounmè
+",527.9,Yèmicodji,3753.7,False,False,12,3015.3,OSM graph fragmentation
+14,12,340.1,Abomey-Calavi (buffer),So-Ava / So-Ava,6.494116,2.405962,Houèkè-Gbo,4543.6,Abomey-Calavi,Houèkè-Gbo,4543.6,Vossa-Kpodji,10954.6,True,True,63,441.1,Missing bridge crossing
+15,11,359.2,Abomey-Calavi,Abomey-Calavi / Zinvié,6.603555,2.388703,Gbodjè,996.0,Abomey-Calavi,Gbodjè,996.0,,,False,True,90099,1963.6,Unknown
+16,11,331.7,Abomey-Calavi,Abomey-Calavi / Akassato,6.496995,2.40011,Houèkè-Gbo,3927.8,Abomey-Calavi,Houèkè-Gbo,3927.8,,,True,True,3,276.8,OSM graph fragmentation
+17,11,276.8,Abomey-Calavi (buffer),Ouidah / Pahou,6.356169,2.265252,Djèkpota,2518.0,Abomey-Calavi,Djèkpota,2518.0,Yèmicodji,7538.7,True,True,90099,576.9,Missing bridge crossing
+18,11,574.2,Abomey-Calavi,Abomey-Calavi / Akassato,6.507259,2.403835,Akassato,4344.0,Abomey-Calavi,Akassato,4344.0,,,True,False,43,267.4,Water-isolated pocket
+19,10,368.1,Abomey-Calavi,Abomey-Calavi / Akassato,6.487169,2.39818,Houèkè-Gbo,3721.8,Abomey-Calavi,Houèkè-Gbo,3721.8,Vossa-Kpodji,10214.6,True,False,62,100.4,Water-isolated pocket
+20,10,197.6,Cotonou,Cotonou / Cotonou 3,6.397328,2.445407,Agbodjèdo,516.6,Cotonou,Agbodjèdo,516.6,,,False,True,6,167.6,OSM graph fragmentation
+21,10,285.4,Abomey-Calavi (buffer),Zè / Yokpo,6.632605,2.331928,"Houégoudo
+",1140.2,Abomey-Calavi,"Houégoudo
+",1140.2,,,False,False,90099,584.0,Unknown
+22,10,327.3,Abomey-Calavi,Abomey-Calavi / Akassato,6.546321,2.407285,Agassa-Godomey,4695.5,Abomey-Calavi,Agassa-Godomey,4695.5,,,True,False,40,17.0,Water-isolated pocket
+23,9,396.6,Abomey-Calavi (buffer),Tori-Bossito / Avamè,6.50512,2.235105,Dassèkomey,2575.3,Abomey-Calavi,Dassèkomey,2575.3,,,False,False,90099,455.3,Missing chef-lieu coverage
+24,8,355.3,Abomey-Calavi,Abomey-Calavi / Kpanroun,6.67221,2.404442,Bozoun,1847.2,Abomey-Calavi,Bozoun,1847.2,,,False,False,12,1269.1,OSM graph fragmentation
+25,8,181.3,Abomey-Calavi,Abomey-Calavi / Calavi,6.498374,2.325281,"Zoundja
+",1232.8,Abomey-Calavi,"Zoundja
+",1232.8,,,False,False,10,1250.5,OSM graph fragmentation
+26,8,260.3,Abomey-Calavi (buffer),So-Ava / Ahomè-Lokpo,6.542279,2.407886,Agassa-Godomey,4769.8,Abomey-Calavi,Agassa-Godomey,4769.8,,,True,False,40,19.3,Water-isolated pocket
+27,8,220.8,Abomey-Calavi (buffer),Zè / Tangbo-Djèvié,6.557825,2.277772,Djissoukpa,1504.0,Abomey-Calavi,Djissoukpa,1504.0,,,False,False,8,58.0,OSM graph fragmentation
+28,7,130.5,Abomey-Calavi,Abomey-Calavi / Kpanroun,6.649673,2.384559,Avagbé,2273.6,Abomey-Calavi,Avagbé,2273.6,,,False,False,7,3828.7,OSM graph fragmentation
+29,7,168.8,Abomey-Calavi (buffer),Ouidah / Pahou,6.388933,2.217079,Houinmè-Daho,2916.2,Abomey-Calavi,Houinmè-Daho,2916.2,,,True,False,90099,666.4,Water-isolated pocket
+30,7,163.6,Abomey-Calavi (buffer),So-Ava / So-Ava,6.494195,2.402834,Houèkè-Gbo,4198.8,Abomey-Calavi,Houèkè-Gbo,4198.8,Vossa-Kpodji,10966.9,True,False,63,106.6,Water-isolated pocket
+31,6,234.0,Abomey-Calavi,Abomey-Calavi / Zinvié,6.610975,2.401238,Gbodjè,2423.5,Abomey-Calavi,Gbodjè,2423.5,,,False,False,90099,1057.7,Missing chef-lieu coverage
+32,6,246.7,Abomey-Calavi,Abomey-Calavi / Akassato,6.48106,2.395084,Houèkè-Gbo,3560.3,Abomey-Calavi,Houèkè-Gbo,3560.3,Vossa-Kpodji,9573.4,True,False,62,50.3,Water-isolated pocket
+33,6,147.9,Abomey-Calavi (buffer),Ouidah / Pahou,6.355417,2.266689,Djèkpota,2446.3,Abomey-Calavi,Djèkpota,2446.3,Yèmicodji,7386.4,True,False,90099,652.1,Water-isolated pocket
+34,6,115.4,Abomey-Calavi (buffer),Zè / Yokpo,6.629884,2.327168,Wawata,687.0,Abomey-Calavi,Wawata,687.0,,,True,False,90099,676.1,Water-isolated pocket
+35,5,199.7,Abomey-Calavi,Abomey-Calavi / Zinvié,6.607264,2.392419,Gbodjè,1526.5,Abomey-Calavi,Gbodjè,1526.5,,,False,False,90099,1710.2,Missing chef-lieu coverage
+36,5,199.0,Abomey-Calavi,Abomey-Calavi / Zinvié,6.601112,2.392382,Gbodjè,955.3,Abomey-Calavi,Gbodjè,955.3,,,False,False,90099,1488.6,Unknown
+37,5,91.8,Abomey-Calavi,Abomey-Calavi / Zinvié,6.637006,2.383367,Kpotomey,3055.7,Abomey-Calavi,Kpotomey,3055.7,,,False,False,5,3895.7,OSM graph fragmentation
+38,5,160.8,Abomey-Calavi (buffer),So-Ava / Ahomè-Lokpo,6.628236,2.422072,Gbodjè,5406.4,Abomey-Calavi,Gbodjè,5406.4,,,True,False,90,158.3,Water-isolated pocket
+39,5,121.9,Abomey-Calavi,Abomey-Calavi / Zinvié,6.623019,2.415533,Gbodjè,4483.9,Abomey-Calavi,Gbodjè,4483.9,,,True,False,90,295.6,Water-isolated pocket
+40,5,182.8,Abomey-Calavi,Abomey-Calavi / Zinvié,6.612126,2.40404,Gbodjè,2730.5,Abomey-Calavi,Gbodjè,2730.5,,,False,False,90099,786.3,Missing chef-lieu coverage
+41,4,154.9,Abomey-Calavi,Abomey-Calavi / Kpanroun,6.668235,2.405075,Bozoun,2225.7,Abomey-Calavi,Bozoun,2225.7,,,False,False,12,1698.1,OSM graph fragmentation
+42,4,113.9,Abomey-Calavi (buffer),Ouidah / Pahou,6.382572,2.222505,Houinmè-Daho,3172.2,Abomey-Calavi,Houinmè-Daho,3172.2,,,True,False,90099,491.3,Water-isolated pocket
+43,4,85.8,Cotonou,Cotonou / Cotonou 9,6.387459,2.403293,Missèkplé,209.4,Cotonou,Missèkplé,209.4,,,False,True,8,1834.1,OSM graph fragmentation
+44,4,147.3,Abomey-Calavi,Abomey-Calavi / Akassato,6.483907,2.397155,Houèkè-Gbo,3683.9,Abomey-Calavi,Houèkè-Gbo,3683.9,Vossa-Kpodji,9863.4,True,False,62,35.0,Water-isolated pocket
+45,4,128.8,Abomey-Calavi (buffer),So-Ava / Ahomè-Lokpo,6.541024,2.41177,Agassa-Godomey,5208.2,Abomey-Calavi,Agassa-Godomey,5208.2,,,True,False,40,440.1,Water-isolated pocket
