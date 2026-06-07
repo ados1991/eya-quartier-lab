@@ -197,7 +197,20 @@
     </div>
     <input type="range" min="0" max="100" value="85" id="op-compet" class="slider">
 
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competP"><span class="lay-swatch" style="background:linear-gradient(135deg,#0ea5e9 50%,#a3e635 50%);border:1.5px solid #052e16"></span><b>Road propagation — FULL COVERAGE (dept-PARTITIONED)</b></label>
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competC"><span class="lay-swatch" style="background:linear-gradient(135deg,#16a34a 50%,#fbbf24 50%);border:2px solid #052e16"></span><b>Road propagation — FULL COVERAGE (COMMUNE-bounded)</b> ✓</label>
+    <div class="lay-meta">
+      <b>RECOMMENDED RULE.</b> Hard physical stop at the <b>commune</b> boundary (Cotonou commune for Cotonou chefs; Abomey-Calavi commune for AC chefs). Tighter than the dept rule — AC chefs no longer roam into Allada / Hêvié / Sô-Ava / Zè / Toffo. Mega-territories <b>eliminated</b>.<br>
+      Total claimed: <b>68 808 / 94 213 (73.0 %)</b> (vs 94.1 % dept-stop; the missing nodes are roads outside Cotonou/AC communes).<br>
+      Frontiers: <b>6 799</b>. Water-stops: 49. <b>Commune-boundary stops: 289</b> (47 chiefs blocked at boundary).<br>
+      Verification: 10 Cotonou claims outside Cotonou commune (boundary precision artifacts &lt;0.02 %); 6 AC claims outside AC.<br>
+      <b>Top 5 territories (now sensible, max 2 479):</b> Cococodji (2 479) · Togbin-Fandji (1 350) · Adovié (1 327) · Kansounkpa (1 280) · Akossavié (1 273).<br>
+      <a href="data/competitive_road_propagation_commune_full.geojson" download>lines</a> ·
+      <a href="data/competitive_frontier_points_commune_full.geojson" download>frontier points</a> ·
+      <a href="data/competitive_diag_commune_full.json" target="_blank">diagnostic</a>
+    </div>
+    <input type="range" min="0" max="100" value="85" id="op-competC" class="slider">
+
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competP"><span class="lay-swatch" style="background:linear-gradient(135deg,#0ea5e9 50%,#a3e635 50%);border:1.5px solid #052e16"></span>Road propagation — FULL COVERAGE (dept-PARTITIONED, superseded)</label>
     <div class="lay-meta">
       <b>NEW RULE</b>: Littoral/Atlantique boundary is a competition partition, not a physical stop. Roads connect freely across the border. <i>Littoral chefs compete only with Littoral; Atlantique only with Atlantique. No cross-dept collisions.</i><br>
       Total claimed (union): <b>89 965 / 94 213 (95.5 %)</b>  (+1 297 vs physical-stop variant).<br>
@@ -492,7 +505,7 @@ async function init(){
   // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach + frontiers
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
-         competL, competP, competL500, competP500, competLF, competPF, competLP, competPP] = await Promise.all([
+         competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -529,6 +542,8 @@ async function init(){
     loadGeo('data/competitive_frontier_points_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_road_propagation_partitioned_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_frontier_points_partitioned_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_road_propagation_commune_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_frontier_points_commune_full.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -665,6 +680,36 @@ async function init(){
       else l.bindPopup(`${k}: ${p.stopped||''}`);
     }});
   layers.competP_full = L.layerGroup([layers.competLP, layers.competPP]);
+
+  // COMMUNE-bounded full coverage (recommended)
+  const COMPET_STYLE_COM = (f) => ({color: f.properties.color || '#888', weight:2.4, opacity:.82});
+  const COMPET_PT_STYLE_COM = (f) => {
+    const k = f.properties.kind;
+    if (k === 'chef_lieu')               return {radius:5,  color:'#0b1f3b', weight:1.2, fillColor: f.properties.color, fillOpacity:.95};
+    if (k === 'frontier')                return {radius:5,  color:'#000',    weight:2,   fillColor:'#fde047', fillOpacity:.95};
+    if (k === 'water_stop')              return {radius:4,  color:'#0369a1', weight:1.5, fillColor:'#7dd3fc', fillOpacity:.85};
+    if (k === 'commune_boundary_stop')   return {radius:5,  color:'#7f1d1d', weight:1.8, fillColor:'#dc2626', fillOpacity:.92};
+    if (k === 'end_stop')                return {radius:2.5,color:'#94a3b8', weight:0.8, fillColor:'#cbd5e1', fillOpacity:.6};
+    return {radius:3, color:'#666', weight:1, fillColor:'#aaa', fillOpacity:.6};
+  };
+  layers.competLC = L.geoJSON(competLC, {style: COMPET_STYLE_COM,
+    onEachFeature:(f,l)=>{
+      const p=f.properties;
+      l.bindPopup(`<b>${p.name}</b> · COMMUNE-bounded<br>home: ${p.home_commune}<br>${p.seg_count} claimed segments`);
+    }});
+  layers.competPC = L.geoJSON(competPC, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE_COM(f)),
+    onEachFeature:(f,l)=>{
+      const p=f.properties; const k=p.kind;
+      if (k === 'frontier')
+        l.bindPopup(`<b>FRONTIER</b><br><b>${p.blocker}</b> (${p.blocker_dist_m} m) blocked <b>${p.blocked}</b> (would-be ${p.blocked_dist_m} m)`);
+      else if (k === 'commune_boundary_stop')
+        l.bindPopup(`<b>COMMUNE BOUNDARY STOP</b><br>${p.stopped} stopped at edge of ${p.home_commune}`);
+      else if (k === 'chef_lieu')
+        l.bindPopup(`<b>${p.name}</b><br>${p.arrondissement||''} · home: ${p.home_commune}`);
+      else l.bindPopup(`${k}: ${p.stopped||''}`);
+    }});
+  layers.competC = L.layerGroup([layers.competLC, layers.competPC]);
 
   // 300 m frontier structures (clustered)
   layers.front = L.geoJSON(front300, {
@@ -853,6 +898,7 @@ async function init(){
   bind('t-compet500', layers.compet500);
   bind('t-competF', layers.competF);
   bind('t-competP', layers.competP_full);
+  bind('t-competC', layers.competC);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
