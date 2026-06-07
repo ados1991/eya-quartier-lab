@@ -197,7 +197,25 @@
     </div>
     <input type="range" min="0" max="100" value="85" id="op-compet" class="slider">
 
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competC"><span class="lay-swatch" style="background:linear-gradient(135deg,#16a34a 50%,#fbbf24 50%);border:2px solid #052e16"></span><b>Road propagation — FULL COVERAGE (COMMUNE-bounded)</b> ✓</label>
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competB500" checked><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 33%,#fbbf24 33%,#fbbf24 66%,#f97316 66%);border:2px solid #052e16"></span><b>Road propagation — FULL COVERAGE (commune + 500 m spill-over)</b> ✓</label>
+    <div class="lay-meta">
+      <b>RECOMMENDED.</b> Commune-bounded with a <b>500 m buffer</b> beyond each commune boundary to cover orphan road sub-networks (like the canal-trapped west-AC cluster). Chefs may spill up to 500 m into the neighbouring commune; beyond that, hard stop.<br>
+      Total claimed: <b>70 871 / 94 213 (75.2 %)</b> (+2 063 vs strict commune, +3.0 %).<br>
+      <b>Spill-over claims</b>: 2 354 nodes beyond strict commune.<br>
+      Commune-boundary stops: 220.  Frontiers: 6 935.  Water-stops: 49.<br>
+      <b>Issue6 bbox recovery</b>: strict 84/265 (32 %) → +500 m <b>210/265 (79 %)</b>.<br>
+      <a href="data/competitive_road_propagation_commune_buf500_full.geojson" download>lines</a> ·
+      <a href="data/competitive_diag_commune_buf500_full.json" target="_blank">diagnostic</a>
+    </div>
+    <input type="range" min="0" max="100" value="85" id="op-competB500" class="slider">
+
+    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-competB300"><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 50%,#fbbf24 50%);border:1.5px solid #052e16"></span>Road propagation — commune + 300 m spill-over (tighter)</label>
+    <div class="lay-meta">
+      Same rule with smaller buffer. Total claimed: 70 136 (+1 328 vs strict). Bbox recovery: 84 → 165 of 265 (62 %).
+    </div>
+    <input type="range" min="0" max="100" value="75" id="op-competB300" class="slider">
+
+    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-competC"><span class="lay-swatch" style="background:linear-gradient(135deg,#16a34a 50%,#fbbf24 50%);border:1.5px solid #052e16"></span>Road propagation — strict commune (no spill-over)</label>
     <div class="lay-meta">
       <b>RECOMMENDED RULE.</b> Hard physical stop at the <b>commune</b> boundary (Cotonou commune for Cotonou chefs; Abomey-Calavi commune for AC chefs). Tighter than the dept rule — AC chefs no longer roam into Allada / Hêvié / Sô-Ava / Zè / Toffo. Mega-territories <b>eliminated</b>.<br>
       Total claimed: <b>68 808 / 94 213 (73.0 %)</b> (vs 94.1 % dept-stop; the missing nodes are roads outside Cotonou/AC communes).<br>
@@ -505,7 +523,8 @@ async function init(){
   // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach + frontiers
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
-         competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC] = await Promise.all([
+         competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
+         competLB3, competPB3, competLB5, competPB5] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -544,6 +563,10 @@ async function init(){
     loadGeo('data/competitive_frontier_points_partitioned_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_road_propagation_commune_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_frontier_points_commune_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_road_propagation_commune_buf300_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_frontier_points_commune_buf300_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_road_propagation_commune_buf500_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_frontier_points_commune_buf500_full.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -711,6 +734,16 @@ async function init(){
     }});
   layers.competC = L.layerGroup([layers.competLC, layers.competPC]);
 
+  // commune-buffered variants (300 m & 500 m)
+  layers.competLB3 = L.geoJSON(competLB3, {style: COMPET_STYLE_COM,
+    onEachFeature:(f,l)=>{const p=f.properties;l.bindPopup(`<b>${p.name}</b> · commune+${p.commune_tolerance_m||300}m<br>home: ${p.home_commune}<br>${p.seg_count} segs`);}});
+  layers.competPB3 = L.geoJSON(competPB3, {pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE_COM(f))});
+  layers.competB3 = L.layerGroup([layers.competLB3, layers.competPB3]);
+  layers.competLB5 = L.geoJSON(competLB5, {style: COMPET_STYLE_COM,
+    onEachFeature:(f,l)=>{const p=f.properties;l.bindPopup(`<b>${p.name}</b> · commune+${p.commune_tolerance_m||500}m<br>home: ${p.home_commune}<br>${p.seg_count} segs`);}});
+  layers.competPB5 = L.geoJSON(competPB5, {pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE_COM(f))});
+  layers.competB5 = L.layerGroup([layers.competLB5, layers.competPB5]);
+
   // 300 m frontier structures (clustered)
   layers.front = L.geoJSON(front300, {
     style: FRONT_STYLE,
@@ -868,6 +901,7 @@ async function init(){
   if(document.getElementById('t-prop100') && document.getElementById('t-prop100').checked) layers.prop100.addTo(map);
   if(document.getElementById('t-prop300') && document.getElementById('t-prop300').checked) layers.prop300.addTo(map);
   if(document.getElementById('t-front') && document.getElementById('t-front').checked) layers.front.addTo(map);
+  if(document.getElementById('t-competB500') && document.getElementById('t-competB500').checked) layers.competB5.addTo(map);
   if(document.getElementById('t-v2').checked) layers.v2.addTo(map);
   if(document.getElementById('t-v3').checked) layers.v3.addTo(map);
   if(document.getElementById('t-disp').checked) layers.disp.addTo(map);
@@ -899,6 +933,8 @@ async function init(){
   bind('t-competF', layers.competF);
   bind('t-competP', layers.competP_full);
   bind('t-competC', layers.competC);
+  bind('t-competB300', layers.competB3);
+  bind('t-competB500', layers.competB5);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){

@@ -1,0 +1,2191 @@
+{
+  "rule": "commune-bounded competition with 300 m spill-over buffer",
+  "max_dist_m": "unlimited",
+  "commune_tolerance_m": 300,
+  "total_graph_nodes": 94213,
+  "claimed_nodes": 70136,
+  "spill_over_claims": 1488,
+  "frontier_points": 6892,
+  "water_stops": 49,
+  "commune_boundary_stops": 236,
+  "chiefs_blocked_by_commune": 41,
+  "territory_sizes": [
+    {
+      "qi": 55,
+      "name": "Cococodji",
+      "arr": "Godomey",
+      "claimed_nodes": 2631,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 96,
+      "name": "Adovié",
+      "arr": "Hêvié",
+      "claimed_nodes": 1327,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 110,
+      "name": "Kansounkpa",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 1280,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 18,
+      "name": "Akossavié",
+      "arr": "Hêvié",
+      "claimed_nodes": 1273,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 162,
+      "name": "Togbin-Fandji",
+      "arr": "Godomey",
+      "claimed_nodes": 1268,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 294,
+      "name": "Djèkpota",
+      "arr": "Godomey",
+      "claimed_nodes": 1257,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 305,
+      "name": "Hêvié",
+      "arr": "Hêvié",
+      "claimed_nodes": 1196,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 51,
+      "name": "Zèkanmey-Domè",
+      "arr": "Akassato",
+      "claimed_nodes": 993,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 286,
+      "name": "Drabo",
+      "arr": "Togba",
+      "claimed_nodes": 933,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 143,
+      "name": "Hounzévié\n",
+      "arr": "Hêvié",
+      "claimed_nodes": 928,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 209,
+      "name": "Houinmè",
+      "arr": "Hêvié",
+      "claimed_nodes": 895,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 243,
+      "name": "Kpossidja",
+      "arr": "Ouèdo",
+      "claimed_nodes": 855,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 307,
+      "name": "Ouèdo",
+      "arr": "Ouèdo",
+      "claimed_nodes": 853,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 192,
+      "name": "Dessato\n",
+      "arr": "Ouèdo",
+      "claimed_nodes": 830,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 225,
+      "name": "Dossounou",
+      "arr": "Hêvié",
+      "claimed_nodes": 786,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 282,
+      "name": "Dassèkomey",
+      "arr": "Ouèdo",
+      "claimed_nodes": 786,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 295,
+      "name": "Houinmè-Daho",
+      "arr": "Hêvié",
+      "claimed_nodes": 779,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 99,
+      "name": "Domey-Gbo",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 777,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 191,
+      "name": "Agassa-Godomey",
+      "arr": "Akassato",
+      "claimed_nodes": 738,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 136,
+      "name": "Cité-les-Palmiers\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 718,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 150,
+      "name": "Zoundja\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 700,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 40,
+      "name": "Maria-Gléta\n",
+      "arr": "Godomey",
+      "claimed_nodes": 688,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 84,
+      "name": "Agonmé",
+      "arr": "Akassato",
+      "claimed_nodes": 688,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 113,
+      "name": "Womey-Centre\n",
+      "arr": "Godomey",
+      "claimed_nodes": 644,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 46,
+      "name": "Somè",
+      "arr": "Togba",
+      "claimed_nodes": 641,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 149,
+      "name": "Godomey-N'Gbèho",
+      "arr": "Godomey",
+      "claimed_nodes": 634,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 146,
+      "name": "Adjagbo",
+      "arr": "Ouèdo",
+      "claimed_nodes": 632,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 247,
+      "name": "Aïfa-Calavi",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 627,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 8,
+      "name": "Ouéga-Tokpa",
+      "arr": "Togba",
+      "claimed_nodes": 621,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 211,
+      "name": "Sogan",
+      "arr": "Hêvié",
+      "claimed_nodes": 614,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 201,
+      "name": "Tankpè-Tanmè",
+      "arr": "Togba",
+      "claimed_nodes": 610,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 141,
+      "name": "Agongbé",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 591,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 293,
+      "name": "Gbétagbo",
+      "arr": "Akassato",
+      "claimed_nodes": 582,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 299,
+      "name": "Alansankomè",
+      "arr": "Ouèdo",
+      "claimed_nodes": 579,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 15,
+      "name": "Zoungo",
+      "arr": "Hêvié",
+      "claimed_nodes": 577,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 135,
+      "name": "Misséssinto",
+      "arr": "Akassato",
+      "claimed_nodes": 575,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 310,
+      "name": "Womey-Yénawa",
+      "arr": "Godomey",
+      "claimed_nodes": 575,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 74,
+      "name": "Houèto",
+      "arr": "Togba",
+      "claimed_nodes": 538,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 303,
+      "name": "Ouéga-Agué",
+      "arr": "Togba",
+      "claimed_nodes": 535,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 129,
+      "name": "Ahouato",
+      "arr": "Ouèdo",
+      "claimed_nodes": 530,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 187,
+      "name": "Avagbé",
+      "arr": "Kpanroun",
+      "claimed_nodes": 530,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 306,
+      "name": "Akassato",
+      "arr": "Akassato",
+      "claimed_nodes": 529,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 298,
+      "name": "Ahossougbéta",
+      "arr": "Togba",
+      "claimed_nodes": 518,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 69,
+      "name": "Sokan",
+      "arr": "Zinvié",
+      "claimed_nodes": 504,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 270,
+      "name": "Kpodji-Les-Monts",
+      "arr": "Akassato",
+      "claimed_nodes": 504,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 290,
+      "name": "Adjagbo-Aïdjèdo",
+      "arr": "Ouèdo",
+      "claimed_nodes": 491,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 115,
+      "name": "Sodo\n",
+      "arr": "Godomey",
+      "claimed_nodes": 490,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 13,
+      "name": "Fifonsi\n",
+      "arr": "Togba",
+      "claimed_nodes": 468,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 231,
+      "name": "Haie-Vive-Cocotiers",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 462,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 204,
+      "name": "Adjagbo",
+      "arr": "Akassato",
+      "claimed_nodes": 457,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 159,
+      "name": "Aïdégnon\n",
+      "arr": "Togba",
+      "claimed_nodes": 456,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 16,
+      "name": "Tankpê-Yoho",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 449,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 221,
+      "name": "Tokan",
+      "arr": "Togba",
+      "claimed_nodes": 448,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 308,
+      "name": "Golo-Djigbé",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 443,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 182,
+      "name": "Zinvié-Zounmè",
+      "arr": "Zinvié",
+      "claimed_nodes": 440,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 267,
+      "name": "Zopah-Kokpo",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 434,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 77,
+      "name": "Alègléta",
+      "arr": "Godomey",
+      "claimed_nodes": 433,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 242,
+      "name": "Plateau\n",
+      "arr": "Godomey",
+      "claimed_nodes": 415,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 224,
+      "name": "Dokomè",
+      "arr": "Zinvié",
+      "claimed_nodes": 414,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 70,
+      "name": "Aïtchédji\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 412,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 82,
+      "name": "Yèvié",
+      "arr": "Zinvié",
+      "claimed_nodes": 407,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 226,
+      "name": "Glo-Tokpa",
+      "arr": "Akassato",
+      "claimed_nodes": 404,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 261,
+      "name": "Lohoussa",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 386,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 60,
+      "name": "Houèkè-Honou",
+      "arr": "Akassato",
+      "claimed_nodes": 380,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 256,
+      "name": "Agori",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 376,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 9,
+      "name": "Tankpè-Togoudo",
+      "arr": "Godomey",
+      "claimed_nodes": 370,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 126,
+      "name": "Atrokpo-Codji",
+      "arr": "Godomey",
+      "claimed_nodes": 368,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 213,
+      "name": "Fandji\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 367,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 85,
+      "name": "Kolètin",
+      "arr": "Akassato",
+      "claimed_nodes": 365,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 14,
+      "name": "Ounvènoumèdé\n",
+      "arr": "Godomey",
+      "claimed_nodes": 364,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 24,
+      "name": "Amahoun\n",
+      "arr": "Godomey",
+      "claimed_nodes": 351,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 223,
+      "name": "Agonsoudja",
+      "arr": "Akassato",
+      "claimed_nodes": 345,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 228,
+      "name": "Houèkè-Gbo",
+      "arr": "Akassato",
+      "claimed_nodes": 344,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 59,
+      "name": "Yèkon-Do",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 340,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 93,
+      "name": "Zinvié-Fandji",
+      "arr": "Zinvié",
+      "claimed_nodes": 338,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 43,
+      "name": "Alédjo\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 333,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 184,
+      "name": "Adjamè\n",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 332,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 309,
+      "name": "Togba_Maria-Gléta",
+      "arr": "Togba",
+      "claimed_nodes": 332,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 169,
+      "name": "Agamandin",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 323,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 75,
+      "name": "Finafa\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 322,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 274,
+      "name": "Zogbadjè",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 322,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 73,
+      "name": "Gbodjè-Womey\n",
+      "arr": "Godomey",
+      "claimed_nodes": 316,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 119,
+      "name": "Ahouanlèko",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 316,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 236,
+      "name": "Tchinangbégbo\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 315,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 216,
+      "name": "Sèmè",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 305,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 175,
+      "name": "Yénandjro\n",
+      "arr": "Godomey",
+      "claimed_nodes": 303,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 246,
+      "name": "La-Paix\n",
+      "arr": "Godomey",
+      "claimed_nodes": 301,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 86,
+      "name": "Togbin-Daho",
+      "arr": "Godomey",
+      "claimed_nodes": 288,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 35,
+      "name": "Fiyégnon-Jacquot",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 285,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 199,
+      "name": "Fandji\n",
+      "arr": "Godomey",
+      "claimed_nodes": 283,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 177,
+      "name": "Dénou\n",
+      "arr": "Godomey",
+      "claimed_nodes": 280,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 237,
+      "name": "Adjogansa",
+      "arr": "Zinvié",
+      "claimed_nodes": 276,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 58,
+      "name": "Tokpa\n",
+      "arr": "Godomey",
+      "claimed_nodes": 275,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 233,
+      "name": "Azonsa",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 269,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 21,
+      "name": "Agonkèssa",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 263,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 253,
+      "name": "Golo-Fanto",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 258,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 188,
+      "name": "Assrossa\n",
+      "arr": "Godomey",
+      "claimed_nodes": 251,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 297,
+      "name": "Zopah-Akassato",
+      "arr": "Akassato",
+      "claimed_nodes": 248,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 87,
+      "name": "Kpotomey",
+      "arr": "Zinvié",
+      "claimed_nodes": 238,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 100,
+      "name": "Adjaha-Cité",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 230,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 138,
+      "name": "Kpé",
+      "arr": "Kpanroun",
+      "claimed_nodes": 226,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 31,
+      "name": "Mènontin",
+      "arr": "9ème Arrondissement",
+      "claimed_nodes": 219,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 173,
+      "name": "Gbodjo",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 219,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 241,
+      "name": "Togbin-Kpèvi",
+      "arr": "Godomey",
+      "claimed_nodes": 215,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 26,
+      "name": "Gbègnigan-Midokpo\n",
+      "arr": "Godomey",
+      "claimed_nodes": 213,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 30,
+      "name": "Zinvié-Agolèdji",
+      "arr": "Zinvié",
+      "claimed_nodes": 211,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 279,
+      "name": "Cocotomey",
+      "arr": "Godomey",
+      "claimed_nodes": 207,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 23,
+      "name": "Agbo Codji Sèdégbé",
+      "arr": "Godomey",
+      "claimed_nodes": 205,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 47,
+      "name": "Agonkanmey\n",
+      "arr": "Godomey",
+      "claimed_nodes": 205,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 88,
+      "name": "Tokpa-Zoungo-Nord\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 204,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 28,
+      "name": "Cité-la-Victoire\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 203,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 271,
+      "name": "Agla-Les-Pylônes",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 202,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 1,
+      "name": "Dandji-Hokanmè",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 193,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 222,
+      "name": "Houéyihô-Tannou",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 193,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 27,
+      "name": "Tokpa-Zoungo-Sud\n",
+      "arr": "Abomey-Calavi",
+      "claimed_nodes": 191,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 249,
+      "name": "Hounsa-Agbodokpa\n",
+      "arr": "Godomey",
+      "claimed_nodes": 189,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 250,
+      "name": "Zogbohouè",
+      "arr": "9ème Arrondissement",
+      "claimed_nodes": 182,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 208,
+      "name": "Tchanhounkpamè",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 178,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 264,
+      "name": "Kouhounou",
+      "arr": "10ème Arrondissement",
+      "claimed_nodes": 176,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 120,
+      "name": "Zèkanmey",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 175,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 190,
+      "name": "Yêkon-Aga",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 175,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 144,
+      "name": "Fidjrossè-Centre",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 174,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 230,
+      "name": "Logbozounkpa",
+      "arr": "Godomey",
+      "claimed_nodes": 173,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 127,
+      "name": "Gbodjoko",
+      "arr": "Zinvié",
+      "claimed_nodes": 171,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 238,
+      "name": "Dèkoungbé\n",
+      "arr": "Godomey",
+      "claimed_nodes": 169,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 262,
+      "name": "Yèvié-Nougo",
+      "arr": "Zinvié",
+      "claimed_nodes": 164,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 36,
+      "name": "Fifadji",
+      "arr": "9ème Arrondissement",
+      "claimed_nodes": 146,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 164,
+      "name": "Sèdomey",
+      "arr": "Godomey",
+      "claimed_nodes": 144,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 176,
+      "name": "Houégoudo\n",
+      "arr": "Zinvié",
+      "claimed_nodes": 143,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 304,
+      "name": "Kpanroun",
+      "arr": "Kpanroun",
+      "claimed_nodes": 142,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 178,
+      "name": "Djigbo",
+      "arr": "Kpanroun",
+      "claimed_nodes": 137,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 268,
+      "name": "Gninkindji\n",
+      "arr": "Godomey",
+      "claimed_nodes": 134,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 285,
+      "name": "Énagnon",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 134,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 11,
+      "name": "Djoukpa-Togoudo\n",
+      "arr": "Godomey",
+      "claimed_nodes": 127,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 156,
+      "name": "Agla-Petit-Château",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 126,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 160,
+      "name": "Zounga\n",
+      "arr": "Godomey",
+      "claimed_nodes": 126,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 195,
+      "name": "Salamey",
+      "arr": "Godomey",
+      "claimed_nodes": 124,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 45,
+      "name": "Agounvocôdji",
+      "arr": "10ème Arrondissement",
+      "claimed_nodes": 123,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 139,
+      "name": "Zongo-Ehuzu",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 121,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 248,
+      "name": "Nonhouénou\n",
+      "arr": "Godomey",
+      "claimed_nodes": 120,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 280,
+      "name": "Sèdjannako\n",
+      "arr": "Godomey",
+      "claimed_nodes": 119,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 39,
+      "name": "Espace-Saint",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 118,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 219,
+      "name": "Finagnon",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 116,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 106,
+      "name": "Avotrou-Aïmonlonfidé",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 114,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 281,
+      "name": "Gbèdiga-Guêdêhounguè",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 114,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 94,
+      "name": "Fignonhou\n",
+      "arr": "Godomey",
+      "claimed_nodes": 112,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 153,
+      "name": "Zogbo",
+      "arr": "9ème Arrondissement",
+      "claimed_nodes": 112,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 288,
+      "name": "Agla-Centre",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 112,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 3,
+      "name": "Ningboto\n",
+      "arr": "Godomey",
+      "claimed_nodes": 110,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 289,
+      "name": "Donaten",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 107,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 167,
+      "name": "Fifadji-Houto (Jak)",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 101,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 133,
+      "name": "Anagbo",
+      "arr": "Kpanroun",
+      "claimed_nodes": 100,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 254,
+      "name": "Yolomahouto",
+      "arr": "Godomey",
+      "claimed_nodes": 100,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 161,
+      "name": "Abikouholi\n",
+      "arr": "Godomey",
+      "claimed_nodes": 99,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 229,
+      "name": "Aïbatin-Dodo",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 98,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 48,
+      "name": "Dèkoungbé-Église\n",
+      "arr": "Godomey",
+      "claimed_nodes": 97,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 41,
+      "name": "Védokô",
+      "arr": "10ème Arrondissement",
+      "claimed_nodes": 95,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 180,
+      "name": "Hêdomè\n",
+      "arr": "Godomey",
+      "claimed_nodes": 95,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 158,
+      "name": "Houénoussou",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 93,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 174,
+      "name": "Kindonou",
+      "arr": "9ème Arrondissement",
+      "claimed_nodes": 92,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 203,
+      "name": "Cadjèhoun-Agonga",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 92,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 134,
+      "name": "Zongo-Nima",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 91,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 302,
+      "name": "Hlouacomey",
+      "arr": "Godomey",
+      "claimed_nodes": 90,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 148,
+      "name": "Dandji",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 89,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 4,
+      "name": "Hlazounto",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 88,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 19,
+      "name": "Cadjèhoun-Kpota",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 88,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 103,
+      "name": "Aïmèvo\n",
+      "arr": "Godomey",
+      "claimed_nodes": 87,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 284,
+      "name": "Hadjanaho",
+      "arr": "Kpanroun",
+      "claimed_nodes": 87,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 124,
+      "name": "Avotrou-Houézèkomè",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 86,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 168,
+      "name": "Missogbé",
+      "arr": "10ème Arrondissement",
+      "claimed_nodes": 83,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 17,
+      "name": "Akpakpa-Dodomè",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 80,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 49,
+      "name": "Finafa\n",
+      "arr": "Godomey",
+      "claimed_nodes": 80,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 123,
+      "name": "Yénawa-Daho",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 78,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 179,
+      "name": "Djédjé-Layé",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 78,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 260,
+      "name": "Ohé",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 78,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 301,
+      "name": "Gbèdjromèdè-Nord",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 78,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 63,
+      "name": "Xwlacôdji-Kpodji",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 76,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 89,
+      "name": "Sodjatinmè-Centre",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 76,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 220,
+      "name": "Nvènamèdé",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 76,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 275,
+      "name": "Tonato",
+      "arr": "8ème Arrondissement",
+      "claimed_nodes": 76,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 25,
+      "name": "Ganganzounmè\n",
+      "arr": "Godomey",
+      "claimed_nodes": 75,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 276,
+      "name": "Agla-Agongbomey",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 75,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 232,
+      "name": "Yénawa",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 72,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 20,
+      "name": "Yagbé",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 68,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 108,
+      "name": "Adôgléta",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 68,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 116,
+      "name": "Kpankpan",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 68,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 12,
+      "name": "Cadjèhoun-Azalokogon",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 67,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 132,
+      "name": "Hlacômey",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 67,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 277,
+      "name": "Agla-Finafa",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 67,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 109,
+      "name": "Ahouansouri-Agata",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 64,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 50,
+      "name": "Minontchou",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 61,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 189,
+      "name": "Vossa",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 61,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 200,
+      "name": "Sègbèya-Nord",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 59,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 91,
+      "name": "Kpaviédja",
+      "arr": "Kpanroun",
+      "claimed_nodes": 58,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 92,
+      "name": "Gankpodo",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 58,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 186,
+      "name": "Sènadé-Sèkon",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 58,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 239,
+      "name": "Yénawa-Fifadji",
+      "arr": "10ème Arrondissement",
+      "claimed_nodes": 57,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 2,
+      "name": "Kowégbo",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 56,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 66,
+      "name": "Missèkplé",
+      "arr": "10ème Arrondissement",
+      "claimed_nodes": 56,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 80,
+      "name": "Vodjè-Ayidoté",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 56,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 234,
+      "name": "Ahouansori-Towéta-Kpota",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 55,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 292,
+      "name": "Gbèdégbé",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 55,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 142,
+      "name": "Tokplégbé",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 53,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 67,
+      "name": "Sètôvi",
+      "arr": "10ème Arrondissement",
+      "claimed_nodes": 52,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 81,
+      "name": "Godomey-Togoudo",
+      "arr": "Godomey",
+      "claimed_nodes": 52,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 117,
+      "name": "Tanto",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 50,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 145,
+      "name": "Sodjatinmè-Est",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 50,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 102,
+      "name": "Cadjèhoun-Aupiais",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 47,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 287,
+      "name": "Dantôkpa",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 47,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 193,
+      "name": "Gbénonkpô",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 46,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 197,
+      "name": "Sègbèya-Sud",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 46,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 257,
+      "name": "Guinkômey",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 46,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 269,
+      "name": "Agbodjèdo",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 46,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 218,
+      "name": "Gbégamey-Mifongou",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 44,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 181,
+      "name": "Ahouassa",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 43,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 259,
+      "name": "Ayélawadjè-Agongbomè",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 43,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 291,
+      "name": "Vodjè-Kpota",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 43,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 37,
+      "name": "Vodjè-Finagnon",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 42,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 32,
+      "name": "Todoté",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 41,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 90,
+      "name": "Avotrou-Gbègo",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 41,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 210,
+      "name": "Aïbatin-Kpota",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 41,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 252,
+      "name": "Gbénonkpô",
+      "arr": "10ème Arrondissement",
+      "claimed_nodes": 41,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 22,
+      "name": "Missèbô",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 40,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 65,
+      "name": "Houénoussou-Sainte-Rita",
+      "arr": "8ème Arrondissement",
+      "claimed_nodes": 38,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 54,
+      "name": "Gbèdjromèdè",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 36,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 152,
+      "name": "Mèdédjro",
+      "arr": "8ème Arrondissement",
+      "claimed_nodes": 36,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 235,
+      "name": "Houéyihô",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 36,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 29,
+      "name": "Ahogbohoué-Cité-Eucharistie",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 35,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 157,
+      "name": "Midédji",
+      "arr": "10ème Arrondissement",
+      "claimed_nodes": 35,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 251,
+      "name": "Djidjè-Aïchédji",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 35,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 38,
+      "name": "Lom-Nava",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 34,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 33,
+      "name": "Djissoukpa",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 33,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 71,
+      "name": "Cadjèhoun-Détinsa",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 33,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 140,
+      "name": "Ahouansori-Towéta",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 33,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 62,
+      "name": "Vodjè-Centre",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 32,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 72,
+      "name": "Ahouansouri-Agué",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 32,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 125,
+      "name": "Ahogbohoué-Cité-De-l'Expérience",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 32,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 265,
+      "name": "Suru-Léré",
+      "arr": "1er Arrondissement",
+      "claimed_nodes": 32,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 52,
+      "name": "Tokpa-Hoho",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 31,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 53,
+      "name": "Sèdami",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 31,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 68,
+      "name": "Kpondéhou",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 31,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 107,
+      "name": "Cadjèhoun-Gare",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 31,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 121,
+      "name": "Sènadé",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 31,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 266,
+      "name": "Fifatin",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 31,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 217,
+      "name": "Houéhoun",
+      "arr": "8ème Arrondissement",
+      "claimed_nodes": 30,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 255,
+      "name": "Énagnon-Sikê",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 29,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 105,
+      "name": "Missité",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 28,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 155,
+      "name": "Gbégamey-Gbagoudo",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 28,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 273,
+      "name": "Saint-Jean-Gbèdiga",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 28,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 114,
+      "name": "Dédokpo",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 27,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 163,
+      "name": "Gbéto",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 27,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 296,
+      "name": "Bocossi-Tokpa",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 27,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 10,
+      "name": "Minonkpô-Wologuèdè",
+      "arr": "8ème Arrondissement",
+      "claimed_nodes": 26,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 244,
+      "name": "Avlékété-Joncquet",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 26,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 263,
+      "name": "Djidjè",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 26,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 76,
+      "name": "Vossa-Kpodji",
+      "arr": "9ème Arrondissement",
+      "claimed_nodes": 25,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 97,
+      "name": "Gbènan",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 25,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 130,
+      "name": "Xwlacôdji-Plage",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 25,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 171,
+      "name": "Jéricho-Nord",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 25,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 185,
+      "name": "Ladji",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 25,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 227,
+      "name": "Gbégamey-Centre",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 25,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 300,
+      "name": "Ayélawadjè",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 25,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 147,
+      "name": "Gbégamey-Ahito",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 24,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 154,
+      "name": "Mifongou",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 24,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 183,
+      "name": "Midombo",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 24,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 212,
+      "name": "Gbédokpo",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 24,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 112,
+      "name": "Irédé",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 23,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 151,
+      "name": "Abokicodji-Lagune",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 22,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 166,
+      "name": "Agbondjèdo",
+      "arr": "8ème Arrondissement",
+      "claimed_nodes": 22,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 206,
+      "name": "Sèdjro-Saint-Michel",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 22,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 245,
+      "name": "Gbèdjèwin",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 22,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 283,
+      "name": "Sèhogan-Sikê",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 22,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 194,
+      "name": "Adjégounlè",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 21,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 205,
+      "name": "Jéricho-Sud",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 21,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 202,
+      "name": "Abokicodji-Centre",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 20,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 7,
+      "name": "Hindé-Sud",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 19,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 165,
+      "name": "Bozoun",
+      "arr": "Kpanroun",
+      "claimed_nodes": 19,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 240,
+      "name": "Missité",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 19,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 278,
+      "name": "Hindé-Nord",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 19,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 61,
+      "name": "Fignon-Sikê",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 18,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 104,
+      "name": "Aïdjèdo",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 18,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 196,
+      "name": "Aïdjèdo-Vignon",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 18,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 6,
+      "name": "Nouveau-Pont",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 17,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 131,
+      "name": "Gbégamey-Dodo-Ayidjè",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 16,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 170,
+      "name": "Aïdjèdo-Gbègo",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 16,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 42,
+      "name": "Kpondéhou-Tchèmè",
+      "arr": "2ème Arrondissement",
+      "claimed_nodes": 15,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 122,
+      "name": "Agontinkon",
+      "arr": "8ème Arrondissement",
+      "claimed_nodes": 15,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 207,
+      "name": "Gbèdagba",
+      "arr": "8ème Arrondissement",
+      "claimed_nodes": 15,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 128,
+      "name": "Aïdjèdo-Ahito",
+      "arr": "6ème Arrondissement",
+      "claimed_nodes": 14,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 172,
+      "name": "Misséssin",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 14,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 34,
+      "name": "Missité-Sikê",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 13,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 118,
+      "name": "Vodjè-Allobatin",
+      "arr": "11ème Arrondissement",
+      "claimed_nodes": 13,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 198,
+      "name": "Dota",
+      "arr": "5ème Arrondissement",
+      "claimed_nodes": 13,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 215,
+      "name": "Dagbédji-Sikê",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 13,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 5,
+      "name": "Yévèdo",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 9,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 98,
+      "name": "Gbèdomidji",
+      "arr": "7ème Arrondissement",
+      "claimed_nodes": 8,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 56,
+      "name": "Sodjatinmè-Ouest",
+      "arr": "4ème Arrondissement",
+      "claimed_nodes": 7,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 137,
+      "name": "Agbatô",
+      "arr": "3ème Arrondissement",
+      "claimed_nodes": 5,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 0,
+      "name": "Fiyégnon-Houta",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 1,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 44,
+      "name": "Ahowégodo",
+      "arr": "Kpanroun",
+      "claimed_nodes": 1,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 57,
+      "name": "Agla-Figaro",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 1,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 64,
+      "name": "Gbodjètin",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 1,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 78,
+      "name": "Yèmicodji",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 1,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 79,
+      "name": "Dangbodji",
+      "arr": "Zinvié",
+      "claimed_nodes": 1,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 83,
+      "name": "Wawata",
+      "arr": "Zinvié",
+      "claimed_nodes": 1,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 101,
+      "name": "Fidjrossè-Kpota",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 1,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 111,
+      "name": "Agla-Akplomey",
+      "arr": "13ème Arrondissement",
+      "claimed_nodes": 1,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 214,
+      "name": "Wawata-Todja",
+      "arr": "Zinvié",
+      "claimed_nodes": 1,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 258,
+      "name": "Akôgbato",
+      "arr": "12ème Arrondissement",
+      "claimed_nodes": 1,
+      "home_commune": "Cotonou"
+    },
+    {
+      "qi": 272,
+      "name": "Alladacomè",
+      "arr": "Golo-Djigbé",
+      "claimed_nodes": 1,
+      "home_commune": "Abomey-Calavi"
+    },
+    {
+      "qi": 95,
+      "name": "Gbodjè",
+      "arr": "Zinvié",
+      "claimed_nodes": 0,
+      "home_commune": "Abomey-Calavi"
+    }
+  ]
+}
