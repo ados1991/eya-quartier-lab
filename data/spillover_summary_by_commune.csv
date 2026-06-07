@@ -1,0 +1,8 @@
+spillover_home,node_commune,classification,count
+Abomey-Calavi,other,BORDERLINE,6
+Abomey-Calavi,other,USEFUL_GAP_FILL,2034
+Cotonou,Abomey-Calavi,BORDERLINE,9
+Cotonou,Abomey-Calavi,USEFUL_CORRECTION,475
+Cotonou,Abomey-Calavi,USEFUL_GAP_FILL,187
+Cotonou,other,BORDERLINE,1
+Cotonou,other,USEFUL_GAP_FILL,464

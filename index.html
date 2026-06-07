@@ -208,6 +208,20 @@
     </div>
     <input type="range" min="0" max="100" value="85" id="op-competB700" class="slider">
 
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-spillaudit"><span class="lay-swatch" style="background:linear-gradient(90deg,#22c55e 33%,#fbbf24 33%,#fbbf24 66%,#dc2626 66%);border:1.5px solid #052e16"></span><b>700 m spill-over audit</b></label>
+    <div class="lay-meta">
+      Forensic audit of all 3 176 spill-over claims at 700 m buffer. Each point coloured by classification:<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#22c55e;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>USEFUL_GAP_FILL</b> 2 685 (84.5 %) — orphan zones (canal-trapped clusters)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#86efac;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>USEFUL_CORRECTION</b> 475 (15.0 %) — closer than the strict-mode owner<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#fbbf24;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>BORDERLINE</b> 16 (0.5 %)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>SUSPICIOUS_OVERREACH</b> <b>0</b> (none)<br>
+      <a href="data/spillover_700m.geojson" download>geojson</a> ·
+      <a href="data/spillover_summary_by_commune.csv" download>by-commune CSV</a> ·
+      <a href="data/spillover_top_owners.json" target="_blank">top owners</a> ·
+      <a href="data/spillover_suspicious_clusters.geojson" download>suspicious clusters (empty)</a>
+    </div>
+    <input type="range" min="0" max="100" value="70" id="op-spillaudit" class="slider">
+
     <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-competB500"><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 33%,#fbbf24 33%,#fbbf24 66%,#f97316 66%);border:1.5px solid #052e16"></span>Road propagation — commune + 500 m spill-over (medium)</label>
     <div class="lay-meta">
       Less aggressive: 70 871 claimed (+2 063). Bbox: 210/265 (79 %).
@@ -529,7 +543,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -574,6 +588,7 @@ async function init(){
     loadGeo('data/competitive_frontier_points_commune_buf500_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_road_propagation_commune_buf700_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_frontier_points_commune_buf700_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/spillover_700m.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -673,6 +688,16 @@ async function init(){
 
   // FULL COVERAGE competitive — unlimited budget
   const COMPET_STYLE_FULL = (f) => ({color: f.properties.color || '#888', weight:2.2, opacity:.75});
+
+// Spill-over audit styling
+const SPILL_PT_STYLE = (f) => {
+  const c = f.properties.classification;
+  if (c === 'USEFUL_GAP_FILL')      return {radius:3.5, color:'#15803d', weight:0.8, fillColor:'#22c55e', fillOpacity:.85};
+  if (c === 'USEFUL_CORRECTION')    return {radius:3.5, color:'#15803d', weight:0.8, fillColor:'#86efac', fillOpacity:.85};
+  if (c === 'BORDERLINE')           return {radius:4,   color:'#92400e', weight:1,   fillColor:'#fbbf24', fillOpacity:.92};
+  if (c === 'SUSPICIOUS_OVERREACH') return {radius:5,   color:'#7f1d1d', weight:1.5, fillColor:'#dc2626', fillOpacity:.95};
+  return {radius:3, color:'#666', weight:1, fillColor:'#aaa', fillOpacity:.6};
+};
   layers.competLF = L.geoJSON(competLF, {style: COMPET_STYLE_FULL,
     onEachFeature:(f,l)=>{
       const p=f.properties;
@@ -754,6 +779,22 @@ async function init(){
     onEachFeature:(f,l)=>{const p=f.properties;l.bindPopup(`<b>${p.name}</b> · commune+${p.commune_tolerance_m||700}m<br>home: ${p.home_commune}<br>${p.seg_count} segs`);}});
   layers.competPB7 = L.geoJSON(competPB7, {pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE_COM(f))});
   layers.competB7 = L.layerGroup([layers.competLB7, layers.competPB7]);
+
+  // 700 m spill-over audit layer
+  layers.spillAudit = L.geoJSON(spillAudit, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, SPILL_PT_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p = f.properties;
+      l.bindPopup(
+        `<b>${p.classification}</b><br>`+
+        `spill-over chef: <b>${p.spillover_name}</b> (${p.spillover_home})<br>`+
+        `node commune: ${p.node_commune}<br>`+
+        `spill-over dist: ${p.spillover_dist_m} m`+
+        (p.strict_name ? `<br>strict owner: ${p.strict_name} (${p.strict_home}) at ${p.strict_dist_m} m`+
+                          `<br>ratio: ${p.dist_ratio}` : '<br><i>orphan in strict mode</i>')
+      );
+    }
+  });
 
   // 300 m frontier structures (clustered)
   layers.front = L.geoJSON(front300, {
@@ -948,6 +989,7 @@ async function init(){
   bind('t-competB300', layers.competB3);
   bind('t-competB500', layers.competB5);
   bind('t-competB700', layers.competB7);
+  bind('t-spillaudit', layers.spillAudit);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
