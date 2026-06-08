@@ -1,5 +1,6 @@
 {
   "source": "OSM amenities (ODbL)",
+  "audit_only": false,
   "pois_total": 2353,
   "pois_matched": 189,
   "hit_rate_pct": 8.0,
@@ -14,6 +15,12 @@
     "NO_NODE": 6,
     "FILLS_GAP": 4
   },
+  "dispute_cluster_counts_by_confidence": {
+    "MEDIUM": 12,
+    "LOW": 68
+  },
+  "n_dispute_clusters": 80,
+  "n_dispute_pois": 103,
   "top_disputed_pairs": [
     {
       "poi_says": "Védokô",
