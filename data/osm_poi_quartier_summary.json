@@ -1,0 +1,169 @@
+{
+  "source": "OSM amenities (ODbL)",
+  "pois_total": 2353,
+  "pois_matched": 189,
+  "hit_rate_pct": 8.0,
+  "match_mode_counts": {
+    "FULL_SINGLE_UNIQUE": 118,
+    "TOKEN_UNIQUE": 67,
+    "FULL_HYPHEN": 4
+  },
+  "classification_counts": {
+    "DISPUTE": 103,
+    "CONFIRM": 76,
+    "NO_NODE": 6,
+    "FILLS_GAP": 4
+  },
+  "top_disputed_pairs": [
+    {
+      "poi_says": "Védokô",
+      "propagation_says": "Missogbé",
+      "count": 3
+    },
+    {
+      "poi_says": "Togba_Maria-Gléta",
+      "propagation_says": "Ouéga-Tokpa",
+      "count": 3
+    },
+    {
+      "poi_says": "Mènontin",
+      "propagation_says": "Kindonou",
+      "count": 3
+    },
+    {
+      "poi_says": "Togba_Maria-Gléta",
+      "propagation_says": "Houèto",
+      "count": 3
+    },
+    {
+      "poi_says": "Ladji",
+      "propagation_says": "Ahouansori-Towéta-Kpota",
+      "count": 3
+    },
+    {
+      "poi_says": "Gbéto",
+      "propagation_says": "Sèdjro-Saint-Michel",
+      "count": 2
+    },
+    {
+      "poi_says": "Gbéto",
+      "propagation_says": "Dota",
+      "count": 2
+    },
+    {
+      "poi_says": "Agori",
+      "propagation_says": "Fifonsi\n",
+      "count": 2
+    },
+    {
+      "poi_says": "Akpakpa-Dodomè",
+      "propagation_says": "Lom-Nava",
+      "count": 2
+    },
+    {
+      "poi_says": "Cité-la-Victoire\n",
+      "propagation_says": "Aïtchédji\n",
+      "count": 2
+    },
+    {
+      "poi_says": "Houèto",
+      "propagation_says": "Tankpê-Yoho",
+      "count": 2
+    },
+    {
+      "poi_says": "Agbatô",
+      "propagation_says": "Hlacômey",
+      "count": 2
+    },
+    {
+      "poi_says": "Gbétagbo",
+      "propagation_says": "Agassa-Godomey",
+      "count": 2
+    },
+    {
+      "poi_says": "Védokô",
+      "propagation_says": "Sètôvi",
+      "count": 2
+    },
+    {
+      "poi_says": "Tokplégbé",
+      "propagation_says": "Dandji-Hokanmè",
+      "count": 2
+    },
+    {
+      "poi_says": "Cocotomey",
+      "propagation_says": "Tokpa\n",
+      "count": 2
+    },
+    {
+      "poi_says": "Sèdjro-Saint-Michel",
+      "propagation_says": "Djoukpa-Togoudo\n",
+      "count": 1
+    },
+    {
+      "poi_says": "Sèdjro-Saint-Michel",
+      "propagation_says": "Mifongou",
+      "count": 1
+    },
+    {
+      "poi_says": "Zogbo",
+      "propagation_says": "Agounvocôdji",
+      "count": 1
+    },
+    {
+      "poi_says": "Cocotomey",
+      "propagation_says": "Fandji\n",
+      "count": 1
+    },
+    {
+      "poi_says": "Haie-Vive-Cocotiers",
+      "propagation_says": "Cadjèhoun-Agonga",
+      "count": 1
+    },
+    {
+      "poi_says": "Midombo",
+      "propagation_says": "Kpankpan",
+      "count": 1
+    },
+    {
+      "poi_says": "Agla-Petit-Château",
+      "propagation_says": "Todoté",
+      "count": 1
+    },
+    {
+      "poi_says": "Agontinkon",
+      "propagation_says": "Vodjè-Ayidoté",
+      "count": 1
+    },
+    {
+      "poi_says": "Espace-Saint",
+      "propagation_says": "Ounvènoumèdé\n",
+      "count": 1
+    },
+    {
+      "poi_says": "Agla-Les-Pylônes",
+      "propagation_says": "Agla-Petit-Château",
+      "count": 1
+    },
+    {
+      "poi_says": "Cité-la-Victoire\n",
+      "propagation_says": "Agori",
+      "count": 1
+    },
+    {
+      "poi_says": "Sèdjro-Saint-Michel",
+      "propagation_says": "Agamandin",
+      "count": 1
+    },
+    {
+      "poi_says": "Tokan",
+      "propagation_says": "Ahossougbéta",
+      "count": 1
+    },
+    {
+      "poi_says": "Akpakpa-Dodomè",
+      "propagation_says": "Nvènamèdé",
+      "count": 1
+    }
+  ]
+}

@@ -252,6 +252,21 @@
     </div>
     <input type="range" min="0" max="100" value="85" id="op-resolution" class="slider">
 
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-osmpoi"><span class="lay-swatch" style="background:linear-gradient(90deg,#16a34a 33%,#dc2626 33%,#dc2626 66%,#0891b2 66%);border:1.5px solid #052e16"></span><b>OSM POI → quartier audit</b> <span style="color:#16a34a">(free, ODbL)</span></label>
+    <div class="lay-meta">
+      Cross-check OSM amenity labels against current propagation. Each named POI's display name is matched against the 306 IGN chef-lieu names; the matched POI is then snapped to the nearest road node and compared with that node's current owner.<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#16a34a;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>CONFIRM</b> 76 — POI agrees with propagation<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>DISPUTE</b> 103 — POI label says X, propagation says Y<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#0891b2;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>FILLS_GAP</b> 4 — POI sits on an unclaimed node<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#94a3b8;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>NO_NODE</b> 6 — no road node within 80 m<br>
+      <b>Hit rate</b>: 189 / 2 353 (8.0 %) — below 20 % target, but 103 disputes is a real signal density.<br>
+      <a href="data/osm_poi_quartier.geojson" download>geojson</a> ·
+      <a href="data/osm_poi_quartier.csv" download>CSV</a> ·
+      <a href="data/osm_poi_quartier.md" target="_blank">report</a> ·
+      <a href="data/osm_poi_quartier_summary.json" target="_blank">summary</a>
+    </div>
+    <input type="range" min="0" max="100" value="90" id="op-osmpoi" class="slider">
+
     <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-competB500"><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 33%,#fbbf24 33%,#fbbf24 66%,#f97316 66%);border:1.5px solid #052e16"></span>Road propagation — commune + 500 m spill-over (medium)</label>
     <div class="lay-meta">
       Less aggressive: 70 871 claimed (+2 063). Bbox: 210/265 (79 %).
@@ -573,7 +588,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoi] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -621,6 +636,7 @@ async function init(){
     loadGeo('data/spillover_700m.geojson').catch(()=>({features:[]})),
     loadGeo('data/remaining_gap_clusters.geojson').catch(()=>({features:[]})),
     loadGeo('data/resolution_proposals.geojson').catch(()=>({features:[]})),
+    loadGeo('data/osm_poi_quartier.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -720,6 +736,16 @@ async function init(){
 
   // FULL COVERAGE competitive — unlimited budget
   const COMPET_STYLE_FULL = (f) => ({color: f.properties.color || '#888', weight:2.2, opacity:.75});
+
+// OSM POI audit styling
+const OSM_POI_STYLE = (f) => {
+  const c = f.properties.classification;
+  if (c === 'CONFIRM')   return {radius:3,   color:'#14532d', weight:0.6, fillColor:'#16a34a', fillOpacity:.7};
+  if (c === 'DISPUTE')   return {radius:4.5, color:'#7f1d1d', weight:1.2, fillColor:'#dc2626', fillOpacity:.92};
+  if (c === 'FILLS_GAP') return {radius:4.5, color:'#164e63', weight:1.2, fillColor:'#0891b2', fillOpacity:.9};
+  if (c === 'NO_NODE')   return {radius:3,   color:'#475569', weight:0.8, fillColor:'#94a3b8', fillOpacity:.6};
+  return {radius:3, color:'#666', weight:0.6, fillColor:'#aaa', fillOpacity:.5};
+};
 
 // Resolution-proposal styling (size scales with cluster nodes)
 const RES_PT_STYLE = (f) => {
@@ -839,6 +865,22 @@ const SPILL_PT_STYLE = (f) => {
     onEachFeature:(f,l)=>{const p=f.properties;l.bindPopup(`<b>${p.name}</b> · commune+${p.commune_tolerance_m||700}m<br>home: ${p.home_commune}<br>${p.seg_count} segs`);}});
   layers.competPB7 = L.geoJSON(competPB7, {pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE_COM(f))});
   layers.competB7 = L.layerGroup([layers.competLB7, layers.competPB7]);
+
+  // OSM POI → quartier audit (CONFIRM / DISPUTE / FILLS_GAP / NO_NODE)
+  layers.osmPoi = L.geoJSON(osmPoi, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, OSM_POI_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p = f.properties;
+      const cur = p.current_owner ? `${p.current_owner} <i>(${p.current_owner_arr||''})</i>` : '<i>unclaimed</i>';
+      l.bindPopup(
+        `<b>${p.name}</b><br>`+
+        `<b>${p.classification}</b> · match: ${p.match_mode} · conf ${p.confidence}<br>`+
+        `POI label → <b>${p.poi_quartier}</b> <i>(${p.poi_quartier_arr||''})</i><br>`+
+        `propagation → ${cur}<br>`+
+        `matched token: <code>${p.matched_text}</code> · snap ${p.snap_dist_m} m`
+      );
+    }
+  });
 
   // Resolution proposals — disposition per cluster
   layers.resolution = L.geoJSON(resProposals, {
@@ -1093,6 +1135,7 @@ const SPILL_PT_STYLE = (f) => {
   bind('t-spillaudit', layers.spillAudit);
   bind('t-gapaudit', layers.gapAudit);
   bind('t-resolution', layers.resolution);
+  bind('t-osmpoi', layers.osmPoi);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){

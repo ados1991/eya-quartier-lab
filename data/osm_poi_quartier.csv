@@ -1,0 +1,229 @@
+name,lat,lng,category,poi_quartier,poi_quartier_arr,match_mode,matched_text,confidence,snap_dist_m,current_owner,current_owner_arr,classification
+Pharmacie Marché Vedoko,6.3781996,2.3902366,pharmacy,Védokô,10ème Arrondissement,FULL_SINGLE_UNIQUE,vedoko,0.85,21.2,Missogbé,10ème Arrondissement,DISPUTE
+Marché Togba,6.4635422,2.3059166,marketplace,Togba_Maria-Gléta,Togba,TOKEN_UNIQUE,togba,0.6,29.0,Ouéga-Tokpa,Togba,DISPUTE
+Saint Michel de Togoudo,6.4018911,2.3352245,place_of_worship,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,20.0,"Djoukpa-Togoudo
+",Godomey,DISPUTE
+Orabank Agence Saint Michel,6.3667879,2.4292594,bank,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,51.3,Sèdjro-Saint-Michel,7ème Arrondissement,CONFIRM
+SGBBE agence saint michel,6.3651395,2.4271065,bank,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,21.7,Mifongou,5ème Arrondissement,DISPUTE
+pharmacie saint michel,6.3664602,2.42935,pharmacy,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,48.2,Sèdjro-Saint-Michel,7ème Arrondissement,CONFIRM
+BSIC Agence Saint Michel,6.3659243,2.427977,bank,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,30.1,Sèdjro-Saint-Michel,7ème Arrondissement,CONFIRM
+Diamond Bank Agence Saint Michel,6.368423,2.4285659,bank,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,26.6,Sèdjro-Saint-Michel,7ème Arrondissement,CONFIRM
+Nouvelle Pharmacie Mènontin,6.3875949,2.3687693,pharmacy,Mènontin,9ème Arrondissement,FULL_SINGLE_UNIQUE,menontin,0.85,15.4,Mènontin,9ème Arrondissement,CONFIRM
+pharmacie Zogbohoue,6.3921655,2.3828379,pharmacy,Zogbohouè,9ème Arrondissement,FULL_SINGLE_UNIQUE,zogbohoue,0.85,9.4,Zogbohouè,9ème Arrondissement,CONFIRM
+Pharmacie Kindonou,6.3920263,2.3648379,pharmacy,Kindonou,9ème Arrondissement,FULL_SINGLE_UNIQUE,kindonou,0.85,18.6,Kindonou,9ème Arrondissement,CONFIRM
+pharmacie Zogbo,6.3900911,2.3879721,pharmacy,Zogbo,9ème Arrondissement,FULL_SINGLE_UNIQUE,zogbo,0.85,19.1,Agounvocôdji,10ème Arrondissement,DISPUTE
+Centre Médico-Social Mahugnon de Menontin,6.3904737,2.37263,clinic,Mènontin,9ème Arrondissement,FULL_SINGLE_UNIQUE,menontin,0.85,16.0,Mènontin,9ème Arrondissement,CONFIRM
+AVE MARIA DE COCOTOMEY,6.3933187,2.298567,clinic,Cocotomey,Godomey,FULL_SINGLE_UNIQUE,cocotomey,0.85,9.3,"Fandji
+",Godomey,DISPUTE
+Brigarde Territoriale de Cocotomey,6.3937164,2.3011117,police,Cocotomey,Godomey,FULL_SINGLE_UNIQUE,cocotomey,0.85,22.1,Cocotomey,Godomey,CONFIRM
+EPP St Francois d'Assise de Cocotomey,6.3934471,2.3009916,school,Cocotomey,Godomey,FULL_SINGLE_UNIQUE,cocotomey,0.85,10.0,Cocotomey,Godomey,CONFIRM
+Diamond Bank Agence Menontin,6.3882187,2.3642912,bank,Mènontin,9ème Arrondissement,FULL_SINGLE_UNIQUE,menontin,0.85,19.4,Kindonou,9ème Arrondissement,DISPUTE
+Ecole Les cocotiers,6.3558074,2.3928528,school,Haie-Vive-Cocotiers,12ème Arrondissement,TOKEN_UNIQUE,cocotiers,0.6,21.9,Cadjèhoun-Agonga,12ème Arrondissement,DISPUTE
+Pharmacie Midombo,6.3774115,2.4417953,pharmacy,Midombo,3ème Arrondissement,FULL_SINGLE_UNIQUE,midombo,0.85,27.9,Kpankpan,3ème Arrondissement,DISPUTE
+Station Château d'Eau Sonacop,6.3613121,2.4220937,fuel,Agla-Petit-Château,13ème Arrondissement,TOKEN_UNIQUE,chateau,0.6,9.3,Todoté,7ème Arrondissement,DISPUTE
+Pharmacie Agontinkon,6.3757063,2.4051944,pharmacy,Agontinkon,8ème Arrondissement,FULL_SINGLE_UNIQUE,agontinkon,0.85,41.5,Vodjè-Ayidoté,11ème Arrondissement,DISPUTE
+Pharmacie Espace Santé,6.3833491,2.3351096,pharmacy,Espace-Saint,Golo-Djigbé,TOKEN_UNIQUE,espace,0.6,40.8,"Ounvènoumèdé
+",Godomey,DISPUTE
+Les Pylônes,6.3809501,2.3726607,pharmacy,Agla-Les-Pylônes,13ème Arrondissement,TOKEN_UNIQUE,pylones,0.6,22.9,Agla-Petit-Château,13ème Arrondissement,DISPUTE
+Restaurant La Victoire,6.4493809,2.3519159,restaurant,"Cité-la-Victoire
+",Abomey-Calavi,TOKEN_UNIQUE,victoire,0.6,16.9,Agori,Abomey-Calavi,DISPUTE
+Collège Jean Michel le Faucon,6.4553439,2.3554361,school,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,29.4,Agamandin,Abomey-Calavi,DISPUTE
+École Primaire Publique de Cocotomey,6.3889228,2.301493,school,Cocotomey,Godomey,FULL_SINGLE_UNIQUE,cocotomey,0.85,70.5,Cocotomey,Godomey,CONFIRM
+Complexe scolaire de Tokan groupes A et B,6.4528321,2.3103058,school,Tokan,Togba,FULL_SINGLE_UNIQUE,tokan,0.85,46.0,Tokan,Togba,CONFIRM
+Paroisse Saint Pierre de Tokan,6.4535662,2.3160299,place_of_worship,Tokan,Togba,FULL_SINGLE_UNIQUE,tokan,0.85,39.7,Tokan,Togba,CONFIRM
+Marché de Tokan,6.4581063,2.3170308,marketplace,Tokan,Togba,FULL_SINGLE_UNIQUE,tokan,0.85,53.9,Ahossougbéta,Togba,DISPUTE
+Mosquée de Tokan,6.449099,2.3151404,place_of_worship,Tokan,Togba,FULL_SINGLE_UNIQUE,tokan,0.85,43.3,Tokan,Togba,CONFIRM
+Super U Akpakpa,6.3674559,2.4651303,supermarket,Akpakpa-Dodomè,4ème Arrondissement,TOKEN_UNIQUE,akpakpa,0.6,24.5,Nvènamèdé,1er Arrondissement,DISPUTE
+Complexe scolaire de Togba,6.457779,2.3040236,school,Togba_Maria-Gléta,Togba,TOKEN_UNIQUE,togba,0.6,4.8,Somè,Togba,DISPUTE
+École primaire publique de Houeto,6.4406184,2.3048322,school,Houèto,Togba,FULL_SINGLE_UNIQUE,houeto,0.85,49.4,Houèto,Togba,CONFIRM
+COMPLEXE SCOLAIRE OUEGA-AGUE,6.4848865,2.3084975,school,Ouéga-Agué,Togba,FULL_HYPHEN,ouega-ague,1.0,15.8,Ouéga-Agué,Togba,CONFIRM
+ECOLE PRIMAIRE PUBLIQUE DE DRABO,6.5050002,2.3073405,school,Drabo,Togba,FULL_SINGLE_UNIQUE,drabo,0.85,7.2,Kansounkpa,Abomey-Calavi,DISPUTE
+École primaire publique Ouega-Togba,6.4707828,2.3071512,school,Togba_Maria-Gléta,Togba,TOKEN_UNIQUE,togba,0.6,26.3,Ouéga-Tokpa,Togba,DISPUTE
+Église Catholique Saint Michel de Houeto,6.4403082,2.303379,place_of_worship,Houèto,Togba,FULL_SINGLE_UNIQUE,houeto,0.85,15.8,Houèto,Togba,CONFIRM
+Collège d’enseignement général Houeto,6.4332781,2.3034129,college,Houèto,Togba,FULL_SINGLE_UNIQUE,houeto,0.85,50.7,Houèto,Togba,CONFIRM
+École Primaire Publique de Maria-Gléta,6.4241557,2.3047749,school,"Maria-Gléta
+",Godomey,FULL_HYPHEN,maria-gleta,1.0,28.3,"Maria-Gléta
+",Godomey,CONFIRM
+Pharmacie Château d’eau,6.4577846,2.3561644,pharmacy,Agla-Petit-Château,13ème Arrondissement,TOKEN_UNIQUE,chateau,0.6,20.5,Agamandin,Abomey-Calavi,DISPUTE
+Paroisse Marie Auxiliatrice de Mènontin,6.3916746,2.3676065,place_of_worship,Mènontin,9ème Arrondissement,FULL_SINGLE_UNIQUE,menontin,0.85,19.1,Mènontin,9ème Arrondissement,CONFIRM
+Eglise du Christianisme Céleste de Kindonou,6.39515,2.363834,place_of_worship,Kindonou,9ème Arrondissement,FULL_SINGLE_UNIQUE,kindonou,0.85,51.5,Kindonou,9ème Arrondissement,CONFIRM
+Ecole Primaire Publique kowegbo,6.3827236,2.4625012,school,Kowégbo,2ème Arrondissement,FULL_SINGLE_UNIQUE,kowegbo,0.85,29.0,Kowégbo,2ème Arrondissement,CONFIRM
+Ecole Primaire de Midombo A et B,6.3723429,2.4397307,school,Midombo,3ème Arrondissement,FULL_SINGLE_UNIQUE,midombo,0.85,53.6,Gbénonkpô,3ème Arrondissement,DISPUTE
+CEG AKPAKPA CENTRE,6.3691206,2.4471815,school,Akpakpa-Dodomè,4ème Arrondissement,TOKEN_UNIQUE,akpakpa,0.6,92.2,,,NO_NODE
+Cycle Préparatoire Père Aupiais,6.3592352,2.4056236,college,Cadjèhoun-Aupiais,12ème Arrondissement,TOKEN_UNIQUE,aupiais,0.6,40.2,Cadjèhoun-Aupiais,12ème Arrondissement,CONFIRM
+Eglise Saint Michel Gbéto de Cotonou,6.3665673,2.4279563,place_of_worship,Gbéto,5ème Arrondissement,FULL_SINGLE_UNIQUE,gbeto,0.85,73.8,Sèdjro-Saint-Michel,7ème Arrondissement,DISPUTE
+Pharmacie Hêvié,6.407175,2.2659583,pharmacy,Hêvié,Hêvié,FULL_SINGLE_UNIQUE,hevie,0.85,16.8,Sogan,Hêvié,DISPUTE
+Pharmacie Les Graces Divines de Ouedo,6.455982,2.2763793,pharmacy,Ouèdo,Ouèdo,FULL_SINGLE_UNIQUE,ouedo,0.85,24.9,"Dessato
+",Ouèdo,DISPUTE
+CEG Kpanroun,6.6713775,2.362127,school,Kpanroun,Kpanroun,FULL_SINGLE_UNIQUE,kpanroun,0.85,71.0,Kpanroun,Kpanroun,CONFIRM
+Espace beauté,6.3739488,2.424243,pharmacy,Espace-Saint,Golo-Djigbé,TOKEN_UNIQUE,espace,0.6,25.4,Jéricho-Nord,6ème Arrondissement,DISPUTE
+BSIC Agence Saint Michel,6.3670806,2.4294736,bank,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,34.7,Sèdjro-Saint-Michel,7ème Arrondissement,CONFIRM
+Orabank Agence Saint Michel,6.3668413,2.4292791,bank,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,55.4,Sèdjro-Saint-Michel,7ème Arrondissement,CONFIRM
+EPP Zoundja,6.4862203,2.3422656,school,"Zoundja
+",Abomey-Calavi,FULL_SINGLE_UNIQUE,zoundja,0.85,28.4,Zopah-Akassato,Akassato,DISPUTE
+EPP Houeke Honou,6.4973275,2.3652314,school,Houèkè-Honou,Akassato,TOKEN_UNIQUE,honou,0.6,42.1,Houèkè-Gbo,Akassato,DISPUTE
+École Maternelle Publique Gbéto Cotonou Lagune,6.3589976,2.4276076,school,Gbéto,5ème Arrondissement,FULL_SINGLE_UNIQUE,gbeto,0.85,40.3,Dota,5ème Arrondissement,DISPUTE
+Collège d’Enseignement Général Kansounkpa,6.4936002,2.3212615,school,Kansounkpa,Abomey-Calavi,FULL_SINGLE_UNIQUE,kansounkpa,0.85,76.0,Kansounkpa,Abomey-Calavi,CONFIRM
+Complexe scolaire Gbodjo,6.470953,2.3582702,school,Gbodjo,Abomey-Calavi,FULL_SINGLE_UNIQUE,gbodjo,0.85,26.5,Gbodjo,Abomey-Calavi,CONFIRM
+École Primaire Publique Agori Forêt,6.4385567,2.327077,school,Agori,Abomey-Calavi,FULL_SINGLE_UNIQUE,agori,0.85,22.6,"Fifonsi
+",Togba,DISPUTE
+École Primaire Publique Sedonou Zogbadje,6.425498,2.3353317,school,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,33.8,Zogbadjè,Abomey-Calavi,CONFIRM
+École Primaire Publique Zogbadje,6.4348373,2.3392809,school,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,58.6,"Tchinangbégbo
+",Abomey-Calavi,DISPUTE
+École primaire publique Aitchedji Makinsa,6.456742,2.335789,school,"Aïtchédji
+",Abomey-Calavi,FULL_SINGLE_UNIQUE,aitchedji,0.85,39.0,"Aïtchédji
+",Abomey-Calavi,CONFIRM
+École primaire publique Zoundja 2,6.4871665,2.3262892,school,"Zoundja
+",Abomey-Calavi,FULL_SINGLE_UNIQUE,zoundja,0.85,28.1,"Cité-les-Palmiers
+",Abomey-Calavi,DISPUTE
+Paroisse Saint Gabriel de Cococodji,6.389771,2.2731941,place_of_worship,Cococodji,Godomey,FULL_SINGLE_UNIQUE,cococodji,0.85,56.4,Cococodji,Godomey,CONFIRM
+École Primaire Publique d' Agamandin,6.4534799,2.3607172,school,Agamandin,Abomey-Calavi,FULL_SINGLE_UNIQUE,agamandin,0.85,38.4,Agamandin,Abomey-Calavi,CONFIRM
+Église Saint Paul de Zogbadje,6.4290446,2.3381527,place_of_worship,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,49.2,Zogbadjè,Abomey-Calavi,CONFIRM
+Nouvelle pharmacie Dantokpa,6.3716728,2.4338282,pharmacy,Dantôkpa,6ème Arrondissement,FULL_SINGLE_UNIQUE,dantokpa,0.85,13.8,Dantôkpa,6ème Arrondissement,CONFIRM
+EPP/Sèdonou de Zogbadjè,6.4255086,2.3352864,school,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,38.1,Zogbadjè,Abomey-Calavi,CONFIRM
+Pharmacie Godomey-Fignonhou,6.3741733,2.3407759,pharmacy,"Fignonhou
+",Godomey,FULL_SINGLE_UNIQUE,fignonhou,0.85,25.0,Godomey-N'Gbèho,Godomey,DISPUTE
+École Primaire Publique Agongbomey,6.3759855,2.3611734,school,Agla-Agongbomey,13ème Arrondissement,TOKEN_UNIQUE,agongbomey,0.6,33.8,Agla-Agongbomey,13ème Arrondissement,CONFIRM
+Resto plage,6.3498053,2.3655613,restaurant,Xwlacôdji-Plage,5ème Arrondissement,TOKEN_UNIQUE,plage,0.6,58.6,Fiyégnon-Jacquot,12ème Arrondissement,DISPUTE
+Pharmacie principale de Houeto,6.4391634,2.3085669,pharmacy,Houèto,Togba,FULL_SINGLE_UNIQUE,houeto,0.85,18.0,Houèto,Togba,CONFIRM
+Espace Scyca,6.4728845,2.3489161,supermarket,Espace-Saint,Golo-Djigbé,TOKEN_UNIQUE,espace,0.6,16.4,"Fandji
+",Abomey-Calavi,DISPUTE
+Commissariat de Togba,6.4397733,2.3092637,police,Togba_Maria-Gléta,Togba,TOKEN_UNIQUE,togba,0.6,21.7,Houèto,Togba,DISPUTE
+Les Cocotiers,6.3555208,2.3912001,guest_house,Haie-Vive-Cocotiers,12ème Arrondissement,TOKEN_UNIQUE,cocotiers,0.6,47.3,Haie-Vive-Cocotiers,12ème Arrondissement,CONFIRM
+École Maternelle Privée Espace Éveil,6.3905948,2.4291618,school,Espace-Saint,Golo-Djigbé,TOKEN_UNIQUE,espace,0.6,18.3,Ladji,6ème Arrondissement,DISPUTE
+Eglise Paroisse St Raphaël Ladji Centre,6.389248,2.4284416,place_of_worship,Ladji,6ème Arrondissement,FULL_SINGLE_UNIQUE,ladji,0.85,30.5,Ladji,6ème Arrondissement,CONFIRM
+Marché  de ladji,6.3888367,2.434455,marketplace,Ladji,6ème Arrondissement,FULL_SINGLE_UNIQUE,ladji,0.85,69.1,Ahouansori-Towéta-Kpota,6ème Arrondissement,DISPUTE
+Ifedon des Pylones,6.5418553,2.3439885,bar,Agla-Les-Pylônes,13ème Arrondissement,TOKEN_UNIQUE,pylones,0.6,18.5,Gbétagbo,Akassato,DISPUTE
+Église protestante de ladji,6.3899159,2.4304849,place_of_worship,Ladji,6ème Arrondissement,FULL_SINGLE_UNIQUE,ladji,0.85,23.2,Ahouansori-Towéta-Kpota,6ème Arrondissement,DISPUTE
+Église pentecôte de la fois Zogbadjé,6.42089,2.3321233,place_of_worship,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,17.3,Zogbadjè,Abomey-Calavi,CONFIRM
+"Alimentation générale "" les palmiers",6.4254833,2.3371333,supermarket,"Cité-les-Palmiers
+",Abomey-Calavi,TOKEN_UNIQUE,palmiers,0.6,19.5,Zogbadjè,Abomey-Calavi,DISPUTE
+Église de Dieu du plein évangile Zogbadjè,6.4262917,2.33813,place_of_worship,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,6.2,Zogbadjè,Abomey-Calavi,CONFIRM
+Espace Alomasunsun,6.4309462,2.3409913,fast_food,Espace-Saint,Golo-Djigbé,TOKEN_UNIQUE,espace,0.6,12.0,"Tchinangbégbo
+",Abomey-Calavi,DISPUTE
+Mission des intercesseurs évangélique pour la victoire,6.426195,2.318485,place_of_worship,"Cité-la-Victoire
+",Abomey-Calavi,TOKEN_UNIQUE,victoire,0.6,21.9,Tankpè-Tanmè,Togba,DISPUTE
+Impact Centre Chrétien campus d'Akpakpa,6.3748496,2.452708,place_of_worship,Akpakpa-Dodomè,4ème Arrondissement,TOKEN_UNIQUE,akpakpa,0.6,45.0,Lom-Nava,2ème Arrondissement,DISPUTE
+Impact Centre Chrétien Akpakpa,6.3749183,2.4527165,place_of_worship,Akpakpa-Dodomè,4ème Arrondissement,TOKEN_UNIQUE,akpakpa,0.6,39.9,Lom-Nava,2ème Arrondissement,DISPUTE
+Melva de Zogbadjè,6.4283044,2.3405657,place_of_worship,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,8.6,Zogbadjè,Abomey-Calavi,CONFIRM
+Complexe Scolaire Dieu de Victoire,6.451813,2.3429733,school,"Cité-la-Victoire
+",Abomey-Calavi,TOKEN_UNIQUE,victoire,0.6,17.9,"Aïtchédji
+",Abomey-Calavi,DISPUTE
+Commissariat d’arrondissement de Togba,6.4622061,2.3143588,police,Togba_Maria-Gléta,Togba,TOKEN_UNIQUE,togba,0.6,2.3,Ahossougbéta,Togba,DISPUTE
+URHC paroisse Aïtchedji,6.453435,2.3352333,place_of_worship,"Aïtchédji
+",Abomey-Calavi,FULL_SINGLE_UNIQUE,aitchedji,0.85,47.1,"Aïtchédji
+",Abomey-Calavi,CONFIRM
+Commisariat de Togba,6.4396226,2.3091432,police,Togba_Maria-Gléta,Togba,TOKEN_UNIQUE,togba,0.6,31.1,Houèto,Togba,DISPUTE
+Union Renaissance d'Homme en Christde Houèto,6.4381034,2.3090869,place_of_worship,Houèto,Togba,FULL_SINGLE_UNIQUE,houeto,0.85,75.6,Houèto,Togba,CONFIRM
+Eglise Protestante méthodistes SALEM Houèto,6.4325942,2.3116726,place_of_worship,Houèto,Togba,FULL_SINGLE_UNIQUE,houeto,0.85,48.9,Tankpê-Yoho,Abomey-Calavi,DISPUTE
+Paroisse Saint Paul de Zogbadje Benin,6.4291233,2.3386597,place_of_worship,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,12.3,Zogbadjè,Abomey-Calavi,CONFIRM
+Missebo,6.3648149,2.4337544,guest_house,Missèbô,5ème Arrondissement,FULL_SINGLE_UNIQUE,missebo,0.85,93.2,,,NO_NODE
+Complexe scolaire Saint Joseph de la victoire,6.4616756,2.3342147,school,"Cité-la-Victoire
+",Abomey-Calavi,TOKEN_UNIQUE,victoire,0.6,24.8,"Aïtchédji
+",Abomey-Calavi,DISPUTE
+Complexe Scolaire Godomey HLACOMEY,6.3911574,2.3497606,school,Hlacômey,3ème Arrondissement,FULL_SINGLE_UNIQUE,hlacomey,0.85,28.3,Yolomahouto,Godomey,DISPUTE
+Paroisse Saint-Louis de Gbédégbé,6.3655237,2.3866241,place_of_worship,Gbèdégbé,13ème Arrondissement,FULL_SINGLE_UNIQUE,gbedegbe,0.85,43.5,Gbèdégbé,13ème Arrondissement,CONFIRM
+Avlekete Honto,6.387732,2.4258992,place_of_worship,Avlékété-Joncquet,5ème Arrondissement,TOKEN_UNIQUE,avlekete,0.6,20.6,Ahouansori-Towéta,6ème Arrondissement,DISPUTE
+Monts oliviers lifes shop,6.493293,2.3513584,convenience,Kpodji-Les-Monts,Akassato,TOKEN_UNIQUE,monts,0.6,41.3,Zopah-Akassato,Akassato,DISPUTE
+Azalaï Hôtel de la Plage,6.3518259,2.4358052,hotel,Xwlacôdji-Plage,5ème Arrondissement,TOKEN_UNIQUE,plage,0.6,56.3,Xwlacôdji-Kpodji,5ème Arrondissement,DISPUTE
+Paroisse Saint Augustin Minontchou,6.39224,2.4506033,place_of_worship,Minontchou,2ème Arrondissement,FULL_SINGLE_UNIQUE,minontchou,0.85,5.8,Minontchou,2ème Arrondissement,CONFIRM
+Paroisse Saint Augustin Minontchou,6.3928467,2.450775,place_of_worship,Minontchou,2ème Arrondissement,FULL_SINGLE_UNIQUE,minontchou,0.85,24.3,Minontchou,2ème Arrondissement,CONFIRM
+AGBATO CABZ,6.390644,2.4414672,post_office,Agbatô,3ème Arrondissement,FULL_SINGLE_UNIQUE,agbato,0.85,3.1,Hlacômey,3ème Arrondissement,DISPUTE
+TELLA GBETAGBO,6.5449251,2.3576281,guest_house,Gbétagbo,Akassato,FULL_SINGLE_UNIQUE,gbetagbo,0.85,26.0,Agassa-Godomey,Akassato,DISPUTE
+SK 62 GBETAGBO,6.537592,2.34663,post_office,Gbétagbo,Akassato,FULL_SINGLE_UNIQUE,gbetagbo,0.85,4.3,Gbétagbo,Akassato,CONFIRM
+Akpata Menontin,6.3887023,2.3705688,guest_house,Mènontin,9ème Arrondissement,FULL_SINGLE_UNIQUE,menontin,0.85,28.4,Mènontin,9ème Arrondissement,CONFIRM
+ZOUNDJA MON AMOUR,6.4896334,2.3171898,cafe,"Zoundja
+",Abomey-Calavi,FULL_SINGLE_UNIQUE,zoundja,0.85,31.1,Kansounkpa,Abomey-Calavi,DISPUTE
+PASE C 187 JONCQUET,6.3591586,2.4340309,post_office,Avlékété-Joncquet,5ème Arrondissement,TOKEN_UNIQUE,joncquet,0.6,31.2,Guinkômey,5ème Arrondissement,DISPUTE
+PASE C 7 SCOA GBETO,6.3596997,2.429015,post_office,Gbéto,5ème Arrondissement,FULL_SINGLE_UNIQUE,gbeto,0.85,14.1,Dota,5ème Arrondissement,DISPUTE
+PASE DRL2 C??? DEDOKPO,6.3715431,2.4412429,post_office,Dédokpo,4ème Arrondissement,FULL_SINGLE_UNIQUE,dedokpo,0.85,9.8,Gbénonkpô,3ème Arrondissement,DISPUTE
+PASE C 527 EPP AGLA AGONGBOMEY,6.3772195,2.3615801,post_office,Agla-Agongbomey,13ème Arrondissement,TOKEN_UNIQUE,agongbomey,0.6,18.5,Agla-Agongbomey,13ème Arrondissement,CONFIRM
+PASE ALLOBATIN,6.3715527,2.4050601,post_office,Vodjè-Allobatin,11ème Arrondissement,TOKEN_UNIQUE,allobatin,0.6,7.1,Vodjè-Ayidoté,11ème Arrondissement,DISPUTE
+PASE C 109 SCOA GBETO,6.3626784,2.426784,post_office,Gbéto,5ème Arrondissement,FULL_SINGLE_UNIQUE,gbeto,0.85,23.5,Mifongou,5ème Arrondissement,DISPUTE
+PASE C 5 ST Michel,6.3667445,2.4286452,post_office,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,28.6,Sèdjro-Saint-Michel,7ème Arrondissement,CONFIRM
+PASE DRL2 C 188 PLM ALEDJO,6.358253,2.461674,post_office,"Alédjo
+",Abomey-Calavi,FULL_SINGLE_UNIQUE,aledjo,0.85,35.3,Fifadji-Houto (Jak),4ème Arrondissement,DISPUTE
+PASE DRL2 SONEB CHÂTEAU,6.3667856,2.4855495,post_office,Agla-Petit-Château,13ème Arrondissement,TOKEN_UNIQUE,chateau,0.6,20.2,Dandji-Hokanmè,1er Arrondissement,DISPUTE
+PASE C 481 ESPACE DINA,6.3644242,2.4260881,post_office,Espace-Saint,Golo-Djigbé,TOKEN_UNIQUE,espace,0.6,64.1,Mifongou,5ème Arrondissement,DISPUTE
+Marché de Sèdjè Denou,6.7248101,2.381,marketplace,"Dénou
+",Godomey,FULL_SINGLE_UNIQUE,denou,0.85,15.2,,,FILLS_GAP
+Marché de Sèdjè -Denou,6.7248054,2.381,marketplace,"Dénou
+",Godomey,FULL_SINGLE_UNIQUE,denou,0.85,15.2,,,FILLS_GAP
+ABERME GBODJE DJEKPOTA,6.3731789,2.2834266,post_office,Djèkpota,Godomey,FULL_SINGLE_UNIQUE,djekpota,0.85,12.5,Djèkpota,Godomey,CONFIRM
+ABERME GBETAGBO,6.545442,2.3565489,post_office,Gbétagbo,Akassato,FULL_SINGLE_UNIQUE,gbetagbo,0.85,9.2,Agassa-Godomey,Akassato,DISPUTE
+Marché de Sèdégbé,6.3844992,2.3225135,supermarket,Agbo Codji Sèdégbé,Godomey,TOKEN_UNIQUE,sedegbe,0.6,20.4,Agbo Codji Sèdégbé,Godomey,CONFIRM
+AKPATA AKPAKPA,6.3757868,2.4759888,guest_house,Akpakpa-Dodomè,4ème Arrondissement,TOKEN_UNIQUE,akpakpa,0.6,4.5,Avotrou-Houézèkomè,1er Arrondissement,DISPUTE
+Espace Ifedu,6.3777975,2.4108333,hotel,Espace-Saint,Golo-Djigbé,TOKEN_UNIQUE,espace,0.6,53.4,Houéhoun,8ème Arrondissement,DISPUTE
+Cococodji,6.3841269,2.2790161,guest_house,Cococodji,Godomey,FULL_SINGLE_UNIQUE,cococodji,0.85,32.3,Cococodji,Godomey,CONFIRM
+Vedoko Esther,6.38223,2.3947654,guest_house,Védokô,10ème Arrondissement,FULL_SINGLE_UNIQUE,vedoko,0.85,21.5,Missogbé,10ème Arrondissement,DISPUTE
+ZOGBADJE ANIOU,6.4272993,2.3306942,guest_house,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,22.9,Tankpè-Tanmè,Togba,DISPUTE
+Pharmacie Akogbato,6.3577491,2.3583851,pharmacy,Akôgbato,12ème Arrondissement,FULL_SINGLE_UNIQUE,akogbato,0.85,14.2,Fidjrossè-Kpota,12ème Arrondissement,DISPUTE
+Hôtel à vedoko,6.3797918,2.3984946,hotel,Védokô,10ème Arrondissement,FULL_SINGLE_UNIQUE,vedoko,0.85,91.8,,,NO_NODE
+Paroisse catholique St Michel de Zè,6.7196657,2.2861775,place_of_worship,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,66.7,,,FILLS_GAP
+Tchiep Guinkomey,6.3602719,2.4300091,fast_food,Guinkômey,5ème Arrondissement,FULL_SINGLE_UNIQUE,guinkomey,0.85,34.4,Dota,5ème Arrondissement,DISPUTE
+code bar plage,6.347664,2.3061368,restaurant,Xwlacôdji-Plage,5ème Arrondissement,TOKEN_UNIQUE,plage,0.6,32.2,Togbin-Fandji,Godomey,DISPUTE
+Eglise catholique saint Charles lwanga Agla Akplomey,6.3768691,2.353114,place_of_worship,Agla-Akplomey,13ème Arrondissement,TOKEN_UNIQUE,akplomey,0.6,14.3,"Plateau
+",Godomey,DISPUTE
+Eglise du Christianisme Céleste Paroisse les 3Anges Zogbohoue,6.3905415,2.3814443,place_of_worship,Zogbohouè,9ème Arrondissement,FULL_SINGLE_UNIQUE,zogbohoue,0.85,6.9,Zogbohouè,9ème Arrondissement,CONFIRM
+Mosquée centrale et école coranique raodatoul djannat de Zogbohouè,6.3881192,2.3805424,place_of_worship,Zogbohouè,9ème Arrondissement,FULL_SINGLE_UNIQUE,zogbohoue,0.85,94.8,,,NO_NODE
+Eglise Baptiste du Benin Temple de Zogbo,6.3886677,2.3824429,place_of_worship,Zogbo,9ème Arrondissement,FULL_SINGLE_UNIQUE,zogbo,0.85,12.8,Zogbohouè,9ème Arrondissement,DISPUTE
+CEG Yagbé,6.3720871,2.4705954,college,Yagbé,1er Arrondissement,FULL_SINGLE_UNIQUE,yagbe,0.85,66.1,Yagbé,1er Arrondissement,CONFIRM
+Commissariat de Togba,6.4350829,2.3015722,police,Togba_Maria-Gléta,Togba,TOKEN_UNIQUE,togba,0.6,26.3,Houèto,Togba,DISPUTE
+École Coranique Jardin du paradis et mosquée centrale RAODAOUL DJANNA DE Zogbohoue,6.3879696,2.3804787,place_of_worship,Zogbohouè,9ème Arrondissement,FULL_SINGLE_UNIQUE,zogbohoue,0.85,102.2,,,NO_NODE
+EPP Ouedo Centre,6.45512,2.2636436,school,Ouèdo,Ouèdo,FULL_SINGLE_UNIQUE,ouedo,0.85,53.8,Ouèdo,Ouèdo,CONFIRM
+Pharmacie SEDAMI,6.4836965,2.3268054,pharmacy,Sèdami,7ème Arrondissement,FULL_SINGLE_UNIQUE,sedami,0.85,30.2,"Cité-les-Palmiers
+",Abomey-Calavi,DISPUTE
+Bar Zogbadjè,6.426854,2.3436182,bar,Zogbadjè,Abomey-Calavi,FULL_SINGLE_UNIQUE,zogbadje,0.85,44.6,Zogbadjè,Abomey-Calavi,CONFIRM
+Eglise céleste paroisse cité Jéhovah de Togba,6.4620307,2.3061177,place_of_worship,Togba_Maria-Gléta,Togba,TOKEN_UNIQUE,togba,0.6,32.7,Ouéga-Tokpa,Togba,DISPUTE
+EPMB Cité de Lumière de Houêto,6.4371096,2.3106453,place_of_worship,Houèto,Togba,FULL_SINGLE_UNIQUE,houeto,0.85,26.5,Tankpê-Yoho,Abomey-Calavi,DISPUTE
+Pharmacie AÏTCHEDJI SÉMINAIRE,6.4482965,2.3364319,pharmacy,"Aïtchédji
+",Abomey-Calavi,FULL_SINGLE_UNIQUE,aitchedji,0.85,17.8,"Aïtchédji
+",Abomey-Calavi,CONFIRM
+Mosquée Agori forêt,6.4395433,2.3266613,place_of_worship,Agori,Abomey-Calavi,FULL_SINGLE_UNIQUE,agori,0.85,14.2,"Fifonsi
+",Togba,DISPUTE
+Église baptiste de Vêdoko,6.3799665,2.3920058,place_of_worship,Védokô,10ème Arrondissement,FULL_SINGLE_UNIQUE,vedoko,0.85,15.6,Missogbé,10ème Arrondissement,DISPUTE
+Collège Catholique Père Aupiais,6.3569835,2.4048402,school,Cadjèhoun-Aupiais,12ème Arrondissement,TOKEN_UNIQUE,aupiais,0.6,60.3,Cadjèhoun-Aupiais,12ème Arrondissement,CONFIRM
+Marché Dantokpa,6.3727365,2.4333016,marketplace,Dantôkpa,6ème Arrondissement,FULL_SINGLE_UNIQUE,dantokpa,0.85,56.2,Dantôkpa,6ème Arrondissement,CONFIRM
+Marché Vêdoko,6.3781811,2.3896977,marketplace,Védokô,10ème Arrondissement,FULL_SINGLE_UNIQUE,vedoko,0.85,17.6,Sètôvi,10ème Arrondissement,DISPUTE
+Centre d'éducation générale de Zogbo,6.391435,2.3947911,college,Zogbo,9ème Arrondissement,FULL_SINGLE_UNIQUE,zogbo,0.85,55.2,Yénawa-Fifadji,10ème Arrondissement,DISPUTE
+CEG 1 de Cocotomey,6.3978088,2.3000459,school,Cocotomey,Godomey,FULL_SINGLE_UNIQUE,cocotomey,0.85,60.3,"Sodo
+",Godomey,DISPUTE
+École Primaire Publique de Menontin,6.3917506,2.3615164,school,Mènontin,9ème Arrondissement,FULL_SINGLE_UNIQUE,menontin,0.85,48.6,Kindonou,9ème Arrondissement,DISPUTE
+Eglise Saint Michel Gbéto de Cotonou,6.3665666,2.4279225,place_of_worship,Gbéto,5ème Arrondissement,FULL_SINGLE_UNIQUE,gbeto,0.85,76.1,Sèdjro-Saint-Michel,7ème Arrondissement,DISPUTE
+CEG Le Plateau,6.4050018,2.3129297,school,"Plateau
+",Godomey,FULL_SINGLE_UNIQUE,plateau,0.85,51.3,"Yénandjro
+",Godomey,DISPUTE
+Marché St Michel,6.3695386,2.4264092,marketplace,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,58.4,Sèdami,7ème Arrondissement,DISPUTE
+Hôpital de Menontin,6.3900724,2.3652683,hospital,Mènontin,9ème Arrondissement,FULL_SINGLE_UNIQUE,menontin,0.85,31.5,Kindonou,9ème Arrondissement,DISPUTE
+Centre de santé d’arrondissement (CSA) de Cococodji,6.3837554,2.2717659,clinic,Cococodji,Godomey,FULL_SINGLE_UNIQUE,cococodji,0.85,51.5,Cococodji,Godomey,CONFIRM
+Paroisse Jésus Eucharistie,6.3766759,2.3876348,place_of_worship,Ahogbohoué-Cité-Eucharistie,13ème Arrondissement,TOKEN_UNIQUE,eucharistie,0.6,63.2,Houéyihô-Tannou,11ème Arrondissement,DISPUTE
+Église catholique Saint-Christophe d’Ayimlonfidé-Ladji,6.391917,2.4320238,place_of_worship,Ladji,6ème Arrondissement,FULL_SINGLE_UNIQUE,ladji,0.85,22.8,Ahouansori-Towéta-Kpota,6ème Arrondissement,DISPUTE
+Hôpital Minonkpo (ProFam),6.3675598,2.4777622,hospital,Minonkpô-Wologuèdè,8ème Arrondissement,TOKEN_UNIQUE,minonkpo,0.6,62.8,Dandji,1er Arrondissement,DISPUTE
+Commissariat de Tokplégbé,6.3653818,2.4853303,police,Tokplégbé,1er Arrondissement,FULL_SINGLE_UNIQUE,tokplegbe,0.85,52.7,Dandji-Hokanmè,1er Arrondissement,DISPUTE
+Mosqué centrale de Joncquet,6.3600526,2.4328,place_of_worship,Avlékété-Joncquet,5ème Arrondissement,TOKEN_UNIQUE,joncquet,0.6,36.3,Avlékété-Joncquet,5ème Arrondissement,CONFIRM
+Ecole Primaire Public de TANTO,6.3690974,2.4723394,school,Tanto,1er Arrondissement,FULL_SINGLE_UNIQUE,tanto,0.85,36.6,Tanto,1er Arrondissement,CONFIRM
+Paroisse St. Joseph d'Agbato,6.3905978,2.4417963,place_of_worship,Agbatô,3ème Arrondissement,FULL_SINGLE_UNIQUE,agbato,0.85,37.2,Hlacômey,3ème Arrondissement,DISPUTE
+Mission des Ambassadeurs pour Christ de Cocotomey,6.3914236,2.3070823,place_of_worship,Cocotomey,Godomey,FULL_SINGLE_UNIQUE,cocotomey,0.85,26.0,"Tokpa
+",Godomey,DISPUTE
+Mosquée Centrale de Cocotomey,6.3894034,2.3096717,place_of_worship,Cocotomey,Godomey,FULL_SINGLE_UNIQUE,cocotomey,0.85,28.5,"Tokpa
+",Godomey,DISPUTE
+Centre de Santé de KPANROUN,6.6751182,2.365156,hospital,Kpanroun,Kpanroun,FULL_SINGLE_UNIQUE,kpanroun,0.85,55.6,Kpanroun,Kpanroun,CONFIRM
+Hôpital de l'enfant et de la mère lagune,6.3615883,2.4381975,hospital,Abokicodji-Lagune,4ème Arrondissement,TOKEN_UNIQUE,lagune,0.6,21.9,Tokpa-Hoho,5ème Arrondissement,DISPUTE
+Cycle Préparatoire Père Aupiais,6.3587513,2.4052276,university,Cadjèhoun-Aupiais,12ème Arrondissement,TOKEN_UNIQUE,aupiais,0.6,57.1,Cadjèhoun-Aupiais,12ème Arrondissement,CONFIRM
+Hopital Misséssin,6.3709387,2.4473923,hospital,Misséssin,4ème Arrondissement,FULL_SINGLE_UNIQUE,missessin,0.85,21.3,Gbèdjèwin,4ème Arrondissement,DISPUTE
+Centre de santé de Golo-Djigbé,6.5579141,2.3032544,hospital,Golo-Djigbé,Golo-Djigbé,FULL_HYPHEN,golo-djigbe,1.0,60.7,Golo-Djigbé,Golo-Djigbé,CONFIRM
+Marché de Golo-Djigbé,6.5583871,2.3010496,marketplace,Golo-Djigbé,Golo-Djigbé,FULL_HYPHEN,golo-djigbe,1.0,21.9,Golo-Djigbé,Golo-Djigbé,CONFIRM
+Saint Michel Archange de Gbodjo,6.4728882,2.3594541,place_of_worship,Gbodjo,Abomey-Calavi,FULL_SINGLE_UNIQUE,gbodjo,0.85,34.5,Gbodjo,Abomey-Calavi,CONFIRM
+Temple Vaudoum Adahouto Houta,6.3460843,2.2617219,place_of_worship,Fiyégnon-Houta,12ème Arrondissement,TOKEN_UNIQUE,houta,0.6,124.6,,,NO_NODE
+Complexe scolaire Michel Dubois de Pahou,6.3848307,2.2082988,college,Sèdjro-Saint-Michel,7ème Arrondissement,TOKEN_UNIQUE,michel,0.6,52.3,,,FILLS_GAP
+Marché de Cococodji,6.3887037,2.2782388,marketplace,Cococodji,Godomey,FULL_SINGLE_UNIQUE,cococodji,0.85,31.7,Cococodji,Godomey,CONFIRM
+CEG Védoko,6.3821885,2.3889913,college,Védokô,10ème Arrondissement,FULL_SINGLE_UNIQUE,vedoko,0.85,63.5,Sètôvi,10ème Arrondissement,DISPUTE
+Ecole primaire publique de Sètovi,6.3829615,2.3854689,school,Sètôvi,10ème Arrondissement,FULL_SINGLE_UNIQUE,setovi,0.85,34.5,Sètôvi,10ème Arrondissement,CONFIRM
+"Complexe scolaire Gbéto sud - Groupe A, C, D",6.363477,2.4298785,school,Gbéto,5ème Arrondissement,FULL_SINGLE_UNIQUE,gbeto,0.85,45.0,Gbédokpo,5ème Arrondissement,DISPUTE
+École primaire publique de Ladji,6.3908149,2.4296663,school,Ladji,6ème Arrondissement,FULL_SINGLE_UNIQUE,ladji,0.85,36.9,Ladji,6ème Arrondissement,CONFIRM
+Église Catholique de Sètovi,6.3803878,2.3833827,place_of_worship,Sètôvi,10ème Arrondissement,FULL_SINGLE_UNIQUE,setovi,0.85,33.0,Védokô,10ème Arrondissement,DISPUTE
+CEG Les Pylônes,6.3816587,2.3642183,college,Agla-Les-Pylônes,13ème Arrondissement,TOKEN_UNIQUE,pylones,0.6,75.1,Agla-Les-Pylônes,13ème Arrondissement,CONFIRM
+Marché de Kindonou,6.3925969,2.3645584,marketplace,Kindonou,9ème Arrondissement,FULL_SINGLE_UNIQUE,kindonou,0.85,41.2,Kindonou,9ème Arrondissement,CONFIRM
+Paroisse St Pierre de Tokan,6.4540078,2.3159999,place_of_worship,Tokan,Togba,FULL_SINGLE_UNIQUE,tokan,0.85,59.0,Tokan,Togba,CONFIRM
+Marché Moderne de Tokplègbè,6.3683595,2.4850068,marketplace,Tokplégbé,1er Arrondissement,FULL_SINGLE_UNIQUE,tokplegbe,0.85,53.8,Dandji-Hokanmè,1er Arrondissement,DISPUTE
+Complexe Scolaire Akpakpa Nord,6.3784095,2.4440343,school,Akpakpa-Dodomè,4ème Arrondissement,TOKEN_UNIQUE,akpakpa,0.6,63.9,Midombo,3ème Arrondissement,DISPUTE
