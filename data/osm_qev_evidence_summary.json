@@ -1,159 +1,334 @@
 {
   "audit_only": false,
   "evidence_source": "OSM amenities (ODbL)",
-  "n_matched_pois": 183,
-  "n_disputed_pois": 103,
-  "n_quartiers_with_evidence": 119,
-  "n_quartiers_wrongness_above_1": 44,
-  "n_zones": 94,
-  "zones_by_confidence": {
-    "MEDIUM": 7,
-    "LOW": 87
+  "n_chefs_total": 311,
+  "n_chefs_with_evidence": 119,
+  "n_chefs_over_expansion_score_ge_0_5": 22,
+  "n_chefs_under_claim_score_ge_0_5": 15,
+  "n_chefs_boundary_shift_score_ge_0_3": 12,
+  "n_transfer_zones": 94,
+  "zone_confidence_distribution": {
+    "≥ 0.50": 0,
+    "0.30 – 0.50": 4,
+    "0.15 – 0.30": 19,
+    "< 0.15": 71
   },
-  "affected_road_km_by_confidence": {
-    "MEDIUM": 4.04,
-    "LOW": 19.14
-  },
-  "top_wrong_quartiers": [
-    {
-      "name": "Védokô",
-      "wrongness": 5.1,
-      "support_inside": 0,
-      "contradict_inside": 1,
-      "claim_outside": 5
-    },
-    {
-      "name": "Gbéto",
-      "wrongness": 5.1,
-      "support_inside": 0,
-      "contradict_inside": 0,
-      "claim_outside": 6
-    },
-    {
-      "name": "Togba_Maria-Gléta",
-      "wrongness": 4.8,
-      "support_inside": 0,
-      "contradict_inside": 0,
-      "claim_outside": 8
-    },
-    {
-      "name": "Espace-Saint",
-      "wrongness": 4.2,
-      "support_inside": 0,
-      "contradict_inside": 0,
-      "claim_outside": 7
-    },
-    {
-      "name": "Akpakpa-Dodomè",
-      "wrongness": 3.0,
-      "support_inside": 0,
-      "contradict_inside": 0,
-      "claim_outside": 5
-    },
-    {
-      "name": "Hlacômey",
-      "wrongness": 2.55,
-      "support_inside": 0,
-      "contradict_inside": 2,
-      "claim_outside": 1
-    },
-    {
-      "name": "Zoundja\n",
-      "wrongness": 2.55,
-      "support_inside": 0,
-      "contradict_inside": 0,
-      "claim_outside": 3
-    },
-    {
-      "name": "Zogbo",
-      "wrongness": 2.55,
-      "support_inside": 0,
-      "contradict_inside": 0,
-      "claim_outside": 3
-    },
+  "top10_over_expanded": [
     {
       "name": "Missogbé",
-      "wrongness": 2.55,
-      "support_inside": 0,
-      "contradict_inside": 3,
-      "claim_outside": 0
+      "over": 0.718,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 3,
+      "external": 0
     },
     {
       "name": "Dota",
-      "wrongness": 2.55,
-      "support_inside": 0,
-      "contradict_inside": 3,
-      "claim_outside": 0
+      "over": 0.718,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 3,
+      "external": 0
     },
     {
       "name": "Ahouansori-Towéta-Kpota",
-      "wrongness": 2.55,
-      "support_inside": 0,
-      "contradict_inside": 3,
-      "claim_outside": 0
-    },
-    {
-      "name": "Cité-la-Victoire\n",
-      "wrongness": 2.4,
-      "support_inside": 0,
-      "contradict_inside": 0,
-      "claim_outside": 4
-    },
-    {
-      "name": "Agla-Petit-Château",
-      "wrongness": 2.4,
-      "support_inside": 0,
-      "contradict_inside": 1,
-      "claim_outside": 3
+      "over": 0.718,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 3,
+      "external": 0
     },
     {
       "name": "Dandji-Hokanmè",
-      "wrongness": 2.3,
-      "support_inside": 0,
-      "contradict_inside": 3,
-      "claim_outside": 0
-    },
-    {
-      "name": "Cité-les-Palmiers\n",
-      "wrongness": 2.3,
-      "support_inside": 0,
-      "contradict_inside": 2,
-      "claim_outside": 1
-    },
-    {
-      "name": "Midombo",
-      "wrongness": 2.3,
-      "support_inside": 0,
-      "contradict_inside": 1,
-      "claim_outside": 2
-    },
-    {
-      "name": "Agori",
-      "wrongness": 2.3,
-      "support_inside": 0,
-      "contradict_inside": 1,
-      "claim_outside": 2
+      "over": 0.697,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 3,
+      "external": 0
     },
     {
       "name": "Mifongou",
-      "wrongness": 2.05,
-      "support_inside": 0,
-      "contradict_inside": 3,
-      "claim_outside": 0
+      "over": 0.672,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 3,
+      "external": 0
     },
     {
       "name": "Ouéga-Tokpa",
-      "wrongness": 1.8,
-      "support_inside": 0,
-      "contradict_inside": 3,
-      "claim_outside": 0
+      "over": 0.643,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 3,
+      "external": 0
     },
     {
-      "name": "Xwlacôdji-Plage",
-      "wrongness": 1.8,
-      "support_inside": 0,
-      "contradict_inside": 0,
-      "claim_outside": 3
+      "name": "Hlacômey",
+      "over": 0.63,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 2,
+      "external": 1
+    },
+    {
+      "name": "Cité-les-Palmiers\n",
+      "over": 0.63,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 2,
+      "external": 1
+    },
+    {
+      "name": "Védokô",
+      "over": 0.459,
+      "confidence": 0.865,
+      "support": 0,
+      "contradict": 1,
+      "external": 5
+    },
+    {
+      "name": "Kindonou",
+      "over": 0.418,
+      "confidence": 0.865,
+      "support": 3,
+      "contradict": 3,
+      "external": 0
+    }
+  ],
+  "top10_under_claimed": [
+    {
+      "name": "Togba_Maria-Gléta",
+      "under": 0.828,
+      "confidence": 0.931,
+      "support": 0,
+      "contradict": 0,
+      "external": 8
+    },
+    {
+      "name": "Espace-Saint",
+      "under": 0.808,
+      "confidence": 0.903,
+      "support": 0,
+      "contradict": 0,
+      "external": 7
+    },
+    {
+      "name": "Gbéto",
+      "under": 0.836,
+      "confidence": 0.865,
+      "support": 0,
+      "contradict": 0,
+      "external": 6
+    },
+    {
+      "name": "Védokô",
+      "under": 0.81,
+      "confidence": 0.865,
+      "support": 0,
+      "contradict": 1,
+      "external": 5
+    },
+    {
+      "name": "Akpakpa-Dodomè",
+      "under": 0.75,
+      "confidence": 0.811,
+      "support": 0,
+      "contradict": 0,
+      "external": 5
+    },
+    {
+      "name": "Cité-la-Victoire\n",
+      "under": 0.706,
+      "confidence": 0.736,
+      "support": 0,
+      "contradict": 0,
+      "external": 4
+    },
+    {
+      "name": "Agla-Petit-Château",
+      "under": 0.643,
+      "confidence": 0.736,
+      "support": 0,
+      "contradict": 1,
+      "external": 3
+    },
+    {
+      "name": "Zoundja\n",
+      "under": 0.718,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 0,
+      "external": 3
+    },
+    {
+      "name": "Zogbo",
+      "under": 0.718,
+      "confidence": 0.632,
+      "support": 0,
+      "contradict": 0,
+      "external": 3
+    },
+    {
+      "name": "Cocotomey",
+      "under": 0.489,
+      "confidence": 0.903,
+      "support": 3,
+      "contradict": 0,
+      "external": 4
+    }
+  ],
+  "top10_shifted": [
+    {
+      "name": "Védokô",
+      "shift": 0.61,
+      "confidence": 0.865,
+      "over": 0.459,
+      "under": 0.81
+    },
+    {
+      "name": "Agla-Petit-Château",
+      "shift": 0.491,
+      "confidence": 0.736,
+      "over": 0.375,
+      "under": 0.643
+    },
+    {
+      "name": "Hlacômey",
+      "shift": 0.538,
+      "confidence": 0.632,
+      "over": 0.63,
+      "under": 0.459
+    },
+    {
+      "name": "Sèdjro-Saint-Michel",
+      "shift": 0.317,
+      "confidence": 0.993,
+      "over": 0.246,
+      "under": 0.409
+    },
+    {
+      "name": "Cité-les-Palmiers\n",
+      "shift": 0.486,
+      "confidence": 0.632,
+      "over": 0.63,
+      "under": 0.375
+    },
+    {
+      "name": "Midombo",
+      "shift": 0.486,
+      "confidence": 0.632,
+      "over": 0.375,
+      "under": 0.63
+    },
+    {
+      "name": "Agori",
+      "shift": 0.486,
+      "confidence": 0.632,
+      "over": 0.375,
+      "under": 0.63
+    },
+    {
+      "name": "Sètôvi",
+      "shift": 0.388,
+      "confidence": 0.736,
+      "over": 0.479,
+      "under": 0.315
+    },
+    {
+      "name": "Ladji",
+      "shift": 0.297,
+      "confidence": 0.865,
+      "over": 0.182,
+      "under": 0.486
+    },
+    {
+      "name": "Gbétagbo",
+      "shift": 0.342,
+      "confidence": 0.736,
+      "over": 0.245,
+      "under": 0.479
+    }
+  ],
+  "top10_transfer_candidates": [
+    {
+      "from": "Kindonou",
+      "to": "Mènontin",
+      "confidence": 0.451,
+      "n_pois": 2,
+      "contradicting_pois": 0,
+      "affected_road_m": 1310.8
+    },
+    {
+      "from": "Houèto",
+      "to": "Togba_Maria-Gléta",
+      "confidence": 0.33,
+      "n_pois": 2,
+      "contradicting_pois": 2,
+      "affected_road_m": 565.9
+    },
+    {
+      "from": "Fifonsi\n",
+      "to": "Agori",
+      "confidence": 0.31,
+      "n_pois": 2,
+      "contradicting_pois": 0,
+      "affected_road_m": 507.5
+    },
+    {
+      "from": "Ouéga-Tokpa",
+      "to": "Togba_Maria-Gléta",
+      "confidence": 0.309,
+      "n_pois": 2,
+      "contradicting_pois": 0,
+      "affected_road_m": 504.5
+    },
+    {
+      "from": "Agassa-Godomey",
+      "to": "Gbétagbo",
+      "confidence": 0.285,
+      "n_pois": 2,
+      "contradicting_pois": 0,
+      "affected_road_m": 441.6
+    },
+    {
+      "from": "Dota",
+      "to": "Gbéto",
+      "confidence": 0.26,
+      "n_pois": 2,
+      "contradicting_pois": 1,
+      "affected_road_m": 381.1
+    },
+    {
+      "from": "Hlacômey",
+      "to": "Agbatô",
+      "confidence": 0.234,
+      "n_pois": 2,
+      "contradicting_pois": 0,
+      "affected_road_m": 327.3
+    },
+    {
+      "from": "Agamandin",
+      "to": "Agla-Petit-Château",
+      "confidence": 0.211,
+      "n_pois": 1,
+      "contradicting_pois": 0,
+      "affected_road_m": 680.6
+    },
+    {
+      "from": "Fandji\n",
+      "to": "Espace-Saint",
+      "confidence": 0.194,
+      "n_pois": 1,
+      "contradicting_pois": 0,
+      "affected_road_m": 576.2
+    },
+    {
+      "from": "Sèdjro-Saint-Michel",
+      "to": "Gbéto",
+      "confidence": 0.191,
+      "n_pois": 2,
+      "contradicting_pois": 8,
+      "affected_road_m": 249.9
     }
   ]
 }

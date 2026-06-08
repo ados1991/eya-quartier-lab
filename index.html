@@ -305,17 +305,20 @@
       <span style="display:inline-block;width:9px;height:9px;background:#fbbf24;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> 0.5–1.5 ·
       <span style="display:inline-block;width:9px;height:9px;background:#f97316;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> 1.5–3 ·
       <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> &gt; 3 likely wrong<br>
-      Top wrongest: Védokô 5.10 · Gbéto 5.10 · Togba_Maria-Gléta 4.80 · Espace-Saint 4.20 · Akpakpa-Dodomè 3.00<br>
-      <a href="data/osm_qev_quartier_scorecard.csv" download>CSV</a> ·
-      <a href="data/osm_qev_evidence_report.md" target="_blank">report</a>
+      Now colour-coded by failure mode: <span style="color:#dc2626"><b>red</b></span>=over-expanded (territory too large), <span style="color:#0891b2"><b>cyan</b></span>=under-claimed (territory too small), <span style="color:#7c3aed"><b>purple</b></span>=shifted (in the wrong place), <span style="color:#16a34a"><b>green</b></span>=looks fine.<br>
+      Aggregates: <b>22</b> chefs over-expansion≥0.5 · <b>15</b> under-claim≥0.5 · <b>12</b> shifted≥0.3.<br>
+      <a href="data/osm_qev_quartier_scorecard.csv" download>scorecard CSV</a> ·
+      <a href="data/osm_qev_evidence_report.md" target="_blank">full report</a> ·
+      <a href="data/osm_qev_review_workflow.html" target="_blank"><b>▶ open top-20 review workflow</b></a>
     </div>
     <input type="range" min="0" max="100" value="95" id="op-qevs" class="slider">
 
     <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-qevz"><span class="lay-swatch" style="background:linear-gradient(90deg,#7f1d1d 33%,#dc2626 33%,#dc2626 66%,#fb923c 66%);border:1.5px solid #052e16"></span><b>Territorial evidence zones</b> <span style="color:#16a34a">(ranked by road length, ODbL)</span></label>
     <div class="lay-meta">
       Disputed POIs clustered by (from → to) flip, ranked by <i>confidence</i> × <i>affected road length</i>. Click any zone → popup shows the proposed flip + supporting POI names + Google Maps link.<br>
-      <b>HIGH</b> 0 (OSM density too low) · <b>MEDIUM</b> 7 zones / <b>4.04 km</b> of road · <b>LOW</b> 87 zones / 19.14 km<br>
-      Top MEDIUM (km of road affected): Kindonou→Mènontin 1.31 · Houèto→Togba_Maria-Gléta 0.57 · Fifonsi→Agori 0.51 · Ouéga-Tokpa→Togba_Maria-Gléta 0.50<br>
+      Confidence in [0,1] = (1−e^(−POIs/3)) × (1−e^(−road_m/500)). Top zones at OSM density max at 0.45.<br>
+      <b>0</b> zones ≥ 0.50 · <b>4</b> zones 0.30–0.50 · <b>19</b> zones 0.15–0.30 · 71 weak<br>
+      Top 4: Kindonou→Mènontin 0.45 · Houèto→Togba_Maria-Gléta 0.33 · Fifonsi→Agori 0.31 · Ouéga-Tokpa→Togba_Maria-Gléta 0.31<br>
       <a href="data/osm_qev_evidence_zones.geojson" download>zones</a> ·
       <a href="data/osm_qev_evidence_summary.json" target="_blank">summary</a>
     </div>
