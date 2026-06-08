@@ -1,0 +1,200 @@
+{
+  "evidence_source": "OSM amenities (ODbL)",
+  "audit_only": false,
+  "evidence_radius_m": 150,
+  "node_cluster_eps_m": 50,
+  "n_nodes_total": 71551,
+  "n_agree": 203,
+  "n_disagree": 123,
+  "n_no_evidence": 71225,
+  "node_evidence_coverage_pct": 0.46,
+  "pct_of_evidence_nodes_disagree": 37.73,
+  "n_correction_zones": 79,
+  "zones_by_confidence": {
+    "HIGH": 20,
+    "MEDIUM": 47,
+    "LOW": 12
+  },
+  "top_deltas": [
+    {
+      "chef": "Togba_Maria-Gléta",
+      "gain": 15,
+      "lose": 0,
+      "net": 15
+    },
+    {
+      "chef": "Védokô",
+      "gain": 14,
+      "lose": 0,
+      "net": 14
+    },
+    {
+      "chef": "Agbatô",
+      "gain": 12,
+      "lose": 0,
+      "net": 12
+    },
+    {
+      "chef": "Hlacômey",
+      "gain": 0,
+      "lose": 12,
+      "net": -12
+    },
+    {
+      "chef": "Ladji",
+      "gain": 12,
+      "lose": 0,
+      "net": 12
+    },
+    {
+      "chef": "Ahouansori-Towéta-Kpota",
+      "gain": 0,
+      "lose": 12,
+      "net": -12
+    },
+    {
+      "chef": "Tokplégbé",
+      "gain": 10,
+      "lose": 0,
+      "net": 10
+    },
+    {
+      "chef": "Dandji-Hokanmè",
+      "gain": 0,
+      "lose": 10,
+      "net": -10
+    },
+    {
+      "chef": "Akpakpa-Dodomè",
+      "gain": 10,
+      "lose": 0,
+      "net": 10
+    },
+    {
+      "chef": "Houèto",
+      "gain": 2,
+      "lose": 11,
+      "net": -9
+    },
+    {
+      "chef": "Missogbé",
+      "gain": 0,
+      "lose": 7,
+      "net": -7
+    },
+    {
+      "chef": "Agori",
+      "gain": 7,
+      "lose": 0,
+      "net": 7
+    },
+    {
+      "chef": "Fifonsi\n",
+      "gain": 0,
+      "lose": 7,
+      "net": -7
+    },
+    {
+      "chef": "Zogbadjè",
+      "gain": 7,
+      "lose": 0,
+      "net": 7
+    },
+    {
+      "chef": "Tchinangbégbo\n",
+      "gain": 0,
+      "lose": 7,
+      "net": -7
+    },
+    {
+      "chef": "Gbétagbo",
+      "gain": 7,
+      "lose": 0,
+      "net": 7
+    },
+    {
+      "chef": "Agassa-Godomey",
+      "gain": 0,
+      "lose": 7,
+      "net": -7
+    },
+    {
+      "chef": "Lom-Nava",
+      "gain": 0,
+      "lose": 6,
+      "net": -6
+    },
+    {
+      "chef": "Dota",
+      "gain": 0,
+      "lose": 5,
+      "net": -5
+    },
+    {
+      "chef": "Mènontin",
+      "gain": 5,
+      "lose": 0,
+      "net": 5
+    },
+    {
+      "chef": "Kindonou",
+      "gain": 0,
+      "lose": 5,
+      "net": -5
+    },
+    {
+      "chef": "Guinkômey",
+      "gain": 4,
+      "lose": 0,
+      "net": 4
+    },
+    {
+      "chef": "Mifongou",
+      "gain": 0,
+      "lose": 4,
+      "net": -4
+    },
+    {
+      "chef": "Midombo",
+      "gain": 4,
+      "lose": 0,
+      "net": 4
+    },
+    {
+      "chef": "Gbénonkpô",
+      "gain": 0,
+      "lose": 4,
+      "net": -4
+    },
+    {
+      "chef": "Houéyihô-Tannou",
+      "gain": 0,
+      "lose": 4,
+      "net": -4
+    },
+    {
+      "chef": "Ouéga-Tokpa",
+      "gain": 0,
+      "lose": 4,
+      "net": -4
+    },
+    {
+      "chef": "Gbéto",
+      "gain": 3,
+      "lose": 0,
+      "net": 3
+    },
+    {
+      "chef": "Espace-Saint",
+      "gain": 3,
+      "lose": 0,
+      "net": 3
+    },
+    {
+      "chef": "Cadjèhoun-Aupiais",
+      "gain": 3,
+      "lose": 0,
+      "net": 3
+    }
+  ]
+}

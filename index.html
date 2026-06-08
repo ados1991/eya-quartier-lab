@@ -275,6 +275,29 @@
     </div>
     <input type="range" min="0" max="100" value="95" id="op-osmpoidisp" class="slider">
 
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-osmcorr"><span class="lay-swatch" style="background:linear-gradient(90deg,#16a34a 50%,#dc2626 50%);border:1.5px solid #052e16"></span><b>POI correction signal</b> <span style="color:#16a34a">(metro-wide overlay, free, ODbL)</span></label>
+    <div class="lay-meta">
+      Per-claimed-node POI evidence overlay (radius 150 m). For every road graph node, gather all matched POIs nearby, take majority vote, compare with current propagation owner.<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#16a34a;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>AGREE</b> 203 (POI majority == current owner)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>DISAGREE</b> 123 (candidate correction)<br>
+      Plus 71 225 nodes with no POI evidence at this OSM density.<br>
+      <a href="data/osm_poi_correction_signal.geojson" download>per-node signal</a> ·
+      <a href="data/osm_poi_correction_report.md" target="_blank">report</a>
+    </div>
+    <input type="range" min="0" max="100" value="85" id="op-osmcorr" class="slider">
+
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-osmcorrz"><span class="lay-swatch" style="background:linear-gradient(90deg,#7f1d1d 33%,#dc2626 33%,#dc2626 66%,#fb923c 66%);border:1.5px solid #052e16"></span><b>POI correction zones</b> <span style="color:#16a34a">(aggregated, free, ODbL)</span></label>
+    <div class="lay-meta">
+      DISAGREE nodes clustered into <b>correction zones</b> sharing the same proposed flip (from → to). Each zone's popup shows the proposed change + Google Maps link for visual verification.<br>
+      <span style="display:inline-block;width:11px;height:11px;background:#7f1d1d;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>HIGH</b> 20 zones (≥3 POIs + ≥2 nodes)<br>
+      <span style="display:inline-block;width:8px;height:8px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>MEDIUM</b> 47 zones (≥2 POIs)<br>
+      <span style="display:inline-block;width:6px;height:6px;background:#fb923c;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>LOW</b> 12 zones (1 POI)<br>
+      <b>Total node flips</b>: 123 / 71 551 (0.17 %).<br>
+      <a href="data/osm_poi_correction_zones.geojson" download>zones</a> ·
+      <a href="data/osm_poi_correction_summary.json" target="_blank">summary</a>
+    </div>
+    <input type="range" min="0" max="100" value="95" id="op-osmcorrz" class="slider">
+
     <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-competB500"><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 33%,#fbbf24 33%,#fbbf24 66%,#f97316 66%);border:1.5px solid #052e16"></span>Road propagation — commune + 500 m spill-over (medium)</label>
     <div class="lay-meta">
       Less aggressive: 70 871 claimed (+2 063). Bbox: 210/265 (79 %).
@@ -596,7 +619,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -646,6 +669,8 @@ async function init(){
     loadGeo('data/resolution_proposals.geojson').catch(()=>({features:[]})),
     loadGeo('data/osm_poi_quartier_evidence.geojson').catch(()=>({features:[]})),
     loadGeo('data/osm_poi_quartier_disputes.geojson').catch(()=>({features:[]})),
+    loadGeo('data/osm_poi_correction_signal.geojson').catch(()=>({features:[]})),
+    loadGeo('data/osm_poi_correction_zones.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -754,6 +779,21 @@ const OSM_POI_STYLE = (f) => {
   if (c === 'FILLS_GAP') return {radius:4.5, color:'#164e63', weight:1.2, fillColor:'#0891b2', fillOpacity:.9};
   if (c === 'NO_NODE')   return {radius:3,   color:'#475569', weight:0.8, fillColor:'#94a3b8', fillOpacity:.6};
   return {radius:3, color:'#666', weight:0.6, fillColor:'#aaa', fillOpacity:.5};
+};
+
+// Per-node correction signal (AGREE / DISAGREE)
+const OSM_CORR_PT_STYLE = (f) => {
+  const v = f.properties.verdict;
+  if (v === 'AGREE')    return {radius:3, color:'#14532d', weight:0.6, fillColor:'#16a34a', fillOpacity:.75};
+  if (v === 'DISAGREE') return {radius:4, color:'#7f1d1d', weight:1.2, fillColor:'#dc2626', fillOpacity:.92};
+  return {radius:2.5, color:'#666', weight:0.5, fillColor:'#aaa', fillOpacity:.5};
+};
+// Correction zones (per-cluster, confidence-coded)
+const OSM_CORR_ZONE_STYLE = (f) => {
+  const p = f.properties;
+  const r = p.radius || (p.confidence === 'HIGH' ? 10 : p.confidence === 'MEDIUM' ? 6 : 4);
+  const fill = p.color || (p.confidence === 'HIGH' ? '#7f1d1d' : p.confidence === 'MEDIUM' ? '#dc2626' : '#fb923c');
+  return {radius:r, color:'#1f2937', weight:1.4, fillColor: fill, fillOpacity:.92};
 };
 
 // OSM POI dispute-cluster styling (per-cluster, confidence-coded)
@@ -898,6 +938,34 @@ const SPILL_PT_STYLE = (f) => {
         `POI label → <b>${p.poi_quartier}</b> <i>(${p.poi_quartier_arr||''})</i><br>`+
         `propagation → ${cur}<br>`+
         `matched token: <code>${p.matched_text}</code> · snap ${p.snap_dist_m} m`
+      );
+    }
+  });
+
+  // Metro-wide per-node correction signal (AGREE / DISAGREE)
+  layers.osmCorrSig = L.geoJSON(osmCorrSig, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, OSM_CORR_PT_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p = f.properties;
+      l.bindPopup(
+        `<b>${p.verdict}</b><br>`+
+        `current: ${p.current_owner}<br>`+
+        `POI says: ${p.top_poi_quartier} (${p.n_supporting_pois}/${p.n_pois_total} POIs, ${p.consensus_pct}% consensus)<br>`+
+        `top vote weight ${p.top_vote_weight}, runner-up ${p.runner_up_weight}`
+      );
+    }
+  });
+  // Correction zones (aggregated DISAGREE clusters)
+  layers.osmCorrZones = L.geoJSON(osmCorrZones, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, OSM_CORR_ZONE_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p = f.properties;
+      l.bindPopup(
+        `<b>Zone #${p.zone_id} · ${p.confidence}</b><br>`+
+        `<b>${p.n_nodes}</b> contiguous road nodes flagged<br>`+
+        `Proposed flip: <b>${p.from_quartier}</b> → <b>${p.to_quartier}</b><br>`+
+        `supporting POIs: ${p.n_supporting_pois} (max ${p.max_supporting_pois_per_node}/node)<br>`+
+        `<a href="${p.gmaps_link}" target="_blank">▶ Open in Google Maps</a>`
       );
     }
   });
@@ -1176,6 +1244,8 @@ const SPILL_PT_STYLE = (f) => {
   bind('t-resolution', layers.resolution);
   bind('t-osmpoi', layers.osmPoiEv);
   bind('t-osmpoidisp', layers.osmPoiDisp);
+  bind('t-osmcorr', layers.osmCorrSig);
+  bind('t-osmcorrz', layers.osmCorrZones);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
