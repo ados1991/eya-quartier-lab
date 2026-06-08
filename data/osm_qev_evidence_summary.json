@@ -1,0 +1,159 @@
+{
+  "audit_only": false,
+  "evidence_source": "OSM amenities (ODbL)",
+  "n_matched_pois": 183,
+  "n_disputed_pois": 103,
+  "n_quartiers_with_evidence": 119,
+  "n_quartiers_wrongness_above_1": 44,
+  "n_zones": 94,
+  "zones_by_confidence": {
+    "MEDIUM": 7,
+    "LOW": 87
+  },
+  "affected_road_km_by_confidence": {
+    "MEDIUM": 4.04,
+    "LOW": 19.14
+  },
+  "top_wrong_quartiers": [
+    {
+      "name": "Védokô",
+      "wrongness": 5.1,
+      "support_inside": 0,
+      "contradict_inside": 1,
+      "claim_outside": 5
+    },
+    {
+      "name": "Gbéto",
+      "wrongness": 5.1,
+      "support_inside": 0,
+      "contradict_inside": 0,
+      "claim_outside": 6
+    },
+    {
+      "name": "Togba_Maria-Gléta",
+      "wrongness": 4.8,
+      "support_inside": 0,
+      "contradict_inside": 0,
+      "claim_outside": 8
+    },
+    {
+      "name": "Espace-Saint",
+      "wrongness": 4.2,
+      "support_inside": 0,
+      "contradict_inside": 0,
+      "claim_outside": 7
+    },
+    {
+      "name": "Akpakpa-Dodomè",
+      "wrongness": 3.0,
+      "support_inside": 0,
+      "contradict_inside": 0,
+      "claim_outside": 5
+    },
+    {
+      "name": "Hlacômey",
+      "wrongness": 2.55,
+      "support_inside": 0,
+      "contradict_inside": 2,
+      "claim_outside": 1
+    },
+    {
+      "name": "Zoundja\n",
+      "wrongness": 2.55,
+      "support_inside": 0,
+      "contradict_inside": 0,
+      "claim_outside": 3
+    },
+    {
+      "name": "Zogbo",
+      "wrongness": 2.55,
+      "support_inside": 0,
+      "contradict_inside": 0,
+      "claim_outside": 3
+    },
+    {
+      "name": "Missogbé",
+      "wrongness": 2.55,
+      "support_inside": 0,
+      "contradict_inside": 3,
+      "claim_outside": 0
+    },
+    {
+      "name": "Dota",
+      "wrongness": 2.55,
+      "support_inside": 0,
+      "contradict_inside": 3,
+      "claim_outside": 0
+    },
+    {
+      "name": "Ahouansori-Towéta-Kpota",
+      "wrongness": 2.55,
+      "support_inside": 0,
+      "contradict_inside": 3,
+      "claim_outside": 0
+    },
+    {
+      "name": "Cité-la-Victoire\n",
+      "wrongness": 2.4,
+      "support_inside": 0,
+      "contradict_inside": 0,
+      "claim_outside": 4
+    },
+    {
+      "name": "Agla-Petit-Château",
+      "wrongness": 2.4,
+      "support_inside": 0,
+      "contradict_inside": 1,
+      "claim_outside": 3
+    },
+    {
+      "name": "Dandji-Hokanmè",
+      "wrongness": 2.3,
+      "support_inside": 0,
+      "contradict_inside": 3,
+      "claim_outside": 0
+    },
+    {
+      "name": "Cité-les-Palmiers\n",
+      "wrongness": 2.3,
+      "support_inside": 0,
+      "contradict_inside": 2,
+      "claim_outside": 1
+    },
+    {
+      "name": "Midombo",
+      "wrongness": 2.3,
+      "support_inside": 0,
+      "contradict_inside": 1,
+      "claim_outside": 2
+    },
+    {
+      "name": "Agori",
+      "wrongness": 2.3,
+      "support_inside": 0,
+      "contradict_inside": 1,
+      "claim_outside": 2
+    },
+    {
+      "name": "Mifongou",
+      "wrongness": 2.05,
+      "support_inside": 0,
+      "contradict_inside": 3,
+      "claim_outside": 0
+    },
+    {
+      "name": "Ouéga-Tokpa",
+      "wrongness": 1.8,
+      "support_inside": 0,
+      "contradict_inside": 3,
+      "claim_outside": 0
+    },
+    {
+      "name": "Xwlacôdji-Plage",
+      "wrongness": 1.8,
+      "support_inside": 0,
+      "contradict_inside": 0,
+      "claim_outside": 3
+    }
+  ]
+}
