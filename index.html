@@ -816,10 +816,18 @@ const QEV_SCORECARD_STYLE = (f) => {
   return {radius:r, color:'#1f2937', weight:1.2,
            fillColor: p.color || '#94a3b8', fillOpacity:.9};
 };
-// Territorial evidence zones (per-cluster, road-length-weighted)
+// Territorial evidence zones — confidence is now a number in [0,1]
 const QEV_ZONE_STYLE = (f) => {
   const p = f.properties;
-  const r = p.radius || (p.confidence === 'HIGH' ? 10 : p.confidence === 'MEDIUM' ? 6 : 4);
+  // Prefer the radius the Python side computed; otherwise scale by
+  // numeric confidence (older string-tier path retained as fallback).
+  let r = p.radius;
+  if (typeof r !== 'number') {
+    if (typeof p.confidence === 'number') r = 4 + p.confidence * 14;
+    else if (p.confidence === 'HIGH')   r = 10;
+    else if (p.confidence === 'MEDIUM') r = 6;
+    else                                r = 4;
+  }
   return {radius:r, color:'#1f2937', weight:1.5,
            fillColor: p.color || '#fb923c', fillOpacity:.92};
 };
@@ -985,34 +993,42 @@ const SPILL_PT_STYLE = (f) => {
     }
   });
 
-  // Quartier wrongness scorecard (chef-lieu point per chef with evidence)
+  // Quartier evidence scorecard (one point per chef with evidence)
+  // Field names match the territorial-evidence rebuild:
+  // support_count / contradiction_count / external_support_count /
+  // confidence_score / over_expansion_score / under_claim_score /
+  // boundary_shift_score
+  const safeFx = (v, n=2) => (typeof v === 'number' ? v.toFixed(n) : '—');
   layers.qevScore = L.geoJSON(qevScore, {
     pointToLayer:(f,latlng)=>L.circleMarker(latlng, QEV_SCORECARD_STYLE(f)),
     onEachFeature:(f,l)=>{
       const p = f.properties;
       l.bindPopup(
         `<b>${p.name}</b> · ${p.arrondissement||''}<br>`+
-        `<b>Wrongness</b>: <span style="font-size:1.2em">${p.wrongness_score.toFixed(2)}</span><br>`+
-        `Support inside: <b>${p.support_inside}</b> · `+
-        `Contradict inside: <b>${p.contradict_inside}</b> · `+
-        `Claim outside: <b>${p.claim_outside}</b><br>`+
-        `<small>(weighted: ${p.weighted_support_inside} / ${p.weighted_contradict_inside} / ${p.weighted_claim_outside})</small>`
+        `<small>Total evidence: <b>${p.total_evidence}</b> POIs · `+
+        `confidence ${safeFx(p.confidence_score)}</small><br>`+
+        `Support: <b>${p.support_count}</b> · `+
+        `Contradiction: <b>${p.contradiction_count}</b> · `+
+        `External: <b>${p.external_support_count}</b><br>`+
+        `<b>over-expansion</b>: ${safeFx(p.over_expansion_score)} · `+
+        `<b>under-claim</b>: ${safeFx(p.under_claim_score)} · `+
+        `<b>shift</b>: ${safeFx(p.boundary_shift_score)}`
       );
     }
   });
-  // Territorial evidence zones (per (from→to) cluster, road-length weighted)
+  // Territorial evidence zones (per from→to cluster, ranked by zone confidence)
   layers.qevZones = L.geoJSON(qevZones, {
     pointToLayer:(f,latlng)=>L.circleMarker(latlng, QEV_ZONE_STYLE(f)),
     onEachFeature:(f,l)=>{
       const p = f.properties;
       const names = (p.poi_names_sample || []).map(n => `<li>${n}</li>`).join('');
       l.bindPopup(
-        `<b>Zone #${p.zone_id} · ${p.confidence}</b><br>`+
+        `<b>Zone #${p.zone_id} · confidence ${safeFx(p.confidence)}</b><br>`+
         `<b>${p.from_quartier}</b> → <b>${p.to_quartier}</b><br>`+
-        `${p.n_pois} POIs (weighted vote ${p.weighted_vote}) · `+
-        `${p.n_affected_nodes} road nodes · `+
-        `<b>${p.affected_road_length_m.toFixed(0)} m</b> of road affected<br>`+
-        `<a href="${p.gmaps_link}" target="_blank">▶ Open in Google Maps</a>`+
+        `${p.n_pois} supporting POIs · `+
+        `${p.contradicting_pois_in_zone||0} contradicting nearby · `+
+        `<b>${safeFx(p.affected_road_length_m, 0)} m</b> of road<br>`+
+        `<a href="${p.gmaps_link}" target="_blank" rel="noopener noreferrer">▶ Open in Google Maps</a>`+
         `<details><summary>POI names</summary><ul>${names}</ul></details>`
       );
     }
