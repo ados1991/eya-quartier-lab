@@ -80,7 +80,7 @@
 
   <div class="lay" style="border-color:#dc2626;background:#fef2f2;margin-top:12px">
     <label class="lay-hdr">
-      <input type="checkbox" id="t-gpoi">
+      <input type="checkbox" id="t-gpoi" checked>
       <span style="color:#dc2626;font-weight:700">🏷 Google POI labels — inline</span>
       <span class="pill" style="background:#fecaca;color:#7f1d1d;border-color:#dc2626">AUDIT</span>
     </label>
@@ -97,7 +97,7 @@
   <h2>Polygon versions</h2>
 
   <div class="lay" style="background:#eff6ff;border-color:#bfdbfe">
-    <label class="lay-hdr"><input type="checkbox" id="t-c50" checked><span class="lay-swatch" style="background:#2563eb"></span>circles 50 m (clean baseline)</label>
+    <label class="lay-hdr"><input type="checkbox" id="t-c50"><span class="lay-swatch" style="background:#2563eb"></span>circles 50 m (clean baseline)</label>
     <div class="lay-meta">50 m radius disk around each IGN chef-lieu (311 centroids). No Dijkstra, no water mask, no POI seeding — pure geometric circles. Use this as the fresh starting point.</div>
     <input type="range" min="0" max="100" value="55" id="op-c50" class="slider">
   </div>
@@ -109,13 +109,13 @@
   </div>
 
   <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-v2" checked><span class="lay-swatch" style="background:#fb923c"></span>v2 — Voronoi + arr-clipped</label>
+    <label class="lay-hdr"><input type="checkbox" id="t-v2"><span class="lay-swatch" style="background:#fb923c"></span>v2 — Voronoi + arr-clipped</label>
     <div class="lay-meta">Same as v1 but clipped to IGN arrondissement boundaries. Previous default.</div>
     <input type="range" min="0" max="100" value="40" id="op-v2" class="slider">
   </div>
 
   <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-v3" checked><span class="lay-swatch" style="background:#0d9488"></span>v3 — topology-aware</label>
+    <label class="lay-hdr"><input type="checkbox" id="t-v3"><span class="lay-swatch" style="background:#0d9488"></span>v3 — topology-aware</label>
     <div class="lay-meta">Multi-source Dijkstra on 100 m grid. Water = forbidden · roads = cheap · POIs named after a quartier act as additional seeds.</div>
     <input type="range" min="0" max="100" value="40" id="op-v3" class="slider">
   </div>
@@ -151,7 +151,7 @@
   </div>
 
   <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-disp" checked><span class="lay-swatch" style="background:#b91c1c"></span>v3 disputed strips</label>
+    <label class="lay-hdr"><input type="checkbox" id="t-disp"><span class="lay-swatch" style="background:#b91c1c"></span>v3 disputed strips</label>
     <div class="lay-meta">Cells where 2nd-best owner's cost is close to best — fuzzy transition zones.</div>
     <input type="range" min="0" max="100" value="45" id="op-disp" class="slider">
   </div>
@@ -188,7 +188,7 @@
     <div class="lay-meta">GOOD 179 · PART 96 · BROK 3 · 0 collisions · coverage 98.6 %</div>
     <input type="range" min="0" max="100" value="80" id="op-prop100" class="slider">
 
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-prop" checked><span class="lay-swatch" style="background:#34d399"></span><b>Road propagation — 200 m</b></label>
+    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-prop"><span class="lay-swatch" style="background:#34d399"></span><b>Road propagation — 200 m</b></label>
     <div class="lay-meta">GOOD 93 · PART 200 · BROK 6 · <b>94 collisions</b> · 13 water stops · coverage 90.4 %</div>
     <input type="range" min="0" max="100" value="80" id="op-prop" class="slider">
 
@@ -416,7 +416,7 @@
     </div>
     <input type="range" min="0" max="100" value="85" id="op-compet500" class="slider">
 
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-front" checked><span class="lay-swatch" style="background:linear-gradient(90deg,#9333ea,#ec4899,#f59e0b,#10b981)"></span><b>300 m frontier structures</b> (clustered)</label>
+    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-front"><span class="lay-swatch" style="background:linear-gradient(90deg,#9333ea,#ec4899,#f59e0b,#10b981)"></span><b>300 m frontier structures</b> (clustered)</label>
     <div class="lay-meta">
       665 raw collision nodes clustered into <b>376 frontier structures</b> (1.8× compression). Each pair's points within 60 m are merged. Shape classifier (PCA) splits clusters into:<br>
       <span style="color:#10b981">━</span> <b>linear_corridor</b> 52  (longest: Nonhouénou ↔ Hlouacomey, 363 m)<br>
@@ -1405,6 +1405,7 @@ const SPILL_PT_STYLE = (f) => {
   if(document.getElementById('t-disp').checked) layers.disp.addTo(map);
   if(document.getElementById('t-arr').checked) layers.arr.addTo(map);
   if(document.getElementById('t-ign').checked) layers.ign.addTo(map);
+  if(document.getElementById('t-gpoi').checked) { layers.gpoi.addTo(map); updateGpoiLabels(); }
 
   // Toggle wiring
   const bind = (id, layer) => document.getElementById(id).onchange = e => {
