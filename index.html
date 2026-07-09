@@ -46,6 +46,17 @@
   .qlbl{background:rgba(255,255,255,.92);border:1px solid #cbd5e1;border-radius:4px;
     padding:1px 5px;font:10px/1.3 -apple-system,system-ui;color:#0b1f3b;font-weight:500;
     box-shadow:0 1px 2px rgba(0,0,0,.04)}.qlbl:before{display:none!important}
+  /* Google POI permanent labels — visible only when body has .gpoi-labels-on
+     (added by zoom listener when zoom ≥ 16). */
+  .gpoi-lbl-marker{background:transparent;border:none;pointer-events:none}
+  .gpoi-lbl-text{display:none;white-space:nowrap;background:rgba(255,255,255,.94);
+    border:1px solid #94a3b8;border-left-width:3px;border-radius:3px;
+    padding:0 4px 0 5px;font:10px/1.35 -apple-system,system-ui;color:#0b1f3b;
+    font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,.06);transform:translate(6px,-6px)}
+  .gpoi-lbl-text.gpoi-cls-CONFIRM  {border-left-color:#16a34a}
+  .gpoi-lbl-text.gpoi-cls-AMBIGUOUS{border-left-color:#f97316}
+  .gpoi-lbl-text.gpoi-cls-MISMATCH {border-left-color:#dc2626}
+  body.gpoi-labels-on .gpoi-lbl-text{display:inline-block}
   .leaflet-popup-content{font:12px -apple-system,system-ui;color:#0b1f3b;margin:10px 14px;max-width:280px}
   .leaflet-popup-content b{color:#0b1f3b}
 </style></head><body>
@@ -68,12 +79,19 @@
   </div>
 
   <div class="lay" style="border-color:#dc2626;background:#fef2f2;margin-top:12px">
-    <label class="lay-hdr" style="color:#dc2626">
-      🧭 <a href="territorial_evidence.html" style="color:#dc2626;text-decoration:underline">Territorial evidence layer</a>
+    <label class="lay-hdr">
+      <input type="checkbox" id="t-gpoi">
+      <span style="color:#dc2626;font-weight:700">🏷 Google POI labels — inline</span>
+      <span class="pill" style="background:#fecaca;color:#7f1d1d;border-color:#dc2626">AUDIT</span>
     </label>
     <div class="lay-meta">
-      Companion map: 5&nbsp;103 A-level Google POIs enriched with current propagation owner, distance-to-frontier and cluster classification. Use it to identify propagation errors from POI naming signals.
+      1&nbsp;677 unique Google A-level POIs plotted directly on this map. Click any dot for details. <b>Full labels appear when you zoom in (≥ 16)</b>.<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#16a34a;border:1px solid #14532d;border-radius:50%;vertical-align:middle"></span> <b>CONFIRM</b> 343 — POI name matches propagation owner<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#f97316;border:1px solid #7c2d12;border-radius:50%;vertical-align:middle"></span> <b>AMBIGUOUS</b> 652 — mismatch but &lt; 300 m from frontier (border noise)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #7f1d1d;border-radius:50%;vertical-align:middle"></span> <b>MISMATCH</b> 682 — mismatch, &gt; 300 m deep inside another quartier<br>
+      Sister view: <a href="territorial_evidence.html" style="color:#dc2626">clustered evidence map ↗</a>
     </div>
+    <input type="range" min="0" max="100" value="80" id="op-gpoi" class="slider">
   </div>
 
   <h2>Polygon versions</h2>
@@ -654,7 +672,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -708,6 +726,7 @@ async function init(){
     loadGeo('data/osm_poi_correction_zones.geojson').catch(()=>({features:[]})),
     loadGeo('data/osm_qev_quartier_scorecard.geojson').catch(()=>({features:[]})),
     loadGeo('data/osm_qev_evidence_zones.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_evidence.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -1295,6 +1314,81 @@ const SPILL_PT_STYLE = (f) => {
     layers.amen.addLayer(m);
   });
 
+  // ─── Google POI evidence — inline layer (audit-only, temporary) ────
+  // Two coordinated layers:
+  //   • layers.gpoi       = coloured dots + hover tooltip + click popup
+  //   • layers.gpoiLabels = permanent name labels, added when zoom ≥ 16
+  //                         AND the user has t-gpoi checked
+  const GPOI_STYLE = (f) => {
+    const c = f.properties.classification;
+    if (c === 'CONFIRM')   return {radius:3,   color:'#14532d', weight:0.7, fillColor:'#16a34a', fillOpacity:.85};
+    if (c === 'AMBIGUOUS') return {radius:3.5, color:'#7c2d12', weight:0.8, fillColor:'#f97316', fillOpacity:.90};
+    if (c === 'MISMATCH')  return {radius:4,   color:'#7f1d1d', weight:1.1, fillColor:'#dc2626', fillOpacity:.95};
+    return {radius:3, color:'#666', weight:0.6, fillColor:'#aaa', fillOpacity:.6};
+  };
+  const escapeHtml = (s) => (s==null?'':String(s)).replace(/[&<>"']/g, ch =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  layers.gpoi = L.geoJSON(gpoi, {
+    pointToLayer:(f,latlng)=>L.circleMarker(latlng, GPOI_STYLE(f)),
+    onEachFeature:(f,l)=>{
+      const p = f.properties;
+      const [lo, la] = f.geometry.coordinates;
+      const nm  = escapeHtml(p.name || '(unnamed)');
+      const mq  = escapeHtml(p.matched_quartier || '?');
+      const cq  = escapeHtml(p.current_propagated_quartier || '?');
+      const cls = p.classification;
+      const clsLabel = cls === 'CONFIRM'
+        ? '<span style="color:#15803d;font-weight:700">CONFIRM</span> — POI name matches current propagation owner'
+        : cls === 'AMBIGUOUS'
+        ? '<span style="color:#c2410c;font-weight:700">AMBIGUOUS</span> — mismatch but &lt; 300 m from frontier (border noise)'
+        : '<span style="color:#b91c1c;font-weight:700">MISMATCH</span> — POI sits deep inside another quartier';
+      const dirLine = p.correction_direction
+        ? `<b>Proposed flip</b>: <span style="color:#b91c1c">${cq}</span> → <span style="color:#15803d">${mq}</span><br>`
+        : '';
+      l.bindPopup(
+        `<b>${nm}</b><br>`+
+        `${clsLabel}<br>`+
+        `<b>POI text says quartier</b>: ${mq}<br>`+
+        `<b>Current propagation owner</b>: ${cq}<br>`+
+        dirLine +
+        `distance to frontier: ${p.distance_to_frontier_m ?? '?'} m<br>`+
+        `distance to matched chef-lieu: ${p.distance_to_chef_m ?? '?'} m<br>`+
+        `category: ${escapeHtml(p.category||'?')} · ${escapeHtml(p.commune||'')}<br>`+
+        `<small>[${la.toFixed(6)}, ${lo.toFixed(6)}]</small>`
+      );
+      l.bindTooltip(nm, {sticky:true, direction:'top', className:'qlbl'});
+    }
+  });
+  // Companion permanent-label layer (one divIcon marker per POI). Added to
+  // the map only when zoom ≥ 16 AND t-gpoi is checked. Body class
+  // .gpoi-labels-on gates final visibility via CSS.
+  layers.gpoiLabels = L.layerGroup();
+  (gpoi.features || []).forEach(f => {
+    const p = f.properties;
+    const [lo, la] = f.geometry.coordinates;
+    const nm = escapeHtml(p.name || '');
+    const html = `<div class="gpoi-lbl-text gpoi-cls-${p.classification}">${nm}</div>`;
+    const m = L.marker([la, lo], {
+      icon: L.divIcon({html, className:'gpoi-lbl-marker', iconSize:[0,0], iconAnchor:[0,0]}),
+      interactive: false,
+      keyboard: false,
+    });
+    layers.gpoiLabels.addLayer(m);
+  });
+  const updateGpoiLabels = () => {
+    const gpoiOn = document.getElementById('t-gpoi').checked;
+    const highZoom = map.getZoom() >= 16;
+    const shouldShow = gpoiOn && highZoom;
+    if (shouldShow) {
+      if (!map.hasLayer(layers.gpoiLabels)) layers.gpoiLabels.addTo(map);
+      document.body.classList.add('gpoi-labels-on');
+    } else {
+      if (map.hasLayer(layers.gpoiLabels)) map.removeLayer(layers.gpoiLabels);
+      document.body.classList.remove('gpoi-labels-on');
+    }
+  };
+  map.on('zoomend', updateGpoiLabels);
+
   // Default-add the ones the checkboxes say "checked"
   // Water layers added FIRST so they sit visually under the polygon layers.
   if(document.getElementById('t-wbod').checked) layers.wbod.addTo(map);
@@ -1349,6 +1443,11 @@ const SPILL_PT_STYLE = (f) => {
   bind('t-osmcorrz', layers.osmCorrZones);
   bind('t-qevs', layers.qevScore);
   bind('t-qevz', layers.qevZones);
+  // Google POI dots — labels layer is managed separately by updateGpoiLabels
+  document.getElementById('t-gpoi').onchange = e => {
+    if (e.target.checked) layers.gpoi.addTo(map); else map.removeLayer(layers.gpoi);
+    updateGpoiLabels();
+  };
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
@@ -1405,6 +1504,21 @@ const SPILL_PT_STYLE = (f) => {
   wireOpProp('op-prop',    layers.propL,    PROP_STYLE);
   wireOpProp('op-prop100', layers.propL100, PROP100_STYLE);
   wireOpProp('op-prop300', layers.propL300, PROP300_STYLE);
+  // Google POI dot opacity — fades circleMarker fill + stroke uniformly.
+  (() => {
+    const el = document.getElementById('op-gpoi');
+    if (!el) return;
+    el.oninput = () => {
+      const op = el.value / 80;
+      layers.gpoi.eachLayer(l => {
+        const base = GPOI_STYLE(l.feature);
+        l.setStyle({
+          fillOpacity: (base.fillOpacity || .9) * op,
+          opacity:     Math.min(1, (base.weight ? 1 : 0) * op * 1.3 + 0.2),
+        });
+      });
+    };
+  })();
 
   // Fit to v3 (the richest)
   map.fitBounds(layers.v3.getBounds(), {padding:[20,20]});
