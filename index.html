@@ -96,13 +96,21 @@
     <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
       <label class="lay-hdr" style="margin:0">
         <input type="checkbox" id="t-gpoiroads" checked>
-        <span style="color:#7f1d1d;font-weight:700">↳ proposed road corrections</span>
+        <span style="color:#7f1d1d;font-weight:700">↳ proposed road flips (territorial flood)</span>
       </label>
       <div class="lay-meta" style="margin-top:4px">
-        For every POI whose text disagrees with its current owner, the road segments in the POI's local ring that <b>currently</b> belong to the current owner are re-painted with the color of the <b>matched</b> quartier. 8&nbsp;937 unique segments · 1&nbsp;705 conflicted (dashed).<br>
-        <small><i>Click any segment to see the vote count + proposing POI names.</i></small>
+        POIs of the same quartier name cluster into evidence regions; each region seeds a <b>competitive Dijkstra flood on the road graph</b> (cap 800 m), and every claimed road is repainted with the region's quartier colour. 4&nbsp;019 edges across 127 clusters. Solid = interior · <span style="letter-spacing:2px">┈</span> rim · <span style="letter-spacing:2px">╌</span> frontier between competing clusters.
       </div>
       <input type="range" min="0" max="100" value="85" id="op-gpoiroads" class="slider">
+    </div>
+    <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
+      <label class="lay-hdr" style="margin:0">
+        <input type="checkbox" id="t-gpoiregions">
+        <span style="color:#7f1d1d;font-weight:700">↳ evidence regions (hulls)</span>
+      </label>
+      <div class="lay-meta" style="margin-top:4px">
+        113 convex-hull polygons — one per POI cluster, tinted with the matched quartier's colour. Turn on to see each cluster's territorial claim at a glance without the roads.
+      </div>
     </div>
   </div>
 
@@ -684,7 +692,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -740,6 +748,7 @@ async function init(){
     loadGeo('data/osm_qev_evidence_zones.geojson').catch(()=>({features:[]})),
     loadGeo('data/google_poi_evidence.geojson').catch(()=>({features:[]})),
     loadGeo('data/google_poi_proposed_road_corrections.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_territorial_regions.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -1338,31 +1347,64 @@ const SPILL_PT_STYLE = (f) => {
   // dashed.
   const GPOI_ROAD_STYLE = (f) => {
     const p = f.properties;
-    const conflicted = !!p.conflicted;
-    return {
-      color: p.to_color || '#999',
-      weight: conflicted ? 3 : 4,
-      opacity: conflicted ? .70 : .90,
-      dashArray: conflicted ? '4,4' : null,
-      lineCap: 'round',
-    };
+    const kind = p.kind;
+    // Frontier edges (between two competing clusters) render dashed and thin.
+    // Rim edges (cluster boundary into unclaimed graph) render lighter/thinner.
+    // Cluster edges (both endpoints in same cluster) render solid & prominent.
+    if (kind === 'frontier') {
+      return {color: p.to_color || '#999', weight:2.5, opacity:.55,
+              dashArray:'4,4', lineCap:'round'};
+    }
+    if (kind === 'cluster_rim') {
+      return {color: p.to_color || '#999', weight:3, opacity:.70,
+              dashArray:'2,4', lineCap:'round'};
+    }
+    return {color: p.to_color || '#999', weight:4, opacity:.92, lineCap:'round'};
   };
   layers.gpoiRoads = L.geoJSON(gpoiRoads, {
     style: GPOI_ROAD_STYLE,
     onEachFeature: (f, l) => {
       const p = f.properties;
-      const poiList = (p.poi_names || []).slice(0,6)
-        .map(n => `<li>${escapeHtml(n)}</li>`).join('');
-      const conflictNote = p.conflicted
-        ? `<br><b style="color:#c2410c">⚠ conflicted</b>: ${p.total_votes} total votes across multiple targets, winner has ${p.vote_count}`
+      const kindLabel = p.kind === 'frontier'
+        ? '<i style="color:#c2410c">frontier — this edge sits between two competing clusters</i>'
+        : p.kind === 'cluster_rim'
+        ? '<i style="color:#6b7280">outer rim — flood reached its expansion limit here</i>'
+        : '<i style="color:#15803d">interior — both endpoints firmly claimed</i>';
+      const conflictLine = p.conflicted && p.conflict_with_quartier
+        ? `<br><b style="color:#c2410c">⚠ conflict</b>: contested with cluster of <b>${escapeHtml(p.conflict_with_quartier)}</b>`
         : '';
       l.bindPopup(
-        `<b>Proposed road correction</b><br>`+
+        `<b>Territorial evidence flip</b><br>`+
         `<b style="color:#b91c1c">from ${escapeHtml(p.from_owner)}</b> → `+
         `<b style="color:#15803d">to ${escapeHtml(p.to_owner)}</b><br>`+
-        `${p.vote_count} POI vote(s) for this flip${conflictNote}`+
-        `<details><summary>proposing POIs</summary>`+
-        `<ul style="margin:4px 0 0 16px;padding:0">${poiList}</ul></details>`
+        `cluster ${p.cluster_id} · <b>${p.cluster_size}</b> POI(s) corroborating<br>`+
+        `walk cost from seed: ${p.cost_u_m ?? '?'} m — ${p.cost_v_m ?? '?'} m<br>`+
+        kindLabel + conflictLine
+      );
+    }
+  });
+  // ─── Territorial evidence regions (convex-hull polygons) ──────────
+  const GPOI_REGION_STYLE = (f) => {
+    const p = f.properties;
+    return {
+      color: p.matched_color || '#666',
+      weight: 1.6,
+      fillColor: p.matched_color || '#aaa',
+      fillOpacity: .18,
+      dashArray: '3,3',
+    };
+  };
+  layers.gpoiRegions = L.geoJSON(gpoiRegions, {
+    style: GPOI_REGION_STYLE,
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      const poiList = (p.poi_names || []).slice(0,10)
+        .map(n => `<li>${escapeHtml(n)}</li>`).join('');
+      l.bindPopup(
+        `<b>${escapeHtml(p.matched_quartier)}</b> · territorial evidence region<br>`+
+        `<b>${p.size}</b> corroborating POIs · `+
+        `<b>${p.n_road_vertices_claimed}</b> road vertices claimed<br>`+
+        `<details><summary>POIs</summary><ul style="margin:4px 0 0 16px;padding:0">${poiList}</ul></details>`
       );
     }
   });
@@ -1527,6 +1569,7 @@ const SPILL_PT_STYLE = (f) => {
     updateGpoiLabels();
   };
   bind('t-gpoiroads', layers.gpoiRoads);
+  bind('t-gpoiregions', layers.gpoiRegions);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
