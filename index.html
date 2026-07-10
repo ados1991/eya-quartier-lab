@@ -93,6 +93,17 @@
       Sister view: <a href="territorial_evidence.html" style="color:#dc2626">clustered evidence map ↗</a>
     </div>
     <input type="range" min="0" max="100" value="80" id="op-gpoi" class="slider">
+    <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
+      <label class="lay-hdr" style="margin:0">
+        <input type="checkbox" id="t-gpoiroads" checked>
+        <span style="color:#7f1d1d;font-weight:700">↳ proposed road corrections</span>
+      </label>
+      <div class="lay-meta" style="margin-top:4px">
+        For every POI whose text disagrees with its current owner, the road segments in the POI's local ring that <b>currently</b> belong to the current owner are re-painted with the color of the <b>matched</b> quartier. 8&nbsp;937 unique segments · 1&nbsp;705 conflicted (dashed).<br>
+        <small><i>Click any segment to see the vote count + proposing POI names.</i></small>
+      </div>
+      <input type="range" min="0" max="100" value="85" id="op-gpoiroads" class="slider">
+    </div>
   </div>
 
   <h2>Polygon versions</h2>
@@ -673,7 +684,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -728,6 +739,7 @@ async function init(){
     loadGeo('data/osm_qev_quartier_scorecard.geojson').catch(()=>({features:[]})),
     loadGeo('data/osm_qev_evidence_zones.geojson').catch(()=>({features:[]})),
     loadGeo('data/google_poi_evidence.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_proposed_road_corrections.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -1315,6 +1327,46 @@ const SPILL_PT_STYLE = (f) => {
     layers.amen.addLayer(m);
   });
 
+  // Shared HTML-escape helper used by all Google-POI layers below.
+  const escapeHtml = (s) => (s==null?'':String(s)).replace(/[&<>"']/g, ch =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+
+  // ─── Google POI proposed road corrections — repaint layer ─────────
+  // For every segment currently owned by X whose local Google POI text
+  // evidence proposes it should be Y, draw it in Y's colour on top of
+  // the base propagation. Conflicted segments (multiple targets) render
+  // dashed.
+  const GPOI_ROAD_STYLE = (f) => {
+    const p = f.properties;
+    const conflicted = !!p.conflicted;
+    return {
+      color: p.to_color || '#999',
+      weight: conflicted ? 3 : 4,
+      opacity: conflicted ? .70 : .90,
+      dashArray: conflicted ? '4,4' : null,
+      lineCap: 'round',
+    };
+  };
+  layers.gpoiRoads = L.geoJSON(gpoiRoads, {
+    style: GPOI_ROAD_STYLE,
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      const poiList = (p.poi_names || []).slice(0,6)
+        .map(n => `<li>${escapeHtml(n)}</li>`).join('');
+      const conflictNote = p.conflicted
+        ? `<br><b style="color:#c2410c">⚠ conflicted</b>: ${p.total_votes} total votes across multiple targets, winner has ${p.vote_count}`
+        : '';
+      l.bindPopup(
+        `<b>Proposed road correction</b><br>`+
+        `<b style="color:#b91c1c">from ${escapeHtml(p.from_owner)}</b> → `+
+        `<b style="color:#15803d">to ${escapeHtml(p.to_owner)}</b><br>`+
+        `${p.vote_count} POI vote(s) for this flip${conflictNote}`+
+        `<details><summary>proposing POIs</summary>`+
+        `<ul style="margin:4px 0 0 16px;padding:0">${poiList}</ul></details>`
+      );
+    }
+  });
+
   // ─── Google POI evidence — inline layer (audit-only, temporary) ────
   // Two coordinated layers:
   //   • layers.gpoi       = coloured dots + hover tooltip + click popup
@@ -1333,8 +1385,6 @@ const SPILL_PT_STYLE = (f) => {
     if (c === 'MISMATCH')  return {radius:4,   color:'#7f1d1d', weight:1.1, fillColor:'#dc2626', fillOpacity:.95};
     return {radius:3, color:'#666', weight:0.6, fillColor:'#aaa', fillOpacity:.6};
   };
-  const escapeHtml = (s) => (s==null?'':String(s)).replace(/[&<>"']/g, ch =>
-    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
   layers.gpoi = L.geoJSON(gpoi, {
     pointToLayer:(f,latlng)=>L.circleMarker(latlng, GPOI_STYLE(f)),
     onEachFeature:(f,l)=>{
@@ -1432,6 +1482,7 @@ const SPILL_PT_STYLE = (f) => {
   if(document.getElementById('t-arr').checked) layers.arr.addTo(map);
   if(document.getElementById('t-ign').checked) layers.ign.addTo(map);
   if(document.getElementById('t-gpoi').checked) { layers.gpoi.addTo(map); updateGpoiLabels(); }
+  if(document.getElementById('t-gpoiroads').checked) layers.gpoiRoads.addTo(map);
 
   // Toggle wiring
   const bind = (id, layer) => document.getElementById(id).onchange = e => {
@@ -1475,6 +1526,7 @@ const SPILL_PT_STYLE = (f) => {
     if (e.target.checked) layers.gpoi.addTo(map); else map.removeLayer(layers.gpoi);
     updateGpoiLabels();
   };
+  bind('t-gpoiroads', layers.gpoiRoads);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
@@ -1543,6 +1595,18 @@ const SPILL_PT_STYLE = (f) => {
           fillOpacity: (base.fillOpacity || .9) * op,
           opacity:     Math.min(1, (base.weight ? 1 : 0) * op * 1.3 + 0.2),
         });
+      });
+    };
+  })();
+  // Proposed-road-corrections opacity — fade the whole overlay uniformly.
+  (() => {
+    const el = document.getElementById('op-gpoiroads');
+    if (!el) return;
+    el.oninput = () => {
+      const op = el.value / 85;
+      layers.gpoiRoads.eachLayer(l => {
+        const base = GPOI_ROAD_STYLE(l.feature);
+        l.setStyle({opacity: Math.min(1, (base.opacity||0.85) * op)});
       });
     };
   })();
