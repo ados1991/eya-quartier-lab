@@ -86,9 +86,10 @@
     </label>
     <div class="lay-meta">
       1&nbsp;677 unique Google A-level POIs plotted directly on this map. Click any dot for details. <b>Full labels appear when you zoom in (≥ 16)</b>.<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#16a34a;border:1px solid #14532d;border-radius:50%;vertical-align:middle"></span> <b>CONFIRM</b> 343 — POI name matches propagation owner<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#f97316;border:1px solid #7c2d12;border-radius:50%;vertical-align:middle"></span> <b>AMBIGUOUS</b> 652 — mismatch but &lt; 300 m from frontier (border noise)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#16a34a;border:1px solid #14532d;border-radius:50%;vertical-align:middle"></span> <b>CONFIRM</b> 355 — POI name matches propagation owner (343 direct + <b>12 promoted via 50 m road connectivity</b>)<br>
+      <span style="display:inline-block;width:9px;height:9px;background:#f97316;border:1px solid #7c2d12;border-radius:50%;vertical-align:middle"></span> <b>AMBIGUOUS</b> 640 — mismatch but &lt; 300 m from frontier (border noise)<br>
       <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #7f1d1d;border-radius:50%;vertical-align:middle"></span> <b>MISMATCH</b> 682 — mismatch, &gt; 300 m deep inside another quartier<br>
+      <small><i>Promoted-CONFIRM dots carry a thin orange ring — the matched quartier's own road network reaches within 50 m, so the AMBIGUOUS→CONFIRM promotion is auditable.</i></small><br>
       Sister view: <a href="territorial_evidence.html" style="color:#dc2626">clustered evidence map ↗</a>
     </div>
     <input type="range" min="0" max="100" value="80" id="op-gpoi" class="slider">
@@ -1320,7 +1321,13 @@ const SPILL_PT_STYLE = (f) => {
   //   • layers.gpoiLabels = permanent name labels, added when zoom ≥ 16
   //                         AND the user has t-gpoi checked
   const GPOI_STYLE = (f) => {
-    const c = f.properties.classification;
+    const p = f.properties;
+    const c = p.classification;
+    // Promoted CONFIRMs: same green fill but a wider orange outer stroke —
+    // makes the AMBIGUOUS→CONFIRM promotion visually auditable at a glance.
+    if (c === 'CONFIRM' && p.reclassified_from_ambiguous) {
+      return {radius:4, color:'#c2410c', weight:2, fillColor:'#16a34a', fillOpacity:.9};
+    }
     if (c === 'CONFIRM')   return {radius:3,   color:'#14532d', weight:0.7, fillColor:'#16a34a', fillOpacity:.85};
     if (c === 'AMBIGUOUS') return {radius:3.5, color:'#7c2d12', weight:0.8, fillColor:'#f97316', fillOpacity:.90};
     if (c === 'MISMATCH')  return {radius:4,   color:'#7f1d1d', weight:1.1, fillColor:'#dc2626', fillOpacity:.95};
@@ -1337,7 +1344,10 @@ const SPILL_PT_STYLE = (f) => {
       const mq  = escapeHtml(p.matched_quartier || '?');
       const cq  = escapeHtml(p.current_propagated_quartier || '?');
       const cls = p.classification;
-      const clsLabel = cls === 'CONFIRM'
+      const promoted = !!p.reclassified_from_ambiguous;
+      const clsLabel = (cls === 'CONFIRM' && promoted)
+        ? '<span style="color:#15803d;font-weight:700">CONFIRM</span> · <i style="color:#c2410c">promoted from AMBIGUOUS via 50 m road connectivity</i>'
+        : cls === 'CONFIRM'
         ? '<span style="color:#15803d;font-weight:700">CONFIRM</span> — POI name matches current propagation owner'
         : cls === 'AMBIGUOUS'
         ? '<span style="color:#c2410c;font-weight:700">AMBIGUOUS</span> — mismatch but &lt; 300 m from frontier (border noise)'
@@ -1345,16 +1355,31 @@ const SPILL_PT_STYLE = (f) => {
       const dirLine = p.correction_direction
         ? `<b>Proposed flip</b>: <span style="color:#b91c1c">${cq}</span> → <span style="color:#15803d">${mq}</span><br>`
         : '';
+      const promotedLine = promoted
+        ? `<b style="color:#15803d">✓ ${p.matched_vertices_in_50m||'?'}</b> road vertices owned by <b>${mq}</b> within 50 m — matched network reaches this POI.<br>`
+        : '';
+      const owners50 = Array.isArray(p.road_owners_50m) && p.road_owners_50m.length
+        ? `<details><summary>road owners within 50 m (${p.road_owners_50m.length})</summary>`+
+          `<ul style="margin:4px 0 0 16px;padding:0">`+
+          p.road_owners_50m.map(o => {
+            const own = escapeHtml(o.name);
+            const hi = (own === mq) ? 'color:#15803d;font-weight:700'
+                     : (own === cq) ? 'color:#b91c1c;font-weight:700' : '';
+            return `<li style="${hi}">${own} <small>(${o.vertex_count} vert.)</small></li>`;
+          }).join('')+
+          `</ul></details>`
+        : `<small><i>no road vertices within 50 m</i></small><br>`;
       l.bindPopup(
         `<b>${nm}</b><br>`+
         `${clsLabel}<br>`+
         `<b>POI text says quartier</b>: ${mq}<br>`+
         `<b>Current propagation owner</b>: ${cq}<br>`+
         dirLine +
-        `distance to frontier: ${p.distance_to_frontier_m ?? '?'} m<br>`+
-        `distance to matched chef-lieu: ${p.distance_to_chef_m ?? '?'} m<br>`+
+        promotedLine +
+        owners50 +
+        `distance to frontier: ${p.distance_to_frontier_m ?? '?'} m · to chef: ${p.distance_to_chef_m ?? '?'} m<br>`+
         `category: ${escapeHtml(p.category||'?')} · ${escapeHtml(p.commune||'')}<br>`+
-        `<small>[${la.toFixed(6)}, ${lo.toFixed(6)}]</small>`
+        `<small>[${la.toFixed(6)}, ${lo.toFixed(6)}] · ${escapeHtml(p.evidence_reason||'')}</small>`
       );
       l.bindTooltip(nm, {sticky:true, direction:'top', className:'qlbl'});
     }
