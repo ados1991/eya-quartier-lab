@@ -95,13 +95,24 @@
     <input type="range" min="0" max="100" value="80" id="op-gpoi" class="slider">
     <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
       <label class="lay-hdr" style="margin:0">
-        <input type="checkbox" id="t-gpoireassign" checked>
-        <span style="color:#7f1d1d;font-weight:700">↳ local reassignment (Mènontin pilot)</span>
+        <span style="color:#7f1d1d;font-weight:700">↳ local reassignment — Mènontin pilot</span>
         <span class="pill" style="background:#dbeafe;color:#1e40af;border-color:#93c5fd">PILOT</span>
       </label>
       <div class="lay-meta" style="margin-top:4px">
-        <b>Per-POI strict rule</b> — for each Mènontin POI: find OSM road vertices within 50 m; if any already owned by Mènontin → CONFIRMED, no change. Else Dijkstra from the seed through <i>{current owner, Mènontin, unclaimed}</i> vertices only until reaching Mènontin's existing network; reassign the minimum branch. Third-party quartiers are hard barriers.<br>
-        Pilot scope: <b>Mènontin only</b>. Currently: 7 CONFIRMED_NEW · 5 CONFIRMED_ALREADY · 2 AMBIGUOUS · 23 vertices flagged. Interior edges solid, rim-to-Mènontin edges dashed.
+        <b>Per-POI strict rule</b> — for each Mènontin POI: find OSM road vertices within R m; if any already owned by Mènontin → CONFIRMED, no change. Else Dijkstra from the seed through <i>{current owner, Mènontin, unclaimed}</i> vertices only until reaching Mènontin's existing network; reassign the minimum branch. Third-party quartiers are hard barriers.
+      </div>
+      <label class="lay-hdr" style="margin-top:6px">
+        <input type="checkbox" id="t-gpoireassign50" checked>
+        <span>R = 50 m</span>
+        <span style="color:#6b7280;font-size:10.5px">— 7 NEW · 5 ALREADY · 2 AMBIGUOUS · 23 verts · 1&nbsp;387 m road</span>
+      </label>
+      <label class="lay-hdr" style="margin-top:4px">
+        <input type="checkbox" id="t-gpoireassign150">
+        <span>R = 150 m</span>
+        <span style="color:#6b7280;font-size:10.5px">— 4 NEW · 10 ALREADY · 0 AMBIGUOUS · 52 verts · 4&nbsp;316 m road</span>
+      </label>
+      <div class="lay-meta" style="margin-top:6px">
+        <small><i>Toggle both to compare. Same visual: solid = interior branch, dashed = rim touching Mènontin's network. Only Kindonou + Agla-Petit-Château roads are ever taken; Agla-Les-Pylônes stays purple.</i></small>
       </div>
     </div>
     <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
@@ -703,7 +714,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -760,7 +771,8 @@ async function init(){
     loadGeo('data/google_poi_evidence.geojson').catch(()=>({features:[]})),
     loadGeo('data/google_poi_proposed_road_corrections.geojson').catch(()=>({features:[]})),
     loadGeo('data/google_poi_territorial_regions.geojson').catch(()=>({features:[]})),
-    loadGeo('data/google_poi_local_reassign.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_local_reassign_r50m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_local_reassign_r150m.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -1395,10 +1407,11 @@ const SPILL_PT_STYLE = (f) => {
       );
     }
   });
-  // ─── Per-POI local reassignment (Mènontin pilot) ─────────────────
-  // Strict rule: for each POI matched to X, find seeds within 50 m; if X
+  // ─── Per-POI local reassignment (Mènontin pilot, 50 m and 150 m) ──
+  // Strict rule: for each POI matched to X, find seeds within R m; if X
   // does not own any, Dijkstra Y→X through {Y, X, unclaimed} only; reassign
-  // only the minimum branch.
+  // only the minimum branch. Two radii are emitted as separate files so
+  // they can be compared visually.
   const GPOI_REASSIGN_STYLE = (f) => {
     const p = f.properties;
     return {
@@ -1409,14 +1422,14 @@ const SPILL_PT_STYLE = (f) => {
       lineCap: 'round',
     };
   };
-  layers.gpoiReassign = L.geoJSON(gpoiReassign, {
+  const makeReassignLayer = (fc, radius_m) => L.geoJSON(fc, {
     style: GPOI_REASSIGN_STYLE,
     onEachFeature: (f, l) => {
       const p = f.properties;
       const anchorList = (p.poi_anchors_all || []).slice(0,8)
         .map(n => `<li>${escapeHtml(n)}</li>`).join('');
       l.bindPopup(
-        `<b>Local reassignment (per-POI)</b><br>`+
+        `<b>Local reassignment (R = ${radius_m} m)</b><br>`+
         `<b>Google POI anchor</b>: ${escapeHtml(p.poi_anchor)}<br>`+
         `<b>Current owner</b>: <span style="color:#b91c1c">${escapeHtml(p.from_owner)}</span><br>`+
         `<b>Target quartier</b>: <span style="color:#15803d">${escapeHtml(p.target_quartier)}</span><br>`+
@@ -1429,6 +1442,8 @@ const SPILL_PT_STYLE = (f) => {
       );
     }
   });
+  layers.gpoiReassign50  = makeReassignLayer(gpoiReassign50, 50);
+  layers.gpoiReassign150 = makeReassignLayer(gpoiReassign150, 150);
 
   // ─── Territorial evidence regions (convex-hull polygons) ──────────
   const GPOI_REGION_STYLE = (f) => {
@@ -1572,7 +1587,8 @@ const SPILL_PT_STYLE = (f) => {
   if(document.getElementById('t-ign').checked) layers.ign.addTo(map);
   if(document.getElementById('t-gpoi').checked) { layers.gpoi.addTo(map); updateGpoiLabels(); }
   if(document.getElementById('t-gpoiroads').checked) layers.gpoiRoads.addTo(map);
-  if(document.getElementById('t-gpoireassign').checked) layers.gpoiReassign.addTo(map);
+  if(document.getElementById('t-gpoireassign50').checked)  layers.gpoiReassign50.addTo(map);
+  if(document.getElementById('t-gpoireassign150').checked) layers.gpoiReassign150.addTo(map);
 
   // Toggle wiring
   const bind = (id, layer) => document.getElementById(id).onchange = e => {
@@ -1618,7 +1634,8 @@ const SPILL_PT_STYLE = (f) => {
   };
   bind('t-gpoiroads', layers.gpoiRoads);
   bind('t-gpoiregions', layers.gpoiRegions);
-  bind('t-gpoireassign', layers.gpoiReassign);
+  bind('t-gpoireassign50',  layers.gpoiReassign50);
+  bind('t-gpoireassign150', layers.gpoiReassign150);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
