@@ -95,31 +95,33 @@
     <input type="range" min="0" max="100" value="80" id="op-gpoi" class="slider">
     <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
       <label class="lay-hdr" style="margin:0">
-        <input type="checkbox" id="t-m3edges" checked>
-        <span style="color:#7f1d1d;font-weight:700">↳ Metro v3 corrections — full rules</span>
-        <span class="pill" style="background:#dcfce7;color:#15803d;border-color:#86efac">v3</span>
+        <input type="checkbox" id="t-m4edges" checked>
+        <span style="color:#7f1d1d;font-weight:700">↳ Metro v4 corrections — quality-preserving completion</span>
+        <span class="pill" style="background:#dcfce7;color:#15803d;border-color:#86efac">v4</span>
       </label>
       <div class="lay-meta" style="margin-top:4px">
-        All rules enforced: <b>chef-lieu 150 m protection</b> (Rule 1, ≥ 3 CONFIRMED corroboration) · <b>connectivity invariant</b> (Rule 2, isolated components repaired) · <b>equal-split frontier</b> (Rule 3, validated pilot) · <b>CONFIRM-only</b> POIs (Rule 4) · <b>in-scope completion</b> (Rule 5, every Cotonou+AC road assigned or flagged) · <b>graph-fragmentation repair</b> (Rule 6, water-aware bridge).<br>
-        Scope: <b>strictly Cotonou + Abomey-Calavi</b> commune polygons — outside roads never coloured.<br>
-        <b>Coverage</b>: Cotonou 15&nbsp;156 / 15&nbsp;336 (<b>98.8&nbsp;%</b>) · Abomey-Calavi 98&nbsp;236 / 99&nbsp;229 (<b>99.0&nbsp;%</b>) · 38&nbsp;094 OUT_OF_SCOPE excluded.<br>
-        <b>Invariants</b>: OWNER_DISCONNECTED = <b>0</b> ✓ · IN_SCOPE_UNCLAIMED = 1&nbsp;173 (all flagged MISSING_CHEF_LIEU_CANDIDATE, 151 components — for review, not silent).<br>
-        Details: <b>339</b> chef-lieu conflicts · <b>474</b> CONFIRM-eligible anchors · <b>1&nbsp;013</b> frontier midpoints · <b>37</b> graph bridges repaired · <b>12</b> multi-quartier review.
+        All previous rules + <b>graph-repair radius sweep</b> (Phase 1, tests 20/25/30/40 m; chose <b>20 m</b>) + <b>bridge-aware crossings</b> (OSM bridge=yes evidence) + <b>ANNEX_TO_EXISTING_QUARTIER</b> preference (Phase 2) + <b>TRUE_MISSING_ANCHOR vs GRAPH_FRAGMENTATION</b> separation (Phase 3). No Euclidean fallback, no one-hop foreign traversal.<br>
+        Scope: <b>strictly Cotonou + Abomey-Calavi</b>.<br>
+        <b>Coverage</b>: Cotonou 14&nbsp;849 / 15&nbsp;336 (<b>96.8&nbsp;%</b>) · Abomey-Calavi 96&nbsp;603 / 99&nbsp;229 (<b>97.4&nbsp;%</b>).<br>
+        <b>Invariants</b>: OWNER_DISCONNECTED = <b>0</b> ✓ · IN_SCOPE_UNCLAIMED = 3&nbsp;113 (all <b>86</b> residual components classified GRAPH_FRAGMENTATION_UNRECOVERED — no strong POI evidence for a truly-missing quartier).<br>
+        Details: <b>474</b> CONFIRM-eligible anchors · <b>339</b> chef-lieu conflicts · <b>69</b> bridges added at R=20 m · Phase 2 annexed <b>648</b> components + <b>71</b> equal-split + <b>8</b> narrowed-by-POI · <b>12</b> multi-review.
       </div>
-      <label class="lay-hdr" style="margin-top:6px"><input type="checkbox" id="t-m3mids" checked>
+      <label class="lay-hdr" style="margin-top:6px"><input type="checkbox" id="t-m4mids" checked>
         <span>↳ Frontier midpoints (white ring)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3conflict">
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4conflict">
         <span>↳ CHEF_LIEU_CONFLICT (light-red)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3isolated">
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4isolated">
         <span>↳ ISOLATED_ROAD_COMPONENT — repaired (cyan)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3multi">
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4multi">
         <span>↳ MULTI_QUARTIER_REVIEW (grey)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3missing">
-        <span>↳ MISSING_CHEF_LIEU_CANDIDATE (orange)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3anchors">
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4truemiss">
+        <span>↳ TRUE_MISSING_ANCHOR_REVIEW (red)</span></label>
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4frag">
+        <span>↳ GRAPH_FRAGMENTATION_UNRECOVERED (yellow)</span></label>
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4anchors">
         <span>↳ POI anchors (ELIGIBLE / NOT_ELIGIBLE)</span></label>
       <div class="lay-meta" style="margin-top:4px">
-        <small><i>Full report</i>: <a href="data/google_poi_metro_v3_report.md" target="_blank">markdown</a> · <a href="data/google_poi_metro_v3_per_quartier.csv" download>per-quartier CSV</a> · <a href="data/google_poi_metro_v3_per_pair.csv" download>per-pair CSV</a></small>
+        <small><i>Reports</i>: <a href="data/google_poi_metro_v4_report.md" target="_blank">full v4 report</a> · <a href="data/google_poi_metro_v4_repair_sweep_report.md" target="_blank">radius sweep</a> · <a href="data/google_poi_metro_v4_per_quartier.csv" download>per-quartier CSV</a> · <a href="data/google_poi_metro_v4_per_pair.csv" download>per-pair CSV</a></small>
       </div>
     </div>
   </div>
@@ -346,7 +348,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150, mkFrontierEdges, mkFrontierMids, mkFrontierAnchors, mkFrontierRings, metroEdges, metroMids, metroAmbig, metroMulti, metroAnchors, m2Edges, m2Mids, m2Conflict, m2Isolated, m2Multi, m2Unresolved, m2Anchors, m3Edges, m3Mids, m3Conflict, m3Isolated, m3Multi, m3Missing, m3Anchors] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150, mkFrontierEdges, mkFrontierMids, mkFrontierAnchors, mkFrontierRings, metroEdges, metroMids, metroAmbig, metroMulti, metroAnchors, m2Edges, m2Mids, m2Conflict, m2Isolated, m2Multi, m2Unresolved, m2Anchors, m3Edges, m3Mids, m3Conflict, m3Isolated, m3Multi, m3Missing, m3Anchors, m4Edges, m4Mids, m4Conflict, m4Isolated, m4Multi, m4TrueMiss, m4Frag, m4Anchors] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -428,6 +430,14 @@ async function init(){
     loadGeo('data/google_poi_metro_v3_multi_quartier_review.geojson').catch(()=>({features:[]})),
     loadGeo('data/google_poi_metro_v3_missing_chef_lieu.geojson').catch(()=>({features:[]})),
     loadGeo('data/google_poi_metro_v3_anchors.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_v4_edges.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_v4_frontier_midpoints.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_v4_chef_lieu_conflict.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_v4_isolated.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_v4_multi_quartier_review.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_v4_true_missing_anchor.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_v4_graph_fragmentation.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_v4_anchors.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -1533,6 +1543,93 @@ const SPILL_PT_STYLE = (f) => {
     }
   });
 
+  // ─── Metro v4 (quality-preserving completion, radius sweep) ────
+  const M4_EDGE_STYLE = M3_EDGE_STYLE;  // reuse v3 styling
+  layers.m4Edges = L.geoJSON(m4Edges, {
+    style: M4_EDGE_STYLE,
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>Metro v4 correction</b><br>`+
+        `<b>${escapeHtml(p.kind||'?')}</b><br>`+
+        (p.winner ? `winner: <b>${escapeHtml(p.winner)}</b><br>` : '')+
+        `length: ${p.length_m ?? '?'} m`
+      );
+    }
+  });
+  layers.m4Mids = L.geoJSON(m4Mids, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {radius:4,color:'#000',weight:1.5,fillColor:'#fff',fillOpacity:1}),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(`<b>Frontier midpoint</b><br>${escapeHtml(p.X)} ↔ ${escapeHtml(p.Y)}<br>${p.X_side_m} m · ${p.Y_side_m} m`);
+    }
+  });
+  layers.m4Conflict = L.geoJSON(m4Conflict, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {radius:6,color:'#7f1d1d',weight:2,fillColor:'#fca5a5',fillOpacity:0.9}),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>CHEF_LIEU_CONFLICT</b><br>`+
+        `attempted target: <b>${escapeHtml(p.attempted_target)}</b><br>`+
+        `protected: ${(p.protected_chef_lieux||[]).map(escapeHtml).join(', ')}<br>`+
+        `voters: ${p.n_voters} · required: ${p.required}`
+      );
+    }
+  });
+  layers.m4Isolated = L.geoJSON(m4Isolated, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {radius:6,color:'#164e63',weight:2,fillColor:'#22d3ee',fillOpacity:0.9}),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(`<b>ISOLATED · repaired</b><br>from: <b>${escapeHtml(p.quartier)}</b><br>`+
+                    `disposition: <b>${escapeHtml(p.disposition)}</b>`);
+    }
+  });
+  layers.m4Multi = L.geoJSON(m4Multi, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {radius:7,color:'#000',weight:2,fillColor:'#94a3b8',fillOpacity:0.95}),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(`<b>MULTI_QUARTIER_REVIEW</b><br>`+
+                    `eligible: ${(p.eligible_quartiers||[]).map(escapeHtml).join(', ')}<br>`+
+                    `component size: ${p.component_size}`);
+    }
+  });
+  layers.m4TrueMiss = L.geoJSON(m4TrueMiss, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {radius:8,color:'#7c2d12',weight:2.5,fillColor:'#ef4444',fillOpacity:0.92}),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>TRUE_MISSING_ANCHOR_REVIEW</b><br>`+
+        `commune: <b>${escapeHtml(p.commune||'?')}</b><br>`+
+        `component size: ${p.component_size} · nearest chef ${p.nearest_chef_dist_m} m<br>`+
+        `candidate quartier names: <b>${(p.candidate_missing_quartier_names||[]).map(escapeHtml).join(', ')}</b><br>`+
+        `POI evidence: ${JSON.stringify(p.poi_evidence_count||{})}`
+      );
+    }
+  });
+  layers.m4Frag = L.geoJSON(m4Frag, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {radius:5,color:'#78350f',weight:1.5,fillColor:'#fbbf24',fillOpacity:0.85}),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>GRAPH_FRAGMENTATION_UNRECOVERED</b><br>`+
+        `commune: <b>${escapeHtml(p.commune||'?')}</b><br>`+
+        `component size: ${p.component_size}<br>`+
+        `nearest chef: <b>${escapeHtml(p.nearest_chef_lieu||'?')}</b> at ${p.nearest_chef_dist_m} m`
+      );
+    }
+  });
+  layers.m4Anchors = L.geoJSON(m4Anchors, {
+    pointToLayer: (f, latlng) => {
+      const p = f.properties;
+      if (p.eligibility === 'ELIGIBLE') return L.circleMarker(latlng, {radius:3.5,color:'#14532d',weight:0.9,fillColor:p.target_color||'#22c55e',fillOpacity:0.9});
+      return L.circleMarker(latlng, {radius:2.8,color:'#7c2d12',weight:0.7,fillColor:'#fb923c',fillOpacity:0.65});
+    },
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(`<b>${escapeHtml(p.poi_name)}</b><br>matched: <b>${escapeHtml(p.matched_quartier||'?')}</b><br>eligibility: <b>${p.eligibility}</b>`);
+    }
+  });
+
   // Metro-wide anchor markers (VALID / INVALID) — light styling to handle 1677 points
   layers.metroAnchorPoints = L.geoJSON(metroAnchors, {
     pointToLayer: (f, latlng) => {
@@ -1718,6 +1815,14 @@ const SPILL_PT_STYLE = (f) => {
   if(isOn('t-m3multi'))    layers.m3Multi.addTo(map);
   if(isOn('t-m3missing'))  layers.m3Missing.addTo(map);
   if(isOn('t-m3anchors'))  layers.m3Anchors.addTo(map);
+  if(isOn('t-m4edges'))    layers.m4Edges.addTo(map);
+  if(isOn('t-m4mids'))     layers.m4Mids.addTo(map);
+  if(isOn('t-m4conflict')) layers.m4Conflict.addTo(map);
+  if(isOn('t-m4isolated')) layers.m4Isolated.addTo(map);
+  if(isOn('t-m4multi'))    layers.m4Multi.addTo(map);
+  if(isOn('t-m4truemiss')) layers.m4TrueMiss.addTo(map);
+  if(isOn('t-m4frag'))     layers.m4Frag.addTo(map);
+  if(isOn('t-m4anchors'))  layers.m4Anchors.addTo(map);
   // Legacy toggles (superseded layers). Their sidebar entries have been
   // removed; layer objects still exist in memory in case a future toggle
   // is re-added, but they won't be added to the map on load.
@@ -1789,6 +1894,14 @@ const SPILL_PT_STYLE = (f) => {
   bind('t-m3multi',    layers.m3Multi);
   bind('t-m3missing',  layers.m3Missing);
   bind('t-m3anchors',  layers.m3Anchors);
+  bind('t-m4edges',    layers.m4Edges);
+  bind('t-m4mids',     layers.m4Mids);
+  bind('t-m4conflict', layers.m4Conflict);
+  bind('t-m4isolated', layers.m4Isolated);
+  bind('t-m4multi',    layers.m4Multi);
+  bind('t-m4truemiss', layers.m4TrueMiss);
+  bind('t-m4frag',     layers.m4Frag);
+  bind('t-m4anchors',  layers.m4Anchors);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
