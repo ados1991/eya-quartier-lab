@@ -136,6 +136,32 @@
     </div>
     <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
       <label class="lay-hdr" style="margin:0">
+        <input type="checkbox" id="t-metromain" checked>
+        <span style="color:#7f1d1d;font-weight:700">↳ Google POI local road corrections — 150 m</span>
+        <span class="pill" style="background:#dcfce7;color:#15803d;border-color:#86efac">METRO</span>
+      </label>
+      <div class="lay-meta" style="margin-top:4px">
+        <b>Metro-wide generalisation</b> of the validated Mènontin↔Kouhounou pilot. Per-POI 150 m validation, per-quartier flood, equal-split at road-walk midpoints, water-barrier hard-stops.<br>
+        <b>753</b> valid / <b>924</b> invalid anchors · <b>11 351</b> corrected road segments (~675 km) · <b>58</b> corridors · <b>287</b> midpoints · <b>57</b> ambiguous · <b>68</b> multi-quartier · <b>27</b> barrier-blocked. Toggles below split by kind.
+      </div>
+      <label class="lay-hdr" style="margin-top:6px"><input type="checkbox" id="t-metrosplit" checked>
+        <span>↳ Equal-split frontier corridors</span></label>
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metromids" checked>
+        <span>↳ Frontier midpoints (white ring)</span></label>
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metroambig">
+        <span>↳ Ambiguous / unresolved (orange)</span></label>
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metromulti">
+        <span>↳ Multi-quartier frontiers (grey dashed)</span></label>
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metrobarrier">
+        <span>↳ Blocked by water barrier (blue dashed)</span></label>
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metroanchors">
+        <span>↳ POI anchors (VALID / INVALID)</span></label>
+      <div class="lay-meta" style="margin-top:4px">
+        <small><i>Full report</i>: <a href="data/google_poi_metro_report.md" target="_blank">markdown</a> · <a href="data/google_poi_metro_per_quartier.csv" download>per-quartier CSV</a> · <a href="data/google_poi_metro_per_pair.csv" download>per-pair CSV</a></small>
+      </div>
+    </div>
+    <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
+      <label class="lay-hdr" style="margin:0">
         <input type="checkbox" id="t-gpoiroads">
         <span style="color:#7f1d1d;font-weight:700">↳ territorial flood (superseded)</span>
       </label>
@@ -733,7 +759,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150, mkFrontierEdges, mkFrontierMids, mkFrontierAnchors, mkFrontierRings] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150, mkFrontierEdges, mkFrontierMids, mkFrontierAnchors, mkFrontierRings, metroEdges, metroMids, metroAmbig, metroMulti, metroAnchors] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -796,6 +822,11 @@ async function init(){
     loadGeo('data/menontin_kouhounou_frontier_midpoints.geojson').catch(()=>({features:[]})),
     loadGeo('data/menontin_kouhounou_frontier_anchors.geojson').catch(()=>({features:[]})),
     loadGeo('data/menontin_kouhounou_frontier_rings.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_edges.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_frontier_midpoints.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_ambiguous.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_multi_quartier.geojson').catch(()=>({features:[]})),
+    loadGeo('data/google_poi_metro_anchors.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -1565,6 +1596,131 @@ const SPILL_PT_STYLE = (f) => {
   // Composite layer group so the main sidebar checkbox toggles edges + midpoints together
   layers.mkFrontierMain = L.layerGroup([layers.mkFrontierEdges, layers.mkFrontierMids]);
 
+  // ─── Metro-wide Google POI corrections (150 m rule generalised) ───
+  const METRO_EDGE_STYLE = (f) => {
+    const p = f.properties;
+    switch (p.kind) {
+      case 'split_half':
+        return {color: p.color||'#666', weight: 3.5, opacity: 0.95, lineCap:'round'};
+      case 'single_owner':
+        return {color: p.color||'#666', weight: 2.8, opacity: 0.80, lineCap:'round'};
+      case 'ambiguous':
+        return {color: '#f97316', weight: 3, opacity: 0.85, dashArray: '4,3'};
+      case 'multi_quartier':
+        return {color: '#94a3b8', weight: 3, opacity: 0.80, dashArray: '2,4'};
+      case 'blocked_barrier':
+        return {color: '#0369a1', weight: 3, opacity: 0.55, dashArray: '6,2'};
+      case 'split_fallback':
+        return {color: p.color||'#666', weight: 2.5, opacity: 0.55};
+      default:
+        return {color: '#666', weight: 2, opacity: 0.5};
+    }
+  };
+  const metroEdgeFeatures = (metroEdges.features || []);
+  // Split into logical layers for independent sidebar toggling
+  const metroEdgeGroups = {
+    single: metroEdgeFeatures.filter(f => f.properties.kind === 'single_owner'),
+    equalSplit: metroEdgeFeatures.filter(f =>
+      f.properties.kind === 'split_half' || f.properties.kind === 'split_fallback'),
+    ambig: metroEdgeFeatures.filter(f => f.properties.kind === 'ambiguous'),
+    multi: metroEdgeFeatures.filter(f => f.properties.kind === 'multi_quartier'),
+    barrier: metroEdgeFeatures.filter(f => f.properties.kind === 'blocked_barrier'),
+  };
+  const makeMetroLayer = (feats) => L.geoJSON({type:'FeatureCollection', features: feats}, {
+    style: METRO_EDGE_STYLE,
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      const claims = p.u_claims || p.v_claims ? `<br>u_claims: ${(p.u_claims||[]).join(', ')}<br>v_claims: ${(p.v_claims||[]).join(', ')}` : '';
+      l.bindPopup(
+        `<b>${escapeHtml(p.kind||'?')}</b><br>`+
+        (p.winner ? `<b>winner</b>: ${escapeHtml(p.winner)}<br>` : '')+
+        `<b>length</b>: ${p.length_m ?? '?'} m`+
+        (p.split_t != null ? `<br>split t=${p.split_t}` : '')+
+        (p.reason ? `<br><i>${escapeHtml(p.reason)}</i>` : '')+
+        claims
+      );
+    }
+  });
+  layers.metroSingle    = makeMetroLayer(metroEdgeGroups.single);
+  layers.metroSplit     = makeMetroLayer(metroEdgeGroups.equalSplit);
+  layers.metroAmbig     = makeMetroLayer(metroEdgeGroups.ambig);
+  layers.metroMulti     = makeMetroLayer(metroEdgeGroups.multi);
+  layers.metroBarrier   = makeMetroLayer(metroEdgeGroups.barrier);
+  // metroMain = ONLY the single-owner corrections (the confirmed reassignments).
+  // metroSplit stays independent so the equal-split corridor toggle can render
+  // it separately without double-rendering.
+  layers.metroMain = layers.metroSingle;
+
+  // Midpoints (equal-split corridor midpoints)
+  layers.metroMidpoints = L.geoJSON(metroMids, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+      radius: 4, color: '#000', weight: 1.5, fillColor: '#fff', fillOpacity: 1,
+    }),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>Frontier midpoint</b><br>`+
+        `<b>${escapeHtml(p.X)}</b> ↔ <b>${escapeHtml(p.Y)}</b><br>`+
+        `edge length: ${p.edge_length_m} m<br>`+
+        `${escapeHtml(p.X)} side: ${p.X_side_m} m<br>`+
+        `${escapeHtml(p.Y)} side: ${p.Y_side_m} m<br>`+
+        `split t=${p.split_t}`
+      );
+    }
+  });
+
+  // Ambiguous points (isolated contested vertices)
+  layers.metroAmbigPoints = L.geoJSON(metroAmbig, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+      radius: 5, color: '#7c2d12', weight: 1.5, fillColor: '#f97316', fillOpacity: 0.9,
+    }),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>Ambiguous (isolated contested)</b><br>`+
+        `claims: ${(p.claims||[]).map(escapeHtml).join(', ')}<br>`+
+        `current owner: ${escapeHtml(p.current_owner||'?')}`
+      );
+    }
+  });
+
+  // Multi-quartier junction points (≥3 claimants)
+  layers.metroMultiPoints = L.geoJSON(metroMulti, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+      radius: 6, color: '#000', weight: 2, fillColor: '#94a3b8', fillOpacity: 0.9,
+    }),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>Multi-quartier junction</b> · ${p.n_claims} claimants<br>`+
+        `claims: ${(p.claims||[]).map(escapeHtml).join(', ')}<br>`+
+        `current owner: ${escapeHtml(p.current_owner||'?')}`
+      );
+    }
+  });
+
+  // Metro-wide anchor markers (VALID / INVALID) — light styling to handle 1677 points
+  layers.metroAnchorPoints = L.geoJSON(metroAnchors, {
+    pointToLayer: (f, latlng) => {
+      const p = f.properties;
+      if (p.status === 'INVALID') {
+        return L.circleMarker(latlng, {radius: 3, color: '#7c2d12', weight: 0.8,
+                                          fillColor: '#fb923c', fillOpacity: 0.75});
+      }
+      return L.circleMarker(latlng, {radius: 3.2, color: '#0b1f3b', weight: 0.8,
+                                       fillColor: p.target_color || '#666', fillOpacity: 0.85});
+    },
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>${escapeHtml(p.poi_name)}</b><br>`+
+        `<b>Matched</b>: ${escapeHtml(p.matched_quartier||'?')}<br>`+
+        `<b>Status</b>: <span style="color:${p.status === 'VALID' ? '#15803d' : '#c2410c'};font-weight:700">${p.status}</span> · ${escapeHtml(p.reason)}<br>`+
+        `seeds within 150 m: ${p.n_seeds} (X: ${p.n_X_seeds}) · reassignable: ${p.n_reassignable}`
+      );
+    }
+  });
+
   // ─── Territorial evidence regions (convex-hull polygons) ──────────
   const GPOI_REGION_STYLE = (f) => {
     const p = f.properties;
@@ -1712,6 +1868,13 @@ const SPILL_PT_STYLE = (f) => {
   if(document.getElementById('t-mkfrontier').checked)         layers.mkFrontierMain.addTo(map);
   if(document.getElementById('t-mkfrontieranchors').checked)  layers.mkFrontierAnchors.addTo(map);
   if(document.getElementById('t-mkfrontierrings').checked)    layers.mkFrontierRings.addTo(map);
+  if(document.getElementById('t-metromain').checked)    layers.metroMain.addTo(map);
+  if(document.getElementById('t-metrosplit').checked)   layers.metroSplit.addTo(map);
+  if(document.getElementById('t-metromids').checked)    layers.metroMidpoints.addTo(map);
+  if(document.getElementById('t-metroambig').checked)   layers.metroAmbigPoints.addTo(map);
+  if(document.getElementById('t-metromulti').checked)   layers.metroMultiPoints.addTo(map);
+  if(document.getElementById('t-metrobarrier').checked) layers.metroBarrier.addTo(map);
+  if(document.getElementById('t-metroanchors').checked) layers.metroAnchorPoints.addTo(map);
 
   // Toggle wiring
   const bind = (id, layer) => document.getElementById(id).onchange = e => {
@@ -1762,6 +1925,13 @@ const SPILL_PT_STYLE = (f) => {
   bind('t-mkfrontier',        layers.mkFrontierMain);
   bind('t-mkfrontieranchors', layers.mkFrontierAnchors);
   bind('t-mkfrontierrings',   layers.mkFrontierRings);
+  bind('t-metromain',    layers.metroMain);
+  bind('t-metrosplit',   layers.metroSplit);
+  bind('t-metromids',    layers.metroMidpoints);
+  bind('t-metroambig',   layers.metroAmbigPoints);
+  bind('t-metromulti',   layers.metroMultiPoints);
+  bind('t-metrobarrier', layers.metroBarrier);
+  bind('t-metroanchors', layers.metroAnchorPoints);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
