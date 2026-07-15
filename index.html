@@ -62,7 +62,7 @@
 </style></head><body>
 <div id="wrap"><div id="side">
   <h1>EYA · Quartier polygon lab<span class="pill">EXPERIMENTAL</span></h1>
-  <p class="lede">Side-by-side comparison of three draft-polygon strategies for the 310 quartiers of Cotonou + Abomey-Calavi. <b>None of these are authoritative.</b> Read <a href="README.md">README.md</a> for what each version means and known limitations.</p>
+  <p class="lede">Google-POI-driven road-ownership corrections proposal for the 310 quartiers of Cotonou + Abomey-Calavi. Base ownership is the water-aware 700 m-buffer road propagation from the IGN chef-lieux; the Metro v2 layer sits on top and shows automatic reassignments (with chef-lieu protection, connectivity invariant, and equal-split frontier rules). <b>None of these are authoritative.</b> Read <a href="README.md">README.md</a> for details.</p>
 
   <div class="lay" style="background:#fef3c7;border-color:#fcd34d;margin-top:10px">
     <label class="lay-hdr" style="cursor:default">
@@ -95,47 +95,6 @@
     <input type="range" min="0" max="100" value="80" id="op-gpoi" class="slider">
     <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
       <label class="lay-hdr" style="margin:0">
-        <span style="color:#7f1d1d;font-weight:700">↳ local reassignment — Mènontin pilot</span>
-        <span class="pill" style="background:#dbeafe;color:#1e40af;border-color:#93c5fd">PILOT</span>
-      </label>
-      <div class="lay-meta" style="margin-top:4px">
-        <b>Per-POI strict rule</b> — for each Mènontin POI: find OSM road vertices within R m; if any already owned by Mènontin → CONFIRMED, no change. Else Dijkstra from the seed through <i>{current owner, Mènontin, unclaimed}</i> vertices only until reaching Mènontin's existing network; reassign the minimum branch. Third-party quartiers are hard barriers.
-      </div>
-      <label class="lay-hdr" style="margin-top:6px">
-        <input type="checkbox" id="t-gpoireassign50" checked>
-        <span>R = 50 m</span>
-        <span style="color:#6b7280;font-size:10.5px">— 7 NEW · 5 ALREADY · 2 AMBIGUOUS · 23 verts · 1&nbsp;387 m road</span>
-      </label>
-      <label class="lay-hdr" style="margin-top:4px">
-        <input type="checkbox" id="t-gpoireassign150">
-        <span>R = 150 m</span>
-        <span style="color:#6b7280;font-size:10.5px">— 4 NEW · 10 ALREADY · 0 AMBIGUOUS · 52 verts · 4&nbsp;316 m road</span>
-      </label>
-      <div class="lay-meta" style="margin-top:6px">
-        <small><i>Toggle both to compare. Same visual: solid = interior branch, dashed = rim touching Mènontin's network. Only Kindonou + Agla-Petit-Château roads are ever taken; Agla-Les-Pylônes stays purple.</i></small>
-      </div>
-    </div>
-    <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
-      <label class="lay-hdr" style="margin:0">
-        <input type="checkbox" id="t-mkfrontier" checked>
-        <span style="color:#7f1d1d;font-weight:700">↳ Mènontin ↔ Kouhounou 150 m Equal-Split Frontier Pilot</span>
-        <span class="pill" style="background:#dbeafe;color:#1e40af;border-color:#93c5fd">PILOT</span>
-      </label>
-      <div class="lay-meta" style="margin-top:4px">
-        Per-POI 150 m validation → merged evidence groups → competitive contested-corridor detection → geometric split at road-walk midpoint.<br>
-        <b>Result</b>: 14/14 Mènontin + 6/7 Kouhounou anchors valid. 95 Mènontin verts + 85 Kouhounou verts claimable, <b>7 contested</b>. 6 edges split at midpoint (white-ringed markers). Only "kouhounou" raw label invalid (no connection). Corridor #0 = 84 m, all Mènontin-side.
-      </div>
-      <label class="lay-hdr" style="margin-top:6px">
-        <input type="checkbox" id="t-mkfrontieranchors">
-        <span>↳ show POI anchor markers</span>
-      </label>
-      <label class="lay-hdr" style="margin-top:4px">
-        <input type="checkbox" id="t-mkfrontierrings">
-        <span>↳ show 150 m debug rings</span>
-      </label>
-    </div>
-    <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
-      <label class="lay-hdr" style="margin:0">
         <input type="checkbox" id="t-m2edges" checked>
         <span style="color:#7f1d1d;font-weight:700">↳ Metro v2 corrections (protection + connectivity invariant)</span>
         <span class="pill" style="background:#dcfce7;color:#15803d;border-color:#86efac">v2</span>
@@ -160,441 +119,44 @@
         <small><i>Full report</i>: <a href="data/google_poi_metro_v2_report.md" target="_blank">markdown</a> · <a href="data/google_poi_metro_v2_per_quartier.csv" download>per-quartier CSV</a> · <a href="data/google_poi_metro_v2_per_pair.csv" download>per-pair CSV</a></small>
       </div>
     </div>
-    <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
-      <label class="lay-hdr" style="margin:0">
-        <input type="checkbox" id="t-metromain">
-        <span style="color:#7f1d1d;font-weight:700">↳ Metro v1 corrections (superseded)</span>
-      </label>
-      <div class="lay-meta" style="margin-top:4px">
-        Older metro pass — no chef-lieu protection, no connectivity invariant, all VALID anchors eligible. Kept for comparison, default off. 11&nbsp;351 segments (~675 km).
-      </div>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metrosplit">
-        <span>↳ v1 equal-split corridors</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metromids">
-        <span>↳ v1 frontier midpoints</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metroambig">
-        <span>↳ v1 ambiguous</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metromulti">
-        <span>↳ v1 multi-quartier</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metrobarrier">
-        <span>↳ v1 blocked by barrier</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-metroanchors">
-        <span>↳ v1 anchors</span></label>
-    </div>
-    <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
-      <label class="lay-hdr" style="margin:0">
-        <input type="checkbox" id="t-gpoiroads">
-        <span style="color:#7f1d1d;font-weight:700">↳ territorial flood (superseded)</span>
-      </label>
-      <div class="lay-meta" style="margin-top:4px">
-        Older cluster-flood approach — kept for comparison, default off. 4&nbsp;019 edges across 127 clusters.
-      </div>
-      <input type="range" min="0" max="100" value="85" id="op-gpoiroads" class="slider">
-    </div>
-    <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
-      <label class="lay-hdr" style="margin:0">
-        <input type="checkbox" id="t-gpoiregions">
-        <span style="color:#7f1d1d;font-weight:700">↳ evidence regions (hulls)</span>
-      </label>
-      <div class="lay-meta" style="margin-top:4px">
-        113 convex-hull polygons — one per POI cluster, tinted with the matched quartier's colour. Turn on to see each cluster's territorial claim at a glance without the roads.
-      </div>
-    </div>
   </div>
 
-  <h2>Polygon versions</h2>
-
-  <div class="lay" style="background:#eff6ff;border-color:#bfdbfe">
-    <label class="lay-hdr"><input type="checkbox" id="t-c50"><span class="lay-swatch" style="background:#2563eb"></span>circles 50 m (clean baseline)</label>
-    <div class="lay-meta">50 m radius disk around each IGN chef-lieu (311 centroids). No Dijkstra, no water mask, no POI seeding — pure geometric circles. Use this as the fresh starting point.</div>
-    <input type="range" min="0" max="100" value="55" id="op-c50" class="slider">
+  <h2>Base road ownership</h2>
+  <div class="lay" style="background:#f0fdf4;border-color:#bbf7d0">
+    <label class="lay-hdr"><input type="checkbox" id="t-competB700" checked><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 25%,#fbbf24 25%,#fbbf24 50%,#f97316 50%,#f97316 75%,#dc2626 75%);border:2px solid #052e16"></span><b>Road propagation — commune + 700 m spill-over</b> ✓</label>
+    <div class="lay-meta">Base ownership layer. Each road segment coloured by the competitive Dijkstra winner from the IGN chef-lieux. Commune-bounded with a 700 m buffer. 71 551 / 94 213 nodes claimed (75.9 %). This is the substrate the Metro v2 corrections sit on top of.</div>
+    <input type="range" min="0" max="100" value="85" id="op-competB700" class="slider">
   </div>
 
-  <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-v1"><span class="lay-swatch" style="background:#94a3b8"></span>v1 — pure Voronoi (baseline)</label>
-    <div class="lay-meta">Centroid-only nearest-seed partition. Ignores all topology.</div>
-    <input type="range" min="0" max="100" value="30" id="op-v1" class="slider">
-  </div>
-
-  <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-v2"><span class="lay-swatch" style="background:#fb923c"></span>v2 — Voronoi + arr-clipped</label>
-    <div class="lay-meta">Same as v1 but clipped to IGN arrondissement boundaries. Previous default.</div>
-    <input type="range" min="0" max="100" value="40" id="op-v2" class="slider">
-  </div>
-
-  <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-v3"><span class="lay-swatch" style="background:#0d9488"></span>v3 — topology-aware</label>
-    <div class="lay-meta">Multi-source Dijkstra on 100 m grid. Water = forbidden · roads = cheap · POIs named after a quartier act as additional seeds.</div>
-    <input type="range" min="0" max="100" value="40" id="op-v3" class="slider">
-  </div>
-
-  <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-v4"><span class="lay-swatch" style="background:#7c3aed"></span>v4 — asymmetric water-barrier (experimental)</label>
-    <div class="lay-meta">v3 + per-quartier "home land component(s)". Stepping into a component NOT in the quartier's home set costs +8. Bridges (incl. Pont MLK) reconnect land masses. POI evidence in another component adds it to the home set.</div>
-    <input type="range" min="0" max="100" value="50" id="op-v4" class="slider">
-  </div>
-
-  <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-v5"><span class="lay-swatch" style="background:#ea580c"></span>v5 — canal-side asymmetric barrier (experimental)</label>
-    <div class="lay-meta">v3 + per-quartier "home side" of each nearby canal/river/stream (>200 m). Stepping from home side into opposite side within 500 m of the polyline costs +25. POI evidence on the other bank flips that waterway to "both" (no penalty). Generic — not hardcoded.</div>
-    <input type="range" min="0" max="100" value="55" id="op-v5" class="slider">
-  </div>
-
-  <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-v5c"><span class="lay-swatch" style="background:#10b981"></span>v5 + corridor test (drain∩road veto only)</label>
-    <div class="lay-meta">v5 with a LOCAL fix to <code>rasterize_water()</code> applied <b>only</b> inside the bbox lat 6.370–6.400, lng 2.380–2.415. Inside the bbox: drain/ditch cells that share a 100 m raster cell with a road become claimable (the road wins). Outside the bbox: identical to v5. 33 cells freed; MIDÉDJI +11, TONATO +22, no losses.</div>
-    <input type="range" min="0" max="100" value="60" id="op-v5c" class="slider">
-  </div>
-
-  <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-v5c2"><span class="lay-swatch" style="background:#a16207"></span>v5 + corridor v2 (drain veto + seed nudge)</label>
-    <div class="lay-meta">Same bbox as v5c, plus a 2nd fix: when an IGN chef-lieu lands on a water cell (e.g. Yénawa-Fifadji whose chef-lieu sits on the canal), snap it to the nearest non-water cell within 200 m so the quartier gets a real seed. Result: YÉNAWA-FIFADJI 0→16 cells, MIDÉDJI 18→29, TONATO 36→58.</div>
-    <input type="range" min="0" max="100" value="65" id="op-v5c2" class="slider">
-  </div>
-
+  <h2>Ground truth (user-drawn)</h2>
   <div class="lay">
     <label class="lay-hdr"><input type="checkbox" id="t-user"><span class="lay-swatch" style="background:#fde68a;border:1.5px solid #0b1f3b"></span>User ground truth (drawn)</label>
-    <div class="lay-meta">The 4 polygons you traced on the live lab (POLYGON-1, MIDEDJI, MISSOGBE, GBENONKPO). Loaded from <code>data/eya_user_drawn_quartiers.geojson</code>. Toggle on to compare any of the algorithmic outputs against your interpretation.</div>
+    <div class="lay-meta">Polygons you traced manually via the Draw callout at top. Loaded from <code>data/eya_user_drawn_quartiers.geojson</code>.</div>
     <input type="range" min="0" max="100" value="50" id="op-user" class="slider">
-  </div>
-
-  <div class="lay">
-    <label class="lay-hdr"><input type="checkbox" id="t-disp"><span class="lay-swatch" style="background:#b91c1c"></span>v3 disputed strips</label>
-    <div class="lay-meta">Cells where 2nd-best owner's cost is close to best — fuzzy transition zones.</div>
-    <input type="range" min="0" max="100" value="45" id="op-disp" class="slider">
   </div>
 
   <h2>Reference layers</h2>
   <div class="lay"><label class="lay-hdr"><input type="checkbox" id="t-arr" checked><span class="lay-swatch" style="background:#0b1f3b"></span>arrondissement polygons</label>
     <div class="lay-meta">Cotonou 13 + Abomey-Calavi 9 (IGN-Bénin).</div></div>
   <div class="lay"><label class="lay-hdr"><input type="checkbox" id="t-ign" checked><span class="lay-swatch" style="background:#0d9488"></span>IGN chef-lieu points + names</label>
-    <div class="lay-meta">309 quartier centroids (RGPH register).</div></div>
+    <div class="lay-meta">309 quartier centroids (RGPH register). These anchor the chef-lieu 150 m protection zone of Rule 1.</div></div>
   <div class="lay"><label class="lay-hdr"><input type="checkbox" id="t-amen"><span class="lay-swatch" style="background:#7c3aed"></span>OSM amenities (churches, police, fuel, …)</label>
     <div class="lay-meta">2 662 categorised landmarks with names. Names visible at zoom ≥ 15.</div></div>
 
   <div class="lay" style="background:#eff6ff;border-color:#bfdbfe">
     <label class="lay-hdr"><input type="checkbox" id="t-wbod" checked><span class="lay-swatch" style="background:#1e3a8a"></span>water bodies (lagoon, ponds, basins)</label>
-    <div class="lay-meta">405 OSM polygons styled by kind: <span style="color:#1e3a8a">lake/lagoon</span>, <span style="color:#0e7490">reservoir</span>, <span style="color:#0369a1">basin</span>, <span style="color:#0284c7">pond</span>.</div>
+    <div class="lay-meta">405 OSM polygons — hard barriers for the Metro v2 correction algorithm.</div>
     <input type="range" min="0" max="100" value="55" id="op-wbod" class="slider">
   </div>
 
   <div class="lay" style="background:#eff6ff;border-color:#bfdbfe">
     <label class="lay-hdr"><input type="checkbox" id="t-wway" checked><span class="lay-swatch" style="background:#0369a1"></span>waterways (canals, rivers, streams)</label>
-    <div class="lay-meta">70 OSM lines styled by kind &amp; width: <span style="color:#1e3a8a">canal</span> (thick), <span style="color:#0369a1">river</span> (thick), <span style="color:#0284c7">stream</span> (medium), <span style="color:#7dd3fc">ditch</span> (dotted). Drains excluded (366 of them, too noisy).</div>
+    <div class="lay-meta">70 OSM lines — canal &amp; river act as hard barriers. Drains excluded per project rule.</div>
     <input type="range" min="0" max="100" value="70" id="op-wway" class="slider">
-  </div>
-
-  <h2>Diagnostics</h2>
-
-  <div class="lay" style="background:#f0fdf4;border-color:#bbf7d0;padding:6px">
-    <div style="font-weight:700;color:#065f46;font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding-bottom:4px">Road propagation (3 budgets · same graph)</div>
-    <div class="lay-meta" style="margin-bottom:6px">
-      Graph: <b>KDTree 15 m</b> (water-aware) + <b>roundabouts</b> + <b>dual-carriageway connectors</b> (40 m, water-aware). Stops at canal · river · stream · lagoon · basin (<i>drains & ditches do NOT stop</i>) or at a collision with another chef-lieu's propagation.
-    </div>
-
-    <label class="lay-hdr"><input type="checkbox" id="t-prop100"><span class="lay-swatch" style="background:#86efac"></span>Road propagation — 100 m</label>
-    <div class="lay-meta">GOOD 179 · PART 96 · BROK 3 · 0 collisions · coverage 98.6 %</div>
-    <input type="range" min="0" max="100" value="80" id="op-prop100" class="slider">
-
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-prop"><span class="lay-swatch" style="background:#34d399"></span><b>Road propagation — 200 m</b></label>
-    <div class="lay-meta">GOOD 93 · PART 200 · BROK 6 · <b>94 collisions</b> · 13 water stops · coverage 90.4 %</div>
-    <input type="range" min="0" max="100" value="80" id="op-prop" class="slider">
-
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-prop300"><span class="lay-swatch" style="background:#10b981"></span>Road propagation — 300 m</label>
-    <div class="lay-meta">GOOD 36 · PART 263 · BROK 6 · <b>433 collisions</b> · 19 water stops · coverage 83.1 %</div>
-    <input type="range" min="0" max="100" value="80" id="op-prop300" class="slider">
-
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-prop500"><span class="lay-swatch" style="background:#065f46"></span>Road propagation — 500 m</label>
-    <div class="lay-meta">GOOD 12 · PART 289 · BROK 6 · OFFR 2 · OSM 2 · coverage 77.8 % · 20 942 near ways</div>
-    <input type="range" min="0" max="100" value="80" id="op-prop500" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-ovr-off"><span class="lay-swatch" style="background:#dc2626"></span>Suspicious overreach — offenders</label>
-    <div class="lay-meta">
-      206 cases (asymmetry &gt; 0.5). Thick red line from the offender's chef-lieu to the collision point. Line opacity scales with asymmetry severity. Top offenders: <b>Cadjèhoun-Détinsa</b> (15×), <b>Akpakpa-Dodomè</b> (12×), <b>Misséssin / Hlouacomey</b> (10×).
-    </div>
-    <input type="range" min="0" max="100" value="70" id="op-ovr-off" class="slider">
-
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-ovr-vic"><span class="lay-swatch" style="background:#fb923c"></span>Suspicious overreach — victims</label>
-    <div class="lay-meta">
-      Thin orange line from the victim's chef-lieu to the collision (short — victim is close to its own territory but being intruded upon). Top victims: <b>Vodjè-Centre</b> (15×), <b>Ohé</b> (13×), <b>Missité</b> (8×).<br>
-      <i>Cause prevalence:</i> dual_carriageway_shortcut 88 (42.7 %) · graph_artifact_low_edges 24 · stronger_road_density 15 · centroid_badly_positioned 12 · <b>unattributed 109 (52.9 %)</b> → natural geometric asymmetry, not a graph bug.<br>
-      <a href="data/suspicious_overreach_summary.csv" download>CSV</a> ·
-      <a href="data/top_offender_quartiers.json" target="_blank">offenders</a> ·
-      <a href="data/top_victim_quartiers.json" target="_blank">victims</a>
-    </div>
-    <input type="range" min="0" max="100" value="70" id="op-ovr-vic" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-compet"><span class="lay-swatch" style="background:#16a34a;border:1.5px solid #052e16"></span><b>Road propagation — 300 m COMPETITIVE</b> (dept-bounded)</label>
-    <div class="lay-meta">
-      Same 300 m budget, true competitive (claim-time rendering) + <b>department-boundary hard stop</b> (Cotonou→Littoral, Abomey-Calavi→Atlantique). 301 polylines, 18 860 segments, 403 frontier points, 69 dept-boundary stops affecting 13 chiefs.<br>
-      <a href="data/competitive_road_propagation_300m.geojson" download>lines</a> ·
-      <a href="data/competitive_frontier_points_300m.geojson" download>frontier points</a>
-    </div>
-    <input type="range" min="0" max="100" value="85" id="op-compet" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competB700" checked><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 25%,#fbbf24 25%,#fbbf24 50%,#f97316 50%,#f97316 75%,#dc2626 75%);border:2px solid #052e16"></span><b>Road propagation — FULL COVERAGE (commune + 700 m spill-over)</b> ✓</label>
-    <div class="lay-meta">
-      <b>RECOMMENDED.</b> Commune-bounded with a <b>700 m buffer</b> — chosen because the still-empty cluster from issue7.jpg sits at median 565 m / max 705 m past the boundary. 800 m would not improve coverage (same 88 %), but adds 400 more spill-over claims elsewhere.<br>
-      Total claimed: <b>71 551 / 94 213 (75.9 %)</b> (+2 743 vs strict, +4.0 %).<br>
-      Spill-over claims: 3 176.  Commune-boundary stops: 200.<br>
-      <b>Issue7 bbox recovery</b>: 84 (32 %) → +500m 210 (79 %) → +700m <b>232 / 265 (88 %)</b>.<br>
-      <a href="data/competitive_road_propagation_commune_buf700_full.geojson" download>lines</a> ·
-      <a href="data/competitive_diag_commune_buf700_full.json" target="_blank">diagnostic</a>
-    </div>
-    <input type="range" min="0" max="100" value="85" id="op-competB700" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-spillaudit"><span class="lay-swatch" style="background:linear-gradient(90deg,#22c55e 33%,#fbbf24 33%,#fbbf24 66%,#dc2626 66%);border:1.5px solid #052e16"></span><b>700 m spill-over audit</b></label>
-    <div class="lay-meta">
-      Forensic audit of all 3 176 spill-over claims at 700 m buffer. Each point coloured by classification:<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#22c55e;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>USEFUL_GAP_FILL</b> 2 685 (84.5 %) — orphan zones (canal-trapped clusters)<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#86efac;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>USEFUL_CORRECTION</b> 475 (15.0 %) — closer than the strict-mode owner<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#fbbf24;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>BORDERLINE</b> 16 (0.5 %)<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>SUSPICIOUS_OVERREACH</b> <b>0</b> (none)<br>
-      <a href="data/spillover_700m.geojson" download>geojson</a> ·
-      <a href="data/spillover_summary_by_commune.csv" download>by-commune CSV</a> ·
-      <a href="data/spillover_top_owners.json" target="_blank">top owners</a> ·
-      <a href="data/spillover_suspicious_clusters.geojson" download>suspicious clusters (empty)</a>
-    </div>
-    <input type="range" min="0" max="100" value="70" id="op-spillaudit" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-gapaudit"><span class="lay-swatch" style="background:linear-gradient(90deg,#0B1F3B 20%,#2563eb 20%,#2563eb 40%,#52525b 40%,#52525b 60%,#dc2626 60%,#dc2626 80%,#fb923c 80%);border:1.5px solid #052e16"></span><b>Remaining gap audit (post-700 m)</b></label>
-    <div class="lay-meta">
-      <b>Final diagnostic</b> — only <b>730 nodes</b> remain unclaimed inside scope (commune + 700 m). <b>46 clusters</b> of ≥ 4 nodes covering 619 nodes / 20.6 km of road.<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#0B1F3B;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>Missing chef-lieu coverage</b> 9 clusters / 154 nodes (DATA)<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#2563eb;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>Water-isolated pocket</b> 20 / 287 (DATA — no bridge across)<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#52525b;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>OSM graph fragmentation</b> 11 / 96 (DATA — disconnected way)<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>Missing bridge crossing</b> 3 / 56 (ALGO — water-aware refused bridge)<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#fb923c;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>Unknown</b> 3 / 26<br>
-      <b>Verdict</b>: 86.8 % DATA · 9.0 % ALGO. Mostly data-quality. Propagation can stop tuning.<br>
-      <a href="data/remaining_gap_clusters.geojson" download>clusters</a> ·
-      <a href="data/remaining_gap_summary.csv" download>CSV</a> ·
-      <a href="data/remaining_gap_report.md" target="_blank">report</a>
-    </div>
-    <input type="range" min="0" max="100" value="80" id="op-gapaudit" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-resolution"><span class="lay-swatch" style="background:linear-gradient(90deg,#16a34a 20%,#dc2626 20%,#dc2626 40%,#7c3aed 40%,#7c3aed 60%,#0891b2 60%,#0891b2 80%,#94a3b8 80%);border:1.5px solid #052e16"></span><b>Resolution proposals (path to 0 unresolved)</b></label>
-    <div class="lay-meta">
-      Per-cluster disposition for every one of the 46 remaining gaps. Each cluster has exactly one of:<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#16a34a;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>ANNEX_TO_NEAREST_CHEF</b> 11 / 88 nodes — post-pass attribution<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>BRIDGE_CROSSING_REQUIRED</b> 3 / 56 — graph-build fix (whitelist bridge=yes)<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#0891b2;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>NEW_CHEF_LIEU_SEED</b> 18 / 379 — extend IGN chef-lieu list<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#fb923c;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>OSM_GRAPH_FIX</b> 1 / 4 — add connector in OSM<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#94a3b8;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>EXCLUDED_AREA</b> 13 / 92 — un-routable hinterland<br>
-      <b>Status</b>: ✓ 46/46 clusters resolved · 0 unresolved · ready for frontier skeleton.<br>
-      <a href="data/resolution_proposals.geojson" download>clusters</a> ·
-      <a href="data/resolution_proposals.csv" download>CSV</a> ·
-      <a href="data/resolution_report.md" target="_blank">report</a>
-    </div>
-    <input type="range" min="0" max="100" value="85" id="op-resolution" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-osmpoi"><span class="lay-swatch" style="background:linear-gradient(90deg,#16a34a 33%,#dc2626 33%,#dc2626 66%,#0891b2 66%);border:1.5px solid #052e16"></span><b>OSM POI evidence</b> <span style="color:#16a34a">(free, ODbL)</span></label>
-    <div class="lay-meta">
-      Per-POI matched evidence. Each named OSM amenity matched to a chef-lieu name + snapped to nearest road node + compared with that node's current owner.<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#16a34a;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> CONFIRM 76 · <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> DISPUTE 103 · <span style="display:inline-block;width:9px;height:9px;background:#0891b2;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> FILLS_GAP 4 · <span style="display:inline-block;width:9px;height:9px;background:#94a3b8;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> NO_NODE 6<br>
-      <b>Hit rate</b>: 189 / 2 353 (8.0 %)<br>
-      <a href="data/osm_poi_quartier_evidence.geojson" download>evidence</a> ·
-      <a href="data/osm_poi_quartier_evidence.csv" download>CSV</a> ·
-      <a href="data/osm_poi_quartier_report.md" target="_blank">report</a>
-    </div>
-    <input type="range" min="0" max="100" value="90" id="op-osmpoi" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-osmpoidisp"><span class="lay-swatch" style="background:linear-gradient(90deg,#7f1d1d 33%,#dc2626 33%,#dc2626 66%,#fb923c 66%);border:1.5px solid #052e16"></span><b>OSM POI dispute clusters</b> <span style="color:#16a34a">(free, ODbL)</span></label>
-    <div class="lay-meta">
-      Dispute clusters aggregated from the evidence. Single-link spatial clustering (eps 300 m). Confidence: HIGH ≥ 3 POIs voting same direction, MEDIUM = 2, LOW = 1.<br>
-      <span style="display:inline-block;width:11px;height:11px;background:#7f1d1d;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>HIGH</b> 0 — OSM density too low<br>
-      <span style="display:inline-block;width:8px;height:8px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>MEDIUM</b> 12 (7 non-conflicted = actionable corrections) <br>
-      <span style="display:inline-block;width:6px;height:6px;background:#fb923c;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>LOW</b> 68 — singletons, weak<br>
-      Each cluster's popup links to Google Maps at street zoom for visual review.<br>
-      <a href="data/osm_poi_quartier_disputes.geojson" download>disputes</a> ·
-      <a href="data/osm_poi_quartier_report.md" target="_blank">report</a>
-    </div>
-    <input type="range" min="0" max="100" value="95" id="op-osmpoidisp" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-osmcorr"><span class="lay-swatch" style="background:linear-gradient(90deg,#16a34a 50%,#dc2626 50%);border:1.5px solid #052e16"></span><b>POI correction signal</b> <span style="color:#16a34a">(metro-wide overlay, free, ODbL)</span></label>
-    <div class="lay-meta">
-      Per-claimed-node POI evidence overlay (radius 150 m). For every road graph node, gather all matched POIs nearby, take majority vote, compare with current propagation owner.<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#16a34a;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>AGREE</b> 203 (POI majority == current owner)<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>DISAGREE</b> 123 (candidate correction)<br>
-      Plus 71 225 nodes with no POI evidence at this OSM density.<br>
-      <a href="data/osm_poi_correction_signal.geojson" download>per-node signal</a> ·
-      <a href="data/osm_poi_correction_report.md" target="_blank">report</a>
-    </div>
-    <input type="range" min="0" max="100" value="85" id="op-osmcorr" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-osmcorrz"><span class="lay-swatch" style="background:linear-gradient(90deg,#7f1d1d 33%,#dc2626 33%,#dc2626 66%,#fb923c 66%);border:1.5px solid #052e16"></span><b>POI correction zones</b> <span style="color:#16a34a">(aggregated, free, ODbL)</span></label>
-    <div class="lay-meta">
-      DISAGREE nodes clustered into <b>correction zones</b> sharing the same proposed flip (from → to). Each zone's popup shows the proposed change + Google Maps link for visual verification.<br>
-      <span style="display:inline-block;width:11px;height:11px;background:#7f1d1d;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>HIGH</b> 20 zones (≥3 POIs + ≥2 nodes)<br>
-      <span style="display:inline-block;width:8px;height:8px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>MEDIUM</b> 47 zones (≥2 POIs)<br>
-      <span style="display:inline-block;width:6px;height:6px;background:#fb923c;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> <b>LOW</b> 12 zones (1 POI)<br>
-      <b>Total node flips</b>: 123 / 71 551 (0.17 %).<br>
-      <a href="data/osm_poi_correction_zones.geojson" download>zones</a> ·
-      <a href="data/osm_poi_correction_summary.json" target="_blank">summary</a>
-    </div>
-    <input type="range" min="0" max="100" value="95" id="op-osmcorrz" class="slider">
-
-    <label class="lay-hdr" style="margin-top:14px;border-top:1px solid #cbd5e1;padding-top:10px"><input type="checkbox" id="t-qevs"><span class="lay-swatch" style="background:linear-gradient(90deg,#86efac 20%,#fbbf24 40%,#f97316 70%,#dc2626);border:1.5px solid #052e16"></span><b>Quartier wrongness scorecard</b> <span style="color:#16a34a">(per-chef, ODbL)</span></label>
-    <div class="lay-meta">
-      Each chef-lieu coloured by <code>wrongness = (contradict_inside + claim_outside) / (support_inside + 1)</code>.<br>
-      <span style="display:inline-block;width:9px;height:9px;background:#86efac;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> &lt; 0.5 looks fine ·
-      <span style="display:inline-block;width:9px;height:9px;background:#fbbf24;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> 0.5–1.5 ·
-      <span style="display:inline-block;width:9px;height:9px;background:#f97316;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> 1.5–3 ·
-      <span style="display:inline-block;width:9px;height:9px;background:#dc2626;border:1px solid #052e16;border-radius:50%;vertical-align:middle"></span> &gt; 3 likely wrong<br>
-      Now colour-coded by failure mode: <span style="color:#dc2626"><b>red</b></span>=over-expanded (territory too large), <span style="color:#0891b2"><b>cyan</b></span>=under-claimed (territory too small), <span style="color:#7c3aed"><b>purple</b></span>=shifted (in the wrong place), <span style="color:#16a34a"><b>green</b></span>=looks fine.<br>
-      Aggregates: <b>22</b> chefs over-expansion≥0.5 · <b>15</b> under-claim≥0.5 · <b>12</b> shifted≥0.3.<br>
-      <a href="data/osm_qev_quartier_scorecard.csv" download>scorecard CSV</a> ·
-      <a href="data/osm_qev_evidence_report.md" target="_blank">full report</a> ·
-      <a href="data/osm_qev_review_workflow.html" target="_blank"><b>▶ open top-20 review workflow</b></a>
-    </div>
-    <input type="range" min="0" max="100" value="95" id="op-qevs" class="slider">
-
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-qevz"><span class="lay-swatch" style="background:linear-gradient(90deg,#7f1d1d 33%,#dc2626 33%,#dc2626 66%,#fb923c 66%);border:1.5px solid #052e16"></span><b>Territorial evidence zones</b> <span style="color:#16a34a">(ranked by road length, ODbL)</span></label>
-    <div class="lay-meta">
-      Disputed POIs clustered by (from → to) flip, ranked by <i>confidence</i> × <i>affected road length</i>. Click any zone → popup shows the proposed flip + supporting POI names + Google Maps link.<br>
-      Confidence in [0,1] = (1−e^(−POIs/3)) × (1−e^(−road_m/500)). Top zones at OSM density max at 0.45.<br>
-      <b>0</b> zones ≥ 0.50 · <b>4</b> zones 0.30–0.50 · <b>19</b> zones 0.15–0.30 · 71 weak<br>
-      Top 4: Kindonou→Mènontin 0.45 · Houèto→Togba_Maria-Gléta 0.33 · Fifonsi→Agori 0.31 · Ouéga-Tokpa→Togba_Maria-Gléta 0.31<br>
-      <a href="data/osm_qev_evidence_zones.geojson" download>zones</a> ·
-      <a href="data/osm_qev_evidence_summary.json" target="_blank">summary</a>
-    </div>
-    <input type="range" min="0" max="100" value="95" id="op-qevz" class="slider">
-
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-competB500"><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 33%,#fbbf24 33%,#fbbf24 66%,#f97316 66%);border:1.5px solid #052e16"></span>Road propagation — commune + 500 m spill-over (medium)</label>
-    <div class="lay-meta">
-      Less aggressive: 70 871 claimed (+2 063). Bbox: 210/265 (79 %).
-    </div>
-    <input type="range" min="0" max="100" value="75" id="op-competB500" class="slider">
-
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-competB300"><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 50%,#fbbf24 50%);border:1.5px solid #052e16"></span>Road propagation — commune + 300 m spill-over (tighter)</label>
-    <div class="lay-meta">
-      Same rule with smaller buffer. Total claimed: 70 136 (+1 328 vs strict). Bbox recovery: 84 → 165 of 265 (62 %).
-    </div>
-    <input type="range" min="0" max="100" value="75" id="op-competB300" class="slider">
-
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-competC"><span class="lay-swatch" style="background:linear-gradient(135deg,#16a34a 50%,#fbbf24 50%);border:1.5px solid #052e16"></span>Road propagation — strict commune (no spill-over)</label>
-    <div class="lay-meta">
-      <b>RECOMMENDED RULE.</b> Hard physical stop at the <b>commune</b> boundary (Cotonou commune for Cotonou chefs; Abomey-Calavi commune for AC chefs). Tighter than the dept rule — AC chefs no longer roam into Allada / Hêvié / Sô-Ava / Zè / Toffo. Mega-territories <b>eliminated</b>.<br>
-      Total claimed: <b>68 808 / 94 213 (73.0 %)</b> (vs 94.1 % dept-stop; the missing nodes are roads outside Cotonou/AC communes).<br>
-      Frontiers: <b>6 799</b>. Water-stops: 49. <b>Commune-boundary stops: 289</b> (47 chiefs blocked at boundary).<br>
-      Verification: 10 Cotonou claims outside Cotonou commune (boundary precision artifacts &lt;0.02 %); 6 AC claims outside AC.<br>
-      <b>Top 5 territories (now sensible, max 2 479):</b> Cococodji (2 479) · Togbin-Fandji (1 350) · Adovié (1 327) · Kansounkpa (1 280) · Akossavié (1 273).<br>
-      <a href="data/competitive_road_propagation_commune_full.geojson" download>lines</a> ·
-      <a href="data/competitive_frontier_points_commune_full.geojson" download>frontier points</a> ·
-      <a href="data/competitive_diag_commune_full.json" target="_blank">diagnostic</a>
-    </div>
-    <input type="range" min="0" max="100" value="85" id="op-competC" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competP"><span class="lay-swatch" style="background:linear-gradient(135deg,#0ea5e9 50%,#a3e635 50%);border:1.5px solid #052e16"></span>Road propagation — FULL COVERAGE (dept-PARTITIONED, superseded)</label>
-    <div class="lay-meta">
-      <b>NEW RULE</b>: Littoral/Atlantique boundary is a competition partition, not a physical stop. Roads connect freely across the border. <i>Littoral chefs compete only with Littoral; Atlantique only with Atlantique. No cross-dept collisions.</i><br>
-      Total claimed (union): <b>89 965 / 94 213 (95.5 %)</b>  (+1 297 vs physical-stop variant).<br>
-      Co-claimed by both depts (near-border roads): <b>86 128</b>.<br>
-      Same-dept frontiers: <b>7 778</b> (3 511 in Littoral, 4 267 in Atlantique).<br>
-      <b>Cross-dept collisions: 0</b> (rule eliminated the artificial border walls).<br>
-      Total walked segments: 175 495 (vs 88 302 physical-stop; +99 % — both depts walk overlapping border roads).<br>
-      <a href="data/competitive_road_propagation_partitioned_full.geojson" download>lines</a> ·
-      <a href="data/competitive_frontier_points_partitioned_full.geojson" download>frontier points</a> ·
-      <a href="data/competitive_diag_partitioned_full.json" target="_blank">diagnostic</a>
-    </div>
-    <input type="range" min="0" max="100" value="80" id="op-competP" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-competF"><span class="lay-swatch" style="background:linear-gradient(135deg,#022c22 50%,#fde047 50%);border:1.5px solid #052e16"></span>Road propagation — FULL COVERAGE (physical dept-stop, superseded)</label>
-    <div class="lay-meta">
-      Unlimited Dijkstra: each chef-lieu propagates until it hits major water, the department boundary, a road dead-end, or another chef-lieu's claimed network. <b>88 668 of 94 213 graph nodes claimed (94.1 %)</b>; 5 545 unclaimed (3 826 outside Littoral/Atlantique, 1 667 in unreached Atlantique sub-regions, 52 in unreached Littoral pockets).<br>
-      <b>7 040 frontier contact points</b> (vs 1 980 at 500 m — most pairs now fully meet).<br>
-      <b>161 dept-boundary stops</b> affecting 21 chiefs.  49 water stops.  0 end-of-budget stops (unlimited).<br>
-      <b>Largest territories</b> (Abomey-Calavi suburbs): Cococodji 5 984 nodes · Ahowégodo 4 244 · Wawata-Todja 3 342 · Djèkpota 2 322 · Anagbo 2 237.<br>
-      <b>Smallest (squeezed)</b>: 10 chef-lieus with only 1 claimed node (Cotonou 12ème/13ème central — each one surrounded by aggressive neighbours).<br>
-      <a href="data/competitive_road_propagation_full.geojson" download>lines</a> ·
-      <a href="data/competitive_frontier_points_full.geojson" download>frontier points</a> ·
-      <a href="data/competitive_diag_full.json" target="_blank">diagnostic JSON</a>
-    </div>
-    <input type="range" min="0" max="100" value="85" id="op-competF" class="slider">
-
-    <label class="lay-hdr" style="margin-top:8px"><input type="checkbox" id="t-compet500"><span class="lay-swatch" style="background:#14532d;border:1.5px solid #052e16"></span><b>Road propagation — 500 m COMPETITIVE</b> (dept-bounded)</label>
-    <div class="lay-meta">
-      500 m competitive + dept boundary. 301 polylines, 31 474 segments, <b>1 980 frontier points</b> (5× more than 300 m — most pairs now meet), 85 dept-boundary stops (14 chiefs). 2 water crossings (same as 300 m — boundary holds).<br>
-      Stop-reason markers: <span style="display:inline-block;width:9px;height:9px;background:#fde047;border:1px solid #000;border-radius:50%;vertical-align:middle"></span> contact frontier ·
-      <span style="display:inline-block;width:8px;height:8px;background:#7dd3fc;border:1px solid #0369a1;border-radius:50%;vertical-align:middle"></span> major water ·
-      <span style="display:inline-block;width:8px;height:8px;background:#ef4444;border:1.5px solid #7f1d1d;border-radius:50%;vertical-align:middle"></span> dept boundary ·
-      <span style="display:inline-block;width:7px;height:7px;background:#cbd5e1;border:1px solid #94a3b8;border-radius:50%;vertical-align:middle"></span> 500 m budget end<br>
-      <a href="data/competitive_road_propagation_500m.geojson" download>lines</a> ·
-      <a href="data/competitive_frontier_points_500m.geojson" download>frontier points</a> ·
-      <a href="data/audit_road_propagation_summary_500m.json" target="_blank">audit summary</a>
-    </div>
-    <input type="range" min="0" max="100" value="85" id="op-compet500" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-front"><span class="lay-swatch" style="background:linear-gradient(90deg,#9333ea,#ec4899,#f59e0b,#10b981)"></span><b>300 m frontier structures</b> (clustered)</label>
-    <div class="lay-meta">
-      665 raw collision nodes clustered into <b>376 frontier structures</b> (1.8× compression). Each pair's points within 60 m are merged. Shape classifier (PCA) splits clusters into:<br>
-      <span style="color:#10b981">━</span> <b>linear_corridor</b> 52  (longest: Nonhouénou ↔ Hlouacomey, 363 m)<br>
-      <span style="color:#f59e0b">●</span> <b>intersection</b> 71  ·
-      <span style="color:#ec4899">●</span> <b>point</b> 249  ·
-      <span style="color:#9333ea">●</span> <b>bridge</b> 4<br>
-      Most fragmented pair: Gbégamey-Gbagoudo ↔ Dagbédji-Sikê (20 collisions → 13 disjoint clusters — they meet on many different streets).<br>
-      <a href="data/frontier_clusters_300m.geojson" download>geojson</a> ·
-      <a href="data/frontier_clusters_300m.csv" download>CSV</a> ·
-      <a href="data/frontier_clusters_summary.json" target="_blank">summary</a>
-    </div>
-    <input type="range" min="0" max="100" value="75" id="op-front" class="slider">
-
-    <label class="lay-hdr" style="margin-top:10px"><input type="checkbox" id="t-coll300"><span class="lay-swatch" style="background:linear-gradient(135deg,#000 50%,#dc2626 50%)"></span>300 m raw collision nodes (per-graph-node)</label>
-    <div class="lay-meta">
-      665 collision nodes (every graph node any 2+ chef-lieus reach within 300 m). Classified into 5 buckets:<br>
-      <span style="display:inline-block;width:10px;height:10px;background:#fff;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle"></span> PLAUSIBLE_FRONTIER (404, 60.8 %)
-      <span style="display:inline-block;width:10px;height:10px;background:#dc2626;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle;margin-left:6px"></span> SUSPICIOUS_OVERREACH (206, 31.0 %)<br>
-      <span style="display:inline-block;width:11px;height:11px;background:#000;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle"></span> MULTI_QUARTIER (47, 7.1 %)
-      <span style="display:inline-block;width:10px;height:10px;background:#1e40af;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle;margin-left:6px"></span> WATER_CANAL_CONFLICT (0)
-      <span style="display:inline-block;width:9px;height:9px;background:#9ca3af;border:1px solid #0b1f3b;border-radius:50%;vertical-align:middle;margin-left:6px"></span> ROAD_GRAPH_ARTIFACT (8)<br>
-      <a href="data/collision_points_300m.geojson" download>geojson</a> ·
-      <a href="data/collision_report_300m.csv" download>CSV</a> ·
-      <a href="data/collision_summary_300m.json" target="_blank">summary</a>
-    </div>
-    <input type="range" min="0" max="100" value="80" id="op-coll300" class="slider">
-
-    <div class="lay-meta" style="margin-top:8px">
-      <span style="color:#dc2626">●</span> collision &nbsp;
-      <span style="color:#0369a1">●</span> major-water stop &nbsp;
-      <span style="color:#94a3b8">●</span> budget end &nbsp;
-      <span style="color:#6b7280;border:2px dashed #6b7280;padding:0 3px;background:#f1f5f9">○</span> off-road chef-lieu<br>
-      <a href="data/road_propagation_report.txt" target="_blank">200m report</a> ·
-      <a href="data/audit_road_propagation.csv" download>200m CSV</a> ·
-      <a href="data/audit_road_propagation_summary_100m.json" target="_blank">100m summary</a> ·
-      <a href="data/audit_road_propagation_summary.json" target="_blank">200m summary</a> ·
-      <a href="data/audit_road_propagation_summary_300m.json" target="_blank">300m summary</a> ·
-      <a href="data/audit_road_propagation_summary_prop300_at100.json" target="_blank">prop300@100m</a> ·
-      <a href="data/audit_road_propagation_summary_prop300_at200.json" target="_blank">prop300@200m</a>
-    </div>
-  </div>
-
-  <h2>Audit: IGN ↔ OSM discrepancy</h2>
-
-  <div class="lay" style="background:#fef2f2;border-color:#fecaca">
-    <label class="lay-hdr"><input type="checkbox" id="t-audit"><span class="lay-swatch" style="background:linear-gradient(90deg,#dc2626,#f59e0b,#eab308,#16a34a)"></span>discrepancy lines (IGN → OSM cluster)</label>
-    <div class="lay-meta">
-      311 quartiers audited. For each, the nearest same-name OSM POI cluster centroid was computed; a line connects the IGN chef-lieu to that cluster. Color = severity bucket:<br>
-      <span style="color:#dc2626;font-weight:700">■ severe (&gt;700 m, 22)</span>
-      &nbsp;<span style="color:#f59e0b;font-weight:700">■ suspicious (300–700 m, 42)</span><br>
-      <span style="color:#eab308;font-weight:700">■ minor (100–300 m, 10)</span>
-      &nbsp;<span style="color:#16a34a;font-weight:700">■ normal (≤100 m, 4)</span>
-      &nbsp;<span style="color:#94a3b8;font-weight:700">○ no OSM POI match (231)</span><br>
-      <a href="data/audit_centroid_discrepancy.csv" download>CSV report</a> ·
-      <a href="data/audit_top50_worst.txt" target="_blank">top-50 worst</a> ·
-      <a href="data/audit_centroid_discrepancy_summary.json" target="_blank">per-arr summary</a>
-    </div>
-    <input type="range" min="0" max="100" value="55" id="op-audit" class="slider">
   </div>
 
   <h2>Base map</h2>
   <div class="lay lay-meta" id="base-info">B&W (Carto Positron, grayscale-filtered). Switch in the top-right layer control.</div>
-
-  <h2>Confidence legend (v2 only)</h2>
-  <div class="legend">
-    <div><span class="sw" style="background:#22c55e"></span>osm_polygon — real OSM admin_level=8</div>
-    <div><span class="sw" style="background:#22c55e"></span>high — 2+ secondary anchors within 300 m of IGN seed</div>
-    <div><span class="sw" style="background:#fb923c"></span>medium — 1+ secondary anchor within 500 m</div>
-    <div><span class="sw" style="background:#fca5a5"></span>low — only IGN seed</div>
-  </div>
 
   <div class="footer">
     Data © OpenStreetMap contributors (ODbL) · IGN-Bénin · INStaD RGPH<br>
@@ -1996,48 +1558,43 @@ const SPILL_PT_STYLE = (f) => {
   };
   map.on('zoomend', updateGpoiLabels);
 
-  // Default-add the ones the checkboxes say "checked"
-  // Water layers added FIRST so they sit visually under the polygon layers.
-  if(document.getElementById('t-wbod').checked) layers.wbod.addTo(map);
-  if(document.getElementById('t-wway').checked) layers.wway.addTo(map);
-  if(document.getElementById('t-c50').checked) layers.c50.addTo(map);
-  if(document.getElementById('t-prop').checked) layers.prop.addTo(map);
-  if(document.getElementById('t-prop100') && document.getElementById('t-prop100').checked) layers.prop100.addTo(map);
-  if(document.getElementById('t-prop300') && document.getElementById('t-prop300').checked) layers.prop300.addTo(map);
-  if(document.getElementById('t-front') && document.getElementById('t-front').checked) layers.front.addTo(map);
-  if(document.getElementById('t-competB500') && document.getElementById('t-competB500').checked) layers.competB5.addTo(map);
-  if(document.getElementById('t-competB700') && document.getElementById('t-competB700').checked) layers.competB7.addTo(map);
-  if(document.getElementById('t-v2').checked) layers.v2.addTo(map);
-  if(document.getElementById('t-v3').checked) layers.v3.addTo(map);
-  if(document.getElementById('t-disp').checked) layers.disp.addTo(map);
-  if(document.getElementById('t-arr').checked) layers.arr.addTo(map);
-  if(document.getElementById('t-ign').checked) layers.ign.addTo(map);
-  if(document.getElementById('t-gpoi').checked) { layers.gpoi.addTo(map); updateGpoiLabels(); }
-  if(document.getElementById('t-gpoiroads').checked) layers.gpoiRoads.addTo(map);
-  if(document.getElementById('t-gpoireassign50').checked)  layers.gpoiReassign50.addTo(map);
-  if(document.getElementById('t-gpoireassign150').checked) layers.gpoiReassign150.addTo(map);
-  if(document.getElementById('t-mkfrontier').checked)         layers.mkFrontierMain.addTo(map);
-  if(document.getElementById('t-mkfrontieranchors').checked)  layers.mkFrontierAnchors.addTo(map);
-  if(document.getElementById('t-mkfrontierrings').checked)    layers.mkFrontierRings.addTo(map);
-  if(document.getElementById('t-metromain').checked)    layers.metroMain.addTo(map);
-  if(document.getElementById('t-metrosplit').checked)   layers.metroSplit.addTo(map);
-  if(document.getElementById('t-metromids').checked)    layers.metroMidpoints.addTo(map);
-  if(document.getElementById('t-metroambig').checked)   layers.metroAmbigPoints.addTo(map);
-  if(document.getElementById('t-metromulti').checked)   layers.metroMultiPoints.addTo(map);
-  if(document.getElementById('t-metrobarrier').checked) layers.metroBarrier.addTo(map);
-  if(document.getElementById('t-metroanchors').checked) layers.metroAnchorPoints.addTo(map);
-  if(document.getElementById('t-m2edges').checked)      layers.m2Edges.addTo(map);
-  if(document.getElementById('t-m2mids').checked)       layers.m2Mids.addTo(map);
-  if(document.getElementById('t-m2conflict').checked)   layers.m2Conflict.addTo(map);
-  if(document.getElementById('t-m2isolated').checked)   layers.m2Isolated.addTo(map);
-  if(document.getElementById('t-m2multi').checked)      layers.m2Multi.addTo(map);
-  if(document.getElementById('t-m2unresolved').checked) layers.m2Unresolved.addTo(map);
-  if(document.getElementById('t-m2anchors').checked)    layers.m2Anchors.addTo(map);
-
-  // Toggle wiring
-  const bind = (id, layer) => document.getElementById(id).onchange = e => {
-    if(e.target.checked) layer.addTo(map); else map.removeLayer(layer);
+  // Toggle helpers — null-tolerant so removing a sidebar entry doesn't crash.
+  const bind = (id, layer) => {
+    const el = document.getElementById(id);
+    if (!el || !layer) return;
+    el.onchange = e => {
+      if (e.target.checked) layer.addTo(map); else map.removeLayer(layer);
+    };
   };
+  const isOn = (id) => {
+    const el = document.getElementById(id);
+    return !!(el && el.checked);
+  };
+
+  // Default-add layers whose sidebar checkbox is checked.
+  // Water & recommended base propagation added FIRST so they sit visually
+  // under the correction overlays. isOn() is null-safe — layers whose
+  // sidebar entry has been removed silently stay off.
+  if(isOn('t-wbod')) layers.wbod.addTo(map);
+  if(isOn('t-wway')) layers.wway.addTo(map);
+  if(isOn('t-competB700')) layers.competB7.addTo(map);
+  if(isOn('t-arr')) layers.arr.addTo(map);
+  if(isOn('t-ign')) layers.ign.addTo(map);
+  if(isOn('t-amen')) layers.amen.addTo(map);
+  if(isOn('t-user')) layers.user.addTo(map);
+  if(isOn('t-gpoi')) { layers.gpoi.addTo(map); updateGpoiLabels(); }
+  if(isOn('t-m2edges'))      layers.m2Edges.addTo(map);
+  if(isOn('t-m2mids'))       layers.m2Mids.addTo(map);
+  if(isOn('t-m2conflict'))   layers.m2Conflict.addTo(map);
+  if(isOn('t-m2isolated'))   layers.m2Isolated.addTo(map);
+  if(isOn('t-m2multi'))      layers.m2Multi.addTo(map);
+  if(isOn('t-m2unresolved')) layers.m2Unresolved.addTo(map);
+  if(isOn('t-m2anchors'))    layers.m2Anchors.addTo(map);
+  // Legacy toggles (superseded layers). Their sidebar entries have been
+  // removed; layer objects still exist in memory in case a future toggle
+  // is re-added, but they won't be added to the map on load.
+
+  // (bind + isOn helpers hoisted above the default-add block)
   bind('t-c50', layers.c50);
   bind('t-v1', layers.v1); bind('t-v2', layers.v2); bind('t-v3', layers.v3);
   bind('t-v4', layers.v4); bind('t-v5', layers.v5);
@@ -2109,6 +1666,7 @@ const SPILL_PT_STYLE = (f) => {
   }
   function wireOp(id, layer, base){
     const el = document.getElementById(id);
+    if (!el || !layer) return;
     el.oninput = () => setOpacity(layer, base, el.value/40);    // 40 = "neutral" preserves built-in opacity
   }
   wireOp('op-v1', layers.v1, V1_STYLE);
@@ -2124,6 +1682,7 @@ const SPILL_PT_STYLE = (f) => {
   // Water-overlay opacity (apply uniformly to all features)
   const wireWater = (id, layer, baseFn) => {
     const el = document.getElementById(id);
+    if (!el || !layer) return;
     el.oninput = () => {
       const op = el.value / 70;
       layer.eachLayer(l => {
