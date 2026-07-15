@@ -117,6 +117,25 @@
     </div>
     <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
       <label class="lay-hdr" style="margin:0">
+        <input type="checkbox" id="t-mkfrontier" checked>
+        <span style="color:#7f1d1d;font-weight:700">↳ Mènontin ↔ Kouhounou 150 m Equal-Split Frontier Pilot</span>
+        <span class="pill" style="background:#dbeafe;color:#1e40af;border-color:#93c5fd">PILOT</span>
+      </label>
+      <div class="lay-meta" style="margin-top:4px">
+        Per-POI 150 m validation → merged evidence groups → competitive contested-corridor detection → geometric split at road-walk midpoint.<br>
+        <b>Result</b>: 14/14 Mènontin + 6/7 Kouhounou anchors valid. 95 Mènontin verts + 85 Kouhounou verts claimable, <b>7 contested</b>. 6 edges split at midpoint (white-ringed markers). Only "kouhounou" raw label invalid (no connection). Corridor #0 = 84 m, all Mènontin-side.
+      </div>
+      <label class="lay-hdr" style="margin-top:6px">
+        <input type="checkbox" id="t-mkfrontieranchors">
+        <span>↳ show POI anchor markers</span>
+      </label>
+      <label class="lay-hdr" style="margin-top:4px">
+        <input type="checkbox" id="t-mkfrontierrings">
+        <span>↳ show 150 m debug rings</span>
+      </label>
+    </div>
+    <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
+      <label class="lay-hdr" style="margin:0">
         <input type="checkbox" id="t-gpoiroads">
         <span style="color:#7f1d1d;font-weight:700">↳ territorial flood (superseded)</span>
       </label>
@@ -714,7 +733,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150, mkFrontierEdges, mkFrontierMids, mkFrontierAnchors, mkFrontierRings] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -773,6 +792,10 @@ async function init(){
     loadGeo('data/google_poi_territorial_regions.geojson').catch(()=>({features:[]})),
     loadGeo('data/google_poi_local_reassign_r50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/google_poi_local_reassign_r150m.geojson').catch(()=>({features:[]})),
+    loadGeo('data/menontin_kouhounou_frontier_edges.geojson').catch(()=>({features:[]})),
+    loadGeo('data/menontin_kouhounou_frontier_midpoints.geojson').catch(()=>({features:[]})),
+    loadGeo('data/menontin_kouhounou_frontier_anchors.geojson').catch(()=>({features:[]})),
+    loadGeo('data/menontin_kouhounou_frontier_rings.geojson').catch(()=>({features:[]})),
   ]);
 
   // Road-propagation lines + points (single grouped layer for the toggle)
@@ -1445,6 +1468,103 @@ const SPILL_PT_STYLE = (f) => {
   layers.gpoiReassign50  = makeReassignLayer(gpoiReassign50, 50);
   layers.gpoiReassign150 = makeReassignLayer(gpoiReassign150, 150);
 
+  // ─── Mènontin ↔ Kouhounou 150 m Equal-Split Frontier Pilot ────────
+  const MK_EDGE_STYLE = (f) => {
+    const p = f.properties;
+    return {
+      color: p.color || '#94a3b8',
+      weight: p.kind === 'split_half' ? 5 : 4,
+      opacity: p.kind === 'split_half' ? 1.0 : 0.85,
+      dashArray: p.kind === 'single_owner_fallback' ? '4,3' : null,
+      lineCap: 'round',
+    };
+  };
+  layers.mkFrontierEdges = L.geoJSON(mkFrontierEdges, {
+    style: MK_EDGE_STYLE,
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      const distLine = (typeof p.d_M_u === 'number')
+        ? `d_M(u)=${p.d_M_u?.toFixed?.(1)||'?'} · d_K(u)=${p.d_K_u?.toFixed?.(1)||'?'}<br>`+
+          `d_M(v)=${p.d_M_v?.toFixed?.(1)||'?'} · d_K(v)=${p.d_K_v?.toFixed?.(1)||'?'}<br>`
+        : '';
+      l.bindPopup(
+        `<b>Frontier pilot edge</b> — ${escapeHtml(p.kind||'?')}<br>`+
+        `<b>Winner</b>: <span style="color:${p.color||'#333'}">${escapeHtml(p.winner||'?')}</span><br>`+
+        `<b>Length</b>: ${p.length_m ?? '?'} m<br>`+
+        (p.split_t != null ? `<b>Split t</b>: ${p.split_t}<br>` : '') + distLine +
+        (p.current_owner_u ? `current at u: ${escapeHtml(p.current_owner_u)}<br>` : '') +
+        (p.current_owner_v ? `current at v: ${escapeHtml(p.current_owner_v)}` : '')
+      );
+    }
+  });
+
+  // Midpoint markers — bold black-and-white ring
+  layers.mkFrontierMids = L.geoJSON(mkFrontierMids, {
+    pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+      radius: 5, color: '#000', weight: 2, fillColor: '#fff', fillOpacity: 1,
+    }),
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindPopup(
+        `<b>Frontier midpoint</b><br>`+
+        `edge length: <b>${p.edge_length_m} m</b><br>`+
+        `Mènontin side: <b>${p.menontin_side_m} m</b><br>`+
+        `Kouhounou side: <b>${p.kouhounou_side_m} m</b><br>`+
+        `split at t=${p.split_t}<br>`+
+        `<small>d_M(u)=${p.d_M_u} · d_K(u)=${p.d_K_u}<br>`+
+        `d_M(v)=${p.d_M_v} · d_K(v)=${p.d_K_v}</small>`
+      );
+    }
+  });
+
+  // POI anchors with VALID / INVALID markers
+  layers.mkFrontierAnchors = L.geoJSON(mkFrontierAnchors, {
+    pointToLayer: (f, latlng) => {
+      const p = f.properties;
+      if (p.status === 'INVALID') {
+        return L.circleMarker(latlng, {radius: 6, color: '#7c2d12', weight: 2,
+                                          fillColor: '#f97316', fillOpacity: 0.9});
+      }
+      return L.circleMarker(latlng, {radius: 5, color: '#0b1f3b', weight: 1.5,
+                                       fillColor: p.target_color || '#666',
+                                       fillOpacity: 0.92});
+    },
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      const pathsHtml = (p.paths||[]).map(pp =>
+        `<li>via ${escapeHtml(pp.Y_name)} (${pp.cost_m} m)</li>`).join('');
+      l.bindPopup(
+        `<b>${escapeHtml(p.poi_name)}</b><br>`+
+        `<b>Matched</b>: ${escapeHtml(p.matched_quartier)}<br>`+
+        `<b>Status</b>: <span style="color:${p.status === 'VALID' ? '#15803d' : '#c2410c'};font-weight:700">${p.status}</span> · ${escapeHtml(p.reason)}<br>`+
+        `seeds within 150 m: ${p.n_seeds} (X-owned: ${p.n_X_seeds}) · reassignable: ${p.n_reassignable}<br>`+
+        (pathsHtml ? `<details><summary>connection paths</summary><ul style="margin:4px 0 0 16px">${pathsHtml}</ul></details>` : '')
+      );
+    }
+  });
+
+  // 150 m debug rings (polygon approximation)
+  layers.mkFrontierRings = L.geoJSON(mkFrontierRings, {
+    style: (f) => {
+      const p = f.properties;
+      const invalid = p.status === 'INVALID';
+      return {
+        color: invalid ? '#f97316' : (p.target_color || '#666'),
+        weight: 1, opacity: 0.6,
+        fillColor: invalid ? '#f97316' : (p.target_color || '#666'),
+        fillOpacity: 0.06,
+        dashArray: '2,3',
+      };
+    },
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      l.bindTooltip(`${escapeHtml(p.poi_name)} · ${escapeHtml(p.matched_quartier)} · 150 m`, {sticky:true});
+    }
+  });
+
+  // Composite layer group so the main sidebar checkbox toggles edges + midpoints together
+  layers.mkFrontierMain = L.layerGroup([layers.mkFrontierEdges, layers.mkFrontierMids]);
+
   // ─── Territorial evidence regions (convex-hull polygons) ──────────
   const GPOI_REGION_STYLE = (f) => {
     const p = f.properties;
@@ -1589,6 +1709,9 @@ const SPILL_PT_STYLE = (f) => {
   if(document.getElementById('t-gpoiroads').checked) layers.gpoiRoads.addTo(map);
   if(document.getElementById('t-gpoireassign50').checked)  layers.gpoiReassign50.addTo(map);
   if(document.getElementById('t-gpoireassign150').checked) layers.gpoiReassign150.addTo(map);
+  if(document.getElementById('t-mkfrontier').checked)         layers.mkFrontierMain.addTo(map);
+  if(document.getElementById('t-mkfrontieranchors').checked)  layers.mkFrontierAnchors.addTo(map);
+  if(document.getElementById('t-mkfrontierrings').checked)    layers.mkFrontierRings.addTo(map);
 
   // Toggle wiring
   const bind = (id, layer) => document.getElementById(id).onchange = e => {
@@ -1636,6 +1759,9 @@ const SPILL_PT_STYLE = (f) => {
   bind('t-gpoiregions', layers.gpoiRegions);
   bind('t-gpoireassign50',  layers.gpoiReassign50);
   bind('t-gpoireassign150', layers.gpoiReassign150);
+  bind('t-mkfrontier',        layers.mkFrontierMain);
+  bind('t-mkfrontieranchors', layers.mkFrontierAnchors);
+  bind('t-mkfrontierrings',   layers.mkFrontierRings);
 
   // Opacity sliders
   function setOpacity(layer, baseStyle, op){
