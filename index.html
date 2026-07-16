@@ -124,6 +124,24 @@
     </div>
   </div>
 
+  <h2>Draft Quartier Polygons</h2>
+  <div class="lay" style="background:#dcfce7;border-color:#86efac">
+    <label class="lay-hdr">
+      <input type="checkbox" id="t-draftpoly" checked>
+      <span style="color:#166534;font-weight:700">📐 Draft Quartier Polygons</span>
+      <span class="pill" style="background:#fde68a;color:#78350f;border-color:#facc15">PROD v1</span>
+    </label>
+    <div class="lay-meta">
+      First production-quality polygon draft, one per quartier. Built from the current 1000 m validated propagation via Voronoi tessellation over IGN chef-lieux, intersected with a 45 m road-buffer + commune polygon, simplified (8 m Douglas-Peucker), holes &lt; 500 m² filled, slivers &lt; 200 m² dropped.<br>
+      <b>296 polygons</b> · <b>233 HIGH</b> confidence · <b>63 LOW</b> confidence (red outline, dashed).<br>
+      Cotonou 155 · Abomey-Calavi 141. Click a polygon for full diagnostics.
+    </div>
+    <input type="range" min="0" max="100" value="50" id="op-draftpoly" class="slider">
+    <div class="lay-meta" style="margin-top:6px">
+      <small><i>Downloads</i>: <a href="data/draft_quartier_polygons_prod.geojson" download>full geojson</a> · <a href="data/draft_quartier_polygons_prod_simplified.geojson" download>simplified</a> · <a href="data/draft_quartier_polygons_prod_per_quartier.csv" download>per-quartier CSV</a> · <a href="data/draft_quartier_polygons_prod_report.md" target="_blank">QA report</a></small>
+    </div>
+  </div>
+
   <h2>Base road ownership</h2>
   <div class="lay" style="background:#f0fdf4;border-color:#bbf7d0">
     <label class="lay-hdr"><input type="checkbox" id="t-competB1000" checked><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 25%,#fbbf24 25%,#fbbf24 50%,#f97316 50%,#f97316 75%,#dc2626 75%);border:2px solid #052e16"></span><b>Road propagation — commune + 1000 m spill-over</b> <span class="pill" style="background:#dbeafe;color:#1e40af;border-color:#93c5fd">NEW</span></label>
@@ -346,12 +364,17 @@ async function loadGeo(url){
   return r.json();
 }
 
+function escapeHtml(s){
+  return (s==null?'':String(s)).replace(/[&<>"']/g, ch =>
+    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+}
+
 async function init(){
   // Polygons + water overlays + audit + road-propagation (3 budgets) + 300m collisions + overreach + frontiers
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, competLB10, competPB10, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150, mkFrontierEdges, mkFrontierMids, mkFrontierAnchors, mkFrontierRings, metroEdges, metroMids, metroAmbig, metroMulti, metroAnchors, m2Edges, m2Mids, m2Conflict, m2Isolated, m2Multi, m2Unresolved, m2Anchors, m3Edges, m3Mids, m3Conflict, m3Isolated, m3Multi, m3Missing, m3Anchors, m4Edges, m4Mids, m4Conflict, m4Isolated, m4Multi, m4TrueMiss, m4Frag, m4Anchors] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, competLB10, competPB10, draftPolys, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150, mkFrontierEdges, mkFrontierMids, mkFrontierAnchors, mkFrontierRings, metroEdges, metroMids, metroAmbig, metroMulti, metroAnchors, m2Edges, m2Mids, m2Conflict, m2Isolated, m2Multi, m2Unresolved, m2Anchors, m3Edges, m3Mids, m3Conflict, m3Isolated, m3Multi, m3Missing, m3Anchors, m4Edges, m4Mids, m4Conflict, m4Isolated, m4Multi, m4TrueMiss, m4Frag, m4Anchors] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -398,6 +421,7 @@ async function init(){
     loadGeo('data/competitive_frontier_points_commune_buf700_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_road_propagation_commune_buf1000_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_frontier_points_commune_buf1000_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/draft_quartier_polygons_prod.geojson').catch(()=>({features:[]})),
     loadGeo('data/spillover_700m.geojson').catch(()=>({features:[]})),
     loadGeo('data/remaining_gap_clusters.geojson').catch(()=>({features:[]})),
     loadGeo('data/resolution_proposals.geojson').catch(()=>({features:[]})),
@@ -725,6 +749,42 @@ const SPILL_PT_STYLE = (f) => {
   layers.competPB10 = L.geoJSON(competPB10, {pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE_COM(f))});
   layers.competB10 = L.layerGroup([layers.competLB10, layers.competPB10]);
 
+  // ─── Draft Quartier Polygons (production v1) ────────────────────
+  const DRAFT_POLY_STYLE = (f) => {
+    const p = f.properties;
+    const lowConf = p.confidence === 'LOW';
+    return {
+      color: lowConf ? '#dc2626' : (p.color || '#666'),
+      weight: lowConf ? 2.5 : 1.6,
+      opacity: 0.9,
+      fillColor: p.color || '#666',
+      fillOpacity: lowConf ? 0.15 : 0.30,
+      dashArray: lowConf ? '4,2' : null,
+    };
+  };
+  layers.draftPolys = L.geoJSON(draftPolys, {
+    style: DRAFT_POLY_STYLE,
+    onEachFeature: (f, l) => {
+      const p = f.properties;
+      const reasons = (p.low_confidence_reasons||[]).length
+        ? `<br><b style="color:#c2410c">⚠ LOW confidence</b>: ${p.low_confidence_reasons.join(' · ')}` : '';
+      const neighbours = (p.neighbours||[]).slice(0,10)
+        .map(n => escapeHtml(n)).join(', ') + (p.n_neighbours > 10 ? ` (+${p.n_neighbours-10})` : '');
+      l.bindPopup(
+        `<b>${escapeHtml(p.name)}</b> <span class="pill" style="background:${p.confidence==='LOW'?'#fee2e2':'#dcfce7'};color:${p.confidence==='LOW'?'#991b1b':'#166534'}">${p.confidence}</span><br>`+
+        `<b>Commune</b>: ${escapeHtml(p.commune)}<br>`+
+        `<b>Area</b>: ${(p.area_m2/10000).toFixed(2)} ha (${p.area_m2.toFixed(0)} m²)<br>`+
+        `<b>Perimeter</b>: ${p.perimeter_m.toFixed(0)} m<br>`+
+        `<b>Owned road length</b>: ${p.road_length_m.toFixed(0)} m<br>`+
+        `<b>Road vertices</b>: ${p.n_road_vertices}<br>`+
+        `<b>Compactness</b>: ${p.compactness}<br>`+
+        `<b>Neighbours</b> (${p.n_neighbours}): ${neighbours}${reasons}`
+      );
+      const lowConf = p.confidence === 'LOW';
+      l.bindTooltip(escapeHtml(p.name) + (lowConf ? ' ⚠' : ''), {sticky: true});
+    }
+  });
+
   // OSM POI evidence — per-POI (CONFIRM / DISPUTE / FILLS_GAP / NO_NODE)
   layers.osmPoiEv = L.geoJSON(osmPoiEv, {
     pointToLayer:(f,latlng)=>L.circleMarker(latlng, OSM_POI_STYLE(f)),
@@ -1034,9 +1094,7 @@ const SPILL_PT_STYLE = (f) => {
     layers.amen.addLayer(m);
   });
 
-  // Shared HTML-escape helper used by all Google-POI layers below.
-  const escapeHtml = (s) => (s==null?'':String(s)).replace(/[&<>"']/g, ch =>
-    ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  // Shared HTML-escape helper (function declaration = hoisted)
 
   // ─── Google POI proposed road corrections — repaint layer ─────────
   // For every segment currently owned by X whose local Google POI text
@@ -1806,6 +1864,7 @@ const SPILL_PT_STYLE = (f) => {
   if(isOn('t-wway')) layers.wway.addTo(map);
   if(isOn('t-competB700'))  layers.competB7.addTo(map);
   if(isOn('t-competB1000')) layers.competB10.addTo(map);
+  if(isOn('t-draftpoly'))   layers.draftPolys.addTo(map);
   if(isOn('t-arr')) layers.arr.addTo(map);
   if(isOn('t-ign')) layers.ign.addTo(map);
   if(isOn('t-amen')) layers.amen.addTo(map);
@@ -1863,6 +1922,20 @@ const SPILL_PT_STYLE = (f) => {
   bind('t-competB500', layers.competB5);
   bind('t-competB700', layers.competB7);
   bind('t-competB1000', layers.competB10);
+  bind('t-draftpoly',   layers.draftPolys);
+  // Opacity slider for draft polygons
+  (() => {
+    const el = document.getElementById('op-draftpoly');
+    if (!el || !layers.draftPolys) return;
+    el.oninput = () => {
+      const op = el.value / 50;
+      layers.draftPolys.eachLayer(l => {
+        const base = DRAFT_POLY_STYLE(l.feature);
+        l.setStyle({fillOpacity: (base.fillOpacity||0.3) * op,
+                     opacity: Math.min(1, (base.opacity||0.9) * op)});
+      });
+    };
+  })();
   bind('t-spillaudit', layers.spillAudit);
   bind('t-gapaudit', layers.gapAudit);
   bind('t-resolution', layers.resolution);
