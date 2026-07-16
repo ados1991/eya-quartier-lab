@@ -129,13 +129,14 @@
     <label class="lay-hdr">
       <input type="checkbox" id="t-draftpoly" checked>
       <span style="color:#166534;font-weight:700">📐 Draft Quartier Polygons</span>
-      <span class="pill" style="background:#fde68a;color:#78350f;border-color:#facc15">PROD v2 · roads</span>
+      <span class="pill" style="background:#fde68a;color:#78350f;border-color:#facc15">PROD v3 · full-coverage</span>
     </label>
     <div class="lay-meta">
-      <b>Road-ownership-derived</b> polygons (NOT chef-lieu Voronoi). For each quartier: class-aware road buffers (primary 30 m, secondary 22 m, residential 18 m, service 12 m) → union per quartier gives coverage envelope → the metro is rasterised at 30 m grid and each cell inside coverage is assigned to the owner of the <b>nearest owned road vertex</b> → strip-union back to polygon → simplify · fill small holes · drop slivers · clip to commune.<br>
-      If you hide the polygon and display only the coloured roads, the polygon boundary follows those roads naturally.<br>
-      <b>298 polygons</b> · <b>139 HIGH</b> confidence · <b>159 LOW</b> confidence (red outline, dashed — mostly narrow road-corridor shapes flagged for review).<br>
-      Cotonou 156 · Abomey-Calavi 142. Click a polygon for full diagnostics.
+      <b>Full land coverage</b>. Every non-water land cell inside Cotonou + Abomey-Calavi belongs to exactly one quartier. Arrondissement boundaries are NOT used as hard limits — only commune boundaries and major water are.<br>
+      Method: rasterise the (commune − major water) surface at 20 m; each cell is assigned to the owner of the <b>nearest owned road vertex</b> (partition seeded by the validated road ownership); expansion fills every building, parcel, courtyard, market and open space; extract per-owner polygon via row-strip union; simplify (6 m).<br>
+      <b>Coverage</b>: 599.4 km² / 606.8 km² of non-water land = <b>98.8 %</b>.<br>
+      <b>298 polygons</b> · <b>225 HIGH</b> · <b>46 MEDIUM</b> · <b>27 MANUAL_REVIEW</b> (red outline, dashed — mostly large expansion into open land without direct road support).<br>
+      Cotonou 156 · Abomey-Calavi 142. Click a polygon for diagnostics.
     </div>
     <input type="range" min="0" max="100" value="50" id="op-draftpoly" class="slider">
     <div class="lay-meta" style="margin-top:6px">
@@ -753,15 +754,17 @@ const SPILL_PT_STYLE = (f) => {
   // ─── Draft Quartier Polygons (production v1) ────────────────────
   const DRAFT_POLY_STYLE = (f) => {
     const p = f.properties;
-    const lowConf = p.confidence === 'LOW';
-    return {
-      color: lowConf ? '#dc2626' : (p.color || '#666'),
-      weight: lowConf ? 2.5 : 1.6,
-      opacity: 0.9,
-      fillColor: p.color || '#666',
-      fillOpacity: lowConf ? 0.15 : 0.30,
-      dashArray: lowConf ? '4,2' : null,
-    };
+    const conf = p.confidence;
+    if (conf === 'MANUAL_REVIEW' || conf === 'LOW') {
+      return {color:'#dc2626', weight:2.5, opacity:0.9,
+                fillColor: p.color || '#666', fillOpacity:0.15, dashArray:'4,2'};
+    }
+    if (conf === 'MEDIUM') {
+      return {color:'#f59e0b', weight:1.9, opacity:0.9,
+                fillColor: p.color || '#666', fillOpacity:0.25, dashArray:'6,3'};
+    }
+    return {color: p.color || '#666', weight:1.6, opacity:0.9,
+              fillColor: p.color || '#666', fillOpacity:0.30};
   };
   layers.draftPolys = L.geoJSON(draftPolys, {
     style: DRAFT_POLY_STYLE,
