@@ -95,33 +95,31 @@
     <input type="range" min="0" max="100" value="80" id="op-gpoi" class="slider">
     <div style="margin-top:8px;padding-top:8px;border-top:1px dashed #fca5a5">
       <label class="lay-hdr" style="margin:0">
-        <input type="checkbox" id="t-m4edges" checked>
-        <span style="color:#7f1d1d;font-weight:700">↳ Metro v4 corrections — quality-preserving completion</span>
-        <span class="pill" style="background:#dcfce7;color:#15803d;border-color:#86efac">v4</span>
+        <input type="checkbox" id="t-m3edges" checked>
+        <span style="color:#7f1d1d;font-weight:700">↳ Metro v3 corrections — full rules</span>
+        <span class="pill" style="background:#dcfce7;color:#15803d;border-color:#86efac">v3</span>
       </label>
       <div class="lay-meta" style="margin-top:4px">
-        All previous rules + <b>graph-repair radius sweep</b> (Phase 1, tests 20/25/30/40 m; chose <b>20 m</b>) + <b>bridge-aware crossings</b> (OSM bridge=yes evidence) + <b>ANNEX_TO_EXISTING_QUARTIER</b> preference (Phase 2) + <b>TRUE_MISSING_ANCHOR vs GRAPH_FRAGMENTATION</b> separation (Phase 3). No Euclidean fallback, no one-hop foreign traversal.<br>
-        Scope: <b>strictly Cotonou + Abomey-Calavi</b>.<br>
-        <b>Coverage</b>: Cotonou 14&nbsp;849 / 15&nbsp;336 (<b>96.8&nbsp;%</b>) · Abomey-Calavi 96&nbsp;603 / 99&nbsp;229 (<b>97.4&nbsp;%</b>).<br>
-        <b>Invariants</b>: OWNER_DISCONNECTED = <b>0</b> ✓ · IN_SCOPE_UNCLAIMED = 3&nbsp;113 (all <b>86</b> residual components classified GRAPH_FRAGMENTATION_UNRECOVERED — no strong POI evidence for a truly-missing quartier).<br>
-        Details: <b>474</b> CONFIRM-eligible anchors · <b>339</b> chef-lieu conflicts · <b>69</b> bridges added at R=20 m · Phase 2 annexed <b>648</b> components + <b>71</b> equal-split + <b>8</b> narrowed-by-POI · <b>12</b> multi-review.
+        All rules enforced: <b>chef-lieu 150 m protection</b> (Rule 1, ≥ 3 CONFIRMED corroboration) · <b>connectivity invariant</b> (Rule 2, isolated components repaired) · <b>equal-split frontier</b> (Rule 3, validated pilot) · <b>CONFIRM-only</b> POIs (Rule 4) · <b>in-scope completion</b> (Rule 5, every Cotonou+AC road assigned or flagged) · <b>graph-fragmentation repair</b> (Rule 6, water-aware bridge at 15 m).<br>
+        Scope: <b>strictly Cotonou + Abomey-Calavi</b> commune polygons — outside roads never coloured.<br>
+        <b>Coverage</b>: Cotonou 15&nbsp;156 / 15&nbsp;336 (<b>98.8&nbsp;%</b>) · Abomey-Calavi 98&nbsp;236 / 99&nbsp;229 (<b>99.0&nbsp;%</b>) · 38&nbsp;094 OUT_OF_SCOPE excluded.<br>
+        <b>Invariants</b>: OWNER_DISCONNECTED = <b>0</b> ✓ · IN_SCOPE_UNCLAIMED = 1&nbsp;173 (all flagged MISSING_CHEF_LIEU_CANDIDATE, 151 components — for review, not silent).<br>
+        Details: <b>339</b> chef-lieu conflicts · <b>474</b> CONFIRM-eligible anchors · <b>1&nbsp;013</b> frontier midpoints · <b>37</b> graph bridges repaired · <b>12</b> multi-quartier review.
       </div>
-      <label class="lay-hdr" style="margin-top:6px"><input type="checkbox" id="t-m4mids" checked>
+      <label class="lay-hdr" style="margin-top:6px"><input type="checkbox" id="t-m3mids" checked>
         <span>↳ Frontier midpoints (white ring)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4conflict">
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3conflict">
         <span>↳ CHEF_LIEU_CONFLICT (light-red)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4isolated">
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3isolated">
         <span>↳ ISOLATED_ROAD_COMPONENT — repaired (cyan)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4multi">
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3multi">
         <span>↳ MULTI_QUARTIER_REVIEW (grey)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4truemiss">
-        <span>↳ TRUE_MISSING_ANCHOR_REVIEW (red)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4frag">
-        <span>↳ GRAPH_FRAGMENTATION_UNRECOVERED (yellow)</span></label>
-      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m4anchors">
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3missing">
+        <span>↳ MISSING_CHEF_LIEU_CANDIDATE (orange)</span></label>
+      <label class="lay-hdr" style="margin-top:4px"><input type="checkbox" id="t-m3anchors">
         <span>↳ POI anchors (ELIGIBLE / NOT_ELIGIBLE)</span></label>
       <div class="lay-meta" style="margin-top:4px">
-        <small><i>Reports</i>: <a href="data/google_poi_metro_v4_report.md" target="_blank">full v4 report</a> · <a href="data/google_poi_metro_v4_repair_sweep_report.md" target="_blank">radius sweep</a> · <a href="data/google_poi_metro_v4_per_quartier.csv" download>per-quartier CSV</a> · <a href="data/google_poi_metro_v4_per_pair.csv" download>per-pair CSV</a></small>
+        <small><i>Full report</i>: <a href="data/google_poi_metro_v3_report.md" target="_blank">markdown</a> · <a href="data/google_poi_metro_v3_per_quartier.csv" download>per-quartier CSV</a> · <a href="data/google_poi_metro_v3_per_pair.csv" download>per-pair CSV</a></small>
       </div>
     </div>
   </div>
