@@ -126,8 +126,13 @@
 
   <h2>Base road ownership</h2>
   <div class="lay" style="background:#f0fdf4;border-color:#bbf7d0">
-    <label class="lay-hdr"><input type="checkbox" id="t-competB700" checked><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 25%,#fbbf24 25%,#fbbf24 50%,#f97316 50%,#f97316 75%,#dc2626 75%);border:2px solid #052e16"></span><b>Road propagation — commune + 700 m spill-over</b> ✓</label>
-    <div class="lay-meta">Base ownership layer. Each road segment coloured by the competitive Dijkstra winner from the IGN chef-lieux. Commune-bounded with a 700 m buffer. 71 551 / 94 213 nodes claimed (75.9 %). This is the substrate the Metro v2 corrections sit on top of.</div>
+    <label class="lay-hdr"><input type="checkbox" id="t-competB1000" checked><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 25%,#fbbf24 25%,#fbbf24 50%,#f97316 50%,#f97316 75%,#dc2626 75%);border:2px solid #052e16"></span><b>Road propagation — commune + 1000 m spill-over</b> <span class="pill" style="background:#dbeafe;color:#1e40af;border-color:#93c5fd">NEW</span></label>
+    <div class="lay-meta"><b>72 582 / 94 213 nodes claimed (77.0 %)</b> — +5.5 % vs strict commune, +1 031 nodes vs the 700 m variant. Same competitive Dijkstra rule, wider commune-boundary spill-over.</div>
+    <input type="range" min="0" max="100" value="85" id="op-competB1000" class="slider">
+  </div>
+  <div class="lay">
+    <label class="lay-hdr"><input type="checkbox" id="t-competB700"><span class="lay-swatch" style="background:linear-gradient(135deg,#22c55e 25%,#fbbf24 25%,#fbbf24 50%,#f97316 50%,#f97316 75%,#dc2626 75%);border:2px solid #052e16;opacity:.6"></span>Road propagation — commune + 700 m spill-over (previous default)</label>
+    <div class="lay-meta">Previous default (71 551 / 94 213 · 75.9 %). Kept for comparison, default off.</div>
     <input type="range" min="0" max="100" value="85" id="op-competB700" class="slider">
   </div>
 
@@ -346,7 +351,7 @@ async function init(){
   const [c50, v1, v2, v3, v4, v5, v5c, v5c2, user, disp, ign, arr, amen, ev, wbod, wway, audit, propL, propP,
          propL100, propP100, propL300, propP300, propL500, propP500, coll300, ovr300, front300,
          competL, competP, competL500, competP500, competLF, competPF, competLP, competPP, competLC, competPC,
-         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150, mkFrontierEdges, mkFrontierMids, mkFrontierAnchors, mkFrontierRings, metroEdges, metroMids, metroAmbig, metroMulti, metroAnchors, m2Edges, m2Mids, m2Conflict, m2Isolated, m2Multi, m2Unresolved, m2Anchors, m3Edges, m3Mids, m3Conflict, m3Isolated, m3Multi, m3Missing, m3Anchors, m4Edges, m4Mids, m4Conflict, m4Isolated, m4Multi, m4TrueMiss, m4Frag, m4Anchors] = await Promise.all([
+         competLB3, competPB3, competLB5, competPB5, competLB7, competPB7, competLB10, competPB10, spillAudit, gapAudit, resProposals, osmPoiEv, osmPoiDisp, osmCorrSig, osmCorrZones, qevScore, qevZones, gpoi, gpoiRoads, gpoiRegions, gpoiReassign50, gpoiReassign150, mkFrontierEdges, mkFrontierMids, mkFrontierAnchors, mkFrontierRings, metroEdges, metroMids, metroAmbig, metroMulti, metroAnchors, m2Edges, m2Mids, m2Conflict, m2Isolated, m2Multi, m2Unresolved, m2Anchors, m3Edges, m3Mids, m3Conflict, m3Isolated, m3Multi, m3Missing, m3Anchors, m4Edges, m4Mids, m4Conflict, m4Isolated, m4Multi, m4TrueMiss, m4Frag, m4Anchors] = await Promise.all([
     loadGeo('data/draft_quartier_circles_50m.geojson').catch(()=>({features:[]})),
     loadGeo('data/draft_quartier_polygons_v1.geojson'),
     loadGeo('data/draft_quartier_polygons_v2.geojson'),
@@ -391,6 +396,8 @@ async function init(){
     loadGeo('data/competitive_frontier_points_commune_buf500_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_road_propagation_commune_buf700_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/competitive_frontier_points_commune_buf700_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_road_propagation_commune_buf1000_full.geojson').catch(()=>({features:[]})),
+    loadGeo('data/competitive_frontier_points_commune_buf1000_full.geojson').catch(()=>({features:[]})),
     loadGeo('data/spillover_700m.geojson').catch(()=>({features:[]})),
     loadGeo('data/remaining_gap_clusters.geojson').catch(()=>({features:[]})),
     loadGeo('data/resolution_proposals.geojson').catch(()=>({features:[]})),
@@ -713,6 +720,10 @@ const SPILL_PT_STYLE = (f) => {
     onEachFeature:(f,l)=>{const p=f.properties;l.bindPopup(`<b>${p.name}</b> · commune+${p.commune_tolerance_m||700}m<br>home: ${p.home_commune}<br>${p.seg_count} segs`);}});
   layers.competPB7 = L.geoJSON(competPB7, {pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE_COM(f))});
   layers.competB7 = L.layerGroup([layers.competLB7, layers.competPB7]);
+  layers.competLB10 = L.geoJSON(competLB10, {style: COMPET_STYLE_COM,
+    onEachFeature:(f,l)=>{const p=f.properties;l.bindPopup(`<b>${p.name}</b> · commune+${p.commune_tolerance_m||1000}m<br>home: ${p.home_commune}<br>${p.seg_count} segs`);}});
+  layers.competPB10 = L.geoJSON(competPB10, {pointToLayer:(f,latlng)=>L.circleMarker(latlng, COMPET_PT_STYLE_COM(f))});
+  layers.competB10 = L.layerGroup([layers.competLB10, layers.competPB10]);
 
   // OSM POI evidence — per-POI (CONFIRM / DISPUTE / FILLS_GAP / NO_NODE)
   layers.osmPoiEv = L.geoJSON(osmPoiEv, {
@@ -1793,7 +1804,8 @@ const SPILL_PT_STYLE = (f) => {
   // sidebar entry has been removed silently stay off.
   if(isOn('t-wbod')) layers.wbod.addTo(map);
   if(isOn('t-wway')) layers.wway.addTo(map);
-  if(isOn('t-competB700')) layers.competB7.addTo(map);
+  if(isOn('t-competB700'))  layers.competB7.addTo(map);
+  if(isOn('t-competB1000')) layers.competB10.addTo(map);
   if(isOn('t-arr')) layers.arr.addTo(map);
   if(isOn('t-ign')) layers.ign.addTo(map);
   if(isOn('t-amen')) layers.amen.addTo(map);
@@ -1850,6 +1862,7 @@ const SPILL_PT_STYLE = (f) => {
   bind('t-competB300', layers.competB3);
   bind('t-competB500', layers.competB5);
   bind('t-competB700', layers.competB7);
+  bind('t-competB1000', layers.competB10);
   bind('t-spillaudit', layers.spillAudit);
   bind('t-gapaudit', layers.gapAudit);
   bind('t-resolution', layers.resolution);
