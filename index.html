@@ -129,12 +129,13 @@
     <label class="lay-hdr">
       <input type="checkbox" id="t-draftpoly" checked>
       <span style="color:#166534;font-weight:700">📐 Draft Quartier Polygons</span>
-      <span class="pill" style="background:#fde68a;color:#78350f;border-color:#facc15">PROD v1</span>
+      <span class="pill" style="background:#fde68a;color:#78350f;border-color:#facc15">PROD v2 · roads</span>
     </label>
     <div class="lay-meta">
-      First production-quality polygon draft, one per quartier. Built from the current 1000 m validated propagation via Voronoi tessellation over IGN chef-lieux, intersected with a 45 m road-buffer + commune polygon, simplified (8 m Douglas-Peucker), holes &lt; 500 m² filled, slivers &lt; 200 m² dropped.<br>
-      <b>296 polygons</b> · <b>233 HIGH</b> confidence · <b>63 LOW</b> confidence (red outline, dashed).<br>
-      Cotonou 155 · Abomey-Calavi 141. Click a polygon for full diagnostics.
+      <b>Road-ownership-derived</b> polygons (NOT chef-lieu Voronoi). For each quartier: class-aware road buffers (primary 30 m, secondary 22 m, residential 18 m, service 12 m) → union per quartier gives coverage envelope → the metro is rasterised at 30 m grid and each cell inside coverage is assigned to the owner of the <b>nearest owned road vertex</b> → strip-union back to polygon → simplify · fill small holes · drop slivers · clip to commune.<br>
+      If you hide the polygon and display only the coloured roads, the polygon boundary follows those roads naturally.<br>
+      <b>298 polygons</b> · <b>139 HIGH</b> confidence · <b>159 LOW</b> confidence (red outline, dashed — mostly narrow road-corridor shapes flagged for review).<br>
+      Cotonou 156 · Abomey-Calavi 142. Click a polygon for full diagnostics.
     </div>
     <input type="range" min="0" max="100" value="50" id="op-draftpoly" class="slider">
     <div class="lay-meta" style="margin-top:6px">
