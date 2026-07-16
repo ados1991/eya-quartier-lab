@@ -20,7 +20,7 @@ Strictly Cotonou + Abomey-Calavi commune polygons. Roads geometrically clipped a
 | commune | total | claimed | unclaimed |
 |---|---:|---:|---:|
 | ABOMEY-CALAVI | 99502 | 98928 | 574 |
-| COTONOU | 15156 | 14980 | 176 |
+| COTONOU | 15156 | 15033 | 123 |
 
 ## Anchors
 
@@ -36,9 +36,9 @@ Strictly Cotonou + Abomey-Calavi commune polygons. Roads geometrically clipped a
 ## Invariants
 
 - **OWNER_DISCONNECTED_ROAD_SEGMENTS**: 0
-- **IN_SCOPE_UNCLAIMED_ROAD_SEGMENTS**: 750
+- **IN_SCOPE_UNCLAIMED_ROAD_SEGMENTS**: 697
 
 ## Fragmentation residuals
 
-- OSM_GRAPH_FRAGMENTATION: 74
+- OSM_GRAPH_FRAGMENTATION: 59
 - WATER_OR_BRIDGE_BLOCK: 2

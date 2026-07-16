@@ -1725,11 +1725,34 @@ const SPILL_PT_STYLE = (f) => {
       l.bindPopup(`<b>Water-blocked edge</b><br>reason: ${escapeHtml(p.reason||'?')}<br>highway: ${escapeHtml(p.highway||'?')}`);
     }
   });
+  const FRAG_COLOR = {
+    "OSM_GRAPH_FRAGMENTATION"    : {fill:"#dc2626", stroke:"#7f1d1d"},   // red
+    "WATER_OR_BRIDGE_BLOCK"      : {fill:"#2563eb", stroke:"#1e3a8a"},   // blue
+    "OUT_OF_SCOPE_CLIPPED"       : {fill:"#f97316", stroke:"#7c2d12"},   // orange
+    "MULTI_QUARTIER_REVIEW"      : {fill:"#a78bfa", stroke:"#5b21b6"},   // purple
+    "UNSNAPPED_CHEF_LIEU_COMPONENT": {fill:"#facc15", stroke:"#854d0e"}, // yellow
+    "BUG_SHOULD_HAVE_CLOSED"     : {fill:"#000000", stroke:"#ff00ff"},   // black+magenta = alarm
+    "UNRESOLVED"                 : {fill:"#94a3b8", stroke:"#334155"},   // grey
+  };
   layers.m5Frag = L.geoJSON(m5Frag, {
-    pointToLayer: (f, latlng) => L.circleMarker(latlng, {radius:5,color:'#78350f',weight:1.5,fillColor:'#fbbf24',fillOpacity:0.85}),
+    pointToLayer: (f, latlng) => {
+      const c = FRAG_COLOR[f.properties.disposition] || FRAG_COLOR.UNRESOLVED;
+      const r = Math.min(12, 4 + Math.sqrt(f.properties.component_size||1));
+      return L.circleMarker(latlng, {radius:r, color:c.stroke, weight:1.8,
+                                        fillColor:c.fill, fillOpacity:0.9});
+    },
     onEachFeature: (f, l) => {
       const p = f.properties;
-      l.bindPopup(`<b>${escapeHtml(p.disposition||'?')}</b><br>commune: <b>${escapeHtml(p.commune||'?')}</b><br>component size: ${p.component_size}`);
+      l.bindPopup(
+        `<b>${escapeHtml(p.disposition||'?')}</b><br>`+
+        `component id: ${p.component_id}<br>`+
+        `vertices: <b>${p.component_size}</b> · edges: ${p.n_edges}<br>`+
+        `commune: <b>${escapeHtml(p.commune||'?')}</b><br>`+
+        `<b>Nearest chef-lieu</b>: ${escapeHtml(p.nearest_chef_lieu||'?')} @ ${p.nearest_chef_dist_m} m<br>`+
+        `<b>Nearest claimed road</b>: ${escapeHtml(p.nearest_claimed_owner||'?')} @ ${p.nearest_claimed_dist_m ?? '?'} m<br>`+
+        `<b>Graph-connected to a claimed road?</b> <b style="color:${p.graph_connected_to_claimed?'#b91c1c':'#15803d'}">${p.graph_connected_to_claimed?'YES (bug!)':'NO (genuine isolation)'}</b><br>`+
+        `<b>Suggested fix</b>: <i>${escapeHtml(p.suggested_fix||'?')}</i>`
+      );
     }
   });
   layers.m5Virtual = L.geoJSON(m5Virtual, {
